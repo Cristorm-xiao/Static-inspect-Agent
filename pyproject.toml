@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "static-inspect-agent"
+version = "0.1.0"
+description = "Python 工程静态巡检 Agent：规则引擎 + LLM 语义分析"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=1.2",
+    "openai>=3.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+inspect-agent = "main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.inspect-agent]
+# 长函数阈值：函数体超过这么多行才交给 LLM 分析
+long-func-threshold = 30
+# LLM 分批大小：每批最多几个函数并发交给模型
+llm-batch-size = 5
+# 扫描时跳过的目录名
+skip-dirs = [".git", "__pycache__", ".venv", "venv", "env", "node_modules", ".idea", ".vscode", "build", "dist"]
