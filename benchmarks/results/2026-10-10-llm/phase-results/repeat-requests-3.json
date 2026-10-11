@@ -1,0 +1,76 @@
+{
+  "phase": "repeat-requests-3",
+  "kind": "repeat",
+  "seconds": 3.206007899978431,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "requests/sessions.py",
+      "line": 302,
+      "smell": "职责过多",
+      "reason": "rebuild_proxies 同时负责解析代理、删除/重建 Proxy-Authorization 头、处理认证信息，混合了代理解析与头部修改两类职责。"
+    },
+    {
+      "file": "requests/sessions.py",
+      "line": 302,
+      "smell": "魔法字符串",
+      "reason": "硬编码的 \"Proxy-Authorization\" 和 \"https\" 前缀散落在逻辑中，缺少常量或辅助判断。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 523,
+      "smell": "命名含糊",
+      "reason": "布尔变量 is_proxied_http_request 与 using_socks_proxy 组合判断条件，逻辑分散且命名未清晰表达最终意图。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 523,
+      "smell": "魔法字符串",
+      "reason": "硬编码 \"https\"、\"socks\"、\"//\" 等字符串，含义依赖上下文，易出错。"
+    },
+    {
+      "file": "requests/help.py",
+      "line": 34,
+      "smell": "重复逻辑",
+      "reason": "Jython 与 IronPython 分支都执行相同的 platform.python_version() 猜测逻辑，可合并。"
+    },
+    {
+      "file": "requests/help.py",
+      "line": 34,
+      "smell": "魔法字符串",
+      "reason": "实现名 \"CPython\"、\"PyPy\"、\"Jython\"、\"IronPython\"、\"Unknown\" 等硬编码，缺少常量。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "重复逻辑",
+      "reason": "两次调用 str(r.content, encoding, ...) 且回退分支中 encoding 可能为 None，逻辑重复且易混淆。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "死代码/无效逻辑",
+      "reason": "tried_encodings 列表被追加但从未使用，属于无用状态。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "魔法字符串",
+      "reason": "硬编码 \"replace\" 错误处理策略，且 DeprecationWarning 消息中嵌入 issue 编号。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 373,
+      "smell": "职责过多",
+      "reason": "方法文档极长且承担了 PoolKey 构建、SSL 参数决策、子类扩展说明等多重职责，实际逻辑却仅一行委托，文档与实现严重不匹配。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 373,
+      "smell": "命名含糊",
+      "reason": "build_connection_pool_key_attributes 名称冗长且返回的是两个字典的元组，命名未准确反映返回结构。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

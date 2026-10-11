@@ -1,0 +1,63 @@
+{
+  "exit_code": 1,
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\Static-inspect-Agent\\examples\\demo_project",
+    "files_scanned": 2,
+    "rule_findings": [
+      {
+        "file": "bad.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "fe3246d55ce2f840838f417fa667d7020ef01a116c44411e56b09123fd17610e"
+      },
+      {
+        "file": "bad.py",
+        "line": 4,
+        "rule": "mutable_default_arg",
+        "rule_id": "R002",
+        "severity": "error",
+        "desc": "函数 accumulate 的默认参数是可变对象，调用间会共享状态",
+        "scope": "accumulate",
+        "fingerprint": "ebfbcee166e96818bf99422cba274bbfbac8d1a30c3697a9becfbbd4fb1f26a9"
+      },
+      {
+        "file": "bad.py",
+        "line": 10,
+        "rule": "eval_call",
+        "rule_id": "R003",
+        "severity": "warning",
+        "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式",
+        "scope": "<module>",
+        "fingerprint": "0c61d065f6f8fb562ba934795638862320ddfd960182a479db54deca58dbf20c"
+      },
+      {
+        "file": "bad.py",
+        "line": 11,
+        "rule": "bare_except",
+        "rule_id": "R001",
+        "severity": "error",
+        "desc": "裸 except 捕获所有异常（含 KeyboardInterrupt），可能阻止异常传播，请检查处理路径",
+        "scope": "<module>",
+        "fingerprint": "038aa88d2ed1269cc61e395db1957b6d396cc1eb5727bef0b96aeb28c7cfe866"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 2,
+      "cache_hits": 0,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

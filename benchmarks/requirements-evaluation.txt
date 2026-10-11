@@ -1,0 +1,5 @@
+# Direct dependencies used in the 2026-10-09 offline evaluation.
+langgraph==1.2.12
+openai==3.19.0
+python-dotenv==1.2.3
+pytest==9.1.1

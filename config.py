@@ -1,36 +1,57 @@
-"""读取 pyproject.toml 中 [tool.inspect-agent] 配置段。
+"""Per-project inspection settings loaded from the scanned project's pyproject.toml."""
 
-用户可在 pyproject.toml 里自定义阈值和跳过目录，不用改源码。
-找不到配置文件或字段时用内置默认值，保证开箱即用。
-"""
 import tomllib
 from pathlib import Path
 
-# ---- 默认值（pyproject.toml 里没配时用这些） ----
-_DEFAULT_LONG_FUNC_THRESHOLD = 30
-_DEFAULT_LLM_BATCH_SIZE = 5
-_DEFAULT_SKIP_DIRS = {
-    ".git", "__pycache__", ".venv", "venv", "env",
-    "node_modules", ".idea", ".vscode", "build", "dist",
+DEFAULT_SKIP_DIRS = frozenset({
+    ".git", "__pycache__", ".venv", "venv", "env", "node_modules",
+    ".idea", ".vscode", "build", "dist",
+})
+LONG_FUNC_THRESHOLD = 30
+LLM_BATCH_SIZE = 5
+SKIP_DIRS = DEFAULT_SKIP_DIRS  # compatibility for direct scanner calls
+DEFAULTS = {
+    'long_func_threshold':30, 'llm_batch_size':5, 'llm_concurrency':3,
+    'llm_batch_tokens':16000, 'llm_max_requests':32, 'llm_input_budget':200000,
+    'llm_output_tokens':1500, 'llm_context_chars':6000, 'cache_ttl_seconds':86400,
+    'cache_enabled':True, 'ignore_package_reexports':False,
 }
 
 
-def _load_config() -> dict:
-    """从项目根目录的 pyproject.toml 读取 [tool.inspect-agent] 段。
-    找不到文件或段落时返回空 dict，由调用方用默认值兜底。
-    """
-    # config.py 在项目根目录，pyproject.toml 也在根目录
-    toml_path = Path(__file__).parent / "pyproject.toml"
-    if not toml_path.exists():
-        return {}
-    with open(toml_path, "rb") as f:
-        data = tomllib.load(f)
-    return data.get("tool", {}).get("inspect-agent", {})
+def load_config(project_root: Path) -> dict:
+    """Return validated settings; invalid project configuration is a usage error."""
+    settings = {}
+    config_path = project_root / "pyproject.toml"
+    if config_path.is_file():
+        with config_path.open("rb") as stream:
+            data = tomllib.load(stream)
+        tool = data.get("tool", {})
+        if not isinstance(tool, dict):
+            raise ValueError("[tool] 必须是 TOML 表")
+        settings = tool.get("inspect-agent", {})
+    if not isinstance(settings, dict):
+        raise ValueError("[tool.inspect-agent] 必须是 TOML 表")
 
-
-_cfg = _load_config()
-
-# 导出配置值：优先用 pyproject.toml 里的，没有就用默认值
-LONG_FUNC_THRESHOLD = int(_cfg.get("long-func-threshold", _DEFAULT_LONG_FUNC_THRESHOLD))
-LLM_BATCH_SIZE = int(_cfg.get("llm-batch-size", _DEFAULT_LLM_BATCH_SIZE))
-SKIP_DIRS = set(_cfg.get("skip-dirs", list(_DEFAULT_SKIP_DIRS)))
+    threshold = settings.get("long-func-threshold", LONG_FUNC_THRESHOLD)
+    batch_size = settings.get("llm-batch-size", LLM_BATCH_SIZE)
+    skip_dirs = settings.get("skip-dirs", sorted(DEFAULT_SKIP_DIRS))
+    if type(threshold) is not int or threshold < 1:
+        raise ValueError("long-func-threshold 必须是正整数")
+    if type(batch_size) is not int or batch_size < 1:
+        raise ValueError("llm-batch-size 必须是正整数")
+    if not isinstance(skip_dirs, list) or any(not isinstance(name, str) or not name for name in skip_dirs):
+        raise ValueError("skip-dirs 必须是非空字符串数组")
+    result = {
+        **DEFAULTS,
+        "long_func_threshold": threshold,
+        "llm_batch_size": batch_size,
+        "skip_dirs": sorted(set(skip_dirs)),
+    }
+    for key, default in DEFAULTS.items():
+        value=settings.get(key.replace('_','-'),default)
+        if type(default) is bool:
+            if type(value) is not bool: raise ValueError(f'{key} 必须是布尔值')
+        elif type(value) is not int or value<1:
+            raise ValueError(f'{key} 必须是正整数')
+        result[key]=value
+    return result

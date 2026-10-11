@@ -1,0 +1,14 @@
+{
+  "models": [
+    "deepseek-flash",
+    "deepseek-v4-pro"
+  ],
+  "requested_model": "deepseek-chat",
+  "returned_model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 7,
+    "completion_tokens": 1,
+    "total_tokens": 8
+  },
+  "note": "Connectivity probe Return only []; excluded from evaluation denominators."
+}

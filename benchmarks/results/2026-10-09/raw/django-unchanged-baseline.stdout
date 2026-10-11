@@ -1,0 +1,7 @@
+{
+  "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+  "files_scanned": 883,
+  "rule_findings": [],
+  "llm_findings": [],
+  "baseline_suppressed": 32
+}

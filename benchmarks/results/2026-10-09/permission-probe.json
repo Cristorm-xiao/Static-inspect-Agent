@@ -1,0 +1,10 @@
+[
+  {
+    "mode": "0o777",
+    "result": "readable"
+  },
+  {
+    "mode": "0o700",
+    "result": "PermissionError: [WinError 5] 拒绝访问。: 'D:\\\\静态工程巡检Agent\\\\validation-2026-10-09\\\\permission-probe-448'"
+  }
+]

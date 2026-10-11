@@ -1,0 +1,56 @@
+"""Create source-context review records after inspecting every production-source finding."""
+import csv
+import json
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path("D:/静态工程巡检Agent/validation-2026-10-09")
+RUN = ROOT / "run-01"
+manifest = {p["name"]: p for p in json.loads((RUN/"corpus.json").read_text(encoding="utf-8"))}
+findings = json.loads((RUN/"source-findings.json").read_text(encoding="utf-8"))
+rows = []
+for f in findings:
+    p = manifest[f["project"]]
+    source = ROOT/"corpus"/p["name"]/p["source"]/f["file"]
+    lines = source.read_text(encoding="utf-8").splitlines()
+    index = f["line"] - 1
+    if f["rule_id"] == "R004":
+        assert f["file"].endswith("__init__.py") and "import *" in lines[index]
+        category = "intentional_package_reexport"
+        note = "包入口集中导出公共 API；语法命中正确，未证明是缺陷。"
+        if p["name"] == "httpx":
+            note += "顶层及 transports 入口均定义 __all__。"
+        else:
+            note += "命中行带 NOQA；现有工具不识别该抑制标记。"
+    elif p["name"] == "flask" and f["rule_id"] == "R001":
+        assert f["file"] == "app.py" and f["line"] == 1515
+        assert "raise" in lines[index + 2]
+        category = "reraise_message_inaccurate"
+        note = "捕获 BaseException 后记录 error 并立即 raise，用于 finally 清理；“吞掉所有异常”的描述不符合这处代码。"
+    elif p["name"] == "flask" and f["rule_id"] == "R003":
+        assert f["file"] == "cli.py" and f["line"] == 1031
+        category = "intentional_local_code_execution"
+        note = "交互式 flask shell 执行本机 PYTHONSTARTUP 文件；未发现不可信远程输入链，不能认定为漏洞。"
+    elif p["name"] == "django" and f["rule_id"] == "R003":
+        assert f["file"] == "db/migrations/questioner.py" and f["line"] == 168
+        category = "intentional_local_code_execution"
+        note = "迁移命令交互提示用户输入 Python 默认值表达式；执行代码是该本地功能的明确行为，不能据此认定漏洞。"
+    else:
+        raise AssertionError("Unreviewed finding: " + str(f))
+    rows.append({**f, "pattern_matches": True, "review_category": category,
+                 "confirmed_new_defect": False, "review_note": note,
+                 "evidence": "\n".join(f"{i+1}: {lines[i]}" for i in range(max(0,index-3),min(len(lines),index+5)))})
+review = {"reviewer": "Codex source-context review; not independent human or maintainer adjudication",
+          "review_scope": "All 50 production-source findings; not a recall study",
+          "findings_reviewed": len(rows), "pattern_matches": sum(r["pattern_matches"] for r in rows),
+          "confirmed_new_defects": sum(r["confirmed_new_defect"] for r in rows),
+          "categories": dict(Counter(r["review_category"] for r in rows)),
+          "caution": "Intentional patterns are not automatically false positives under syntactic style rules. No real-world precision or recall claimed.",
+          "rows": rows}
+(RUN/"source-review.json").write_text(json.dumps(review,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+with (RUN/"source-review.csv").open("w",newline="",encoding="utf-8-sig") as stream:
+    writer=csv.DictWriter(stream,fieldnames=list(rows[0]))
+    writer.writeheader()
+    writer.writerows(rows)
+print(json.dumps({k:v for k,v in review.items() if k!="rows"},ensure_ascii=False,indent=2))
+

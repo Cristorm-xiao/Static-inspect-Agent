@@ -1,0 +1,178 @@
+[
+  {
+    "id": "c01",
+    "label": {
+      "id": "c01",
+      "target": "deep_nesting",
+      "positive": true
+    },
+    "findings": [
+      {
+        "file": "controls/c01.py",
+        "line": 1,
+        "smell": "嵌套过深",
+        "reason": "多层 if 嵌套（group→member→permission→code）超过 6 层，可读性差，应使用提前 continue 或辅助函数。"
+      },
+      {
+        "file": "controls/c01.py",
+        "line": 1,
+        "smell": "重复逻辑",
+        "reason": "codes 收集与 audit 收集两次遍历 groups 并重复相同的 group/member 过滤条件。"
+      },
+      {
+        "file": "controls/c01.py",
+        "line": 1,
+        "smell": "职责过多",
+        "reason": "同一函数既收集 codes 又生成 audit 成员列表，两个不相关的职责应拆分。"
+      }
+    ],
+    "target_hit_by_codex_review": true,
+    "any_suggestion": true,
+    "review_reason": "命中嵌套目标：多层群组、成员、权限循环及条件。"
+  },
+  {
+    "id": "c02",
+    "label": {
+      "id": "c02",
+      "target": "none",
+      "positive": false
+    },
+    "findings": [
+      {
+        "file": "controls/c02.py",
+        "line": 1,
+        "smell": "文档过度冗长",
+        "reason": "docstring 远超函数本身复杂度，包含大量显而易见或重复的说明，维护成本高。"
+      }
+    ],
+    "target_hit_by_codex_review": null,
+    "any_suggestion": true,
+    "review_reason": "负例收到文档冗长建议，属于风格偏好，未证明需要重点修改。"
+  },
+  {
+    "id": "c03",
+    "label": {
+      "id": "c03",
+      "target": "duplicated_logic",
+      "positive": true
+    },
+    "findings": [
+      {
+        "file": "controls/c03.py",
+        "line": 1,
+        "smell": "重复逻辑",
+        "reason": "三个渠道的统计逻辑完全相同，只是变量名不同，应抽取为辅助函数或循环处理。"
+      },
+      {
+        "file": "controls/c03.py",
+        "line": 1,
+        "smell": "魔法数字",
+        "reason": "max(amount, 0) 中的 0 表示金额下限，应提取为具名常量或加注释说明业务含义。"
+      },
+      {
+        "file": "controls/c03.py",
+        "line": 1,
+        "smell": "命名含糊",
+        "reason": "参数 online/retail/wholesale 未表明是订单列表，容易与渠道名混淆。"
+      }
+    ],
+    "target_hit_by_codex_review": true,
+    "any_suggestion": true,
+    "review_reason": "命中重复目标：不同渠道的计算块重复；额外常量与命名建议不计目标命中。"
+  },
+  {
+    "id": "c04",
+    "label": {
+      "id": "c04",
+      "target": "none",
+      "positive": false
+    },
+    "findings": [
+      {
+        "file": "controls/c04.py",
+        "line": 1,
+        "smell": "魔法数字",
+        "reason": "金额计算中 max(amount, 0) 隐含业务规则但无命名常量或注释说明。"
+      }
+    ],
+    "target_hit_by_codex_review": null,
+    "any_suggestion": true,
+    "review_reason": "负例将非负截断的 0 当作未解释魔法值，文档已说明非负金额语义。"
+  },
+  {
+    "id": "c05",
+    "label": {
+      "id": "c05",
+      "target": "unclear_names",
+      "positive": true
+    },
+    "findings": [
+      {
+        "file": "controls/c05.py",
+        "line": 1,
+        "smell": "命名含糊",
+        "reason": "函数名 p 及变量 a/b/c/d/e/f/g 等完全无意义，无法表达意图。"
+      }
+    ],
+    "target_hit_by_codex_review": true,
+    "any_suggestion": true,
+    "review_reason": "命中命名目标：函数和变量名称缺少语义。"
+  },
+  {
+    "id": "c06",
+    "label": {
+      "id": "c06",
+      "target": "none",
+      "positive": false
+    },
+    "findings": [
+      {
+        "file": "controls/c06.py",
+        "line": 1,
+        "smell": "文档过度",
+        "reason": "docstring 冗长且包含大量与实现无关的说明（如空间复杂度、异常行为），远超函数本身复杂度。"
+      }
+    ],
+    "target_hit_by_codex_review": null,
+    "any_suggestion": true,
+    "review_reason": "负例收到文档冗长建议，复杂度与异常说明是否保留是风格取舍。"
+  },
+  {
+    "id": "c07",
+    "label": {
+      "id": "c07",
+      "target": "magic_numbers",
+      "positive": true
+    },
+    "findings": [
+      {
+        "file": "controls/c07.py",
+        "line": 1,
+        "smell": "魔法数字",
+        "reason": "大量硬编码阈值和费率（700、0.037、11、47、1.073 等）散落在逻辑中，难以理解和维护。"
+      }
+    ],
+    "target_hit_by_codex_review": true,
+    "any_suggestion": true,
+    "review_reason": "命中魔法数字目标：计算阈值及比例缺少语义命名。"
+  },
+  {
+    "id": "c08",
+    "label": {
+      "id": "c08",
+      "target": "none",
+      "positive": false
+    },
+    "findings": [
+      {
+        "file": "controls/c08.py",
+        "line": 1,
+        "smell": "职责过多",
+        "reason": "函数名暗示计算费用，但实际承担了取字段、计算、舍入、组装结果等多项职责。"
+      }
+    ],
+    "target_hit_by_codex_review": null,
+    "any_suggestion": true,
+    "review_reason": "负例将紧密相关的字段提取、计算及结果构造认定多职责，缺少实质证据。"
+  }
+]

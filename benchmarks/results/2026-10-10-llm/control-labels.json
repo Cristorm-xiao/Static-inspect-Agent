@@ -1,0 +1,53 @@
+{
+  "rubric": "Labels frozen before inference. Positives require identification of the specified target smell; other comments do not count as a target hit. Negatives are deliberately long mainly due to useful documentation; report both any-warning rate and whether suggestions are supported. Tiny designed controls are not population accuracy.",
+  "cases": [
+    {
+      "id": "c01",
+      "target": "deep_nesting",
+      "positive": true,
+      "source": "def collect_codes(groups):\n    \"\"\"Collect usable codes from enabled groups and members.\"\"\"\n    result = []\n    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            for permission in member.get(\"permissions\", []):\n                                if permission is not None:\n                                    if permission.get(\"allowed\"):\n                                        for code in permission.get(\"codes\", []):\n                                            if isinstance(code, str):\n                                                if code.strip():\n                                                    if code not in result:\n                                                        result.append(code)\n    audit = []\n    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            audit.append({\n                                \"member_id\": member.get(\"id\"),\n                                \"group_id\": group.get(\"id\"),\n                            })\n    return {\n        \"codes\": result,\n        \"members\": audit,\n    }\n"
+    },
+    {
+      "id": "c02",
+      "target": "none",
+      "positive": false,
+      "source": "def normalize_labels(labels):\n    \"\"\"Return unique nonempty labels in their original order.\n\n    Parameters\n    ----------\n    labels : iterable of str\n        Labels to normalize. Each element must be a string.\n\n    Returns\n    -------\n    list of str\n        Whitespace-trimmed labels with duplicates removed.\n\n    Notes\n    -----\n    Matching is case sensitive.\n    The input iterable is consumed once.\n    The input elements are not modified.\n    Empty and whitespace-only strings are omitted.\n    The first occurrence determines the output order.\n    Additional space is proportional to unique labels.\n\n    Examples\n    --------\n    normalize_labels([\" red \", \"\", \"red\", \"Blue\"])\n    returns [\"red\", \"Blue\"].\n    \"\"\"\n    result = []\n    seen = set()\n    for label in labels:\n        normalized = label.strip()\n        if normalized and normalized not in seen:\n            seen.add(normalized)\n            result.append(normalized)\n    return result\n"
+    },
+    {
+      "id": "c03",
+      "target": "duplicated_logic",
+      "positive": true,
+      "source": "def summarize_orders(online, retail, wholesale):\n    \"\"\"Summarize paid orders separately for three sales channels.\"\"\"\n    online_total = 0\n    online_count = 0\n    online_ids = []\n    for order in online:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            online_total += max(amount, 0)\n            online_count += 1\n            online_ids.append(order[\"id\"])\n    retail_total = 0\n    retail_count = 0\n    retail_ids = []\n    for order in retail:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            retail_total += max(amount, 0)\n            retail_count += 1\n            retail_ids.append(order[\"id\"])\n    wholesale_total = 0\n    wholesale_count = 0\n    wholesale_ids = []\n    for order in wholesale:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            wholesale_total += max(amount, 0)\n            wholesale_count += 1\n            wholesale_ids.append(order[\"id\"])\n    return {\n        \"online\": (online_total, online_count, online_ids),\n        \"retail\": (retail_total, retail_count, retail_ids),\n        \"wholesale\": (wholesale_total, wholesale_count, wholesale_ids),\n    }\n"
+    },
+    {
+      "id": "c04",
+      "target": "none",
+      "positive": false,
+      "source": "def summarize_paid_orders(orders):\n    \"\"\"Summarize an iterable of validated order mappings.\n\n    Each order contains the following required fields:\n    paid: whether payment has completed.\n    quantity: the nonnegative number of units.\n    unit_price: the price of one unit.\n    discount: the absolute discount for the whole order.\n    id: the order identifier.\n\n    The function expects values in consistent currency units.\n    Input validation is performed by the caller.\n    Unpaid orders do not contribute to the result.\n    A discount cannot make a contribution negative.\n    The order identifiers retain input order.\n    Duplicate identifiers are preserved.\n    The function never mutates an order.\n    The iterable is consumed exactly once.\n\n    Returns a mapping with these fields:\n    total: combined nonnegative contribution.\n    count: number of paid orders.\n    ids: identifiers of paid orders.\n    \"\"\"\n    total = 0\n    count = 0\n    identifiers = []\n    for order in orders:\n        if not order[\"paid\"]:\n            continue\n        amount = order[\"quantity\"] * order[\"unit_price\"] - order[\"discount\"]\n        total += max(amount, 0)\n        count += 1\n        identifiers.append(order[\"id\"])\n    return {\"total\": total, \"count\": count, \"ids\": identifiers}\n"
+    },
+    {
+      "id": "c05",
+      "target": "unclear_names",
+      "positive": true,
+      "source": "def p(a):\n    \"\"\"Compute a report from integer observations.\"\"\"\n    b = []\n    c = []\n    d = 0\n    e = 0\n    for f in a:\n        if f >= 0:\n            b.append(f)\n            d += f\n        else:\n            c.append(f)\n            e += f\n    g = len(b)\n    h = len(c)\n    if g:\n        i = d / g\n        j = min(b)\n        k = max(b)\n    else:\n        i = None\n        j = None\n        k = None\n    if h:\n        l = e / h\n        m = min(c)\n        n = max(c)\n    else:\n        l = None\n        m = None\n        n = None\n    return {\n        \"a\": {\"b\": g, \"c\": i, \"d\": j, \"e\": k},\n        \"f\": {\"g\": h, \"h\": l, \"i\": m, \"j\": n},\n    }\n"
+    },
+    {
+      "id": "c06",
+      "target": "none",
+      "positive": false,
+      "source": "def count_statuses(statuses):\n    \"\"\"Count occurrences of hashable status values.\n\n    Parameters\n    ----------\n    statuses : iterable\n        Hashable values representing processing statuses.\n\n    Returns\n    -------\n    dict\n        A mapping from each observed status to its count.\n\n    Behavior\n    --------\n    Empty input produces an empty mapping.\n    Every observed value is counted.\n    No normalization is applied to status values.\n    The input iterable is consumed once.\n    The function does not mutate input values.\n    Dictionary order follows first appearance.\n    Additional space grows with distinct statuses.\n    Unhashable input values raise TypeError.\n\n    Examples\n    --------\n    count_statuses([\"ready\", \"done\", \"ready\"])\n    returns {\"ready\": 2, \"done\": 1}.\n    \"\"\"\n    counts = {}\n    for status in statuses:\n        counts[status] = counts.get(status, 0) + 1\n    return counts\n"
+    },
+    {
+      "id": "c07",
+      "target": "magic_numbers",
+      "positive": true,
+      "source": "def calculate_charges(accounts):\n    \"\"\"Calculate the monthly charge for each validated account.\"\"\"\n    result = []\n    for account in accounts:\n        amount = account[\"balance\"]\n        if amount < 700:\n            fee = amount * 0.037 + 13\n        elif amount < 2400:\n            fee = amount * 0.029 + 17\n        else:\n            fee = amount * 0.021 + 23\n        if account[\"late_days\"] > 11:\n            fee += 19\n        if account[\"late_days\"] > 26:\n            fee += 31\n        if account[\"transactions\"] > 47:\n            fee += (account[\"transactions\"] - 47) * 0.43\n        if account[\"region\"] == \"north\":\n            fee *= 1.073\n        elif account[\"region\"] == \"south\":\n            fee *= 1.091\n        else:\n            fee *= 1.057\n        if account[\"loyalty_years\"] > 4:\n            fee *= 0.93\n        if account[\"loyalty_years\"] > 9:\n            fee *= 0.89\n        result.append({\n            \"id\": account[\"id\"],\n            \"charge\": round(fee, 2),\n        })\n    return result\n"
+    },
+    {
+      "id": "c08",
+      "target": "none",
+      "positive": false,
+      "source": "def calculate_flat_charges(accounts, *, rate, fixed_fee, decimal_places):\n    \"\"\"Calculate charges using caller-supplied pricing parameters.\n\n    Parameters\n    ----------\n    accounts : iterable of mappings\n        Validated accounts containing id and balance.\n    rate : number\n        Fraction of the balance charged.\n    fixed_fee : number\n        Fixed charge added to each account.\n    decimal_places : int\n        Number of decimal places used for rounding.\n\n    Returns\n    -------\n    list of mappings\n        Each mapping contains id and charge.\n\n    Notes\n    -----\n    The caller supplies the applicable pricing policy.\n    The caller validates all account fields.\n    Rates and balances must use compatible numeric types.\n    The function applies Python's round semantics.\n    Account order is preserved.\n    The input mappings are never modified.\n    \"\"\"\n    return [\n        {\n            \"id\": account[\"id\"],\n            \"charge\": round(account[\"balance\"] * rate + fixed_fee, decimal_places),\n        }\n        for account in accounts\n    ]\n"
+    }
+  ]
+}

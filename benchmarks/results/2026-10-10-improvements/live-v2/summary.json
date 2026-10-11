@@ -1,0 +1,122 @@
+{
+  "candidate_totals": {
+    "old_candidates": 1144,
+    "new_candidates": 920,
+    "old_source_bytes": 2622309,
+    "new_source_bytes": 2180065
+  },
+  "timings_medians": [
+    {
+      "project": "requests",
+      "before": 2.138068400003249,
+      "after_no_cache": 2.115478699997766,
+      "after_cold": 2.168956800014712,
+      "after_warm": 2.0996341000136454
+    },
+    {
+      "project": "flask",
+      "before": 2.132728500000667,
+      "after_no_cache": 2.159019699989585,
+      "after_cold": 2.198374800005695,
+      "after_warm": 2.0823946000018623
+    },
+    {
+      "project": "click",
+      "before": 2.1350646000064444,
+      "after_no_cache": 2.1454236000136007,
+      "after_cold": 2.2334165000065695,
+      "after_warm": 2.150812900013989
+    },
+    {
+      "project": "httpx",
+      "before": 2.1956920999800786,
+      "after_no_cache": 2.2070511000056285,
+      "after_cold": 2.221288500004448,
+      "after_warm": 2.139547400001902
+    },
+    {
+      "project": "django",
+      "before": 3.5558260999969207,
+      "after_no_cache": 4.069485899992287,
+      "after_cold": 5.488093799998751,
+      "after_warm": 3.1153677999973297
+    }
+  ],
+  "baseline": {
+    "baseline_original": 32,
+    "shift_new": 0,
+    "shift_suppressed": 32,
+    "injected_new": 4,
+    "injected_old_suppressed": 32,
+    "new_rule_ids": [
+      "R001",
+      "R002",
+      "R003",
+      "R004"
+    ]
+  },
+  "live_stats": {
+    "candidates": 43,
+    "requests": 9,
+    "cache_hits": 0,
+    "estimated_input_reserved": 119763,
+    "prompt_tokens": 30571,
+    "completion_tokens": 5490,
+    "usage_missing_calls": 0,
+    "rejected_items": 4,
+    "context_rounds": 0,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "statuses": {
+      "partial_invalid": 10,
+      "completed": 33
+    },
+    "completed_functions": 33,
+    "status": "partial",
+    "seconds": 12.45262840000214
+  },
+  "live_groups": {
+    "original": {
+      "samples": 25,
+      "raw_suggestions": 9,
+      "accepted_suggestions": 7,
+      "accepted_categories": {
+        "C": 2,
+        "A": 3,
+        "B": 2
+      }
+    },
+    "control": {
+      "samples": 8,
+      "raw_suggestions": 7,
+      "accepted_suggestions": 5,
+      "accepted_categories": {
+        "A": 4,
+        "B": 1
+      }
+    },
+    "heldout": {
+      "samples": 10,
+      "raw_suggestions": 2,
+      "accepted_suggestions": 2,
+      "accepted_categories": {
+        "B": 1,
+        "C": 1
+      }
+    }
+  },
+  "controls": {
+    "positive_target_hits_after_validation": 3,
+    "positive_cases": 4,
+    "negative_cases_with_suggestions": 0,
+    "negative_cases": 4
+  },
+  "limits": [
+    "Single machine; 3 runs per before/no-cache/warm, 1 cold-cache observation.",
+    "Candidate selection is heuristic, not an accuracy estimate.",
+    "Two prompt rounds retained; v2 heldout10 excludes original25 and v1 heldout10.",
+    "Source review by Codex; evidence matching does not imply semantic correctness.",
+    "No live context request occurred; second-round behavior tested using fake network clients."
+  ]
+}

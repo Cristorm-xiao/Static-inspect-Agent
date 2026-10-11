@@ -1,0 +1,10 @@
+{
+  "final_product_matches_live_v2": true,
+  "corpus_clean": true,
+  "second_heldout_disjoint": true,
+  "artifacts_exclude_key": true,
+  "archives_exclude_key": true,
+  "wheel_matches_source": true,
+  "wheel_cli_smoke": true,
+  "local_document_links": true
+}

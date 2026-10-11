@@ -1,0 +1,406 @@
+{
+  "reviewer": "Codex, not independent human gold labels",
+  "rubric": {
+    "A": "具体改进线索（可部分成立）",
+    "B": "低优先级或设计取舍",
+    "C": "不准确、风险或上下文不足"
+  },
+  "items": [
+    {
+      "call": "02",
+      "ordinal": 0,
+      "group": "original",
+      "accepted": true,
+      "category": "C",
+      "review_reason": "同一函数仅一处 shutil 导入；局部导入不等于重复导入，性能结论缺少证据。",
+      "finding": {
+        "function_id": "click:testing.py:547:isolated_filesystem",
+        "category": "重复导入",
+        "evidence_lines": [
+          26,
+          26
+        ],
+        "evidence": "                import shutil",
+        "impact": "shutil 在 finally 分支内局部导入，每次调用都会执行导入查找；同时把标准库依赖隐藏在异常清理路径中，读者需读到函数末尾才能发现该依赖。",
+        "suggestion": "将 import shutil 提升到模块顶部与其他标准库导入并列，函数体内直接使用 shutil.rmtree。",
+        "needs_context": false
+      },
+      "response_sha256": "cbe96925160c95190e9c83d87c584b9f6e714e0d7413246c4fc4cab283cfed59",
+      "source_sha256": "73362b92a089f3f798df0f5bb03d3198f48cd5cb806af62cb72c81af63a47812"
+    },
+    {
+      "call": "02",
+      "ordinal": 1,
+      "group": "original",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "退出码归一化及输出收集的控制流确实复杂，可考虑提取；尚未验证重构收益。",
+      "finding": {
+        "function_id": "click:testing.py:433:invoke",
+        "category": "多层控制流",
+        "evidence_lines": [
+          71,
+          101
+        ],
+        "evidence": "            try:\n                return_value = cli.main(args=args or (), prog_name=prog_name, **extra)\n            except SystemExit as e:\n                exc_info = sys.exc_info()\n                e_code = t.cast(\"int | t.Any | None\", e.code)\n\n                if e_code is None:\n                    e_code = 0\n\n                if e_code != 0:\n                    exception = e\n\n                if not isinstance(e_code, int):\n                    sys.stdout.write(str(e_code))\n                    sys.stdout.write(\"\\n\")\n                    e_code = 1\n\n                exit_code = e_code\n\n            except Exception as e:\n                if not catch_exceptions:\n                    raise\n                exception = e\n                exit_code = 1\n                exc_info = sys.exc_info()\n            finally:\n                sys.stdout.flush()\n                sys.stderr.flush()\n                stdout = outstreams[0].getvalue()\n                stderr = outstreams[1].getvalue()\n                output = outstreams[2].getvalue()",
+        "impact": "SystemExit 分支内嵌套了 e_code 归一化、非 int 输出、异常记录三层判断，与 finally 中的流读取混在同一 try 块，阅读时需同时跟踪退出码、异常对象、输出流三类状态，修改任一处易遗漏其他分支。",
+        "suggestion": "把 SystemExit 的退出码归一化逻辑抽成独立小函数（如 _normalize_exit_code(e_code) 返回 (exit_code, exception)），try 块只保留调用与赋值，finally 仅负责 flush 与读取流。",
+        "needs_context": false
+      },
+      "response_sha256": "cbe96925160c95190e9c83d87c584b9f6e714e0d7413246c4fc4cab283cfed59",
+      "source_sha256": "f0e3fc51f48a75d4561f427950a2c99a536963983dce94fbc5de91a7e894a443"
+    },
+    {
+      "call": "02",
+      "ordinal": 2,
+      "group": "original",
+      "accepted": true,
+      "category": "B",
+      "review_reason": "两个 arity 策略存在相似转换表达式，提取是否有益需权衡清晰度。",
+      "finding": {
+        "function_id": "click:core.py:2314:type_cast_value",
+        "category": "重复业务逻辑",
+        "evidence_lines": [
+          24,
+          50
+        ],
+        "evidence": "        if self.nargs == 1 or self.type.is_composite:\n\n            def convert(value: t.Any) -> t.Any:\n                return self.type(value, param=self, ctx=ctx)\n\n        elif self.nargs == -1:\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                return tuple(self.type(x, self, ctx) for x in check_iter(value))\n\n        else:  # nargs > 1\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                value = tuple(check_iter(value))\n\n                if len(value) != self.nargs:\n                    raise BadParameter(\n                        ngettext(\n                            \"Takes {nargs} values but 1 was given.\",\n                            \"Takes {nargs} values but {len} were given.\",\n                            len(value),\n                        ).format(nargs=self.nargs, len=len(value)),\n                        ctx=ctx,\n                        param=self,\n                    )\n\n                return tuple(self.type(x, self, ctx) for x in value)",
+        "impact": "三个分支各自定义 convert，其中 nargs==-1 与 nargs>1 分支都执行 tuple(self.type(x, self, ctx) for x in ...)，仅差长度校验；重复的转换表达式在调整 type 调用签名时需同步修改多处。",
+        "suggestion": "让 nargs>1 分支在完成长度校验后复用同一转换表达式，或提取 _convert_each(value) 辅助函数供两个分支调用，减少重复。",
+        "needs_context": false
+      },
+      "response_sha256": "cbe96925160c95190e9c83d87c584b9f6e714e0d7413246c4fc4cab283cfed59",
+      "source_sha256": "fbf1b58dcced1cafbeae079a3fb12036766bdc25da93399d9069a1e6d56fa24f"
+    },
+    {
+      "call": "02",
+      "ordinal": 3,
+      "group": "original",
+      "accepted": true,
+      "category": "B",
+      "review_reason": "width 是具名默认参数；解释取值来源可以改善文档，但不构成明确设计问题。",
+      "finding": {
+        "function_id": "click:termui.py:328:progressbar",
+        "category": "缺少业务含义的数值阈值",
+        "evidence_lines": [
+          14,
+          14
+        ],
+        "evidence": "    width: int = 36,",
+        "impact": "width 默认值 36 是裸数字，文档仅说明“0 表示全终端宽度”，未解释 36 的来源或含义，调用方难以判断该默认值是否适合自身场景。",
+        "suggestion": "将 36 提取为具名模块常量（如 DEFAULT_BAR_WIDTH = 36）并在文档字符串中说明其含义，或补充注释解释该默认宽度的选取依据。",
+        "needs_context": false
+      },
+      "response_sha256": "cbe96925160c95190e9c83d87c584b9f6e714e0d7413246c4fc4cab283cfed59",
+      "source_sha256": "0cd3c9cc2d30a642e7132ecd976170253a9469bdcff24067f338bd55417e7b22"
+    },
+    {
+      "call": "02",
+      "ordinal": 4,
+      "group": "original",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "同函数中重复 warnings 导入确实存在；表驱动建议还需保留延迟导入和版本差异。",
+      "finding": {
+        "function_id": "click:__init__.py:74:__getattr__",
+        "category": "重复导入",
+        "evidence_lines": [
+          2,
+          39
+        ],
+        "evidence": "    import warnings\n\n    if name == \"BaseCommand\":\n        from .core import _BaseCommand\n\n        warnings.warn(\n            \"'BaseCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Command' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _BaseCommand\n\n    if name == \"MultiCommand\":\n        from .core import _MultiCommand\n\n        warnings.warn(\n            \"'MultiCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Group' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _MultiCommand\n\n    if name == \"OptionParser\":\n        from .parser import _OptionParser\n\n        warnings.warn(\n            \"'OptionParser' is deprecated and will be removed in Click 9.0. The\"\n            \" old parser is available in 'optparse'.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _OptionParser\n\n    if name == \"__version__\":\n        import importlib.metadata\n        import warnings",
+        "impact": "warnings 在第 2 行已导入，第 39 行在 __version__ 分支内再次 import warnings，属冗余；同时四个分支重复“导入目标 + warnings.warn + return”的相同结构，新增弃用别名时需复制整段模板。",
+        "suggestion": "删除第 39 行重复的 import warnings；可将各别名映射为 (模块路径, 属性名, 弃用消息) 表，用统一循环处理导入与告警，减少重复模板。",
+        "needs_context": false
+      },
+      "response_sha256": "cbe96925160c95190e9c83d87c584b9f6e714e0d7413246c4fc4cab283cfed59",
+      "source_sha256": "e074e59fdda5c2d5c9ee132a08f1afebe61b8f0474b47ee3dbeb1b1f1c1d6e1f"
+    },
+    {
+      "call": "04",
+      "ordinal": 0,
+      "group": "original",
+      "accepted": true,
+      "category": "C",
+      "review_reason": "old_field_keys 在循环内 remove/add；直接将差集预计算到外层会改变候选更新语义，不能照搬。",
+      "finding": {
+        "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+        "category": "重复计算",
+        "evidence_lines": [
+          16,
+          21
+        ],
+        "evidence": "            for rem_app_label, rem_model_name, rem_field_name in sorted(\n                old_field_keys - self.new_field_keys\n            ):\n                if rem_app_label == app_label and rem_model_name == model_name:\n                    old_field = old_model_state.get_field(rem_field_name)\n                    old_field_dec = self.deep_deconstruct(old_field)",
+        "impact": "外层循环每处理一个新的字段名，都会重新对 old_field_keys - self.new_field_keys 求差集并排序，且对每个候选旧字段重新 deep_deconstruct。当模型字段较多时，同一批候选旧字段会被反复计算，属于可避免的重复开销，也让内层循环的意图（只比较同一模型的旧字段）不够直观。",
+        "suggestion": "在进入外层循环前先计算一次候选集合，例如 candidates = sorted(old_field_keys - self.new_field_keys)，并在内层循环中按 (app_label, model_name) 过滤；如需进一步优化，可预先按模型分组或缓存 deep_deconstruct 结果。",
+        "needs_context": false
+      },
+      "response_sha256": "7241136d050d51a434f48972c9a967e7feb4430a953a1909abd331ca948a2726",
+      "source_sha256": "67f7db715031007cb6372e653e0397ba389a180074cd39756957f992b79cebe6"
+    },
+    {
+      "call": "04",
+      "ordinal": 1,
+      "group": "original",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "多层匹配与字段调整控制流有源码依据，可进入重构审查。",
+      "finding": {
+        "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+        "category": "多层控制流",
+        "evidence_lines": [
+          22,
+          38
+        ],
+        "evidence": "                    if (\n                        field.remote_field\n                        and field.remote_field.model\n                        and \"to\" in old_field_dec[2]\n                    ):\n                        old_rel_to = old_field_dec[2][\"to\"]\n                        if old_rel_to in self.renamed_models_rel:\n                            old_field_dec[2][\"to\"] = self.renamed_models_rel[old_rel_to]\n                    old_field.set_attributes_from_name(rem_field_name)\n                    old_db_column = old_field.get_attname_column()[1]\n                    if old_field_dec == field_dec or (\n                        # Was the field renamed and db_column equal to the\n                        # old field's column added?\n                        old_field_dec[0:2] == field_dec[0:2]\n                        and dict(old_field_dec[2], db_column=old_db_column)\n                        == field_dec[2]\n                    ):",
+        "impact": "重命名判定条件（含 remote_field 的 to 重写、db_column 补偿比较）嵌套在多层 if/for 中，且 old_field_dec 被就地修改，阅读者需要同时跟踪多个状态才能理解“何时算重命名”。这增加了后续修改判定逻辑时引入回归的风险。",
+        "suggestion": "将“把旧字段的 to 指向重命名后的模型”和“判断两个 deconstruct 结果是否等价（含 db_column 补偿）”分别抽成带命名的辅助方法或局部函数，使主循环只表达“找到候选并询问是否重命名”的流程。",
+        "needs_context": false
+      },
+      "response_sha256": "7241136d050d51a434f48972c9a967e7feb4430a953a1909abd331ca948a2726",
+      "source_sha256": "67f7db715031007cb6372e653e0397ba389a180074cd39756957f992b79cebe6"
+    },
+    {
+      "call": "04",
+      "ordinal": 2,
+      "group": "original",
+      "accepted": false,
+      "category": "B",
+      "review_reason": "命名和未使用解包槽属于低优先级建议；证据多包含一行 break，严格校验拒绝。",
+      "finding": {
+        "function_id": "django:db/models/sql/query.py:1850:setup_joins",
+        "category": "难以理解的名称",
+        "evidence_lines": [
+          50,
+          68
+        ],
+        "evidence": "        for pivot in range(len(names), 0, -1):\n            try:\n                path, final_field, targets, rest = self.names_to_path(\n                    names[:pivot],\n                    opts,\n                    allow_many,\n                    fail_on_missing=True,\n                )\n            except FieldError as exc:\n                if pivot == 1:\n                    # The first item cannot be a lookup, so it's safe\n                    # to raise the field error here.\n                    raise\n                else:\n                    last_field_exception = exc\n            else:\n                # The transforms are the remaining items that couldn't be\n                # resolved into fields.\n                transforms = names[pivot:]\n                break",
+        "impact": "pivot 表示“尝试解析为字段的前缀长度”，但名称本身不体现这一含义；同时 rest 被解包却未使用，读者需要额外推断循环在做什么（从最长前缀开始回退，直到能解析为字段）。",
+        "suggestion": "将 pivot 重命名为更具描述性的名称（如 field_path_length 或 prefix_len），并去掉未使用的 rest（用 _ 或省略），使回退解析的意图更直接。",
+        "needs_context": false
+      },
+      "response_sha256": "7241136d050d51a434f48972c9a967e7feb4430a953a1909abd331ca948a2726",
+      "source_sha256": "8562e3cca30610407c8fb1319f01acd734b5045ba7988931ba95475e4feea58e"
+    },
+    {
+      "call": "04",
+      "ordinal": 3,
+      "group": "original",
+      "accepted": false,
+      "category": "B",
+      "review_reason": "verbosity 是 CLI 约定；证据只覆盖所报范围的一小段，严格校验拒绝。",
+      "finding": {
+        "function_id": "django:core/management/commands/createcachetable.py:57:create_table",
+        "category": "缺少业务含义的数值阈值",
+        "evidence_lines": [
+          8,
+          74
+        ],
+        "evidence": "            if self.verbosity > 0:\n                self.stdout.write(\"Cache table '%s' already exists.\" % tablename)\n            return",
+        "impact": "verbosity 的阈值 0 和 1 以裸数字形式散落在函数中（第 8、74 行），其含义（0=静默、1=常规、2=详细）只能靠约定推断，后续调整输出级别时容易漏改或误改。",
+        "suggestion": "为这些级别引入具名常量或复用 Django 已有的 verbosity 约定常量，使“何时输出”与“输出级别”的对应关系显式化。",
+        "needs_context": false
+      },
+      "response_sha256": "7241136d050d51a434f48972c9a967e7feb4430a953a1909abd331ca948a2726",
+      "source_sha256": "d48546c54b48d496577b59e050f972afff4ad7f8978dc2679a93ac036e16cd8f"
+    },
+    {
+      "call": "05",
+      "ordinal": 0,
+      "group": "control",
+      "accepted": false,
+      "category": "A",
+      "review_reason": "两次筛选群组成员的逻辑确实重复，但证据长度与申报区间不一致，被拒绝。",
+      "finding": {
+        "function_id": "c01",
+        "category": "重复业务逻辑",
+        "evidence_lines": [
+          4,
+          28
+        ],
+        "evidence": "    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            for permission in member.get(\"permissions\", []):\n                                if permission is not None:\n                                    if permission.get(\"allowed\"):\n                                        for code in permission.get(\"codes\", []):\n                                            if isinstance(code, str):\n                                                if code.strip():\n                                                    if code not in result:\n                                                        result.append(code)\n    audit = []\n    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            audit.append({",
+        "impact": "同一套“启用组→有效成员”的筛选条件被完整复制两遍，任何一处条件（如 enabled/active 语义）变更都必须同步修改两处，容易漏改导致 codes 与 members 结果不一致。",
+        "suggestion": "把组/成员筛选抽成一个生成器（如 iter_active_members(groups)），codes 收集与 audit 构建都基于它迭代，消除重复条件链。",
+        "needs_context": false
+      },
+      "response_sha256": "8381d4dd79f9e9308c1359f5b53f865de2f287d7a766029b998a2364bfec4de8",
+      "source_sha256": "f5db2ccd26a125113e050e83835d4b6b17d131fc196c7a6e3883346cbdcd0b88"
+    },
+    {
+      "call": "05",
+      "ordinal": 1,
+      "group": "control",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "嵌套过深目标命中；具体声称8层并非精确层数，不影响存在深层嵌套的判断。",
+      "finding": {
+        "function_id": "c01",
+        "category": "多层控制流",
+        "evidence_lines": [
+          4,
+          17
+        ],
+        "evidence": "    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            for permission in member.get(\"permissions\", []):\n                                if permission is not None:\n                                    if permission.get(\"allowed\"):\n                                        for code in permission.get(\"codes\", []):\n                                            if isinstance(code, str):\n                                                if code.strip():\n                                                    if code not in result:\n                                                        result.append(code)",
+        "impact": "嵌套达 8 层，条件与循环交错，阅读时难以快速判断每层过滤的意图，修改任一过滤条件都需重新梳理缩进层级。",
+        "suggestion": "用 continue 提前跳过 None/未启用项，或把成员、权限的过滤拆成独立辅助函数，将嵌套压平到 2-3 层。",
+        "needs_context": false
+      },
+      "response_sha256": "8381d4dd79f9e9308c1359f5b53f865de2f287d7a766029b998a2364bfec4de8",
+      "source_sha256": "f5db2ccd26a125113e050e83835d4b6b17d131fc196c7a6e3883346cbdcd0b88"
+    },
+    {
+      "call": "05",
+      "ordinal": 2,
+      "group": "control",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "部分成立：列表成员检查有重复扫描开销；引用 c02 属跨片段比较，不能假定同一模块。",
+      "finding": {
+        "function_id": "c01",
+        "category": "重复计算",
+        "evidence_lines": [
+          16,
+          17
+        ],
+        "evidence": "                                                    if code not in result:\n                                                        result.append(code)",
+        "impact": "对 result 列表做线性成员检查，在 code 数量较大时整体复杂度为 O(n²)，且该去重逻辑与 c02 的 seen 集合去重是同一意图的不同实现。",
+        "suggestion": "改用 seen = set() 配合 result 列表做 O(1) 去重，与 c02 保持一致的去重写法。",
+        "needs_context": false
+      },
+      "response_sha256": "8381d4dd79f9e9308c1359f5b53f865de2f287d7a766029b998a2364bfec4de8",
+      "source_sha256": "f5db2ccd26a125113e050e83835d4b6b17d131fc196c7a6e3883346cbdcd0b88"
+    },
+    {
+      "call": "05",
+      "ordinal": 3,
+      "group": "control",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "部分成立：渠道间重复逻辑存在；建议直接调用 c04 是跨片段假设，不能按原文照搬。",
+      "finding": {
+        "function_id": "c03",
+        "category": "重复业务逻辑",
+        "evidence_lines": [
+          3,
+          32
+        ],
+        "evidence": "    online_total = 0\n    online_count = 0\n    online_ids = []\n    for order in online:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            online_total += max(amount, 0)\n            online_count += 1\n            online_ids.append(order[\"id\"])\n    retail_total = 0\n    retail_count = 0\n    retail_ids = []\n    for order in retail:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            retail_total += max(amount, 0)\n            retail_count += 1\n            retail_ids.append(order[\"id\"])\n    wholesale_total = 0\n    wholesale_count = 0\n    wholesale_ids = []\n    for order in wholesale:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            wholesale_total += max(amount, 0)\n            wholesale_count += 1\n            wholesale_ids.append(order[\"id\"])",
+        "impact": "三个渠道的统计逻辑逐字重复三遍，且与 c04 的 summarize_paid_orders 是同一计算。金额公式或 max(amount,0) 规则变更时需改四处，极易遗漏导致渠道间口径不一致。",
+        "suggestion": "对每个渠道调用同一统计函数（如 c04 的 summarize_paid_orders），再组装成返回字典，消除三份重复循环。",
+        "needs_context": false
+      },
+      "response_sha256": "8381d4dd79f9e9308c1359f5b53f865de2f287d7a766029b998a2364bfec4de8",
+      "source_sha256": "391405a8c08100985bb6217372037bc28bec36e02efb83f91c987175f0bc6f75"
+    },
+    {
+      "call": "05",
+      "ordinal": 4,
+      "group": "control",
+      "accepted": false,
+      "category": "A",
+      "review_reason": "命名单字母目标有依据，但证据全文比所报区间多一行，被拒绝。",
+      "finding": {
+        "function_id": "c05",
+        "category": "难以理解的名称",
+        "evidence_lines": [
+          1,
+          34
+        ],
+        "evidence": "def p(a):\n    \"\"\"Compute a report from integer observations.\"\"\"\n    b = []\n    c = []\n    d = 0\n    e = 0\n    for f in a:\n        if f >= 0:\n            b.append(f)\n            d += f\n        else:\n            c.append(f)\n            e += f\n    g = len(b)\n    h = len(c)\n    if g:\n        i = d / g\n        j = min(b)\n        k = max(b)\n    else:\n        i = None\n        j = None\n        k = None\n    if h:\n        l = e / h\n        m = min(c)\n        n = max(c)\n    else:\n        l = None\n        m = None\n        n = None\n    return {\n        \"a\": {\"b\": g, \"c\": i, \"d\": j, \"e\": k},\n        \"f\": {\"g\": h, \"h\": l, \"i\": m, \"j\": n},\n    }",
+        "impact": "函数名、局部变量和返回字典键全部为单字母，无法从代码判断 a/b/c 与正负样本、均值、极值的对应关系，维护者必须逐行反推语义，且返回结构对外不可自解释。",
+        "suggestion": "将函数与变量改为有业务含义的名称（如 summarize_observations、nonnegative_values、positive_mean、negative_max），返回字典键改为 count/mean/min/max 等可读键名。",
+        "needs_context": false
+      },
+      "response_sha256": "8381d4dd79f9e9308c1359f5b53f865de2f287d7a766029b998a2364bfec4de8",
+      "source_sha256": "44a0b43bdc21199fd1986aca1c909d2e9e5ee68aa8963a5390fd60577fa2932d"
+    },
+    {
+      "call": "06",
+      "ordinal": 0,
+      "group": "control",
+      "accepted": true,
+      "category": "A",
+      "review_reason": "费率与阈值缺少具名业务含义，命中预设魔法数值目标。",
+      "finding": {
+        "function_id": "c07",
+        "category": "魔法数值/缺少业务含义",
+        "evidence_lines": [
+          6,
+          27
+        ],
+        "evidence": "        if amount < 700:\n            fee = amount * 0.037 + 13\n        elif amount < 2400:\n            fee = amount * 0.029 + 17\n        else:\n            fee = amount * 0.021 + 23\n        if account[\"late_days\"] > 11:\n            fee += 19\n        if account[\"late_days\"] > 26:\n            fee += 31\n        if account[\"transactions\"] > 47:\n            fee += (account[\"transactions\"] - 47) * 0.43\n        if account[\"region\"] == \"north\":\n            fee *= 1.073\n        elif account[\"region\"] == \"south\":\n            fee *= 1.091\n        else:\n            fee *= 1.057\n        if account[\"loyalty_years\"] > 4:\n            fee *= 0.93\n        if account[\"loyalty_years\"] > 9:\n            fee *= 0.89",
+        "impact": "费率、阈值、附加费与地区系数全部以裸字面量硬编码，且函数无任何文档说明其含义。任何定价策略调整都需在函数体内逐处修改，无法从代码判断 700/2400、11/26、47、0.43、1.073 等数值的业务来源，容易改错或漏改。",
+        "suggestion": "将各档位阈值、费率、附加费与地区系数提取为具名常量或模块级配置（如 BALANCE_TIERS、LATE_FEE_TIERS、REGION_MULTIPLIERS），并在函数 docstring 中说明计费规则与单位。",
+        "needs_context": false
+      },
+      "response_sha256": "b0fed960192f09ca2dc4ea33fa5681de781ef4936c5557f81763693709960568",
+      "source_sha256": "f57d29b3dd599f73e86497c8651ab48151e296163814252854d1d3be217eadca"
+    },
+    {
+      "call": "06",
+      "ordinal": 1,
+      "group": "control",
+      "accepted": true,
+      "category": "B",
+      "review_reason": "阶梯规则可考虑表述更明确，但改写须保留当前累进语义。",
+      "finding": {
+        "function_id": "c07",
+        "category": "重复业务逻辑/控制流",
+        "evidence_lines": [
+          12,
+          27
+        ],
+        "evidence": "        if account[\"late_days\"] > 11:\n            fee += 19\n        if account[\"late_days\"] > 26:\n            fee += 31\n        if account[\"transactions\"] > 47:\n            fee += (account[\"transactions\"] - 47) * 0.43\n        if account[\"region\"] == \"north\":\n            fee *= 1.073\n        elif account[\"region\"] == \"south\":\n            fee *= 1.091\n        else:\n            fee *= 1.057\n        if account[\"loyalty_years\"] > 4:\n            fee *= 0.93\n        if account[\"loyalty_years\"] > 9:\n            fee *= 0.89",
+        "impact": "逾期费与忠诚度折扣采用“逐级累加/累乘”的并列 if 结构，语义上等价于阶梯规则，但阅读者需自行推断 11/26 与 4/9 是累进档位还是互斥档位；若后续新增档位，容易误写成 elif 而改变计费结果。",
+        "suggestion": "用显式的阶梯表（阈值→增量/系数）配合循环或辅助函数表达，使档位关系一目了然，并避免新增档位时结构不一致。",
+        "needs_context": false
+      },
+      "response_sha256": "b0fed960192f09ca2dc4ea33fa5681de781ef4936c5557f81763693709960568",
+      "source_sha256": "f57d29b3dd599f73e86497c8651ab48151e296163814252854d1d3be217eadca"
+    },
+    {
+      "call": "06",
+      "ordinal": 2,
+      "group": "heldout",
+      "accepted": true,
+      "category": "B",
+      "review_reason": "切片确有复制；已有重定向上限且历史快照语义重要，收益和改法需进一步验证。",
+      "finding": {
+        "function_id": "requests:sessions.py:159:resolve_redirects",
+        "category": "多层控制流/状态复用",
+        "evidence_lines": [
+          19,
+          25
+        ],
+        "evidence": "        while url:\n            prepared_request = req.copy()\n\n            # Update history and keep track of redirects.\n            # resp.history must ignore the original request in this loop\n            hist.append(resp)\n            resp.history = hist[1:]",
+        "impact": "循环内每轮都重新赋值 resp.history = hist[1:]，即对历史列表做切片复制；重定向次数多时产生 O(n^2) 的复制开销，且 hist 与 resp.history 的语义关系（hist 含原始响应、history 不含）仅靠注释维系，后续修改易破坏。",
+        "suggestion": "可改为在循环外维护历史并在每轮追加，或明确注释 hist 与 resp.history 的差异并考虑用单一列表加偏移量表达，减少重复切片。",
+        "needs_context": false
+      },
+      "response_sha256": "b0fed960192f09ca2dc4ea33fa5681de781ef4936c5557f81763693709960568",
+      "source_sha256": "a252c5ac7ac4c8c122e077f1b5905bbbfb1d73c2290de251de4fc5a3ea1f5509"
+    },
+    {
+      "call": "06",
+      "ordinal": 3,
+      "group": "heldout",
+      "accepted": true,
+      "category": "C",
+      "review_reason": "没有考虑 Python re 的缓存，不能从重复调用 re.compile 推出重复编译；性能结论无测量支持。",
+      "finding": {
+        "function_id": "requests:auth.py:241:handle_401",
+        "category": "重复计算/可读性",
+        "evidence_lines": [
+          20,
+          23
+        ],
+        "evidence": "        if \"digest\" in s_auth.lower() and self._thread_local.num_401_calls < 2:\n            self._thread_local.num_401_calls += 1\n            pat = re.compile(r\"digest \", flags=re.IGNORECASE)\n            self._thread_local.chal = parse_dict_header(pat.sub(\"\", s_auth, count=1))",
+        "impact": "每次进入该分支都重新编译同一个正则表达式，且 num_401_calls < 2 中的 2 为裸字面量，未说明“最多重试一次”的业务含义，读者需结合上下文推断。",
+        "suggestion": "将正则编译提升为模块级常量，并把重试上限提取为具名常量（如 MAX_401_RETRIES = 1）或加注释说明其含义。",
+        "needs_context": false
+      },
+      "response_sha256": "b0fed960192f09ca2dc4ea33fa5681de781ef4936c5557f81763693709960568",
+      "source_sha256": "1e30d8dc35664131b3e8180eaf73a59a3b36bb7b3fbbf9c96e692d6ec55b331d"
+    }
+  ]
+}

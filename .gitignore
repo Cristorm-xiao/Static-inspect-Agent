@@ -1,5 +1,6 @@
 # 环境变量文件（含密钥，禁止提交）
 .env
+.inspect-cache/
 
 # Python 缓存
 __pycache__/
@@ -7,6 +8,7 @@ __pycache__/
 
 # pytest 缓存
 .pytest_cache/
+pytest-cache-files-*/
 
 # 打包产物
 build/

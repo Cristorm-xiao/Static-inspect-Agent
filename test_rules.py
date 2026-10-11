@@ -91,15 +91,35 @@ def test_nonexistent_file_does_not_crash(tmp_path):
     assert findings[0]["rule"] == "syntax_error"
 
 
-def test_unreadable_file_does_not_crash(tmp_path):
-    # 文件无读权限 → PermissionError → 应被兜底捕获，不中断整条巡检
+def test_unreadable_file_does_not_crash(tmp_path, monkeypatch):
+    # Windows 的 chmod(0) 不保证拒绝读取，直接模拟读取失败。
     locked = tmp_path / "locked.py"
     locked.write_text("x = 1\n", encoding="utf-8")
-    locked.chmod(0o000)  # 移除所有读权限
+    original = __import__("pathlib").Path.read_bytes
+
+    def fail_read(path, *args, **kwargs):
+        if path == locked:
+            raise PermissionError("access denied")
+        return original(path, *args, **kwargs)
+
+    monkeypatch.setattr(__import__("pathlib").Path, "read_bytes", fail_read)
 
     findings = check_file(str(locked))
 
-    # 测试结束前恢复权限，确保 tmp_path 能正常清理
-    locked.chmod(0o644)
     assert len(findings) == 1
     assert findings[0]["rule"] == "syntax_error"
+
+
+def test_eval_and_wildcard_import_are_reported(tmp_path):
+    source = tmp_path / "unsafe.py"
+    source.write_text("from math import *\nvalue = eval('1 + 2')\n", encoding="utf-8")
+    findings = check_file(str(source))
+    assert [(item["rule_id"], item["line"]) for item in findings] == [
+        ("R004", 1), ("R003", 2),
+    ]
+
+
+def test_method_named_eval_is_not_reported(tmp_path):
+    source = tmp_path / "safe.py"
+    source.write_text("result = evaluator.eval(expression)\n", encoding="utf-8")
+    assert check_file(str(source)) == []

@@ -1,0 +1,70 @@
+{
+  "phase": "primary-requests",
+  "kind": "primary",
+  "seconds": 2.822847000003094,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "requests/sessions.py",
+      "line": 302,
+      "smell": "魔法字符串",
+      "reason": "硬编码的 \"Proxy-Authorization\" 和 \"https\" 字符串在多处重复出现，易拼写错误。"
+    },
+    {
+      "file": "requests/sessions.py",
+      "line": 302,
+      "smell": "职责过多",
+      "reason": "同一方法同时负责解析代理、删除/重建认证头、处理重定向逻辑，混合了多个关注点。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 523,
+      "smell": "魔法字符串",
+      "reason": "硬编码 \"https\"、\"socks\"、\"//\" 等字符串，缺乏常量或命名。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 523,
+      "smell": "命名含糊",
+      "reason": "变量 url 在方法中途被重新赋值，语义从 path_url 变为完整 URL，容易混淆。"
+    },
+    {
+      "file": "requests/help.py",
+      "line": 34,
+      "smell": "重复逻辑",
+      "reason": "Jython 和 IronPython 分支代码完全相同，可合并为一个条件。"
+    },
+    {
+      "file": "requests/help.py",
+      "line": 34,
+      "smell": "魔法字符串",
+      "reason": "实现名 \"CPython\"、\"PyPy\" 等硬编码字符串散落各处。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "死代码/逻辑错误",
+      "reason": "fallback 分支中 encoding 可能为 None，且异常处理与主逻辑重复，实际未使用 tried_encodings。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "职责过多",
+      "reason": "函数同时发出弃用警告、解析编码、尝试解码并回退，混合了多个关注点。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 373,
+      "smell": "职责过多",
+      "reason": "方法仅做转发调用，却附带超长文档描述大量逻辑，文档与实现严重不匹配。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 373,
+      "smell": "命名含糊",
+      "reason": "方法名 build_connection_pool_key_attributes 很长且实际未构建任何内容，仅委托给 _urllib3_request_context。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

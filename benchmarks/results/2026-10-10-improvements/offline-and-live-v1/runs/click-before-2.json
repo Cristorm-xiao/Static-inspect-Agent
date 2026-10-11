@@ -1,0 +1,19 @@
+{
+  "measurement": {
+    "project": "click",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.1350646000064444,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": null
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+    "files_scanned": 17,
+    "rule_findings": [],
+    "llm_findings": [],
+    "baseline_suppressed": 0
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "c01",
+    "positive": true,
+    "target": "deep_nesting",
+    "raw_count": 3,
+    "accepted_count": 2,
+    "target_hit_after_validation": true
+  },
+  {
+    "id": "c02",
+    "positive": false,
+    "target": "none",
+    "raw_count": 0,
+    "accepted_count": 0,
+    "target_hit_after_validation": null
+  },
+  {
+    "id": "c03",
+    "positive": true,
+    "target": "duplicated_logic",
+    "raw_count": 1,
+    "accepted_count": 1,
+    "target_hit_after_validation": true
+  },
+  {
+    "id": "c04",
+    "positive": false,
+    "target": "none",
+    "raw_count": 0,
+    "accepted_count": 0,
+    "target_hit_after_validation": null
+  },
+  {
+    "id": "c05",
+    "positive": true,
+    "target": "unclear_names",
+    "raw_count": 1,
+    "accepted_count": 0,
+    "target_hit_after_validation": false
+  },
+  {
+    "id": "c06",
+    "positive": false,
+    "target": "none",
+    "raw_count": 0,
+    "accepted_count": 0,
+    "target_hit_after_validation": null
+  },
+  {
+    "id": "c07",
+    "positive": true,
+    "target": "magic_numbers",
+    "raw_count": 2,
+    "accepted_count": 2,
+    "target_hit_after_validation": true
+  },
+  {
+    "id": "c08",
+    "positive": false,
+    "target": "none",
+    "raw_count": 0,
+    "accepted_count": 0,
+    "target_hit_after_validation": null
+  }
+]

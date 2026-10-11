@@ -1,0 +1,88 @@
+{
+  "phase": "primary-httpx",
+  "kind": "primary",
+  "seconds": 2.8118055000086315,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "职责过多",
+      "reason": "__init__ 同时负责 URL 解析、headers 构造、cookies 处理、请求体编码、stream 分支处理，逻辑过于集中。"
+    },
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "嵌套过深",
+      "reason": "stream 为 None 分支内又嵌套 content_type 判断与 encode_request 调用，可读性下降。"
+    },
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "魔法值",
+      "reason": "硬编码字符串 \"content-type\" 未提取为常量。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "重复逻辑",
+      "reason": "四个属性 connect/read/write/pool 的赋值逻辑在多个分支中重复出现。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "嵌套过深",
+      "reason": "多层 if/elif/else 分支嵌套，条件判断复杂难读。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "魔法数字",
+      "reason": "使用 timeout[0]、timeout[1]、len(timeout) < 3 等索引与长度数字，含义不直观。"
+    },
+    {
+      "file": "httpx/_api.py",
+      "line": 364,
+      "smell": "重复逻辑",
+      "reason": "patch 函数与其它 HTTP 方法函数（get/post/put 等）几乎完全重复，仅方法名不同。"
+    },
+    {
+      "file": "httpx/_api.py",
+      "line": 364,
+      "smell": "参数过多",
+      "reason": "函数签名包含 14 个参数，接口臃肿，维护成本高。"
+    },
+    {
+      "file": "httpx/_client.py",
+      "line": 1543,
+      "smell": "参数过多",
+      "reason": "stream 方法同样有大量参数，且与 build_request 参数高度重叠。"
+    },
+    {
+      "file": "httpx/_client.py",
+      "line": 1543,
+      "smell": "重复逻辑",
+      "reason": "参数列表与 build_request 的参数几乎一一对应，存在样板式重复传递。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "函数内导入",
+      "reason": "在方法内部 import httpcore，应放在模块顶部，影响可读性与性能。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "职责过多",
+      "reason": "handle_async_request 同时负责类型断言、请求转换、异常映射、响应构造，职责混杂。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "魔法值",
+      "reason": "使用 assert 做运行时类型检查，且多处断言散落，缺乏统一校验。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

@@ -1,0 +1,5 @@
+{
+  "executed_sha256": "ade7ac50bc306da924eb961c4ec8bbade333fb6706a948ace0d84d1dbaa1607d",
+  "portable_sha256": "510e069233b6f54c16cc735d23b34707c7246b14bca66d458790ecf58f52c367",
+  "change_after_measurement": "Allow missing tool Git metadata in extracted archive. Timing, scanning and metric logic unchanged; executed script retained as run_validation.executed.py.txt."
+}

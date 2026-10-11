@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "findings": [
+    {
+      "rule_id": "R001",
+      "file": "app.py",
+      "line": 1515
+    },
+    {
+      "rule_id": "R003",
+      "file": "cli.py",
+      "line": 1031
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "measurement": {
+    "project": "flask",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.132728500000667,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": null
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+    "files_scanned": 24,
+    "rule_findings": [
+      {
+        "file": "app.py",
+        "line": 1515,
+        "rule": "bare_except",
+        "rule_id": "R001",
+        "severity": "error",
+        "desc": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+      },
+      {
+        "file": "cli.py",
+        "line": 1031,
+        "rule": "eval_call",
+        "rule_id": "R003",
+        "severity": "warning",
+        "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0
+  }
+}

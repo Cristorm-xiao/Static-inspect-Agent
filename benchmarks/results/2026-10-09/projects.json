@@ -1,0 +1,190 @@
+[
+  {
+    "name": "requests",
+    "tag": "v2.32.5",
+    "repository": "https://github.com/psf/requests",
+    "commit": "b25c87d7cb8d6a18a37fa12442b5f883f9e41741",
+    "source": "src/requests",
+    "files": 18,
+    "physical_lines": 5623,
+    "first_seconds": 3.847988199995598,
+    "repeat_seconds": [
+      1.92882559998543,
+      2.00939059999655,
+      1.962282899999991,
+      1.9368624000053387,
+      1.955226300022332
+    ],
+    "median_seconds": 1.955226300022332,
+    "min_seconds": 1.92882559998543,
+    "max_seconds": 2.00939059999655,
+    "lines_per_second": 2875.8819375208773,
+    "findings": 0,
+    "rule_counts": {},
+    "llm_candidate_functions_ge30": 43,
+    "llm_batches_at_5": 9,
+    "max_candidate_lines": 122,
+    "full_repository": {
+      "files": 36,
+      "physical_lines": 11248,
+      "seconds": 2.0280583999992814,
+      "findings": 0,
+      "rule_counts": {}
+    },
+    "source_unchanged": true
+  },
+  {
+    "name": "flask",
+    "tag": "3.1.2",
+    "repository": "https://github.com/pallets/flask",
+    "commit": "2c1b30d0503cfb064f1cb252e6614a06915a362a",
+    "source": "src/flask",
+    "files": 24,
+    "physical_lines": 9202,
+    "first_seconds": 2.034038000012515,
+    "repeat_seconds": [
+      2.42346700001508,
+      2.36237409999012,
+      2.1001422999834176,
+      2.2233088000211865,
+      2.0954206000023987
+    ],
+    "median_seconds": 2.2233088000211865,
+    "min_seconds": 2.0954206000023987,
+    "max_seconds": 2.42346700001508,
+    "lines_per_second": 4138.876255026882,
+    "findings": 2,
+    "rule_counts": {
+      "R001": 1,
+      "R003": 1
+    },
+    "llm_candidate_functions_ge30": 70,
+    "llm_batches_at_5": 14,
+    "max_candidate_lines": 141,
+    "full_repository": {
+      "files": 83,
+      "physical_lines": 17874,
+      "seconds": 2.0043134999868926,
+      "findings": 2,
+      "rule_counts": {
+        "R001": 1,
+        "R003": 1
+      }
+    },
+    "source_unchanged": true
+  },
+  {
+    "name": "click",
+    "tag": "8.3.0",
+    "repository": "https://github.com/pallets/click",
+    "commit": "00fadb8904387158ce6e9aa1573be770446895c1",
+    "source": "src/click",
+    "files": 17,
+    "physical_lines": 11038,
+    "first_seconds": 2.0190529999963474,
+    "repeat_seconds": [
+      2.0318432000058237,
+      2.0047378000163008,
+      1.9509591000096407,
+      1.989221499999985,
+      1.9486598999937996
+    ],
+    "median_seconds": 1.989221499999985,
+    "min_seconds": 1.9486598999937996,
+    "max_seconds": 2.0318432000058237,
+    "lines_per_second": 5548.904433216755,
+    "findings": 0,
+    "rule_counts": {},
+    "llm_candidate_functions_ge30": 83,
+    "llm_batches_at_5": 17,
+    "max_candidate_lines": 169,
+    "full_repository": {
+      "files": 62,
+      "physical_lines": 21214,
+      "seconds": 2.101283500000136,
+      "findings": 0,
+      "rule_counts": {}
+    },
+    "source_unchanged": true
+  },
+  {
+    "name": "httpx",
+    "tag": "0.28.1",
+    "repository": "https://github.com/encode/httpx",
+    "commit": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+    "source": "httpx",
+    "files": 23,
+    "physical_lines": 8828,
+    "first_seconds": 1.9801930999965407,
+    "repeat_seconds": [
+      1.9237038999854121,
+      2.0383064999768976,
+      1.9610188000078779,
+      2.020478299993556,
+      2.070810100005474
+    ],
+    "median_seconds": 2.020478299993556,
+    "min_seconds": 1.9237038999854121,
+    "max_seconds": 2.070810100005474,
+    "lines_per_second": 4369.262466232949,
+    "findings": 16,
+    "rule_counts": {
+      "R004": 16
+    },
+    "llm_candidate_functions_ge30": 59,
+    "llm_batches_at_5": 12,
+    "max_candidate_lines": 133,
+    "full_repository": {
+      "files": 60,
+      "physical_lines": 17751,
+      "seconds": 2.047737300017616,
+      "findings": 16,
+      "rule_counts": {
+        "R004": 16
+      }
+    },
+    "source_unchanged": true
+  },
+  {
+    "name": "django",
+    "tag": "5.2.7",
+    "repository": "https://github.com/django/django",
+    "commit": "3cff3209e35a560f94801d428cf7f2a3ecb2a051",
+    "source": "django",
+    "files": 883,
+    "physical_lines": 158083,
+    "first_seconds": 3.3751266000035685,
+    "repeat_seconds": [
+      3.438017900014529,
+      3.4403383000171743,
+      3.2460387000173796,
+      3.269665600004373,
+      3.3018890999956056
+    ],
+    "median_seconds": 3.3018890999956056,
+    "min_seconds": 3.2460387000173796,
+    "max_seconds": 3.4403383000171743,
+    "lines_per_second": 47876.532255492886,
+    "findings": 32,
+    "rule_counts": {
+      "R004": 31,
+      "R003": 1
+    },
+    "llm_candidate_functions_ge30": 889,
+    "llm_batches_at_5": 178,
+    "max_candidate_lines": 591,
+    "full_repository": {
+      "files": 2818,
+      "physical_lines": 489391,
+      "seconds": 5.844573200010927,
+      "findings": 46,
+      "rule_counts": {
+        "R004": 36,
+        "R003": 2,
+        "R002": 7,
+        "E000": 1
+      }
+    },
+    "source_unchanged": true
+  }
+]

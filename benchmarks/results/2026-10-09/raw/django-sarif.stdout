@@ -1,0 +1,671 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "static-inspect-agent",
+          "rules": [
+            {
+              "id": "R003",
+              "name": "eval_call",
+              "shortDescription": {
+                "text": "eval_call"
+              }
+            },
+            {
+              "id": "R004",
+              "name": "wildcard_import",
+              "shortDescription": {
+                "text": "wildcard_import"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/gis/db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/gis/db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/gis/forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/gis/geos/prototypes/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 46
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/gis/geos/prototypes/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 67
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/messages/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/messages/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/aggregates/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/aggregates/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/fields/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/fields/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/fields/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/fields/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 4
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/fields/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contrib/postgres/forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/migrations/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R003",
+          "level": "warning",
+          "message": {
+            "text": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/migrations/questioner.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 168
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 39
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 46
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/sql/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "db/models/sql/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R004",
+          "level": "warning",
+          "message": {
+            "text": "通配导入会模糊名称来源，建议显式导入所需名称"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "forms/__init__.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "phase": "primary-flask",
+  "kind": "primary",
+  "seconds": 2.840258799988078,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "flask/sansio/blueprints.py",
+      "line": 41,
+      "smell": "重复逻辑",
+      "reason": "subdomain 和 url_prefix 都使用相同的 options.get(...) 回退到 blueprint 属性的模式，可提取辅助函数。"
+    },
+    {
+      "file": "flask/sansio/blueprints.py",
+      "line": 41,
+      "smell": "职责过多",
+      "reason": "__init__ 同时处理多个属性的赋值与回退逻辑，且混入了大量文档注释。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 425,
+      "smell": "嵌套过深",
+      "reason": "多层 if/elif 嵌套处理 host_matching、subdomain_matching 等分支，逻辑复杂。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 425,
+      "smell": "魔法字符串",
+      "reason": "多次直接使用配置键字符串如 \"TRUSTED_HOSTS\"、\"SERVER_NAME\"、\"APPLICATION_ROOT\" 等。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 226,
+      "smell": "职责过多",
+      "reason": "__init__ 既调用 super 又初始化 CLI、注册静态路由，承担了过多初始化职责。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 226,
+      "smell": "魔法字符串",
+      "reason": "endpoint=\"static\"、\"<path:filename>\" 等硬编码字符串散落在逻辑中。"
+    },
+    {
+      "file": "flask/helpers.py",
+      "line": 352,
+      "smell": "命名含糊",
+      "reason": "变量 flashes 在过滤后被重新赋值，语义从原始列表变为过滤后列表，容易混淆。"
+    },
+    {
+      "file": "flask/helpers.py",
+      "line": 352,
+      "smell": "魔法字符串",
+      "reason": "session 键 \"_flashes\" 硬编码在函数中。"
+    },
+    {
+      "file": "flask/sansio/scaffold.py",
+      "line": 754,
+      "smell": "魔法字符串",
+      "reason": "多次使用 \"site-packages\"、\"lib\" 等硬编码字符串判断路径结构。"
+    },
+    {
+      "file": "flask/sansio/scaffold.py",
+      "line": 754,
+      "smell": "嵌套过深",
+      "reason": "多层 if 判断不同平台的 site-packages 路径布局，分支较多。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

@@ -1,0 +1,56 @@
+{
+  "measurement": {
+    "project": "flask",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.115338600007817,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+    "files_scanned": 24,
+    "rule_findings": [
+      {
+        "file": "app.py",
+        "line": 1515,
+        "rule": "bare_except",
+        "rule_id": "R001",
+        "severity": "error",
+        "desc": "裸 except 捕获所有异常后直接重新抛出；请确认确需覆盖 BaseException",
+        "scope": "Flask.wsgi_app",
+        "fingerprint": "bcce09070f81bfe2487bd1ce8a84263fa3e2cb6599b66b4b513c87854cb7262a"
+      },
+      {
+        "file": "cli.py",
+        "line": 1031,
+        "rule": "eval_call",
+        "rule_id": "R003",
+        "severity": "warning",
+        "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式",
+        "scope": "shell_command",
+        "fingerprint": "e670804081da469bd6032ca5eab7a5802a4aca4b5cd9eebdb780fb2a4bfca13f"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

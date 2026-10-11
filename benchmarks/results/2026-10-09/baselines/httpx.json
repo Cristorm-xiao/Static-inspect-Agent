@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "findings": [
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 4
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 5
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 6
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 7
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 8
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 9
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 10
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 11
+    },
+    {
+      "rule_id": "R004",
+      "file": "__init__.py",
+      "line": 12
+    },
+    {
+      "rule_id": "R004",
+      "file": "_transports/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "_transports/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "_transports/__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "_transports/__init__.py",
+      "line": 4
+    },
+    {
+      "rule_id": "R004",
+      "file": "_transports/__init__.py",
+      "line": 5
+    }
+  ]
+}

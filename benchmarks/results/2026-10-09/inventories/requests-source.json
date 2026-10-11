@@ -1,0 +1,116 @@
+{
+  "files": 18,
+  "physical_lines": 5623,
+  "bytes": 192938,
+  "entries": [
+    {
+      "path": "__init__.py",
+      "bytes": 5256,
+      "physical_lines": 184,
+      "sha256": "43df72db850e5f5751d022bdf01d02dfa07c7a6e10645a73e80f1eccd2b02511"
+    },
+    {
+      "path": "__version__.py",
+      "bytes": 449,
+      "physical_lines": 14,
+      "sha256": "b9b5adde2821fb7d07c677063ed6dacb6587437500b55b390c0c5ff12fdf3e92"
+    },
+    {
+      "path": "_internal_utils.py",
+      "bytes": 1545,
+      "physical_lines": 50,
+      "sha256": "534eda8a19edd8b2634ba9006e071c4f91f4fee8c7ddc4fa2c134b13f4213b8d"
+    },
+    {
+      "path": "adapters.py",
+      "bytes": 26981,
+      "physical_lines": 696,
+      "sha256": "3c6fed10c88d4490943a73d7e0fcea72e91c92276c1b23087e875ab27a9fb99a"
+    },
+    {
+      "path": "api.py",
+      "bytes": 6606,
+      "physical_lines": 157,
+      "sha256": "c20586062a530b464394aac38c14eb0851d3b4ee5d5b7fca484759d27b27f8a2"
+    },
+    {
+      "path": "auth.py",
+      "bytes": 10500,
+      "physical_lines": 314,
+      "sha256": "f9321b1855873d1518fc2a5705a2b99ea0784d017067ccdbe8e036f530f01b34"
+    },
+    {
+      "path": "certs.py",
+      "bytes": 446,
+      "physical_lines": 17,
+      "sha256": "53fa47ebbf69a0c7c07ee1eac2b754f91c2e71f4d7dd75403209255f93da4067"
+    },
+    {
+      "path": "compat.py",
+      "bytes": 2248,
+      "physical_lines": 106,
+      "sha256": "a2125b65eab8f04fc38461e48e8699bf5907205b0eaea474998455351b30bd6f"
+    },
+    {
+      "path": "cookies.py",
+      "bytes": 19151,
+      "physical_lines": 561,
+      "sha256": "8d10a3772ad0a04c87c710ea8889eace0a56d8a367d5d6f4cb1b6e45cc7b91ee"
+    },
+    {
+      "path": "exceptions.py",
+      "bytes": 4411,
+      "physical_lines": 151,
+      "sha256": "dfb98429347306c8a5ab81c0caa08032010499825ae3bde605e0b515f883301c"
+    },
+    {
+      "path": "help.py",
+      "bytes": 4009,
+      "physical_lines": 134,
+      "sha256": "53a08c13553001fe2162fc5e4222e1c0eb6d56c646928bf1a3428cc80f85324b"
+    },
+    {
+      "path": "hooks.py",
+      "bytes": 766,
+      "physical_lines": 33,
+      "sha256": "1d1abdfddd3e4ef471790a942f37fd27fa9fadfa0309d2756b7b7196cb2f0be0"
+    },
+    {
+      "path": "models.py",
+      "bytes": 36549,
+      "physical_lines": 1039,
+      "sha256": "df0f615771b4d6bc1eaccabe30639643f8e32dd5a447f7cdaae8354b539b324c"
+    },
+    {
+      "path": "packages.py",
+      "bytes": 927,
+      "physical_lines": 23,
+      "sha256": "b745f5941ad2e2dcd9d44b5f09841c87a7353ab669ba82443f70b480f178082d"
+    },
+    {
+      "path": "sessions.py",
+      "bytes": 31334,
+      "physical_lines": 831,
+      "sha256": "42f72303ecde0cca0e8479b2f95845d2f7280d99ca0cf865b1dda8d0433cf662"
+    },
+    {
+      "path": "status_codes.py",
+      "bytes": 4450,
+      "physical_lines": 128,
+      "sha256": "0e62d9b97da1d8e4615e6463e1282e7a316702928e0ff696016f074ae9beb419"
+    },
+    {
+      "path": "structures.py",
+      "bytes": 3011,
+      "physical_lines": 99,
+      "sha256": "1e2ff1575ccc89a50add1d743152c4ad05e8702a9ac8109bc13462c92538b8b7"
+    },
+    {
+      "path": "utils.py",
+      "bytes": 34299,
+      "physical_lines": 1086,
+      "sha256": "cc378c150377aea0b406b73a4c904c2f17e8cb202821f278ee833735a4128025"
+    }
+  ],
+  "tree_sha256": "8ba76d4bd784ddf87ee44229abaa4e56b3dfee5382805ba070d35be831c9476c"
+}

@@ -1,0 +1,35 @@
+{
+  "measurement": {
+    "project": "click",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.150812900013989,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 17,
+      "read_errors": 0
+    }
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+    "files_scanned": 17,
+    "rule_findings": [],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 17,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

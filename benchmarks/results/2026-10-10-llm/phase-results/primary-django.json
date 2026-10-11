@@ -1,0 +1,88 @@
+{
+  "phase": "primary-django",
+  "kind": "primary",
+  "seconds": 3.2437197000253946,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "django/db/migrations/autodetector.py",
+      "line": 1006,
+      "smell": "嵌套过深",
+      "reason": "多层 for/if 嵌套（外层循环、内层循环、多层条件判断）导致逻辑难以跟踪。"
+    },
+    {
+      "file": "django/db/migrations/autodetector.py",
+      "line": 1006,
+      "smell": "魔法索引",
+      "reason": "使用 old_field_dec[2]、field_dec[0:2] 等数字索引访问 deconstruct 结果，含义不直观。"
+    },
+    {
+      "file": "django/db/migrations/autodetector.py",
+      "line": 1006,
+      "smell": "职责过多",
+      "reason": "单个方法同时负责字段重命名检测、关系模型重命名处理、用户询问和状态更新。"
+    },
+    {
+      "file": "django/db/models/sql/query.py",
+      "line": 1850,
+      "smell": "职责过多",
+      "reason": "setup_joins 同时处理路径解析、transform 包装、join 构建与别名复用，职责过于集中。"
+    },
+    {
+      "file": "django/db/models/sql/query.py",
+      "line": 1850,
+      "smell": "嵌套过深",
+      "reason": "for/else 加内部函数定义与多层条件，控制流复杂难以阅读。"
+    },
+    {
+      "file": "django/db/models/sql/query.py",
+      "line": 1850,
+      "smell": "命名含糊",
+      "reason": "变量名如 rest、pivot、targets、last_field_exception 语义不够明确。"
+    },
+    {
+      "file": "django/template/defaulttags.py",
+      "line": 694,
+      "smell": "魔法字符串",
+      "reason": "硬编码 \"escape\"、\"safe\"、\"var|%s\" 等字符串，缺乏常量或说明。"
+    },
+    {
+      "file": "django/template/defaulttags.py",
+      "line": 694,
+      "smell": "命名含糊",
+      "reason": "变量名 unused 表示未使用元素，但语义不清晰。"
+    },
+    {
+      "file": "django/views/decorators/http.py",
+      "line": 106,
+      "smell": "重复逻辑",
+      "reason": "同步与异步 inner 函数几乎完全重复，仅 await 不同。"
+    },
+    {
+      "file": "django/views/decorators/http.py",
+      "line": 106,
+      "smell": "魔法字符串",
+      "reason": "硬编码 \"GET\"、\"HEAD\"、\"Last-Modified\"、\"ETag\" 等 HTTP 相关字符串。"
+    },
+    {
+      "file": "django/core/management/commands/createcachetable.py",
+      "line": 57,
+      "smell": "职责过多",
+      "reason": "create_table 同时负责路由检查、表存在检查、SQL 构建、dry-run 输出和实际执行。"
+    },
+    {
+      "file": "django/core/management/commands/createcachetable.py",
+      "line": 57,
+      "smell": "魔法数字",
+      "reason": "使用 max_length=255 和 verbosity > 1 等魔法数字，缺乏命名常量。"
+    },
+    {
+      "file": "django/core/management/commands/createcachetable.py",
+      "line": 57,
+      "smell": "重复逻辑",
+      "reason": "dry_run 分支和实际执行分支都重复输出 index_output 语句。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

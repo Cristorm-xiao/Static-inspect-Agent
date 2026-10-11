@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "findings": [
+    {
+      "rule_id": "R003",
+      "file": "db/migrations/questioner.py",
+      "line": 168
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/gis/db/models/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/gis/db/models/__init__.py",
+      "line": 5
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/gis/forms/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/gis/geos/prototypes/__init__.py",
+      "line": 46
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/gis/geos/prototypes/__init__.py",
+      "line": 67
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/messages/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/messages/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/aggregates/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/aggregates/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/fields/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/fields/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/fields/__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/fields/__init__.py",
+      "line": 4
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/fields/__init__.py",
+      "line": 5
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/forms/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/forms/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "contrib/postgres/forms/__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/migrations/__init__.py",
+      "line": 2
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/__init__.py",
+      "line": 5
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/__init__.py",
+      "line": 18
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/__init__.py",
+      "line": 39
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/__init__.py",
+      "line": 46
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/sql/__init__.py",
+      "line": 1
+    },
+    {
+      "rule_id": "R004",
+      "file": "db/models/sql/__init__.py",
+      "line": 3
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 6
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 7
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 8
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 9
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 10
+    },
+    {
+      "rule_id": "R004",
+      "file": "forms/__init__.py",
+      "line": 11
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "static-inspect-agent",
+          "rules": [
+            {
+              "id": "R001",
+              "name": "bare_except",
+              "shortDescription": {
+                "text": "bare_except"
+              }
+            },
+            {
+              "id": "R003",
+              "name": "eval_call",
+              "shortDescription": {
+                "text": "eval_call"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "R001",
+          "level": "error",
+          "message": {
+            "text": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1515
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R003",
+          "level": "warning",
+          "message": {
+            "text": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "cli.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1031
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

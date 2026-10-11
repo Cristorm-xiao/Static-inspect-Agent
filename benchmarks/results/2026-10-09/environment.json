@@ -1,0 +1,31 @@
+{
+  "timestamp_utc": "2026-10-09T08:48:23.023618+00:00",
+  "python": "3.13.10 (tags/v3.13.10:4fd8843, Dec  2 2025, 15:08:18) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "D:\\python\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpus": 28,
+  "dependencies": {
+    "langgraph": "1.2.12",
+    "openai": "3.19.0",
+    "python-dotenv": "1.2.3",
+    "pytest": "9.1.1"
+  },
+  "tool_git_head": "6878f110fd6bfe232b6361587d006af19143a627",
+  "tool_source_hashes": {
+    "main.py": "abfb9a444b9132024450606847ae554f6ae40c75bf93ac13356bbd7561a8f3b8",
+    "config.py": "5468dd54cf0e20e1e67ba9b4fd2479e6f3bd77348c13b8c1467f2f6fe1dd7c87",
+    "graph.py": "8ce202157f818e940535fd4bc04d554e2fcc055d8ff230bcde62e561020ad7ac",
+    "scanner.py": "1609c1c13f036c0423372e8b48e130e5deceb6d819b3e8ed2bbe27fcb092cd4b",
+    "rules.py": "b80ec31d0726ebae50f64ace9fe2833a80d55a74fcaa89e12bf96b0c58adef42",
+    "llm_node.py": "90a4c2ee11bc36e7ba7a6f1436a100dfbb08512c2ff44e89372950c9c4986e7d",
+    "baseline.py": "4205674822d93ce72d0cc045f123b16d18772ebc5ed1e734acdce0ec33c8c0cd",
+    "report.py": "ffa6d4436365728bb68362c5f312f4c27753b5a6d20281a288b1e1dc6371545c",
+    "sarif.py": "73ec82f7be40cbffdfec0f3806db54a088a109ba1464b5091c6f62f86ce5fa61",
+    "state.py": "2ce3cf2e20d7bf9ec095a73b7260ccbd080a3f4b831c3100c477e6f01eeadd4c",
+    "pyproject.toml": "a33b0345740aba1b1311e298b7afbdeae0dc06fa35c0a2df173c1bd93b62d5bc"
+  },
+  "llm": "disabled; no real-provider quality evaluation",
+  "timing": "sequential fresh CLI subprocesses; first observation separate, then repeats; OS caches not flushed",
+  "repeats": 5
+}

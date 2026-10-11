@@ -1,0 +1,20 @@
+{
+  "project": "D:\\静态工程巡检Agent\\validation-2026-10-10-llm\\run-01\\cli-project",
+  "files_scanned": 1,
+  "rule_findings": [],
+  "llm_findings": [
+    {
+      "file": "cookies.py",
+      "line": 455,
+      "smell": "魔法数字/魔法值",
+      "reason": "硬编码的 version: 0、rfc2109: False 等默认值散落在字典中，缺乏命名常量或配置说明。"
+    },
+    {
+      "file": "cookies.py",
+      "line": 455,
+      "smell": "重复逻辑",
+      "reason": "port_specified、domain_specified、path_specified 三处都是 bool(...) 的相同模式，可提取辅助函数。"
+    }
+  ],
+  "baseline_suppressed": 0
+}

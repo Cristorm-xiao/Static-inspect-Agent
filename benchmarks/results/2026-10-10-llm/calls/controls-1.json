@@ -1,0 +1,96 @@
+{
+  "call_id": "controls-1",
+  "phase": "controls",
+  "kind": "controls",
+  "sample_ids": [
+    "c03",
+    "c01",
+    "c06"
+  ],
+  "started_at": "2026-10-10T02:04:29.930014+00:00",
+  "request": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是资深 Python 代码审查员。以下是 3 个较长的函数，请找出代码坏味道\n（如命名含糊、职责过多、嵌套过深、重复逻辑、魔法数字等）。\n\n\n### 片段0 (文件: controls/c03.py, 行: 1)\n```python\ndef summarize_orders(online, retail, wholesale):\n    \"\"\"Summarize paid orders separately for three sales channels.\"\"\"\n    online_total = 0\n    online_count = 0\n    online_ids = []\n    for order in online:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            online_total += max(amount, 0)\n            online_count += 1\n            online_ids.append(order[\"id\"])\n    retail_total = 0\n    retail_count = 0\n    retail_ids = []\n    for order in retail:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            retail_total += max(amount, 0)\n            retail_count += 1\n            retail_ids.append(order[\"id\"])\n    wholesale_total = 0\n    wholesale_count = 0\n    wholesale_ids = []\n    for order in wholesale:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            wholesale_total += max(amount, 0)\n            wholesale_count += 1\n            wholesale_ids.append(order[\"id\"])\n    return {\n        \"online\": (online_total, online_count, online_ids),\n        \"retail\": (retail_total, retail_count, retail_ids),\n        \"wholesale\": (wholesale_total, wholesale_count, wholesale_ids),\n    }\n```\n\n### 片段1 (文件: controls/c01.py, 行: 1)\n```python\ndef collect_codes(groups):\n    \"\"\"Collect usable codes from enabled groups and members.\"\"\"\n    result = []\n    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            for permission in member.get(\"permissions\", []):\n                                if permission is not None:\n                                    if permission.get(\"allowed\"):\n                                        for code in permission.get(\"codes\", []):\n                                            if isinstance(code, str):\n                                                if code.strip():\n                                                    if code not in result:\n                                                        result.append(code)\n    audit = []\n    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            audit.append({\n                                \"member_id\": member.get(\"id\"),\n                                \"group_id\": group.get(\"id\"),\n                            })\n    return {\n        \"codes\": result,\n        \"members\": audit,\n    }\n```\n\n### 片段2 (文件: controls/c06.py, 行: 1)\n```python\ndef count_statuses(statuses):\n    \"\"\"Count occurrences of hashable status values.\n\n    Parameters\n    ----------\n    statuses : iterable\n        Hashable values representing processing statuses.\n\n    Returns\n    -------\n    dict\n        A mapping from each observed status to its count.\n\n    Behavior\n    --------\n    Empty input produces an empty mapping.\n    Every observed value is counted.\n    No normalization is applied to status values.\n    The input iterable is consumed once.\n    The function does not mutate input values.\n    Dictionary order follows first appearance.\n    Additional space grows with distinct statuses.\n    Unhashable input values raise TypeError.\n\n    Examples\n    --------\n    count_statuses([\"ready\", \"done\", \"ready\"])\n    returns {\"ready\": 2, \"done\": 1}.\n    \"\"\"\n    counts = {}\n    for status in statuses:\n        counts[status] = counts.get(status, 0) + 1\n    return counts\n```\n\n\n只返回 JSON 数组，每个元素格式：{\"index\": 片段编号, \"smell\": \"坏味道名\", \"reason\": \"一句话说明\"}\n无问题就返回 []。"
+      }
+    ],
+    "temperature": 0.3
+  },
+  "http_attempts": 1,
+  "http_statuses": [
+    200
+  ],
+  "status": "ok",
+  "returned_model": "deepseek-flash",
+  "response_id": "ceefe108-72b9-4a62-9563-ce7fa1bb7956",
+  "finish_reason": "stop",
+  "content": "```json\n[\n  {\n    \"index\": 0,\n    \"smell\": \"重复逻辑\",\n    \"reason\": \"三个渠道的统计逻辑完全相同，只是变量名不同，应抽取为辅助函数或循环处理。\"\n  },\n  {\n    \"index\": 0,\n    \"smell\": \"魔法数字\",\n    \"reason\": \"max(amount, 0) 中的 0 表示金额下限，应提取为具名常量或加注释说明业务含义。\"\n  },\n  {\n    \"index\": 0,\n    \"smell\": \"命名含糊\",\n    \"reason\": \"参数 online/retail/wholesale 未表明是订单列表，容易与渠道名混淆。\"\n  },\n  {\n    \"index\": 1,\n    \"smell\": \"嵌套过深\",\n    \"reason\": \"多层 if 嵌套（group→member→permission→code）超过 6 层，可读性差，应使用提前 continue 或辅助函数。\"\n  },\n  {\n    \"index\": 1,\n    \"smell\": \"重复逻辑\",\n    \"reason\": \"codes 收集与 audit 收集两次遍历 groups 并重复相同的 group/member 过滤条件。\"\n  },\n  {\n    \"index\": 1,\n    \"smell\": \"职责过多\",\n    \"reason\": \"同一函数既收集 codes 又生成 audit 成员列表，两个不相关的职责应拆分。\"\n  },\n  {\n    \"index\": 2,\n    \"smell\": \"文档过度\",\n    \"reason\": \"docstring 冗长且包含大量与实现无关的说明（如空间复杂度、异常行为），远超函数本身复杂度。\"\n  }\n]\n```",
+  "usage": {
+    "completion_tokens": 362,
+    "prompt_tokens": 887,
+    "total_tokens": 1249,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 887
+  },
+  "format": {
+    "json_array": true,
+    "strict_items": true,
+    "items": 7
+  },
+  "parsed_findings": [
+    {
+      "file": "controls/c03.py",
+      "line": 1,
+      "smell": "重复逻辑",
+      "reason": "三个渠道的统计逻辑完全相同，只是变量名不同，应抽取为辅助函数或循环处理。"
+    },
+    {
+      "file": "controls/c03.py",
+      "line": 1,
+      "smell": "魔法数字",
+      "reason": "max(amount, 0) 中的 0 表示金额下限，应提取为具名常量或加注释说明业务含义。"
+    },
+    {
+      "file": "controls/c03.py",
+      "line": 1,
+      "smell": "命名含糊",
+      "reason": "参数 online/retail/wholesale 未表明是订单列表，容易与渠道名混淆。"
+    },
+    {
+      "file": "controls/c01.py",
+      "line": 1,
+      "smell": "嵌套过深",
+      "reason": "多层 if 嵌套（group→member→permission→code）超过 6 层，可读性差，应使用提前 continue 或辅助函数。"
+    },
+    {
+      "file": "controls/c01.py",
+      "line": 1,
+      "smell": "重复逻辑",
+      "reason": "codes 收集与 audit 收集两次遍历 groups 并重复相同的 group/member 过滤条件。"
+    },
+    {
+      "file": "controls/c01.py",
+      "line": 1,
+      "smell": "职责过多",
+      "reason": "同一函数既收集 codes 又生成 audit 成员列表，两个不相关的职责应拆分。"
+    },
+    {
+      "file": "controls/c06.py",
+      "line": 1,
+      "smell": "文档过度",
+      "reason": "docstring 冗长且包含大量与实现无关的说明（如空间复杂度、异常行为），远超函数本身复杂度。"
+    }
+  ],
+  "seconds": 2.03827670001192,
+  "finished_at": "2026-10-10T02:04:31.968301+00:00"
+}

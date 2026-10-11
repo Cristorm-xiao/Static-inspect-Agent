@@ -1,188 +1,128 @@
-# 工程静态巡检 Agent
+# Static Inspect Agent · Python 工程静态巡检
 
-一个基于 **LangGraph** 的 Python 工程静态巡检工具：预置规则引擎做确定性检查（AST 分析），LLM 做代码坏味道的语义解读，输出 Markdown / JSON 巡检报告。
+一个可直接放进 CI 的 Python 源码巡检 CLI。它用 AST 规则给出可复现的发现，选择性调用 OpenAI 兼容模型解释长函数的代码坏味道，并输出 Markdown、JSON 或 SARIF 报告。**默认扫描过程只读取源码，不执行被扫描项目。**
 
-静态读取源码，**不运行被检查的代码**；目前只支持 Python 工程。
+## 为什么做这个项目
 
-## 特性
+已有工程往往积累了不少历史问题，直接启用新检查会让 CI 一次性失败。本项目把“确定性门禁”和“模型建议”分开：先建立规则基线，后续只拦截新问题；模型不可用时，离线规则仍能正常产出报告。这个设计覆盖了 Python 后端 / AI Agent 岗位常见的 CLI 工程化、状态编排、外部服务降级和 CI 接入场景。
 
-- **规则引擎（确定性）**：基于 `ast` 模块解析语法树，零误报、零成本、离线可跑
-- **LLM 语义分析（建议性）**：把长函数片段交给大模型解读坏味道，分批并发调用，自动超时重试
-- **降级友好**：未配置 API key、网络超时、模型返回畸形 JSON 都不会中断巡检
-- **CI 就绪**：发现问题时退出码为 1，可直接接入 GitHub Actions / pre-commit
-- **可配置**：阈值、批量大小、跳过目录均在 `pyproject.toml` 中配置
-- **双格式输出**：Markdown（给人看）/ JSON（给程序读）
+## 30 秒离线演示
 
-## 安装
-
-需要 Python 3.12+。
+需要 Python 3.12+。在仓库根目录执行：
 
 ```bash
-# 克隆后在项目目录内：
-pip install -e .
-
-# 开发模式（额外安装 pytest）：
-pip install -e ".[dev]"
+python -m pip install -e ".[dev]"
+inspect-agent examples/demo_project --no-llm --format json
 ```
 
-可选：配置 LLM 语义分析（不配也能用，规则引擎照常工作）。在项目根目录创建 `.env`：
+演示项目包含四种问题。命令会返回 **1**（发现规则问题），JSON 里包含相对文件路径、行号、规则 ID 和级别：
+
+```json
+{
+  "file": "bad.py",
+  "line": 1,
+  "rule": "wildcard_import",
+  "rule_id": "R004",
+  "severity": "warning",
+  "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+}
+```
+
+没有 API key 也能完成这个演示。`--no-llm` 保证全程不调用模型。
+完整的 Markdown 输出见 [演示报告](examples/demo-report.md)。
+
+## 使用方式
 
 ```bash
-DEEPSEEK_API_KEY=sk-你的密钥
-# 以下两项有默认值，通常不用改
+# 人类可读报告
+inspect-agent ./my-project --no-llm -o report.md
+
+# 脚本消费：stdout 只有 JSON，日志走 stderr
+inspect-agent ./my-project --no-llm --format json
+
+# SARIF 2.1.0，可供代码扫描平台消费
+inspect-agent ./my-project --no-llm --format sarif -o report.sarif
+
+# 首次接入老项目：保存当下已有的规则发现，命令成功返回 0
+inspect-agent ./my-project --no-llm --write-baseline inspect-baseline.json
+
+# 以后只报告新增规则问题
+inspect-agent ./my-project --no-llm --baseline inspect-baseline.json
+```
+
+`-o/--output` 将报告写入文件；未指定时打印到 stdout（JSON / SARIF 固定 UTF-8 编码）。`-v/--verbose` 显示进度日志。退出码：`0` 无新规则问题，`1` 有规则问题，`2` 输入或输出错误。LLM 建议会显示在报告中，不决定退出码，也不进入 SARIF。
+
+## 规则
+
+| ID | 严重级别 | 检查 |
+|---|---|---|
+| E000 | error | 语法错误或源文件读取失败 |
+| R001 | error | 裸 `except:` |
+| R002 | error | `list` / `dict` / `set` 字面量作为默认参数 |
+| R003 | warning | 直接调用 `eval(...)` |
+| R004 | warning | `from module import *` |
+
+规则是 AST 语法模式匹配。`warning` 表示需要人工复核，不声称能证明漏洞。添加规则时在 `rules.py` 注册检查函数并为它添加正反例测试。
+
+## 项目配置
+
+在**被扫描项目**的 `pyproject.toml` 中添加配置：
+
+```toml
+[tool.inspect-agent]
+long-func-threshold = 30
+llm-batch-size = 5
+skip-dirs = [".git", "__pycache__", ".venv", "venv", "node_modules"]
+```
+
+这三个字段都可省略。`skip-dirs` 如提供，会替换默认跳过目录名单。错误类型或非正数阈值会返回退出码 2。
+
+## 可选的 LLM 分析
+
+不带 `--no-llm` 时，工具结合有效行数、嵌套、分支和重复语句等指标挑选函数，再将源码片段发往配置的 OpenAI 兼容服务。默认使用 DeepSeek；可以通过环境变量改为其他兼容端点：
+
+```text
+DEEPSEEK_API_KEY=your-key
 DEEPSEEK_BASE_URL=https://api.deepseek.com/v1
 DEEPSEEK_MODEL=deepseek-chat
 ```
 
-## 快速开始
+也可以将这些变量放在本地 `.env`（已被 `.gitignore` 忽略）。模型请求失败或响应畸形时，规则报告仍可用。被扫描代码可能含敏感信息；开启模型前请确认允许向目标服务发送函数片段。
+
+## 架构与验证
+
+`scan → rule_check → llm_analyze → report` 是 LangGraph 状态流；CLI 在图执行前验证配置，在图执行后处理基线、SARIF 和退出码。实现边界、基线取舍及安全限制见 [架构说明](docs/architecture.md)。
 
 ```bash
-# 巡检当前目录（Markdown 报告打印到控制台）
-inspect-agent .
-
-# 等价写法（未安装时）
-python main.py .
-
-# 只跑规则引擎，不调用 LLM（免费、秒级）
-inspect-agent . --no-llm
-
-# 报告写入文件
-inspect-agent ./my-project -o report.md
-
-# JSON 格式输出（配合 jq 等工具使用）
-inspect-agent . --format json
-
-# 显示详细进度日志
-inspect-agent . -v
+python -m pytest -q
+python -m build --wheel
+inspect-agent . --no-llm --format json
 ```
 
-退出码：`0` = 未发现问题；`1` = 发现问题（CI 据此判断成败）。
+最后一条会扫到 `examples/demo_project` 中故意留下的问题，因此预计返回 1。测试覆盖 AST 正反例、读取故障、LLM 超时和畸形响应、目标项目配置、CLI 错误码、基线及 SARIF。GitHub Actions 在 Ubuntu 与 Windows 的 Python 3.12 / 3.13 上运行测试、构建和已安装命令的烟雾验证。
 
-## 规则清单
+## 后续方向
 
-规则引擎基于 AST 做确定性检查，每条规则有稳定 ID 和严重级别（`error` / `warning` / `info`）：
+- 通过人工复核和留出样本继续改善建议质量。
+- 扩展跨文件分析和流敏感名称解析。
+- 为缓存增加容量管理，为供应商请求增加精确 token 计量和限流协调。
 
-| 规则 ID | 名称 | 级别 | 说明 |
-|---------|------|------|------|
-| R001 | `bare_except` | error | 裸 `except:` 会吞掉所有异常（含 `KeyboardInterrupt`），应写 `except Exception:` |
-| R002 | `mutable_default_arg` | error | 函数默认参数为 `list`/`dict`/`set`，所有调用共享同一可变对象 |
-| E000 | `syntax_error` | error | 文件无法解析（语法错误、编码错误、无读取权限），跳过检查但记录在案 |
+## v0.3 改进
 
-LLM 语义分析不产生规则 ID，其发现标记为"建议"，与规则引擎的确定性结论分区展示。
+- 规则检查与 LLM 候选提取复用一次 AST 解析；支持源码编码声明及源码缓存。
+- LLM 按函数缓存结果，限制并发、批次大小和逻辑调用预算；失败、跳过、未完成状态明确展示。
+- 建议必须包含可在当前函数中核对的原文证据；可按需读取同文件辅助函数定义，最多补查一轮。
+- v2 基线采用结构指纹，支持注释插入后继续匹配；兼容读取 v1 基线。
+- 新增 `--no-cache`、`--refresh-cache`、`--cache-dir`。默认缓存位于被扫描项目的 `.inspect-cache/`，包含源码片段，建议加入目标仓库的忽略列表。
 
-## 命令行参数
+完整改动原理、配置、示例和限制见 [改动说明](docs/improvements-2026-10-10.md)。退出码仍由规则决定，LLM 完成度请查看 JSON 的 `llm_stats` 和 `llm_outcomes`。
 
-| 参数 | 说明 |
-|------|------|
-| `project_path` | （必填）待巡检的项目根目录 |
-| `-o, --output FILE` | 报告写入文件（默认只打印到控制台） |
-| `--no-llm` | 禁用 LLM 语义分析，只跑规则引擎 |
-| `--format {markdown,json}` | 输出格式，默认 `markdown` |
-| `-v, --verbose` | 显示各节点的详细进度日志 |
+## 真实项目验证
 
-JSON 输出结构：
+2026-10-09 对 Requests、Flask、Click、HTTPX、Django 的固定发布版本进行了离线评测：生产包覆盖 965 个 Python 文件、192,774 行文本；完整仓库覆盖 3,059 个文件、557,478 行文本，两种范围不可相加。Django 生产包端到端扫描中位耗时 3.30 秒（首次观测后重复 5 次）。
 
-```json
-{
-  "project": ".",
-  "files_scanned": 10,
-  "rule_findings": [
-    {"file": "bad.py", "line": 3, "rule": "bare_except",
-     "rule_id": "R001", "severity": "error", "desc": "..."}
-  ],
-  "llm_findings": [
-    {"file": "long.py", "line": 20, "smell": "函数过长", "reason": "..."}
-  ]
-}
-```
+验证了重复输出一致性、JSON/SARIF 关键字段一致性、50 条旧告警的基线过滤和 4 类新增合成问题检出。同时发现包入口导出告警噪声、裸 except 提示语不准确，以及注释插入导致旧告警重新报告等局限。告警数不等于缺陷数。
 
-## 配置
+2026-10-10 补充真实 LLM 验证：10 次正式调用全部成功，5 个项目的 25 个函数产生 63 条建议；Codex 源码复核分为 13 条具体改进线索、36 条低优先级或设计取舍建议、14 条不准确或上下文不足。共使用 23,592 tokens。同批函数三次产生 10、5、11 条建议，4 个负对照均收到建议，表明仍需要人工复核；以上不是生产准确率。详见 [LLM 补充报告](docs/validation/2026-10-10-llm-report.md)。
 
-在被巡检项目（或工具自身）的 `pyproject.toml` 中添加：
-
-```toml
-[tool.inspect-agent]
-long-func-threshold = 30   # 函数超过多少行才交给 LLM
-llm-batch-size = 5         # LLM 每批分析的函数数量（分批并发）
-skip-dirs = [".git", "__pycache__", ".venv", "venv", "node_modules"]
-```
-
-LLM 相关密钥通过环境变量 / `.env` 文件提供，不写入代码（见"安装"一节）。
-
-## CI 集成示例
-
-GitHub Actions（`.github/workflows/inspect.yml`）：
-
-```yaml
-name: static-inspect
-on: [push, pull_request]
-jobs:
-  inspect:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: pip install git+https://github.com/<你>/static-inspect-agent.git
-      # 规则引擎离线运行；如需 LLM 分析，在仓库 Secrets 配置 DEEPSEEK_API_KEY
-      - run: inspect-agent . --no-llm -o report.md
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: inspect-report
-          path: report.md
-```
-
-发现问题时进程退出码为 1，CI 自动标红；报告作为 artifact 保留供查看。
-
-## 架构
-
-基于 LangGraph 的线性状态流转，所有节点共享一份 `InspectState`：
-
-```
-project_path
-     │
-     ▼
-┌─────────┐   py_files    ┌────────────┐  rule_findings  ┌─────────────┐
-│  scan   │ ───────────▶ │ rule_check │ ──────────────▶ │ llm_analyze │
-│ 扫描.py │              │ AST 规则引擎 │                 │ 分批并发 LLM │
-└─────────┘              └────────────┘                  └──────┬──────┘
-                                                               │ llm_findings
-                                                               ▼
-                                                        ┌────────────┐
-                                                        │   report   │
-                                                        │ Markdown/  │
-                                                        │ JSON 报告   │
-                                                        └────────────┘
-```
-
-**混合架构的分工原则**：
-
-- **规则引擎**（确定性）：AST 匹配，结果 100% 可复现，负责"明确的问题"（语法错误、危险写法）。离线、免费、零误判。
-- **LLM 语义分析**（建议性）：只处理规则难以判断的"代码坏味道"（命名、职责、嵌套）。结果会在报告中分区呈现。
-- 任一环节失败，前面环节的成果不丢失：LLM 超时/未配置/返回畸形都不影响规则引擎的结论出现在报告里。
-
-## 安全与隐私说明
-
-- LLM 分析会把**超过阈值的函数源码**发送到 DeepSeek API；规则引擎完全离线，`--no-llm` 可全程不联网。
-- LLM 的返回内容不可信：代码对返回 JSON 做类型校验和越界检查，任何畸形响应只会被跳过，不会影响规则引擎结果。
-- 被扫描代码若被恶意构造（如注释中嵌入指令），理论上存在 prompt injection 风险——因此 LLM 发现始终标记为"建议"。需要**确定性阻断**的 CI 场景建议使用 `--no-llm`，让退出码只由规则引擎决定；开启 LLM 时其发现同样会计入退出码。
-- API 密钥只从环境变量 / `.env` 读取，`.env` 不应提交版本库。
-
-## 开发与测试
-
-```bash
-pip install -e ".[dev]"
-python -m pytest -v          # 10 个单元测试：规则引擎 6 个 + LLM 节点 4 个
-```
-
-LLM 相关测试全部使用 mock 替身（模拟超时、畸形 JSON、分批并发），不发起真实网络请求。
-
-## Roadmap
-
-- [ ] baseline 基线机制：首次全量结果存为基线，后续只报告新增问题（老项目渐进式接入）
-- [ ] SARIF 输出格式，对接 GitHub 代码扫描的行内注释
-- [ ] 支持本地模型（Ollama 等 OpenAI 兼容端点），源码不出内网
-- [ ] 扩充规则库（`eval` 使用、通配导入、过深嵌套等），规则可在配置中单独开关
-- [ ] rules 与 llm 节点复用同一次 AST 解析，消除重复 parse
+详细数据、源码复核与适用边界见 [验证报告](docs/validation/2026-10-09-report.md)，复现脚本和原始证据见 [benchmarks](benchmarks/README.md)。

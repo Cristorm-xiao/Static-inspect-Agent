@@ -1,0 +1,64 @@
+{
+  "call_id": "cli-smoke-0",
+  "phase": "cli-smoke",
+  "kind": "cli",
+  "sample_ids": [
+    "cli:cookies.py:455"
+  ],
+  "started_at": "2026-10-10T02:04:33.338565+00:00",
+  "request": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是资深 Python 代码审查员。以下是 1 个较长的函数，请找出代码坏味道\n（如命名含糊、职责过多、嵌套过深、重复逻辑、魔法数字等）。\n\n\n### 片段0 (文件: cookies.py, 行: 455)\n```python\ndef create_cookie(name, value, **kwargs):\n    \"\"\"Make a cookie from underspecified parameters.\n\n    By default, the pair of `name` and `value` will be set for the domain ''\n    and sent on every request (this is sometimes called a \"supercookie\").\n    \"\"\"\n    result = {\n        \"version\": 0,\n        \"name\": name,\n        \"value\": value,\n        \"port\": None,\n        \"domain\": \"\",\n        \"path\": \"/\",\n        \"secure\": False,\n        \"expires\": None,\n        \"discard\": True,\n        \"comment\": None,\n        \"comment_url\": None,\n        \"rest\": {\"HttpOnly\": None},\n        \"rfc2109\": False,\n    }\n\n    badargs = set(kwargs) - set(result)\n    if badargs:\n        raise TypeError(\n            f\"create_cookie() got unexpected keyword arguments: {list(badargs)}\"\n        )\n\n    result.update(kwargs)\n    result[\"port_specified\"] = bool(result[\"port\"])\n    result[\"domain_specified\"] = bool(result[\"domain\"])\n    result[\"domain_initial_dot\"] = result[\"domain\"].startswith(\".\")\n    result[\"path_specified\"] = bool(result[\"path\"])\n\n    return cookielib.Cookie(**result)\n```\n\n\n只返回 JSON 数组，每个元素格式：{\"index\": 片段编号, \"smell\": \"坏味道名\", \"reason\": \"一句话说明\"}\n无问题就返回 []。"
+      }
+    ],
+    "temperature": 0.3
+  },
+  "http_attempts": 1,
+  "http_statuses": [
+    200
+  ],
+  "status": "ok",
+  "returned_model": "deepseek-flash",
+  "response_id": "b894795d-9a35-4402-be36-6b608b350163",
+  "finish_reason": "stop",
+  "content": "```json\n[{\"index\": 0, \"smell\": \"魔法数字/魔法值\", \"reason\": \"硬编码的 version: 0、rfc2109: False 等默认值散落在字典中，缺乏命名常量或配置说明。\"}, {\"index\": 0, \"smell\": \"重复逻辑\", \"reason\": \"port_specified、domain_specified、path_specified 三处都是 bool(...) 的相同模式，可提取辅助函数。\"}]\n```",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 380,
+    "total_tokens": 485,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 380
+  },
+  "format": {
+    "json_array": true,
+    "strict_items": true,
+    "items": 2
+  },
+  "parsed_findings": [
+    {
+      "file": "cookies.py",
+      "line": 455,
+      "smell": "魔法数字/魔法值",
+      "reason": "硬编码的 version: 0、rfc2109: False 等默认值散落在字典中，缺乏命名常量或配置说明。"
+    },
+    {
+      "file": "cookies.py",
+      "line": 455,
+      "smell": "重复逻辑",
+      "reason": "port_specified、domain_specified、path_specified 三处都是 bool(...) 的相同模式，可提取辅助函数。"
+    }
+  ],
+  "seconds": 1.0896342999767512,
+  "finished_at": "2026-10-10T02:04:34.428209+00:00"
+}

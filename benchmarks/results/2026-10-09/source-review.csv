@@ -1,0 +1,307 @@
+﻿project,file,line,rule,rule_id,severity,desc,source_url,pattern_matches,review_category,confirmed_new_defect,review_note,evidence
+flask,app.py,1515,bare_except,R001,error,裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:,https://github.com/pallets/flask/blob/2c1b30d0503cfb064f1cb252e6614a06915a362a/src/flask/app.py#L1515,True,reraise_message_inaccurate,False,捕获 BaseException 后记录 error 并立即 raise，用于 finally 清理；“吞掉所有异常”的描述不符合这处代码。,"1512:             except Exception as e:
+1513:                 error = e
+1514:                 response = self.handle_exception(e)
+1515:             except:  # noqa: B001
+1516:                 error = sys.exc_info()[1]
+1517:                 raise
+1518:             return response(environ, start_response)
+1519:         finally:"
+flask,cli.py,1031,eval_call,R003,warning,直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式,https://github.com/pallets/flask/blob/2c1b30d0503cfb064f1cb252e6614a06915a362a/src/flask/cli.py#L1031,True,intentional_local_code_execution,False,交互式 flask shell 执行本机 PYTHONSTARTUP 文件；未发现不可信远程输入链，不能认定为漏洞。,"1028:     startup = os.environ.get(""PYTHONSTARTUP"")
+1029:     if startup and os.path.isfile(startup):
+1030:         with open(startup) as f:
+1031:             eval(compile(f.read(), startup, ""exec""), ctx)
+1032: 
+1033:     ctx.update(current_app.make_shell_context())
+1034: 
+1035:     # Site, customize, or startup script can set a hook to call when"
+httpx,__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .__version__ import __description__, __title__, __version__
+2: from ._api import *
+3: from ._auth import *
+4: from ._client import *
+5: from ._config import *
+6: from ._content import *"
+httpx,__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .__version__ import __description__, __title__, __version__
+2: from ._api import *
+3: from ._auth import *
+4: from ._client import *
+5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *"
+httpx,__init__.py,4,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L4,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .__version__ import __description__, __title__, __version__
+2: from ._api import *
+3: from ._auth import *
+4: from ._client import *
+5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *"
+httpx,__init__.py,5,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L5,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"2: from ._api import *
+3: from ._auth import *
+4: from ._client import *
+5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *"
+httpx,__init__.py,6,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L6,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"3: from ._auth import *
+4: from ._client import *
+5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *"
+httpx,__init__.py,7,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L7,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"4: from ._client import *
+5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *"
+httpx,__init__.py,8,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L8,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"5: from ._config import *
+6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *
+12: from ._urls import *"
+httpx,__init__.py,9,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L9,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"6: from ._content import *
+7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *
+12: from ._urls import *
+13: "
+httpx,__init__.py,10,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L10,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"7: from ._exceptions import *
+8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *
+12: from ._urls import *
+13: 
+14: try:"
+httpx,__init__.py,11,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L11,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"8: from ._models import *
+9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *
+12: from ._urls import *
+13: 
+14: try:
+15:     from ._main import main"
+httpx,__init__.py,12,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/__init__.py#L12,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"9: from ._status_codes import *
+10: from ._transports import *
+11: from ._types import *
+12: from ._urls import *
+13: 
+14: try:
+15:     from ._main import main
+16: except ImportError:  # pragma: no cover"
+httpx,_transports/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .asgi import *
+2: from .base import *
+3: from .default import *
+4: from .mock import *
+5: from .wsgi import *"
+httpx,_transports/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .asgi import *
+2: from .base import *
+3: from .default import *
+4: from .mock import *
+5: from .wsgi import *
+6: "
+httpx,_transports/__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .asgi import *
+2: from .base import *
+3: from .default import *
+4: from .mock import *
+5: from .wsgi import *
+6: 
+7: __all__ = ["
+httpx,_transports/__init__.py,4,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py#L4,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"1: from .asgi import *
+2: from .base import *
+3: from .default import *
+4: from .mock import *
+5: from .wsgi import *
+6: 
+7: __all__ = [
+8:     ""ASGITransport"","
+httpx,_transports/__init__.py,5,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/encode/httpx/blob/26d48e0634e6ee9cdc0533996db289ce4b430177/httpx/_transports/__init__.py#L5,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。顶层及 transports 入口均定义 __all__。,"2: from .base import *
+3: from .default import *
+4: from .mock import *
+5: from .wsgi import *
+6: 
+7: __all__ = [
+8:     ""ASGITransport"",
+9:     ""AsyncBaseTransport"","
+django,contrib/gis/db/models/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/gis/db/models/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.db.models import *  # NOQA isort:skip
+2: from django.db.models import __all__ as models_all  # isort:skip
+3: import django.contrib.gis.db.models.functions  # NOQA
+4: import django.contrib.gis.db.models.lookups  # NOQA
+5: from django.contrib.gis.db.models.aggregates import *  # NOQA"
+django,contrib/gis/db/models/__init__.py,5,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/gis/db/models/__init__.py#L5,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"2: from django.db.models import __all__ as models_all  # isort:skip
+3: import django.contrib.gis.db.models.functions  # NOQA
+4: import django.contrib.gis.db.models.lookups  # NOQA
+5: from django.contrib.gis.db.models.aggregates import *  # NOQA
+6: from django.contrib.gis.db.models.aggregates import __all__ as aggregates_all
+7: from django.contrib.gis.db.models.fields import (
+8:     GeometryCollectionField,
+9:     GeometryField,"
+django,contrib/gis/forms/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/gis/forms/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.forms import *  # NOQA
+2: 
+3: from .fields import (  # NOQA
+4:     GeometryCollectionField,
+5:     GeometryField,"
+django,contrib/gis/geos/prototypes/__init__.py,46,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/gis/geos/prototypes/__init__.py#L46,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"43:     get_num_coords,
+44:     get_num_geoms,
+45: )
+46: from django.contrib.gis.geos.prototypes.misc import *  # NOQA
+47: from django.contrib.gis.geos.prototypes.predicates import (  # NOQA
+48:     geos_contains,
+49:     geos_covers,
+50:     geos_crosses,"
+django,contrib/gis/geos/prototypes/__init__.py,67,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/gis/geos/prototypes/__init__.py#L67,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"64:     geos_touches,
+65:     geos_within,
+66: )
+67: from django.contrib.gis.geos.prototypes.topology import *  # NOQA"
+django,contrib/messages/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/messages/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.contrib.messages.api import *  # NOQA
+2: from django.contrib.messages.constants import *  # NOQA
+3: from django.contrib.messages.storage.base import Message  # NOQA"
+django,contrib/messages/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/messages/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.contrib.messages.api import *  # NOQA
+2: from django.contrib.messages.constants import *  # NOQA
+3: from django.contrib.messages.storage.base import Message  # NOQA"
+django,contrib/postgres/aggregates/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/aggregates/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .general import *  # NOQA
+2: from .statistics import *  # NOQA"
+django,contrib/postgres/aggregates/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/aggregates/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .general import *  # NOQA
+2: from .statistics import *  # NOQA"
+django,contrib/postgres/fields/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/fields/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .citext import *  # NOQA
+3: from .hstore import *  # NOQA
+4: from .jsonb import *  # NOQA
+5: from .ranges import *  # NOQA"
+django,contrib/postgres/fields/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/fields/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .citext import *  # NOQA
+3: from .hstore import *  # NOQA
+4: from .jsonb import *  # NOQA
+5: from .ranges import *  # NOQA"
+django,contrib/postgres/fields/__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/fields/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .citext import *  # NOQA
+3: from .hstore import *  # NOQA
+4: from .jsonb import *  # NOQA
+5: from .ranges import *  # NOQA"
+django,contrib/postgres/fields/__init__.py,4,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/fields/__init__.py#L4,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .citext import *  # NOQA
+3: from .hstore import *  # NOQA
+4: from .jsonb import *  # NOQA
+5: from .ranges import *  # NOQA"
+django,contrib/postgres/fields/__init__.py,5,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/fields/__init__.py#L5,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"2: from .citext import *  # NOQA
+3: from .hstore import *  # NOQA
+4: from .jsonb import *  # NOQA
+5: from .ranges import *  # NOQA"
+django,contrib/postgres/forms/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/forms/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .hstore import *  # NOQA
+3: from .ranges import *  # NOQA"
+django,contrib/postgres/forms/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/forms/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .hstore import *  # NOQA
+3: from .ranges import *  # NOQA"
+django,contrib/postgres/forms/__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/contrib/postgres/forms/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .array import *  # NOQA
+2: from .hstore import *  # NOQA
+3: from .ranges import *  # NOQA"
+django,db/migrations/__init__.py,2,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/migrations/__init__.py#L2,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from .migration import Migration, swappable_dependency  # NOQA
+2: from .operations import *  # NOQA"
+django,db/migrations/questioner.py,168,eval_call,R003,warning,直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/migrations/questioner.py#L168,True,intentional_local_code_execution,False,迁移命令交互提示用户输入 Python 默认值表达式；执行代码是该本地功能的明确行为，不能据此认定漏洞。,"165:                 sys.exit(1)
+166:             else:
+167:                 try:
+168:                     return eval(code, {}, {""datetime"": datetime, ""timezone"": timezone})
+169:                 except Exception as e:
+170:                     self.prompt_output.write(f""{e.__class__.__name__}: {e}"")
+171: 
+172:     def ask_not_null_addition(self, field_name, model_name):"
+django,db/models/__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.core.exceptions import ObjectDoesNotExist
+2: from django.db.models import signals
+3: from django.db.models.aggregates import *  # NOQA
+4: from django.db.models.aggregates import __all__ as aggregates_all
+5: from django.db.models.constraints import *  # NOQA
+6: from django.db.models.constraints import __all__ as constraints_all
+7: from django.db.models.deletion import ("
+django,db/models/__init__.py,5,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/__init__.py#L5,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"2: from django.db.models import signals
+3: from django.db.models.aggregates import *  # NOQA
+4: from django.db.models.aggregates import __all__ as aggregates_all
+5: from django.db.models.constraints import *  # NOQA
+6: from django.db.models.constraints import __all__ as constraints_all
+7: from django.db.models.deletion import (
+8:     CASCADE,
+9:     DO_NOTHING,"
+django,db/models/__init__.py,18,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/__init__.py#L18,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"15:     ProtectedError,
+16:     RestrictedError,
+17: )
+18: from django.db.models.enums import *  # NOQA
+19: from django.db.models.enums import __all__ as enums_all
+20: from django.db.models.expressions import (
+21:     Case,
+22:     Exists,"
+django,db/models/__init__.py,39,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/__init__.py#L39,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"36:     WindowFrame,
+37:     WindowFrameExclusion,
+38: )
+39: from django.db.models.fields import *  # NOQA
+40: from django.db.models.fields import __all__ as fields_all
+41: from django.db.models.fields.composite import CompositePrimaryKey
+42: from django.db.models.fields.files import FileField, ImageField
+43: from django.db.models.fields.generated import GeneratedField"
+django,db/models/__init__.py,46,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/__init__.py#L46,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"43: from django.db.models.fields.generated import GeneratedField
+44: from django.db.models.fields.json import JSONField
+45: from django.db.models.fields.proxy import OrderWrt
+46: from django.db.models.indexes import *  # NOQA
+47: from django.db.models.indexes import __all__ as indexes_all
+48: from django.db.models.lookups import Lookup, Transform
+49: from django.db.models.manager import Manager
+50: from django.db.models.query import ("
+django,db/models/sql/__init__.py,1,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/sql/__init__.py#L1,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.db.models.sql.query import *  # NOQA
+2: from django.db.models.sql.query import Query
+3: from django.db.models.sql.subqueries import *  # NOQA
+4: from django.db.models.sql.where import AND, OR, XOR
+5: "
+django,db/models/sql/__init__.py,3,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/db/models/sql/__init__.py#L3,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"1: from django.db.models.sql.query import *  # NOQA
+2: from django.db.models.sql.query import Query
+3: from django.db.models.sql.subqueries import *  # NOQA
+4: from django.db.models.sql.where import AND, OR, XOR
+5: 
+6: __all__ = [""Query"", ""AND"", ""OR"", ""XOR""]"
+django,forms/__init__.py,6,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L6,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"3: """"""
+4: 
+5: from django.core.exceptions import ValidationError  # NOQA
+6: from django.forms.boundfield import *  # NOQA
+7: from django.forms.fields import *  # NOQA
+8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA"
+django,forms/__init__.py,7,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L7,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"4: 
+5: from django.core.exceptions import ValidationError  # NOQA
+6: from django.forms.boundfield import *  # NOQA
+7: from django.forms.fields import *  # NOQA
+8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA
+11: from django.forms.widgets import *  # NOQA"
+django,forms/__init__.py,8,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L8,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"5: from django.core.exceptions import ValidationError  # NOQA
+6: from django.forms.boundfield import *  # NOQA
+7: from django.forms.fields import *  # NOQA
+8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA
+11: from django.forms.widgets import *  # NOQA"
+django,forms/__init__.py,9,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L9,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"6: from django.forms.boundfield import *  # NOQA
+7: from django.forms.fields import *  # NOQA
+8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA
+11: from django.forms.widgets import *  # NOQA"
+django,forms/__init__.py,10,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L10,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"7: from django.forms.fields import *  # NOQA
+8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA
+11: from django.forms.widgets import *  # NOQA"
+django,forms/__init__.py,11,wildcard_import,R004,warning,通配导入会模糊名称来源，建议显式导入所需名称,https://github.com/django/django/blob/3cff3209e35a560f94801d428cf7f2a3ecb2a051/django/forms/__init__.py#L11,True,intentional_package_reexport,False,包入口集中导出公共 API；语法命中正确，未证明是缺陷。命中行带 NOQA；现有工具不识别该抑制标记。,"8: from django.forms.forms import *  # NOQA
+9: from django.forms.formsets import *  # NOQA
+10: from django.forms.models import *  # NOQA
+11: from django.forms.widgets import *  # NOQA"

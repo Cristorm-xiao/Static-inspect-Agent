@@ -1,0 +1,119 @@
+{
+  "formal_logical_calls": 10,
+  "successful_calls": 10,
+  "http_attempts": 10,
+  "http_statuses": {
+    "200": 10
+  },
+  "strict_valid_after_fence_removal": 10,
+  "fenced_responses": 5,
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "prompt_tokens": 19415,
+    "completion_tokens": 4177,
+    "total_tokens": 23592,
+    "prompt_cache_hit_tokens": 3328,
+    "prompt_cache_miss_tokens": 16087
+  },
+  "primary": [
+    {
+      "project": "click",
+      "functions": 5,
+      "suggestions": 17,
+      "seconds": 3.1569795999967027,
+      "prompt_tokens": 3633,
+      "completion_tokens": 684
+    },
+    {
+      "project": "django",
+      "functions": 5,
+      "suggestions": 13,
+      "seconds": 3.2370457999932114,
+      "prompt_tokens": 3161,
+      "completion_tokens": 624
+    },
+    {
+      "project": "flask",
+      "functions": 5,
+      "suggestions": 10,
+      "seconds": 2.647743099980289,
+      "prompt_tokens": 2360,
+      "completion_tokens": 418
+    },
+    {
+      "project": "httpx",
+      "functions": 5,
+      "suggestions": 13,
+      "seconds": 2.8075095000094734,
+      "prompt_tokens": 1936,
+      "completion_tokens": 537
+    },
+    {
+      "project": "requests",
+      "functions": 5,
+      "suggestions": 10,
+      "seconds": 2.6047498999978416,
+      "prompt_tokens": 1890,
+      "completion_tokens": 437
+    }
+  ],
+  "review_categories": {
+    "C": 14,
+    "A": 13,
+    "B": 36
+  },
+  "primary_latency_median_seconds": 2.8075095000094734,
+  "repeat_requests": {
+    "counts": [
+      10,
+      5,
+      11
+    ],
+    "flagged_function_counts": [
+      5,
+      5,
+      5
+    ],
+    "exact_pairwise_jaccard": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "note": "Exact text agreement is not semantic agreement; three observations only."
+  },
+  "cli": {
+    "phase": "cli-smoke",
+    "kind": "cli",
+    "seconds": 2.448132399993483,
+    "samples": 1,
+    "findings": [
+      {
+        "file": "cookies.py",
+        "line": 455,
+        "smell": "魔法数字/魔法值",
+        "reason": "硬编码的 version: 0、rfc2109: False 等默认值散落在字典中，缺乏命名常量或配置说明。"
+      },
+      {
+        "file": "cookies.py",
+        "line": 455,
+        "smell": "重复逻辑",
+        "reason": "port_specified、domain_specified、path_specified 三处都是 bool(...) 的相同模式，可提取辅助函数。"
+      }
+    ],
+    "logical_calls": 1,
+    "successful_calls": 1,
+    "exit_code": 0,
+    "files_scanned": 1,
+    "rule_findings": [],
+    "process_startup_included": false
+  },
+  "limitations": [
+    "Only 25/1144 real candidate functions sampled, five per project; not population-weighted.",
+    "63 suggestions reviewed by Codex, no exhaustive defect truth, no accuracy/recall estimate.",
+    "Controls: 4/4 intended positive smells observed and 4/4 negative controls received suggestions; tiny constructed set.",
+    "Sequential project groups; does not measure whole-project concurrency, rate limiting or production reliability.",
+    "Connectivity probe 7 input + 1 output tokens excluded from formal metrics."
+  ]
+}

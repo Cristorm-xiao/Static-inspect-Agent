@@ -1,0 +1,5306 @@
+{
+  "files": 883,
+  "physical_lines": 158083,
+  "bytes": 5812209,
+  "entries": [
+    {
+      "path": "__init__.py",
+      "bytes": 823,
+      "physical_lines": 24,
+      "sha256": "43444f3660b0498467af74bcbe35700fe9001068495a4673ae1891d09af66f8e"
+    },
+    {
+      "path": "__main__.py",
+      "bytes": 222,
+      "physical_lines": 10,
+      "sha256": "15b2e8fb5dac2673a64dbe2e27ed21e78e060c4a6ec45c371950153086747bff"
+    },
+    {
+      "path": "apps/__init__.py",
+      "bytes": 94,
+      "physical_lines": 4,
+      "sha256": "1e3de8dedc98fa513d8d0ad869d346b9a75d58527372173283e7ff1ae0377781"
+    },
+    {
+      "path": "apps/config.py",
+      "bytes": 11756,
+      "physical_lines": 274,
+      "sha256": "f1ded1b94edd1aa3cc43a723e8aa2c32f0f39f8e5f51d3fdfc0ad7ce6d2c8b4c"
+    },
+    {
+      "path": "apps/registry.py",
+      "bytes": 18130,
+      "physical_lines": 437,
+      "sha256": "cc9d6a2006c802be96d8c70646d117dff949d2bc52f0e61cd3a92e1fcb804229"
+    },
+    {
+      "path": "conf/__init__.py",
+      "bytes": 10081,
+      "physical_lines": 272,
+      "sha256": "31ed6682a374f601f68cdb296f6f5ca1d7ff29dc1b02d7c72a9285b99edfc602"
+    },
+    {
+      "path": "conf/global_settings.py",
+      "bytes": 23695,
+      "physical_lines": 669,
+      "sha256": "e6ec56327b4303c9571fabe513bd42ca796bcb9755d3efb73c23430315445a2d"
+    },
+    {
+      "path": "conf/locale/__init__.py",
+      "bytes": 14493,
+      "physical_lines": 629,
+      "sha256": "6733813f75c4b1489892a2821a41780211e7400491c49edcd7c88a092fee20c6"
+    },
+    {
+      "path": "conf/locale/ar/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ar/formats.py",
+      "bytes": 717,
+      "physical_lines": 21,
+      "sha256": "7b4fcdc91ab2a4ef33f04adb05d38fac7200478f2ce03abbcdba8e1930375139"
+    },
+    {
+      "path": "conf/locale/ar_DZ/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ar_DZ/formats.py",
+      "bytes": 930,
+      "physical_lines": 29,
+      "sha256": "646e042bad4f7ca06da6daa3fb64db9f8df3cdba7b18fdbb1681ef9e609cf337"
+    },
+    {
+      "path": "conf/locale/az/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/az/formats.py",
+      "bytes": 1117,
+      "physical_lines": 30,
+      "sha256": "754432bfd066ea2a0146997b2c33bf74a670db0e6910ec09f20e23fbb1f0332a"
+    },
+    {
+      "path": "conf/locale/bg/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/bg/formats.py",
+      "bytes": 726,
+      "physical_lines": 21,
+      "sha256": "9fb4c6e5d6674a0b116515c87908e2f25101224f3e516004508cb03969294ab0"
+    },
+    {
+      "path": "conf/locale/bn/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/bn/formats.py",
+      "bytes": 996,
+      "physical_lines": 32,
+      "sha256": "8889f766f536de42ea25e854474209199c4897b897c63a8a81bf4021b9e0c1b3"
+    },
+    {
+      "path": "conf/locale/bs/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/bs/formats.py",
+      "bytes": 726,
+      "physical_lines": 21,
+      "sha256": "7d9cc3c4b0d9f221ac1838ed66e94620825f69620922c2457dba38a14abc1546"
+    },
+    {
+      "path": "conf/locale/ca/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ca/formats.py",
+      "bytes": 970,
+      "physical_lines": 30,
+      "sha256": "a9b951745db09309d78b2e9c79e797263e67e913942fafdb8cf354c06166c960"
+    },
+    {
+      "path": "conf/locale/ckb/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ckb/formats.py",
+      "bytes": 749,
+      "physical_lines": 21,
+      "sha256": "4229269cde1e762489cdfa626a19fcbe1f2e3b608f4117a1210b26fb56d68237"
+    },
+    {
+      "path": "conf/locale/cs/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/cs/formats.py",
+      "bytes": 1582,
+      "physical_lines": 43,
+      "sha256": "d5c2a7a4224add4203dfbfced9c4e9c611835da8032727d09c737f1d6f6d2884"
+    },
+    {
+      "path": "conf/locale/cy/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/cy/formats.py",
+      "bytes": 1388,
+      "physical_lines": 33,
+      "sha256": "a26427ce22acd678850d40532171df7fa625fbc9c6dc8aea4c8c4cf44dfd874b"
+    },
+    {
+      "path": "conf/locale/da/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/da/formats.py",
+      "bytes": 902,
+      "physical_lines": 26,
+      "sha256": "0e997870bf9e85451732b93d5654f2a8bb46444b2a4be262a4488190a1421cfa"
+    },
+    {
+      "path": "conf/locale/de/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/de/formats.py",
+      "bytes": 1025,
+      "physical_lines": 29,
+      "sha256": "50e4a9ff104927a17b61c0a45be4bc821f9fe9444e42ae28a511692056443a7f"
+    },
+    {
+      "path": "conf/locale/de_CH/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/de_CH/formats.py",
+      "bytes": 1412,
+      "physical_lines": 35,
+      "sha256": "b0d46d3687f9f6b6475c9900267c8fc26c82a0a1ef12c975b5e5de345ef770ee"
+    },
+    {
+      "path": "conf/locale/el/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/el/formats.py",
+      "bytes": 1275,
+      "physical_lines": 34,
+      "sha256": "c9b3a38d0d1afc695f88c3262e2547b82ed2553e6e2151be46c6c086c433de77"
+    },
+    {
+      "path": "conf/locale/en/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/en/formats.py",
+      "bytes": 2503,
+      "physical_lines": 65,
+      "sha256": "49fda7496da8861acf7026ed3c58fd16060bb032b62f9c80feb7987db2bcb536"
+    },
+    {
+      "path": "conf/locale/en_AU/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/en_AU/formats.py",
+      "bytes": 1691,
+      "physical_lines": 41,
+      "sha256": "eeb9b48f29f34e25c8687b17c2bdd35a4976edc40479a4a918490d5006ce30cc"
+    },
+    {
+      "path": "conf/locale/en_CA/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/en_CA/formats.py",
+      "bytes": 1197,
+      "physical_lines": 31,
+      "sha256": "ac6e7c3eaa61c720a62be43228b561bac670c6494e4abcebb804352bbe9fc283"
+    },
+    {
+      "path": "conf/locale/en_GB/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/en_GB/formats.py",
+      "bytes": 1691,
+      "physical_lines": 41,
+      "sha256": "d267cd5721cc51be4829b067e78dcf2b991625fec231f9142b783107d6f60b65"
+    },
+    {
+      "path": "conf/locale/en_IE/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/en_IE/formats.py",
+      "bytes": 1521,
+      "physical_lines": 37,
+      "sha256": "2cf0a589ae6923b26810ce7ead2ec75c0016ba04dea14f7f1ed5523dfaf15902"
+    },
+    {
+      "path": "conf/locale/eo/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/eo/formats.py",
+      "bytes": 1759,
+      "physical_lines": 44,
+      "sha256": "28f5ca79595b9d9b59696278f0cbb6e15d03f03718e24975ef93c1e22294953a"
+    },
+    {
+      "path": "conf/locale/es/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es/formats.py",
+      "bytes": 1008,
+      "physical_lines": 30,
+      "sha256": "b1ec6f879acf9fae7a600dfa0ec1270ac779e4a85ce505563738880335bedc37"
+    },
+    {
+      "path": "conf/locale/es_AR/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es_AR/formats.py",
+      "bytes": 965,
+      "physical_lines": 30,
+      "sha256": "051ba103345363d8dfee22d14d0445fd7a8ab181bbddd5282ad7bd2561d57894"
+    },
+    {
+      "path": "conf/locale/es_CO/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es_CO/formats.py",
+      "bytes": 717,
+      "physical_lines": 26,
+      "sha256": "b1ef53a87c536093b4c68141fa1748f7fc80dae7dec1888ff432e25577d2125c"
+    },
+    {
+      "path": "conf/locale/es_MX/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es_MX/formats.py",
+      "bytes": 794,
+      "physical_lines": 26,
+      "sha256": "102cf6830ad82144b559e79b5da4943e9e11993a6d4f607c67ee3e68a5af6730"
+    },
+    {
+      "path": "conf/locale/es_NI/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es_NI/formats.py",
+      "bytes": 737,
+      "physical_lines": 26,
+      "sha256": "3ff89f8c4be2a4d00f8447020ba197d6e0cd75c56d8fd49a2232c4346d6d0471"
+    },
+    {
+      "path": "conf/locale/es_PR/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/es_PR/formats.py",
+      "bytes": 702,
+      "physical_lines": 27,
+      "sha256": "422d9fbe6ba58d1a84eebaffd5d38efce107d1e922b045e93b6072e8a2a145b9"
+    },
+    {
+      "path": "conf/locale/et/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/et/formats.py",
+      "bytes": 728,
+      "physical_lines": 21,
+      "sha256": "0748cf17b2bc0f2b4bbe8d02549d7dcd1093c5fe50b47128653d9309f437f3c8"
+    },
+    {
+      "path": "conf/locale/eu/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/eu/formats.py",
+      "bytes": 770,
+      "physical_lines": 21,
+      "sha256": "1fab3fa8b70a7ceced1db3771a6d2bdc49395932c86c621ab13fb044ac6de53f"
+    },
+    {
+      "path": "conf/locale/fa/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fa/formats.py",
+      "bytes": 743,
+      "physical_lines": 21,
+      "sha256": "647ad4f2e97b14c85fee8c9cd6f384519bb217a950889226609e9a2055a72dbd"
+    },
+    {
+      "path": "conf/locale/fi/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fi/formats.py",
+      "bytes": 1249,
+      "physical_lines": 36,
+      "sha256": "e22227414d6087d81b56c442ef83efeb8f3b342c09774759208b117c20b89ca3"
+    },
+    {
+      "path": "conf/locale/fr/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fr/formats.py",
+      "bytes": 965,
+      "physical_lines": 27,
+      "sha256": "8637e7afc09da6f4238c1a3e40eb6c7bd84ff3e14917978b3eac12c46eb27614"
+    },
+    {
+      "path": "conf/locale/fr_BE/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fr_BE/formats.py",
+      "bytes": 1186,
+      "physical_lines": 32,
+      "sha256": "b8a9473bfbfd2d6e7bb009acc4d9272f32b715011a1050b82418f4818cf2dfac"
+    },
+    {
+      "path": "conf/locale/fr_CA/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fr_CA/formats.py",
+      "bytes": 1201,
+      "physical_lines": 30,
+      "sha256": "de03a5cdb2c66530f7862b54c171211444cc256690beb7636952d1a98a24c046"
+    },
+    {
+      "path": "conf/locale/fr_CH/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fr_CH/formats.py",
+      "bytes": 1186,
+      "physical_lines": 32,
+      "sha256": "b8a9473bfbfd2d6e7bb009acc4d9272f32b715011a1050b82418f4818cf2dfac"
+    },
+    {
+      "path": "conf/locale/fy/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/fy/formats.py",
+      "bytes": 679,
+      "physical_lines": 21,
+      "sha256": "c5830ab4d24203003eed056717ef002a12ce2c8c5726d3a151a546e868fb468b"
+    },
+    {
+      "path": "conf/locale/ga/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ga/formats.py",
+      "bytes": 703,
+      "physical_lines": 21,
+      "sha256": "fd2a69ad2f7c5cc156c55f28e10a882dc32a22c2811fffe270f170b254371b00"
+    },
+    {
+      "path": "conf/locale/gd/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/gd/formats.py",
+      "bytes": 736,
+      "physical_lines": 21,
+      "sha256": "8b1c2cb0475457f548afbdd420dacece6bb964f08b2ecb4a0addf74a3d8b8830"
+    },
+    {
+      "path": "conf/locale/gl/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/gl/formats.py",
+      "bytes": 778,
+      "physical_lines": 21,
+      "sha256": "2d72df9c4bebba7808a836f198a7ae855cd72a9a0a038f176f99bce5290236e0"
+    },
+    {
+      "path": "conf/locale/he/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/he/formats.py",
+      "bytes": 733,
+      "physical_lines": 21,
+      "sha256": "8e4109be26a7388cd523dc400e91deb67ff2677338ad56da707dc11876307a2a"
+    },
+    {
+      "path": "conf/locale/hi/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/hi/formats.py",
+      "bytes": 705,
+      "physical_lines": 21,
+      "sha256": "827185ebb895812862ac6e22c37527ffcfafb4caf1b795be7905fcff057d4f73"
+    },
+    {
+      "path": "conf/locale/hr/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/hr/formats.py",
+      "bytes": 1767,
+      "physical_lines": 44,
+      "sha256": "c222bc10ae886a73b189a3997901a370af1806f9a61ddc2f5d812b10d1b0755f"
+    },
+    {
+      "path": "conf/locale/hu/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/hu/formats.py",
+      "bytes": 1031,
+      "physical_lines": 30,
+      "sha256": "e65ad2df947affa2a34e84b95cc1b0ed4b88e8970d8f635960be69682248c81c"
+    },
+    {
+      "path": "conf/locale/id/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/id/formats.py",
+      "bytes": 1693,
+      "physical_lines": 49,
+      "sha256": "8f1e680519d4758870b3a963fec7f0575d8bc44a7f3eafd02a3c2ee17d7018f8"
+    },
+    {
+      "path": "conf/locale/ig/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ig/formats.py",
+      "bytes": 1151,
+      "physical_lines": 32,
+      "sha256": "913d5c47a2253b7cc6e71236e2e10ece3308b74fad7d391fb3348d79b162252c"
+    },
+    {
+      "path": "conf/locale/is/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/is/formats.py",
+      "bytes": 709,
+      "physical_lines": 21,
+      "sha256": "b327f41c12884d13608f146eadcdf30855b1fddba6408e94d72c8fb22e0a7d5a"
+    },
+    {
+      "path": "conf/locale/it/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/it/formats.py",
+      "bytes": 1817,
+      "physical_lines": 43,
+      "sha256": "3cb28bd6f9b0752f4a44fd3bd45827312ec83ee57f3bfd1d219f9e666e245a15"
+    },
+    {
+      "path": "conf/locale/ja/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ja/formats.py",
+      "bytes": 750,
+      "physical_lines": 21,
+      "sha256": "73c81f49379cbf48a1c4d6b0ea9b32a7970cb5f27e5aac12b18d3a1af451ca82"
+    },
+    {
+      "path": "conf/locale/ka/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ka/formats.py",
+      "bytes": 1909,
+      "physical_lines": 48,
+      "sha256": "22165bcfeb837bf1dd43e1c74b1df3068c5c8d324a4783c876153a2260cb1b35"
+    },
+    {
+      "path": "conf/locale/km/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/km/formats.py",
+      "bytes": 771,
+      "physical_lines": 21,
+      "sha256": "31a48d65b41d96027573a34947bb890fcc203adbc32344cc513b3575d8901aea"
+    },
+    {
+      "path": "conf/locale/kn/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/kn/formats.py",
+      "bytes": 701,
+      "physical_lines": 21,
+      "sha256": "227f7be3ad5ad8ed5c48e56ed9fb70577440ec6a2cecae464ab1d362fe4100d5"
+    },
+    {
+      "path": "conf/locale/ko/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ko/formats.py",
+      "bytes": 2114,
+      "physical_lines": 54,
+      "sha256": "8071a79d8c87e2b8a273ba5a84418e53e66963c0d0d543e5865fd94a828c8b8d"
+    },
+    {
+      "path": "conf/locale/ky/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ky/formats.py",
+      "bytes": 1210,
+      "physical_lines": 32,
+      "sha256": "56d148b5106d7ea9eefcefe52c74867c667eeac556a49293548beed2ae5ac93e"
+    },
+    {
+      "path": "conf/locale/lt/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/lt/formats.py",
+      "bytes": 1682,
+      "physical_lines": 45,
+      "sha256": "961a8d75cee06746f260f8f2afb635da7b3d97c996b6f8e35afa090275e2ea84"
+    },
+    {
+      "path": "conf/locale/lv/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/lv/formats.py",
+      "bytes": 1759,
+      "physical_lines": 46,
+      "sha256": "7340e11eeb3202f78e46ae48ad3a6fff111c702568d3a31e22d172c462def72d"
+    },
+    {
+      "path": "conf/locale/mk/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/mk/formats.py",
+      "bytes": 1491,
+      "physical_lines": 40,
+      "sha256": "ecf57272468b47a968ec0d9cf61717618e7b89e5e434f2987c151f71debe6581"
+    },
+    {
+      "path": "conf/locale/ml/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ml/formats.py",
+      "bytes": 1640,
+      "physical_lines": 43,
+      "sha256": "d561826e686b46e616a1eb1d96b91398446e7b1cec5bb75e7e8cf825e19bc663"
+    },
+    {
+      "path": "conf/locale/mn/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/mn/formats.py",
+      "bytes": 697,
+      "physical_lines": 21,
+      "sha256": "d36c626f22b4d403eb1503ff7f29e3e3cc3f286a0854c0f838915db5690472ea"
+    },
+    {
+      "path": "conf/locale/ms/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ms/formats.py",
+      "bytes": 1560,
+      "physical_lines": 38,
+      "sha256": "0b4b55046dba9b0ae89c03471ee1b5c34cc55d996ddace31cb6efe04f5227561"
+    },
+    {
+      "path": "conf/locale/nb/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/nb/formats.py",
+      "bytes": 1593,
+      "physical_lines": 41,
+      "sha256": "d779e56f53e53159921ded012007dd87273345cc2fd5db44b614bdae068437a7"
+    },
+    {
+      "path": "conf/locale/nl/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/nl/formats.py",
+      "bytes": 4019,
+      "physical_lines": 92,
+      "sha256": "0344f9cfcfcb03850b56f88dc297c6837d0c75c3b85ec8f7101b7c86a45d3533"
+    },
+    {
+      "path": "conf/locale/nn/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/nn/formats.py",
+      "bytes": 1593,
+      "physical_lines": 41,
+      "sha256": "d779e56f53e53159921ded012007dd87273345cc2fd5db44b614bdae068437a7"
+    },
+    {
+      "path": "conf/locale/pl/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/pl/formats.py",
+      "bytes": 1062,
+      "physical_lines": 30,
+      "sha256": "aa6a6e9d693db01aec15211c472b968cc07063c0b115ba90c4f36dbb6eafec5a"
+    },
+    {
+      "path": "conf/locale/pt/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/pt/formats.py",
+      "bytes": 1559,
+      "physical_lines": 39,
+      "sha256": "4f9038cbb4bbc97bbe48cbc6c8fa89642d82c0a36b4f4dc5283aa2b679672137"
+    },
+    {
+      "path": "conf/locale/pt_BR/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/pt_BR/formats.py",
+      "bytes": 1319,
+      "physical_lines": 34,
+      "sha256": "7eabd5d4e2efc4a213b1aed592a80179eb9ada3368220aa24e668d665c1b351f"
+    },
+    {
+      "path": "conf/locale/ro/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ro/formats.py",
+      "bytes": 963,
+      "physical_lines": 35,
+      "sha256": "955e78191d4891c33624cf38050dd8177f3cda7ff07b766a4d465b457879190d"
+    },
+    {
+      "path": "conf/locale/ru/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ru/formats.py",
+      "bytes": 1128,
+      "physical_lines": 30,
+      "sha256": "ce2f22e68914b31452a1ad36502440e31e1a562989a325ff0c1ec5dfa80efb44"
+    },
+    {
+      "path": "conf/locale/sk/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sk/formats.py",
+      "bytes": 1081,
+      "physical_lines": 30,
+      "sha256": "518f067c394cdf7b84910ecba0db1aa9c3062763e1150cb8ec246c3f1a54d00e"
+    },
+    {
+      "path": "conf/locale/sl/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sl/formats.py",
+      "bytes": 1686,
+      "physical_lines": 44,
+      "sha256": "04c2296be81a9244638152164fcfc21c2805cbee03d606d965da5da5b570adfb"
+    },
+    {
+      "path": "conf/locale/sq/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sq/formats.py",
+      "bytes": 709,
+      "physical_lines": 21,
+      "sha256": "4042c7e77e2a10c447eee5bd3d80db8fefecb1d217becc3c58b9274450421652"
+    },
+    {
+      "path": "conf/locale/sr/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sr/formats.py",
+      "bytes": 1773,
+      "physical_lines": 44,
+      "sha256": "f55622fd9f758c2fa83da650cc3154fa66aa38af63523f80f1baacaeb713c88c"
+    },
+    {
+      "path": "conf/locale/sr_Latn/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sr_Latn/formats.py",
+      "bytes": 1772,
+      "physical_lines": 44,
+      "sha256": "35476da1f16bd60d5a80b795eca7a35b3a8c2ac94b72b141fb4db0511bc22bcf"
+    },
+    {
+      "path": "conf/locale/sv/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/sv/formats.py",
+      "bytes": 1346,
+      "physical_lines": 35,
+      "sha256": "9dd0b9984f1d095db3eb4d547d5b7bc9f2f3a3692a93417573bc77a1f439e85e"
+    },
+    {
+      "path": "conf/locale/ta/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ta/formats.py",
+      "bytes": 703,
+      "physical_lines": 21,
+      "sha256": "0bcb5d4a90d0a64242b5a5f03804e5bb3345b5aef83fc9e8c6621186b00ed867"
+    },
+    {
+      "path": "conf/locale/te/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/te/formats.py",
+      "bytes": 701,
+      "physical_lines": 21,
+      "sha256": "7cd767ed787d47adcadb341c63a36f021066432e7726a43cc74aeaf32a0dc217"
+    },
+    {
+      "path": "conf/locale/tg/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/tg/formats.py",
+      "bytes": 1192,
+      "physical_lines": 32,
+      "sha256": "ea8f10e6b596d7492fe152237abd5a026059fc3b3f0b3b24e028c9b394bd891c"
+    },
+    {
+      "path": "conf/locale/th/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/th/formats.py",
+      "bytes": 1105,
+      "physical_lines": 33,
+      "sha256": "8fbc25518f83bf6639ca9ddd40af99733f1c9329d12f901c828415654e828fa6"
+    },
+    {
+      "path": "conf/locale/tk/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/tk/formats.py",
+      "bytes": 1192,
+      "physical_lines": 32,
+      "sha256": "ea8f10e6b596d7492fe152237abd5a026059fc3b3f0b3b24e028c9b394bd891c"
+    },
+    {
+      "path": "conf/locale/tr/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/tr/formats.py",
+      "bytes": 1049,
+      "physical_lines": 30,
+      "sha256": "ae9c185d22e01483afdadc04772fa2e0747e8d8702df1859b6e68a6a9c7a8cfb"
+    },
+    {
+      "path": "conf/locale/ug/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/ug/formats.py",
+      "bytes": 468,
+      "physical_lines": 14,
+      "sha256": "db89c89d621650d47bf90081ceb09a032b5b12dd44ab4378c9d4789809522c68"
+    },
+    {
+      "path": "conf/locale/uk/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/uk/formats.py",
+      "bytes": 1276,
+      "physical_lines": 35,
+      "sha256": "a5cfb2b8a0edbb156c2799a9fff6241a575b65551b3ef8a85c267da386b85092"
+    },
+    {
+      "path": "conf/locale/uz/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/uz/formats.py",
+      "bytes": 1206,
+      "physical_lines": 30,
+      "sha256": "bca0f394f727fd19935a203e6fba54b75871230a40089c2113dd3b35aca63060"
+    },
+    {
+      "path": "conf/locale/vi/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/vi/formats.py",
+      "bytes": 783,
+      "physical_lines": 21,
+      "sha256": "3d9f6408cb304d00e12c29470ad6848ac5a34e8139101a161d19c0d0cf2a9490"
+    },
+    {
+      "path": "conf/locale/zh_Hans/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/zh_Hans/formats.py",
+      "bytes": 1640,
+      "physical_lines": 42,
+      "sha256": "ef4702cf0ca1ffa2148a966957d335774cf55fd330eced175b2c502094699ead"
+    },
+    {
+      "path": "conf/locale/zh_Hant/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "conf/locale/zh_Hant/formats.py",
+      "bytes": 1640,
+      "physical_lines": 42,
+      "sha256": "ef4702cf0ca1ffa2148a966957d335774cf55fd330eced175b2c502094699ead"
+    },
+    {
+      "path": "conf/urls/__init__.py",
+      "bytes": 301,
+      "physical_lines": 9,
+      "sha256": "2c9b68749ad24309e59fdd91c96436e722ee20755259b938a8b9b0f3557ce931"
+    },
+    {
+      "path": "conf/urls/i18n.py",
+      "bytes": 1205,
+      "physical_lines": 39,
+      "sha256": "0c218f69908ca464ac65b3dd8398858089058f3e49c745f39f4c09610a5d8515"
+    },
+    {
+      "path": "conf/urls/static.py",
+      "bytes": 938,
+      "physical_lines": 30,
+      "sha256": "e1f9f554f71aa26fa3d2d8c5bb2cecc9a57510c4daf0d87d7ef813b3ddd55344"
+    },
+    {
+      "path": "contrib/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/admin/__init__.py",
+      "bytes": 1255,
+      "physical_lines": 52,
+      "sha256": "b53a63d9fb6570af7bf685f984ee546e0eb9b368c706fda9f7069369e3da88fd"
+    },
+    {
+      "path": "contrib/admin/actions.py",
+      "bytes": 3275,
+      "physical_lines": 94,
+      "sha256": "12b9a46098e4b8f0316f9c2c5277fcb61b6828e01d42cf16879c67221b8c9324"
+    },
+    {
+      "path": "contrib/admin/apps.py",
+      "bytes": 867,
+      "physical_lines": 27,
+      "sha256": "ed603cf0ed0e854c421fbcedfae3cde8290d2ad70ffa0cb8a3ad065a94a221f5"
+    },
+    {
+      "path": "contrib/admin/checks.py",
+      "bytes": 51833,
+      "physical_lines": 1359,
+      "sha256": "00e8fa68b59517b470126366fbfb09c66c9a0b9c8d6e1576aa4ac2e02171b073"
+    },
+    {
+      "path": "contrib/admin/decorators.py",
+      "bytes": 3592,
+      "physical_lines": 111,
+      "sha256": "1f0849038da9fbb796dd87ca8b617f182b1d8063d92af21b67934ef6d275f5bd"
+    },
+    {
+      "path": "contrib/admin/exceptions.py",
+      "bytes": 532,
+      "physical_lines": 25,
+      "sha256": "b0d6f19a9a91405bc77ff7a520adfa970fc4a8f44c7ed7cdc88c73783966d33a"
+    },
+    {
+      "path": "contrib/admin/filters.py",
+      "bytes": 28384,
+      "physical_lines": 716,
+      "sha256": "3d4ad16b61351b15d57bf139e0e02b0c96476d9a0d4237eac2eb520955796270"
+    },
+    {
+      "path": "contrib/admin/forms.py",
+      "bytes": 1054,
+      "physical_lines": 31,
+      "sha256": "193af1e6170f55a3a49f4fbe67ae8d12a788536083ac5858e873ddc9cbe33166"
+    },
+    {
+      "path": "contrib/admin/helpers.py",
+      "bytes": 19188,
+      "physical_lines": 568,
+      "sha256": "809dae45706c496adad3e97853a2fc72905a755eea024fe94acc86f1bf762b84"
+    },
+    {
+      "path": "contrib/admin/migrations/0001_initial.py",
+      "bytes": 2582,
+      "physical_lines": 75,
+      "sha256": "ecd4347b74c33cf8b731ec512d668d2c569bec5b1e72db47fcd8b66723cf335d"
+    },
+    {
+      "path": "contrib/admin/migrations/0002_logentry_remove_auto_add.py",
+      "bytes": 574,
+      "physical_lines": 21,
+      "sha256": "422221f454abe4e7ef02c6db8128f9d7c3885a5e464159c17936753524b02f36"
+    },
+    {
+      "path": "contrib/admin/migrations/0003_logentry_add_action_flag_choices.py",
+      "bytes": 557,
+      "physical_lines": 19,
+      "sha256": "02474daee538e859e7b2ae7b7c36b5603b105c22a2cb9638952fd744de5dad13"
+    },
+    {
+      "path": "contrib/admin/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/admin/models.py",
+      "bytes": 8748,
+      "physical_lines": 248,
+      "sha256": "e647ee45d5b87e15fa4ea67512c97f6e45211e036b6e190cedd2129d4742ce86"
+    },
+    {
+      "path": "contrib/admin/options.py",
+      "bytes": 104078,
+      "physical_lines": 2600,
+      "sha256": "cb6722ff537576b5a8903532a321cecf499f6bc578452eeccffc735708aa23e8"
+    },
+    {
+      "path": "contrib/admin/sites.py",
+      "bytes": 24075,
+      "physical_lines": 621,
+      "sha256": "6f7ef882739615187d4d06f1a7fe799b4ca5ddbe8f75cdae33d3f8aeaef9918a"
+    },
+    {
+      "path": "contrib/admin/templatetags/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/admin/templatetags/admin_list.py",
+      "bytes": 19703,
+      "physical_lines": 544,
+      "sha256": "0baf08057ab7e5462cdf44c83fe2556bddc0774993191a48c3d55eafcfe9a425"
+    },
+    {
+      "path": "contrib/admin/templatetags/admin_modify.py",
+      "bytes": 5128,
+      "physical_lines": 150,
+      "sha256": "ec99d09579962f63bc07bb0bf429330ca031e0ef5a8cfbec88122871c2228277"
+    },
+    {
+      "path": "contrib/admin/templatetags/admin_urls.py",
+      "bytes": 2108,
+      "physical_lines": 70,
+      "sha256": "ddc13714208f4204d1ecdcafe705ee0d28922ec4e01ba7cb028527a376e0e31e"
+    },
+    {
+      "path": "contrib/admin/templatetags/base.py",
+      "bytes": 1510,
+      "physical_lines": 45,
+      "sha256": "5dd9960cc8f581500137a2a7758905306356a13f8a44947363af788669344de8"
+    },
+    {
+      "path": "contrib/admin/templatetags/log.py",
+      "bytes": 2117,
+      "physical_lines": 67,
+      "sha256": "027e0241e001b55aef8b816d3f1808c1906364d378da1ae1e2f76f2f6d6706f6"
+    },
+    {
+      "path": "contrib/admin/tests.py",
+      "bytes": 8792,
+      "physical_lines": 233,
+      "sha256": "f5ace640a9b962ee3dca916c8dbdf3b415dff8ad2a84daea0611d28f0a831f96"
+    },
+    {
+      "path": "contrib/admin/utils.py",
+      "bytes": 22524,
+      "physical_lines": 616,
+      "sha256": "a257877cbd4f776314a3087c591ea6dbe8eb4ade9f8dfce4b3516beac255448a"
+    },
+    {
+      "path": "contrib/admin/views/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/admin/views/autocomplete.py",
+      "bytes": 4508,
+      "physical_lines": 123,
+      "sha256": "127988a0c1565b95698f1c1fead0f190df6a440ee95c5635f5c9006eb672847a"
+    },
+    {
+      "path": "contrib/admin/views/decorators.py",
+      "bytes": 658,
+      "physical_lines": 19,
+      "sha256": "85bb80197823e06ca6f14938c96ffe65e45cbcea1428254a2730dc530ec5a981"
+    },
+    {
+      "path": "contrib/admin/views/main.py",
+      "bytes": 26499,
+      "physical_lines": 631,
+      "sha256": "c5ca67955dd1c56c0919725a02a22946c6cafee0d41ab1a285b5c095d6580783"
+    },
+    {
+      "path": "contrib/admin/widgets.py",
+      "bytes": 20242,
+      "physical_lines": 605,
+      "sha256": "9db4081ea94c6d2ab3575ba2281429e32fb170572e29e8f71bade426faf2e398"
+    },
+    {
+      "path": "contrib/admindocs/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/admindocs/apps.py",
+      "bytes": 223,
+      "physical_lines": 7,
+      "sha256": "abd9bcc077ec68a16e58fe1a4688263d684555aa2eae278b5038df3bf7f89a46"
+    },
+    {
+      "path": "contrib/admindocs/middleware.py",
+      "bytes": 1362,
+      "physical_lines": 33,
+      "sha256": "82aed687f83b894ee0310c76fa2e3bc48755ea84fdb7954324c0cdd69c1417f3"
+    },
+    {
+      "path": "contrib/admindocs/urls.py",
+      "bytes": 1359,
+      "physical_lines": 50,
+      "sha256": "f01cbc702db6f2a423bde2b65a22e2d59c6b770fe583cc314907b10ed79837c1"
+    },
+    {
+      "path": "contrib/admindocs/utils.py",
+      "bytes": 8667,
+      "physical_lines": 268,
+      "sha256": "b0f70d18b8cc13b820feeb0d26d7ec88ef367fbcf790898d2c4ffae47aae0e91"
+    },
+    {
+      "path": "contrib/admindocs/views.py",
+      "bytes": 20095,
+      "physical_lines": 523,
+      "sha256": "d09f266933b46f220a7ab667c7af2f25195d469a2a28190e0bd34ff23668a671"
+    },
+    {
+      "path": "contrib/auth/__init__.py",
+      "bytes": 15345,
+      "physical_lines": 405,
+      "sha256": "a96590d9e385923bc87b637429030ec5cd47bc82f8d5fd5e5b9f517412beaa23"
+    },
+    {
+      "path": "contrib/auth/admin.py",
+      "bytes": 10634,
+      "physical_lines": 256,
+      "sha256": "35d397f4da19fb924159695508941b7593bf9210c7edf6f1b1b30bd0cc5a3de8"
+    },
+    {
+      "path": "contrib/auth/apps.py",
+      "bytes": 1315,
+      "physical_lines": 31,
+      "sha256": "38dff983f40b88295ebf24cd3f01225b9756f3fd8cbc99cc124e7cdeee8dc017"
+    },
+    {
+      "path": "contrib/auth/backends.py",
+      "bytes": 13309,
+      "physical_lines": 342,
+      "sha256": "c044bd9dd48f05e1fdbe7a1707a114ad958a04a1e99fa41f47eb52000e80bfd0"
+    },
+    {
+      "path": "contrib/auth/base_user.py",
+      "bytes": 5210,
+      "physical_lines": 167,
+      "sha256": "a01cffa4086408cde50b140e4844933223ad5978bbd974b6ac41dd81ad333ec1"
+    },
+    {
+      "path": "contrib/auth/checks.py",
+      "bytes": 10109,
+      "physical_lines": 262,
+      "sha256": "d8667cfaca77e34fb4bffa25e6a82fcfd7e67dfaedb3e0c22cd7a2011e8e82cc"
+    },
+    {
+      "path": "contrib/auth/context_processors.py",
+      "bytes": 1978,
+      "physical_lines": 67,
+      "sha256": "c20781f5c34185c7408db869696423c34c5dec48f5ed7e66f5f88a530227e6b5"
+    },
+    {
+      "path": "contrib/auth/decorators.py",
+      "bytes": 4895,
+      "physical_lines": 135,
+      "sha256": "dfa0b576e0893e37b02a60b63221dd4f04c7b45c1942bd833992493659b3ab6c"
+    },
+    {
+      "path": "contrib/auth/forms.py",
+      "bytes": 22112,
+      "physical_lines": 616,
+      "sha256": "bda9cce282e92729869e23d6a812d97805fc57bf61214834ea1a44ad6bd61387"
+    },
+    {
+      "path": "contrib/auth/handlers/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/auth/handlers/modwsgi.py",
+      "bytes": 1291,
+      "physical_lines": 43,
+      "sha256": "86851e6cf3d1f449acf285e460e6e035c907a9c6aae0cfd16d3419f02d5519e0"
+    },
+    {
+      "path": "contrib/auth/hashers.py",
+      "bytes": 24023,
+      "physical_lines": 688,
+      "sha256": "1bafdaccd5c0c67323ccd972cd6acb51c98c1695b4b5af7579abb4d4b5314ef8"
+    },
+    {
+      "path": "contrib/auth/management/__init__.py",
+      "bytes": 5565,
+      "physical_lines": 174,
+      "sha256": "39ac32a4e210ce8c1c5ccc6f056d7a53d1421f1f1150736d90a7b6bf33bbde06"
+    },
+    {
+      "path": "contrib/auth/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/auth/management/commands/changepassword.py",
+      "bytes": 2768,
+      "physical_lines": 82,
+      "sha256": "e77aa1bc3d096c82984216dea54e9d6fe411b472f56a89970a0b7ad22274b308"
+    },
+    {
+      "path": "contrib/auth/management/commands/createsuperuser.py",
+      "bytes": 13893,
+      "physical_lines": 317,
+      "sha256": "9a6c4ef2bad1308f6eadf550110193b4118fd587ac69a5c8a42c9f6ba56c2528"
+    },
+    {
+      "path": "contrib/auth/middleware.py",
+      "bytes": 12245,
+      "physical_lines": 291,
+      "sha256": "cd21ba26e725b469f9c78cd19cead5d4258f3e001464a7310eca1e5006bbe18c"
+    },
+    {
+      "path": "contrib/auth/migrations/0001_initial.py",
+      "bytes": 7485,
+      "physical_lines": 204,
+      "sha256": "66229b04fd5e7f50a42dcab17989b40cce900014512f2811f8a91ecd32f16b86"
+    },
+    {
+      "path": "contrib/auth/migrations/0002_alter_permission_name_max_length.py",
+      "bytes": 361,
+      "physical_lines": 15,
+      "sha256": "508c22f286762c44c469adcaaf093fc9cf5969632bb860e09d31616343a5a34f"
+    },
+    {
+      "path": "contrib/auth/migrations/0003_alter_user_email_max_length.py",
+      "bytes": 435,
+      "physical_lines": 17,
+      "sha256": "75d24c7f91c5efdb245ffa0751c4e116931563da9f3c4d2dc7eb77615ca6d124"
+    },
+    {
+      "path": "contrib/auth/migrations/0004_alter_user_username_opts.py",
+      "bytes": 907,
+      "physical_lines": 27,
+      "sha256": "880bd8b0a7139b311e63c46b02e57b7cf48a01d8ae8186345fd11146717cfe0a"
+    },
+    {
+      "path": "contrib/auth/migrations/0005_alter_user_last_login_null.py",
+      "bytes": 427,
+      "physical_lines": 17,
+      "sha256": "5a0b9f10469c18ad7a65bfe59b2ae983d691eb9e94af11ce03fb5b53e0b48cb5"
+    },
+    {
+      "path": "contrib/auth/migrations/0006_require_contenttypes_0002.py",
+      "bytes": 382,
+      "physical_lines": 13,
+      "sha256": "eb48430a03166950cf1cfec632e824eaa3c16754686ee160195a6032386ace2e"
+    },
+    {
+      "path": "contrib/auth/migrations/0007_alter_validators_add_error_messages.py",
+      "bytes": 828,
+      "physical_lines": 26,
+      "sha256": "2631a820973175871400cca55c054942d18c0190c22c2077b38636d7de3eff7c"
+    },
+    {
+      "path": "contrib/auth/migrations/0008_alter_user_username_max_length.py",
+      "bytes": 840,
+      "physical_lines": 26,
+      "sha256": "a7f0b2f4901ceae996ef7768f2cdf7fea02c303c6e5e991504c6d838184b99eb"
+    },
+    {
+      "path": "contrib/auth/migrations/0009_alter_user_last_name_max_length.py",
+      "bytes": 432,
+      "physical_lines": 17,
+      "sha256": "86b6db7c90ee16f81673f4f8b7e7f21960e067a071fa58d1e861a01622271e23"
+    },
+    {
+      "path": "contrib/auth/migrations/0010_alter_group_name_max_length.py",
+      "bytes": 393,
+      "physical_lines": 15,
+      "sha256": "c83806c88b0be1f156d538f69be8464105fc63f505626c39ff5ff528d2749a77"
+    },
+    {
+      "path": "contrib/auth/migrations/0011_update_proxy_permissions.py",
+      "bytes": 2936,
+      "physical_lines": 76,
+      "sha256": "f27c7963209097eaa77ca65b4998432428909ce0cd654b2bbd11f7bc62c76cb6"
+    },
+    {
+      "path": "contrib/auth/migrations/0012_alter_user_first_name_max_length.py",
+      "bytes": 428,
+      "physical_lines": 17,
+      "sha256": "9867c1a76ea12d73b8ea0edb7a5513be9bfe100aca09620aa876b4d01e40c033"
+    },
+    {
+      "path": "contrib/auth/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/auth/mixins.py",
+      "bytes": 4787,
+      "physical_lines": 135,
+      "sha256": "e84b1e3306e293629eaffea23fb8c22521e07d10aa3aa26b570b9d2600b0571f"
+    },
+    {
+      "path": "contrib/auth/models.py",
+      "bytes": 21965,
+      "physical_lines": 634,
+      "sha256": "f2a717c26f2773899bde9554df55aa4478c576d1825ba0748dbf2cd8922ab92c"
+    },
+    {
+      "path": "contrib/auth/password_validation.py",
+      "bytes": 9910,
+      "physical_lines": 279,
+      "sha256": "6e0d120df259b2d09f8699857f8ad511784f0c6efba4e192b018e13048bd3c01"
+    },
+    {
+      "path": "contrib/auth/signals.py",
+      "bytes": 123,
+      "physical_lines": 5,
+      "sha256": "e796b0ea1ea7e0fb8fdee2d74eaa3598975b35b2c98592dfdb27d68b4fda27c9"
+    },
+    {
+      "path": "contrib/auth/tokens.py",
+      "bytes": 4460,
+      "physical_lines": 132,
+      "sha256": "a1f1e275d1f88cb7084312dd093474b6c079d53c005ca32f22c45e435cffcef0"
+    },
+    {
+      "path": "contrib/auth/urls.py",
+      "bytes": 1221,
+      "physical_lines": 36,
+      "sha256": "076ed5913fd7426d4df9f6577ab6e536cb8ac75eab0a3f18b19afb00a9f39ad2"
+    },
+    {
+      "path": "contrib/auth/validators.py",
+      "bytes": 747,
+      "physical_lines": 25,
+      "sha256": "d3d0db61366c8eb349c673df52234a78efc88e2e7698ceffaf13dbc7a7d9df3d"
+    },
+    {
+      "path": "contrib/auth/views.py",
+      "bytes": 14519,
+      "physical_lines": 385,
+      "sha256": "b9037b832021b52283080acfcfb895d5a8779a08b7b11d87ab611921494b8305"
+    },
+    {
+      "path": "contrib/contenttypes/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/contenttypes/admin.py",
+      "bytes": 5343,
+      "physical_lines": 143,
+      "sha256": "94a2a2b233b22bc2c64d7a89976006e26a3572309e46b232cd1cd8e4f645f332"
+    },
+    {
+      "path": "contrib/contenttypes/apps.py",
+      "bytes": 868,
+      "physical_lines": 22,
+      "sha256": "51af748ebdbad92a78d5c769409a728d4774d8da02c908ebf81d22dc976edeff"
+    },
+    {
+      "path": "contrib/contenttypes/checks.py",
+      "bytes": 1314,
+      "physical_lines": 46,
+      "sha256": "acff1df4ae9aa8c14002ce6f4943212eef79c2ddcea6cea77e5ad1cf4aa7f7d8"
+    },
+    {
+      "path": "contrib/contenttypes/fields.py",
+      "bytes": 32586,
+      "physical_lines": 842,
+      "sha256": "89b4903d77fe3f63c85014f1959be973dbfea72b8bf11534aed912464db2b587"
+    },
+    {
+      "path": "contrib/contenttypes/forms.py",
+      "bytes": 4083,
+      "physical_lines": 133,
+      "sha256": "16e7b9c02f933e836938ba50dec245a83dcbaee6172eddd7774dabb47be27981"
+    },
+    {
+      "path": "contrib/contenttypes/management/__init__.py",
+      "bytes": 5082,
+      "physical_lines": 145,
+      "sha256": "abbd5e02d92c8ffc10917ef05ff14d7ce85fa086cdb1b5c8b24a61ba4c28d8fd"
+    },
+    {
+      "path": "contrib/contenttypes/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/contenttypes/management/commands/remove_stale_contenttypes.py",
+      "bytes": 4756,
+      "physical_lines": 113,
+      "sha256": "3e6fd4e18ded596920fb0243d17abe4ae8b9349b00ab3671ff972622e4afe2df"
+    },
+    {
+      "path": "contrib/contenttypes/migrations/0001_initial.py",
+      "bytes": 1479,
+      "physical_lines": 45,
+      "sha256": "84b237e25223d279628db5fb600bc0bb391087fe4a92b30f463ac9cb4fd7435e"
+    },
+    {
+      "path": "contrib/contenttypes/migrations/0002_remove_content_type_name.py",
+      "bytes": 1241,
+      "physical_lines": 42,
+      "sha256": "b4e9d2508c3fd77cd79325e2cebb06d2e80dd9913834e98a6c56ab69c2aa810a"
+    },
+    {
+      "path": "contrib/contenttypes/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/contenttypes/models.py",
+      "bytes": 7032,
+      "physical_lines": 188,
+      "sha256": "7f0497f62a31648bfd406118f367503686a653a781f06a527283ce43e932e495"
+    },
+    {
+      "path": "contrib/contenttypes/prefetch.py",
+      "bytes": 1394,
+      "physical_lines": 36,
+      "sha256": "b6cfabb2f0a85ec136487c0c42054317f67947f31ab79671c30929f6b3a4aea1"
+    },
+    {
+      "path": "contrib/contenttypes/views.py",
+      "bytes": 3637,
+      "physical_lines": 88,
+      "sha256": "bd51e4bc0d09954cebffeb309d5529afeef59aa2efec5ab1be3a8866fe01eca8"
+    },
+    {
+      "path": "contrib/flatpages/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/flatpages/admin.py",
+      "bytes": 723,
+      "physical_lines": 22,
+      "sha256": "2b36ef75aa7896b3834e433ba7f90dc4b2dc965f1d507e8e55aa5531d602407c"
+    },
+    {
+      "path": "contrib/flatpages/apps.py",
+      "bytes": 260,
+      "physical_lines": 8,
+      "sha256": "19c883197900ad5c82aeb2fab8cee6be05b79434d1858a75df04c5a2da8521a3"
+    },
+    {
+      "path": "contrib/flatpages/forms.py",
+      "bytes": 2566,
+      "physical_lines": 74,
+      "sha256": "321d6d42e8ad9e2f1b98666f205a66fe054b5dd9d9ad42f0eade4a3e6f34adc8"
+    },
+    {
+      "path": "contrib/flatpages/middleware.py",
+      "bytes": 804,
+      "physical_lines": 20,
+      "sha256": "500b540e665112d6a6a751c90829415af23adc481302ecbf337083a2af9ba386"
+    },
+    {
+      "path": "contrib/flatpages/migrations/0001_initial.py",
+      "bytes": 2476,
+      "physical_lines": 68,
+      "sha256": "29901ef8778912d68be4731eb6b4ea1f4d59cb1576dbf999a6f6cf6ca48830b8"
+    },
+    {
+      "path": "contrib/flatpages/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/flatpages/models.py",
+      "bytes": 1813,
+      "physical_lines": 49,
+      "sha256": "edf9e483774d8ddf1787307db8397e26bb7277a8fedabd73b0f958aba2bbcb80"
+    },
+    {
+      "path": "contrib/flatpages/sitemaps.py",
+      "bytes": 598,
+      "physical_lines": 14,
+      "sha256": "2faa965f408c149702240b5c8666e9aea91003d858cb1261d32798575319083e"
+    },
+    {
+      "path": "contrib/flatpages/templatetags/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/flatpages/templatetags/flatpages.py",
+      "bytes": 3653,
+      "physical_lines": 101,
+      "sha256": "9c5fb3daba186e3c69eb5482fb56484f9c6278644479109fad4b83c09fa49d8e"
+    },
+    {
+      "path": "contrib/flatpages/urls.py",
+      "bytes": 185,
+      "physical_lines": 6,
+      "sha256": "c3e6b456f03020ab4c4fc48a61206060db770df91c6a10260e3415c598e1c5fd"
+    },
+    {
+      "path": "contrib/flatpages/views.py",
+      "bytes": 2794,
+      "physical_lines": 70,
+      "sha256": "2cf93a0c22781c720017af080697024d2c0e34b796349b0f00fb222239094ee4"
+    },
+    {
+      "path": "contrib/gis/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/admin/__init__.py",
+      "bytes": 515,
+      "physical_lines": 29,
+      "sha256": "a8fe998541062e2b5aea486ebaef54419340aaf1977e3e480d445921765f1df3"
+    },
+    {
+      "path": "contrib/gis/admin/options.py",
+      "bytes": 710,
+      "physical_lines": 21,
+      "sha256": "43b96fa1f59920f7c7d3d8e3055a7fb67c78be2759edcda2c7e2ddd21418aba0"
+    },
+    {
+      "path": "contrib/gis/apps.py",
+      "bytes": 431,
+      "physical_lines": 14,
+      "sha256": "05dd83d46e7e7feb024a76b11ecd0c6acc7cac65a9325d896a221a936e487c34"
+    },
+    {
+      "path": "contrib/gis/db/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/base/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/base/adapter.py",
+      "bytes": 618,
+      "physical_lines": 26,
+      "sha256": "f6c14cc25aed67bc872128c764d3d1a6d630a0fef82e2d5b38d201cb13a2d3db"
+    },
+    {
+      "path": "contrib/gis/db/backends/base/features.py",
+      "bytes": 3829,
+      "physical_lines": 111,
+      "sha256": "066889206243fe7d66a0aaadb517aedbb54e0ab4df24520c37b99acabe6d69ec"
+    },
+    {
+      "path": "contrib/gis/db/backends/base/models.py",
+      "bytes": 4149,
+      "physical_lines": 140,
+      "sha256": "609f52387bcac34d100477b57ef98084f7b3c6f86415ebd12230280cc13bf54a"
+    },
+    {
+      "path": "contrib/gis/db/backends/base/operations.py",
+      "bytes": 7069,
+      "physical_lines": 210,
+      "sha256": "982c050d204c9e1e8a87545783365240f2b9a1d0ddf20b25611c3465e1d503db"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/base.py",
+      "bytes": 512,
+      "physical_lines": 14,
+      "sha256": "071bb611d7203bf6978e38a28657d9db8adb1254de84ebfbcbe216e5d3bbb923"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/features.py",
+      "bytes": 887,
+      "physical_lines": 21,
+      "sha256": "f61d4b84211219427c55a2dd3d0a198fb9145005b8a0c99c91ffb54439e66e43"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/introspection.py",
+      "bytes": 1635,
+      "physical_lines": 33,
+      "sha256": "834807a9f815890d1cd2ffed49fe416f4fd29084c7a0bc28f9b65fbbf7194d6e"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/operations.py",
+      "bytes": 5098,
+      "physical_lines": 146,
+      "sha256": "24c2cc9467be6a3149892177c28863dad5595f1ca5c9bc6b42adfae6dcc30df1"
+    },
+    {
+      "path": "contrib/gis/db/backends/mysql/schema.py",
+      "bytes": 4065,
+      "physical_lines": 112,
+      "sha256": "69ef286826ce5e604093226172bd662b05c6ba94753f5d92d249de6566a04185"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/adapter.py",
+      "bytes": 2127,
+      "physical_lines": 61,
+      "sha256": "52ecde10e0511180ec83863d4b0ee289bccd853e90ae87d7c3a8afb89ee69544"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/base.py",
+      "bytes": 521,
+      "physical_lines": 14,
+      "sha256": "6e1b7c39f8ae686a80d5c36fbcca13818475ddbd3dc5fc8db1a68eea70a60624"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/features.py",
+      "bytes": 1049,
+      "physical_lines": 28,
+      "sha256": "2fde3218f8323f172f9f593367e3b8566c6109ef00dceedda354a1f392d2bc3f"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/introspection.py",
+      "bytes": 1985,
+      "physical_lines": 46,
+      "sha256": "9d9f692c8bffa1c327e89f23e6b3a7d26d6f1277f269ed7af9b61b34d1d1db75"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/models.py",
+      "bytes": 2148,
+      "physical_lines": 67,
+      "sha256": "3ac0df53a5603f560d712697ff7f154bed016bb4b4d2156f728b408dd3bcb50c"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/operations.py",
+      "bytes": 9032,
+      "physical_lines": 247,
+      "sha256": "24b929b65d55822aa41ff6ed0af96aa8949d838f484a7061e69a2a30886e878b"
+    },
+    {
+      "path": "contrib/gis/db/backends/oracle/schema.py",
+      "bytes": 5581,
+      "physical_lines": 151,
+      "sha256": "35f1661a47f03f5464867914b4dcfe274756a8fdcfdc9187278e690b6e1c1c66"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/adapter.py",
+      "bytes": 2043,
+      "physical_lines": 63,
+      "sha256": "d9fd32d3cd3919783a15ddf9798ed0c92debdc2ed0903d476d54aa0baf6e7fd4"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/base.py",
+      "bytes": 5954,
+      "physical_lines": 161,
+      "sha256": "67bb2c811a45f3eb057ea5dc4310f4935515aac8b00f534dedf68ca63cc3b750"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/const.py",
+      "bytes": 2071,
+      "physical_lines": 63,
+      "sha256": "fadf8314579f16aaa247da56df1f837b6cb30de2b2bfb87ed7201f4f192ba385"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/features.py",
+      "bytes": 468,
+      "physical_lines": 13,
+      "sha256": "8e145e54d1f341ff393ddafbd95e716ceeeeb0a4068d542ecc8dda650bc52793"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/introspection.py",
+      "bytes": 3235,
+      "physical_lines": 71,
+      "sha256": "fa929327e642ffa2693cb008367cd5f4e70019ad792ecbcd3dae530009ee7dc4"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/models.py",
+      "bytes": 2075,
+      "physical_lines": 73,
+      "sha256": "ec2365cd558eb1554934b24a22760fe4c96ea052a192b785120b2c339d680136"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/operations.py",
+      "bytes": 16999,
+      "physical_lines": 423,
+      "sha256": "0d2317ec66e4e06c6c402515c208cbb0b42bf8d3e4fbb0ed1ea7e736cfe47819"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/pgraster.py",
+      "bytes": 4740,
+      "physical_lines": 152,
+      "sha256": "489823e0bad2988ba4066917d9f94c7cd19ed01a2acda0affa8d455d3cc57f6e"
+    },
+    {
+      "path": "contrib/gis/db/backends/postgis/schema.py",
+      "bytes": 4592,
+      "physical_lines": 124,
+      "sha256": "070ef3d118e7d17a544bd07aa43dc73bc0e96bb4ee594ec80b5c1eae5ee71e2c"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/adapter.py",
+      "bytes": 328,
+      "physical_lines": 10,
+      "sha256": "e0fe834c4adf34525db5777d67100353cc6398554a4117b6fce8afa0464a63f6"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/base.py",
+      "bytes": 3297,
+      "physical_lines": 79,
+      "sha256": "83f93f1e44ef2d78181b4837e226e4d09a800954949320be7804a0d54ec41385"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/client.py",
+      "bytes": 143,
+      "physical_lines": 5,
+      "sha256": "6a57ef9343c78e80c2bd47bcb3831e0aae2ad12d21fb9e7bee2118eb44738bdc"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/features.py",
+      "bytes": 902,
+      "physical_lines": 26,
+      "sha256": "2bbb50b8ec66c194292fa14f8de37603631d754a91164b740321842c426ca3c8"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/introspection.py",
+      "bytes": 3200,
+      "physical_lines": 82,
+      "sha256": "ed232dd2944f5da115d628bb6d9d34d6b7930f89e5e9c1e2b8c960aee44b638e"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/models.py",
+      "bytes": 2001,
+      "physical_lines": 71,
+      "sha256": "c093c1eb0d43f9850d87409d7afc7b98d83f3073034416960323286c90334059"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/operations.py",
+      "bytes": 8751,
+      "physical_lines": 231,
+      "sha256": "222a0b9ff4653db7c6da809bc699d04548e65cf5406828a28551a1cf24935aaa"
+    },
+    {
+      "path": "contrib/gis/db/backends/spatialite/schema.py",
+      "bytes": 7534,
+      "physical_lines": 194,
+      "sha256": "2f8361810121dc1ab5db304982126dc951f3de15716c6736e7b91562cc6a6fa5"
+    },
+    {
+      "path": "contrib/gis/db/backends/utils.py",
+      "bytes": 813,
+      "physical_lines": 28,
+      "sha256": "a8a16110540baf14e92fa57af5c5ad8439b29bfb35cd34e3307df363b7cc3fc1"
+    },
+    {
+      "path": "contrib/gis/db/models/__init__.py",
+      "bytes": 895,
+      "physical_lines": 30,
+      "sha256": "07253b2971e7bff0e0a7b7592fca6aad5e26ea24ffc3da9120964ed44e40b089"
+    },
+    {
+      "path": "contrib/gis/db/models/aggregates.py",
+      "bytes": 3242,
+      "physical_lines": 95,
+      "sha256": "637bfcdc89b6f9079edc06920faa1fccc56fd9ae27ce3ac03592a6970d25a679"
+    },
+    {
+      "path": "contrib/gis/db/models/fields.py",
+      "bytes": 14722,
+      "physical_lines": 434,
+      "sha256": "a52de7b04a40c209cbe0c2f30dc923d6902edbedfd0ba73073efd6270453bca5"
+    },
+    {
+      "path": "contrib/gis/db/models/functions.py",
+      "bytes": 20196,
+      "physical_lines": 590,
+      "sha256": "a42fc38ec08ab2c754cf955bfa51e93ed006866faeb403eef0c6589cb8793c79"
+    },
+    {
+      "path": "contrib/gis/db/models/lookups.py",
+      "bytes": 12192,
+      "physical_lines": 395,
+      "sha256": "412ff015838fe6d0a714464af55146a988174274b41ff4d9006a6f52e28beb10"
+    },
+    {
+      "path": "contrib/gis/db/models/proxy.py",
+      "bytes": 3258,
+      "physical_lines": 84,
+      "sha256": "c0872694b0cf36e20c4a7d1a6183fcd3045982b13c32baaf09bc98b740fa60d4"
+    },
+    {
+      "path": "contrib/gis/db/models/sql/__init__.py",
+      "bytes": 140,
+      "physical_lines": 6,
+      "sha256": "d6a085eed01405d28f52d1ba9a90a4f63e7a16e55b6e725cab56d22846e09638"
+    },
+    {
+      "path": "contrib/gis/db/models/sql/conversion.py",
+      "bytes": 2507,
+      "physical_lines": 74,
+      "sha256": "91ecc56cd58c4f1ce8a87f7ab9c42b5c55c69c93b75f1d6be7d2732c5f046d0b"
+    },
+    {
+      "path": "contrib/gis/feeds.py",
+      "bytes": 6146,
+      "physical_lines": 151,
+      "sha256": "485c674322ad2e0e4c3a56776f407d8ee7bdf73de0d1efdad6c348f8dc40a621"
+    },
+    {
+      "path": "contrib/gis/forms/__init__.py",
+      "bytes": 331,
+      "physical_lines": 13,
+      "sha256": "a4942396b8c78e5413f3371d580035cb0e930ffd0770a276aa9dcbde52d17e49"
+    },
+    {
+      "path": "contrib/gis/forms/fields.py",
+      "bytes": 4752,
+      "physical_lines": 144,
+      "sha256": "3f35b6be541e3fa2a96b4cab018abe0368cb1c04c1b8712f902806a049ccb0eb"
+    },
+    {
+      "path": "contrib/gis/forms/widgets.py",
+      "bytes": 4042,
+      "physical_lines": 125,
+      "sha256": "44517d0833c4de1a0f04f2335d7dbcddbbb6dec34cf33a3d556e9d5835fe0111"
+    },
+    {
+      "path": "contrib/gis/gdal/__init__.py",
+      "bytes": 1870,
+      "physical_lines": 59,
+      "sha256": "b5d8ba1ae7e3571f671fa9bb4dd95a7e8130898a4c040ee5bfa2c9b22fe02bdc"
+    },
+    {
+      "path": "contrib/gis/gdal/base.py",
+      "bytes": 187,
+      "physical_lines": 6,
+      "sha256": "b2935be517e934f7b3c1ab4433b055fcc5de1c55e4aacbfcd708d498fb5f4a8f"
+    },
+    {
+      "path": "contrib/gis/gdal/datasource.py",
+      "bytes": 4773,
+      "physical_lines": 129,
+      "sha256": "6d0a038438bcfc0efc3961ac203ee22b9e5c28681a4394eb396509962232e3dc"
+    },
+    {
+      "path": "contrib/gis/gdal/driver.py",
+      "bytes": 3077,
+      "physical_lines": 94,
+      "sha256": "196e31b6705cca68edbaf2c0f6a9cd9a3fa76f2c44ef3c4cdddc7318d1c02235"
+    },
+    {
+      "path": "contrib/gis/gdal/envelope.py",
+      "bytes": 7521,
+      "physical_lines": 205,
+      "sha256": "9405bb00cb4e8ed0d1c171e5c55640c68fc5339569bce9d24313e79a34ca6804"
+    },
+    {
+      "path": "contrib/gis/gdal/error.py",
+      "bytes": 1636,
+      "physical_lines": 61,
+      "sha256": "d1a47bf23d925e4675b690989a93ba7e1d3e3b7e0c8dd972bcfe75cdad663fe8"
+    },
+    {
+      "path": "contrib/gis/gdal/feature.py",
+      "bytes": 4137,
+      "physical_lines": 120,
+      "sha256": "b0d4a20dceddee79e1f1af20051607c89dfc6eeeb35a153dc8970c4246ebed87"
+    },
+    {
+      "path": "contrib/gis/gdal/field.py",
+      "bytes": 7139,
+      "physical_lines": 253,
+      "sha256": "6e82afd6f579ea3aba547c53ead6107816917fa33b97e7b410bc8a02c558ebdd"
+    },
+    {
+      "path": "contrib/gis/gdal/geometries.py",
+      "bytes": 30167,
+      "physical_lines": 881,
+      "sha256": "830d79f7fb9b5eaeea749aefa1ef72fcd175d74b6cc40a27d7568d15c4ad6252"
+    },
+    {
+      "path": "contrib/gis/gdal/geomtype.py",
+      "bytes": 4728,
+      "physical_lines": 146,
+      "sha256": "73bb249117ad6661bfbbf61d116701580b5ea4679b2a81b4559eb05dec02c4b4"
+    },
+    {
+      "path": "contrib/gis/gdal/layer.py",
+      "bytes": 9059,
+      "physical_lines": 234,
+      "sha256": "937c1e54b687f59387d8340086aaf5c016390335dae842cbbb09c377a9a4c36c"
+    },
+    {
+      "path": "contrib/gis/gdal/libgdal.py",
+      "bytes": 3761,
+      "physical_lines": 142,
+      "sha256": "f80c56288ca751ed045404579a9a4830a92d12dd0ee79a6b0c776b7d421ef474"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/ds.py",
+      "bytes": 4835,
+      "physical_lines": 110,
+      "sha256": "42aa80e8ad4ababa38ff34293f9e77f35703659da7a49e142bc45c586bcb32d9"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/errcheck.py",
+      "bytes": 4314,
+      "physical_lines": 142,
+      "sha256": "3eab85d0fcfe0ad265c729ea15286fc8055d616a7d7bb0ef5d6f02ae81c423ef"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/generation.py",
+      "bytes": 5066,
+      "physical_lines": 178,
+      "sha256": "eee8ed73a64929930a13342a6cf26bb528a8cce2089b760a54ef00359a5d89ae"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/geom.py",
+      "bytes": 6408,
+      "physical_lines": 175,
+      "sha256": "06f15727fbf782917631b88362b0a240365bd32ff861881094bade3a39391153"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/raster.py",
+      "bytes": 5740,
+      "physical_lines": 169,
+      "sha256": "6b2f29acb4b1608054de7e7a1459b50fac04bcf3b368856dc8aff270914763a9"
+    },
+    {
+      "path": "contrib/gis/gdal/prototypes/srs.py",
+      "bytes": 3784,
+      "physical_lines": 107,
+      "sha256": "3cde8ff67be6ad2d556676aaa655421e9467bf566885142f3e1e8b28871ae6a9"
+    },
+    {
+      "path": "contrib/gis/gdal/raster/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/gdal/raster/band.py",
+      "bytes": 8616,
+      "physical_lines": 273,
+      "sha256": "9a9b77ede8d4f9c9ee414838c5cdd2a7c78fb0b68059df6a7cb8486919cbf9bd"
+    },
+    {
+      "path": "contrib/gis/gdal/raster/base.py",
+      "bytes": 2959,
+      "physical_lines": 77,
+      "sha256": "ecd7288c43c1b7b518f360c8fc5a5ad7054b65a5077227256b4d7113a01df8bb"
+    },
+    {
+      "path": "contrib/gis/gdal/raster/const.py",
+      "bytes": 3388,
+      "physical_lines": 105,
+      "sha256": "efbc168920616464da3b5d58fe318f12cfa7ea32f1a66dc4f4acb53cfa93caf0"
+    },
+    {
+      "path": "contrib/gis/gdal/raster/source.py",
+      "bytes": 18935,
+      "physical_lines": 541,
+      "sha256": "a7ce4e7dc19dfb8a869ae51375b918ddede00bbc3e27c94ebf067b4a03cb363c"
+    },
+    {
+      "path": "contrib/gis/gdal/srs.py",
+      "bytes": 12663,
+      "physical_lines": 362,
+      "sha256": "622ff596fb101367057c1819e929ec81cdbfd2689df9aee6b028b2a961d09a71"
+    },
+    {
+      "path": "contrib/gis/geoip2.py",
+      "bytes": 9649,
+      "physical_lines": 250,
+      "sha256": "b04acd7a261705b5f021fe3d953f61eacd030915a6ecdff9360c2e7f831f0889"
+    },
+    {
+      "path": "contrib/gis/geometry.py",
+      "bytes": 807,
+      "physical_lines": 19,
+      "sha256": "e58c12b92d6ca04124ab58db597f4511effdf03ac22e1616268abf4d4293baa5"
+    },
+    {
+      "path": "contrib/gis/geos/__init__.py",
+      "bytes": 680,
+      "physical_lines": 19,
+      "sha256": "add713b2a0794a7d351c4364821aff4014d20b2f34d28611c41ac36efa4e0f9f"
+    },
+    {
+      "path": "contrib/gis/geos/base.py",
+      "bytes": 187,
+      "physical_lines": 6,
+      "sha256": "ae36cd98eb08d39d1afa1df75579d037ee17cb545e51885c86d8f25b900d4cd4"
+    },
+    {
+      "path": "contrib/gis/geos/collections.py",
+      "bytes": 4060,
+      "physical_lines": 121,
+      "sha256": "456b65cc2115d5ef4dabee23881439adc6d46f6b278e8f4c211ccf091d1e8994"
+    },
+    {
+      "path": "contrib/gis/geos/coordseq.py",
+      "bytes": 7049,
+      "physical_lines": 211,
+      "sha256": "795af539360cdd249842bd16ed2667e5a2d92d038969baedbb0b763806a1172c"
+    },
+    {
+      "path": "contrib/gis/geos/error.py",
+      "bytes": 109,
+      "physical_lines": 4,
+      "sha256": "f0fd77eec08ab01e015bb0197b74baf2e20b7d98a8d3b01c8782c02860e9631c"
+    },
+    {
+      "path": "contrib/gis/geos/factory.py",
+      "bytes": 994,
+      "physical_lines": 33,
+      "sha256": "d149526a6b2f77a38d0a09f16335b50c02b49e2b19a3a3c921bdb7473041c121"
+    },
+    {
+      "path": "contrib/gis/geos/geometry.py",
+      "bytes": 27430,
+      "physical_lines": 780,
+      "sha256": "7208fd5ebe6b0e67ecc9c6193fa6cdfc88130bf3f236c81e2a608841f1118f90"
+    },
+    {
+      "path": "contrib/gis/geos/io.py",
+      "bytes": 828,
+      "physical_lines": 28,
+      "sha256": "431bfed6cd2e701add667a79af6f0250c63e6418e159bfbfffe2d3fcc3f23a19"
+    },
+    {
+      "path": "contrib/gis/geos/libgeos.py",
+      "bytes": 5158,
+      "physical_lines": 175,
+      "sha256": "7e52cd94bd078b61cedae90713365875c0d425ec1a4a1d9a5da28e3124c01792"
+    },
+    {
+      "path": "contrib/gis/geos/linestring.py",
+      "bytes": 6565,
+      "physical_lines": 193,
+      "sha256": "1f7f8f8930d1e63155d95c881d5eac587678f31348418ca73b6c2d887816f2be"
+    },
+    {
+      "path": "contrib/gis/geos/mutable_list.py",
+      "bytes": 10435,
+      "physical_lines": 314,
+      "sha256": "5a26679c833ec0e3b48ec9b1b252614ff034761e38d616a3f81e4382229dc9a2"
+    },
+    {
+      "path": "contrib/gis/geos/point.py",
+      "bytes": 4943,
+      "physical_lines": 162,
+      "sha256": "a354fcae45e81f0f5c4474bdb8044b848346b4eab58f5655f6aca9b5ef7b8bf7"
+    },
+    {
+      "path": "contrib/gis/geos/polygon.py",
+      "bytes": 6899,
+      "physical_lines": 189,
+      "sha256": "b49f382d10ef5063b687ba6eddb6121f61d1fe7e6cdf5109a18322113e75caff"
+    },
+    {
+      "path": "contrib/gis/geos/prepared.py",
+      "bytes": 1628,
+      "physical_lines": 51,
+      "sha256": "ffb9173b1bd7dbff5824b67912c9dfd1d442d24dbb450aa5c1e0aa0f80ee436e"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/__init__.py",
+      "bytes": 1502,
+      "physical_lines": 67,
+      "sha256": "ff74c9ea102a51c9e4c65ec5ea5d19c4dac00582099fa1a85db4ba635f7ef7b3"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/coordseq.py",
+      "bytes": 3221,
+      "physical_lines": 97,
+      "sha256": "a03ad95455593c16449da885300676f5ea3a6790acf8dd8f10198e44454aa95c"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/errcheck.py",
+      "bytes": 2884,
+      "physical_lines": 96,
+      "sha256": "1ec99fca1ac440a19685b57a59e933d28c1ffc1114be36af0c148db1619b555b"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/geom.py",
+      "bytes": 3495,
+      "physical_lines": 94,
+      "sha256": "ef6ec4dbb3d9e6fd35a27bebddd3e80bcb5ff51956508e858d8acd62f986366f"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/io.py",
+      "bytes": 11690,
+      "physical_lines": 369,
+      "sha256": "333b9ae5e867a45ef9c2c1e68e5d54c547f698fef7ba4e272279b9de947b3519"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/misc.py",
+      "bytes": 1202,
+      "physical_lines": 35,
+      "sha256": "6f7c7eaff078c751b737cc622acd2a914800f95e8845edd3259f437f641361d5"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/predicates.py",
+      "bytes": 1713,
+      "physical_lines": 51,
+      "sha256": "ca65e8ee2e9a68298a398a76a10d4807eb2c5e1106d69cdf2cdb5ba51e62fd94"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/prepared.py",
+      "bytes": 1201,
+      "physical_lines": 26,
+      "sha256": "f76045c02f5149f1dedc413860de706d9b19d1e18a57cbf93c1b4eb89d387833"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/threadsafe.py",
+      "bytes": 2379,
+      "physical_lines": 77,
+      "sha256": "3bccc13edf5ba9c8a96fb968d5bc17c5f61762af23b1b022c69f128c872d0f6a"
+    },
+    {
+      "path": "contrib/gis/geos/prototypes/topology.py",
+      "bytes": 2401,
+      "physical_lines": 74,
+      "sha256": "bd62fddd2f9216c30cc5d634f7aa9cc9975a94ff3a921bbfc4c24a87c25d1a9b"
+    },
+    {
+      "path": "contrib/gis/management/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/management/commands/inspectdb.py",
+      "bytes": 778,
+      "physical_lines": 18,
+      "sha256": "eec051c5117cdc5a21f956c15a81f7cce34f4f04dec8803c4b6f933ee17130e8"
+    },
+    {
+      "path": "contrib/gis/management/commands/ogrinspect.py",
+      "bytes": 6235,
+      "physical_lines": 164,
+      "sha256": "3a9074ba610bc0c6539c4e8090a79394ca146ddd2c3df0469de09d8ec6d53dfd"
+    },
+    {
+      "path": "contrib/gis/measure.py",
+      "bytes": 12946,
+      "physical_lines": 373,
+      "sha256": "0fece3e671517a09c63fef66fe4e9f9b8b0d844fdfc3aecbb12ab0c1f98c3abc"
+    },
+    {
+      "path": "contrib/gis/ptr.py",
+      "bytes": 1353,
+      "physical_lines": 41,
+      "sha256": "19a96d6f219998bf1502f25a5cfa83553712a53a933b3e24568d83de6749d75c"
+    },
+    {
+      "path": "contrib/gis/serializers/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/gis/serializers/geojson.py",
+      "bytes": 2953,
+      "physical_lines": 77,
+      "sha256": "b52cafa0846cece34f40a70b593be8b7823c41c818b97537904b77571e081ce1"
+    },
+    {
+      "path": "contrib/gis/shortcuts.py",
+      "bytes": 1067,
+      "physical_lines": 40,
+      "sha256": "023caf390d23faa7ef1e55c66c7366fdb16c8dbb0704020cb6e9215343e3812e"
+    },
+    {
+      "path": "contrib/gis/sitemaps/__init__.py",
+      "bytes": 142,
+      "physical_lines": 4,
+      "sha256": "c0c91d3891aec860815bf1d3791af61014f46dd55a18f10f4b89736a4a1ca26b"
+    },
+    {
+      "path": "contrib/gis/sitemaps/kml.py",
+      "bytes": 2651,
+      "physical_lines": 78,
+      "sha256": "dc125ff915f229833f2227a4bde8ef22228eea42c357f121d653b345a179b103"
+    },
+    {
+      "path": "contrib/gis/sitemaps/views.py",
+      "bytes": 2418,
+      "physical_lines": 65,
+      "sha256": "982f7f0a176990805b1f11bd3ba9f7b3a834e6813bed0992358937a344d5dd84"
+    },
+    {
+      "path": "contrib/gis/utils/__init__.py",
+      "bytes": 707,
+      "physical_lines": 25,
+      "sha256": "d8588aeeccc1a5fc7aa49c36779592e11ef62fdb18c902e992fd13968cee61d8"
+    },
+    {
+      "path": "contrib/gis/utils/layermapping.py",
+      "bytes": 29767,
+      "physical_lines": 728,
+      "sha256": "eae0e1e5b40c66fcd9a1199f45ac60caf1a903b0a69b9c527756c04322cc7e13"
+    },
+    {
+      "path": "contrib/gis/utils/ogrinfo.py",
+      "bytes": 2009,
+      "physical_lines": 53,
+      "sha256": "9ae1db536c470129cce5d897eef68571fb35d8af040dafae36759d825e29a343"
+    },
+    {
+      "path": "contrib/gis/utils/ogrinspect.py",
+      "bytes": 9438,
+      "physical_lines": 268,
+      "sha256": "169f813505d7efb747a9cd02c8a974abbb69f155306ae6167d7883eeb525d094"
+    },
+    {
+      "path": "contrib/gis/utils/srs.py",
+      "bytes": 3040,
+      "physical_lines": 78,
+      "sha256": "feb06bdf33443d731acc60271aeb87d20eb1333a8db247749ab48b62860fd862"
+    },
+    {
+      "path": "contrib/gis/views.py",
+      "bytes": 736,
+      "physical_lines": 22,
+      "sha256": "20b83591c67ac87cdac715511c0662b3e7d201e77fdb6e8dc058d9092112bce9"
+    },
+    {
+      "path": "contrib/humanize/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/humanize/apps.py",
+      "bytes": 201,
+      "physical_lines": 7,
+      "sha256": "6acee376b13740e7718d8656b767b2df4acbfd6b12db2efed9a6e149798d50e7"
+    },
+    {
+      "path": "contrib/humanize/templatetags/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/humanize/templatetags/humanize.py",
+      "bytes": 13017,
+      "physical_lines": 336,
+      "sha256": "ec96d5f6171bfdec8422eb4240191a584090b5cebd088960eacb53f3904f29c2"
+    },
+    {
+      "path": "contrib/messages/__init__.py",
+      "bytes": 174,
+      "physical_lines": 3,
+      "sha256": "c9b83a6a5cc89c2536f76f8ef9dc41ec56849a250fdf7b2d7679ddc04a55dd66"
+    },
+    {
+      "path": "contrib/messages/api.py",
+      "bytes": 3377,
+      "physical_lines": 127,
+      "sha256": "5a6e210b280b2b869d350afc3bcc619f4d032003cf4fee470e1c8cdfb30beec9"
+    },
+    {
+      "path": "contrib/messages/apps.py",
+      "bytes": 630,
+      "physical_lines": 19,
+      "sha256": "416819df08cb7949f68b30fa29834f37876c827b081b060fbe2d2e69bcab6a97"
+    },
+    {
+      "path": "contrib/messages/constants.py",
+      "bytes": 333,
+      "physical_lines": 21,
+      "sha256": "84fc065d9e81609cb0055e9362d414958786ca20f6e9bca51bd7d1e7d7fec1d8"
+    },
+    {
+      "path": "contrib/messages/context_processors.py",
+      "bytes": 367,
+      "physical_lines": 13,
+      "sha256": "b940455633e926cd1d8a7af9ae2c78ee7e15292af2516595f2f3cc658763d260"
+    },
+    {
+      "path": "contrib/messages/middleware.py",
+      "bytes": 1012,
+      "physical_lines": 26,
+      "sha256": "219a09ee6352cc9937eed9944ff3b889fbd7e3a2d81482f13f71a9b573bab7b3"
+    },
+    {
+      "path": "contrib/messages/storage/__init__.py",
+      "bytes": 404,
+      "physical_lines": 12,
+      "sha256": "d62d379a18a066e5e711e13c0a4c6ebf3d0d0fea92bbd3a1c9f633f1795d1b86"
+    },
+    {
+      "path": "contrib/messages/storage/base.py",
+      "bytes": 6265,
+      "physical_lines": 183,
+      "sha256": "12a8cf73a88fe06df1ee0aa6ec7ce3ae3e1255812697e1d46af04e2c0cebdb79"
+    },
+    {
+      "path": "contrib/messages/storage/cookie.py",
+      "bytes": 8926,
+      "physical_lines": 248,
+      "sha256": "e708ee72b2eb2fbc57b13682830c25ecb5a99cc201bacee53dce3217fd61338b"
+    },
+    {
+      "path": "contrib/messages/storage/fallback.py",
+      "bytes": 2149,
+      "physical_lines": 56,
+      "sha256": "146a2833106f7823b9bd8ee6e511e8db2efc083f7daa7f3e065d9dfa2a671b0d"
+    },
+    {
+      "path": "contrib/messages/storage/session.py",
+      "bytes": 1816,
+      "physical_lines": 52,
+      "sha256": "fcd1d353f4a760306f9d5b0629479528ead73a73627ea004195f2896fa79a815"
+    },
+    {
+      "path": "contrib/messages/test.py",
+      "bytes": 432,
+      "physical_lines": 11,
+      "sha256": "5be08e61b01341a0a9bd4915b087dc0d7e7d0e65ead285fa41cc0e40941d8d8f"
+    },
+    {
+      "path": "contrib/messages/utils.py",
+      "bytes": 268,
+      "physical_lines": 12,
+      "sha256": "65eed1997d8b6a5c632734d615893d304eb5726b908f96c737cfcf1facd5cb11"
+    },
+    {
+      "path": "contrib/messages/views.py",
+      "bytes": 543,
+      "physical_lines": 19,
+      "sha256": "142259629115a1fc8adbdeff0dec591d41d5e9c7a8b635635e71e959f1497c4c"
+    },
+    {
+      "path": "contrib/postgres/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/postgres/aggregates/__init__.py",
+      "bytes": 67,
+      "physical_lines": 2,
+      "sha256": "5cfb4242e97eea6ad1a5ef9020173b8b1d1d14ad603e6359663001a77111f9e4"
+    },
+    {
+      "path": "contrib/postgres/aggregates/general.py",
+      "bytes": 1561,
+      "physical_lines": 65,
+      "sha256": "cb09ff07b6c7c079f1ee89602e02d667f331c321abdf2a7e422070cd8801f22c"
+    },
+    {
+      "path": "contrib/postgres/aggregates/mixins.py",
+      "bytes": 2165,
+      "physical_lines": 57,
+      "sha256": "2b5e4585c6d90bccd100e32d2a569ccea4d5d4cfc68ec70153d2f142d38a22aa"
+    },
+    {
+      "path": "contrib/postgres/aggregates/statistics.py",
+      "bytes": 1586,
+      "physical_lines": 75,
+      "sha256": "5a1bcf7e11ab007de8ffddf75d3a46516975a89e715ea19286a9230ff3bcc602"
+    },
+    {
+      "path": "contrib/postgres/apps.py",
+      "bytes": 3776,
+      "physical_lines": 84,
+      "sha256": "8c73e18df736cc1cab987f586c7e95a50b6431f57c0e294d68f0d66e418e4238"
+    },
+    {
+      "path": "contrib/postgres/constraints.py",
+      "bytes": 9300,
+      "physical_lines": 214,
+      "sha256": "5d8e946f6f81aa63c711da713788bc759efda52c865f8dfb80a8cddabbe9d107"
+    },
+    {
+      "path": "contrib/postgres/expressions.py",
+      "bytes": 419,
+      "physical_lines": 14,
+      "sha256": "35e5bb28326604cc30b0160c5b7927614877775b24ce314dd536475278f6f1cf"
+    },
+    {
+      "path": "contrib/postgres/fields/__init__.py",
+      "bytes": 153,
+      "physical_lines": 5,
+      "sha256": "01b477389d83af29a35970d6ed9c553d9f9f468e6abd4b38e717d0c635259b8f"
+    },
+    {
+      "path": "contrib/postgres/fields/array.py",
+      "bytes": 13002,
+      "physical_lines": 372,
+      "sha256": "4c3d915d4953fde30e62c3f992ea0cc7eb535bfe8760fa75b507efc7df1f8f62"
+    },
+    {
+      "path": "contrib/postgres/fields/citext.py",
+      "bytes": 1408,
+      "physical_lines": 45,
+      "sha256": "8e8f9bb5150d8b1e3fdc59b1f01dceaa5ba1ec56d331b680eac9975f3951f411"
+    },
+    {
+      "path": "contrib/postgres/fields/hstore.py",
+      "bytes": 3408,
+      "physical_lines": 112,
+      "sha256": "149a7605f532691350dcf97a364c7b55dd5e4471320b17da4f13141c72e5c954"
+    },
+    {
+      "path": "contrib/postgres/fields/jsonb.py",
+      "bytes": 420,
+      "physical_lines": 14,
+      "sha256": "a504e6489c0306356f6b54880d084f41544aa8601ff9e3c088644240cb7d13c7"
+    },
+    {
+      "path": "contrib/postgres/fields/ranges.py",
+      "bytes": 11800,
+      "physical_lines": 383,
+      "sha256": "b302c280e48d4e2526777cd2de08979ec7d103bef8f0a627fd8a6409bfeef812"
+    },
+    {
+      "path": "contrib/postgres/fields/utils.py",
+      "bytes": 98,
+      "physical_lines": 3,
+      "sha256": "7db52530f29da1140ece69d9a5cfb2d51c12aba84416adc55a16db9154ac30df"
+    },
+    {
+      "path": "contrib/postgres/forms/__init__.py",
+      "bytes": 92,
+      "physical_lines": 3,
+      "sha256": "0d723d0d6d338516fcb1d8541f88a832859731895b842eb3491b49301ee29860"
+    },
+    {
+      "path": "contrib/postgres/forms/array.py",
+      "bytes": 8652,
+      "physical_lines": 251,
+      "sha256": "4b86cfe144bbd06ef151072291d0435f9ab85bc192d54e190d706e3e8353272f"
+    },
+    {
+      "path": "contrib/postgres/forms/hstore.py",
+      "bytes": 1846,
+      "physical_lines": 59,
+      "sha256": "34249bbcc1f821aac9e22e4d64c680411b987abab67dc7b035c6f567feba0afe"
+    },
+    {
+      "path": "contrib/postgres/forms/ranges.py",
+      "bytes": 3771,
+      "physical_lines": 119,
+      "sha256": "13f276add7243a9af0b3661ddd1be18e7666e5b1dbf89e7df5b763576ad2689e"
+    },
+    {
+      "path": "contrib/postgres/functions.py",
+      "bytes": 263,
+      "physical_lines": 11,
+      "sha256": "40d6c06268f41f38f395743b5db1cb87b5fee7bd173463f379367d8b8a3edda9"
+    },
+    {
+      "path": "contrib/postgres/indexes.py",
+      "bytes": 8466,
+      "physical_lines": 242,
+      "sha256": "6e6ec4ff5718fcce3d2f48adfe121e05de65776935874447343601790fe642a1"
+    },
+    {
+      "path": "contrib/postgres/lookups.py",
+      "bytes": 2069,
+      "physical_lines": 78,
+      "sha256": "81ac2378253f9c4c934b41a608a9aa5dbf7dc600985f71540077bdd8a2d1ce10"
+    },
+    {
+      "path": "contrib/postgres/operations.py",
+      "bytes": 12623,
+      "physical_lines": 349,
+      "sha256": "c965bc4e66432ee64429d209e1840af59a913b09ec7ddcbd0d21c1151195d60f"
+    },
+    {
+      "path": "contrib/postgres/search.py",
+      "bytes": 12115,
+      "physical_lines": 383,
+      "sha256": "524b5a7e803a6acfffe83f2ee4c38d8f0d355470b1238b6fbf6364f6ed808fdd"
+    },
+    {
+      "path": "contrib/postgres/serializers.py",
+      "bytes": 445,
+      "physical_lines": 10,
+      "sha256": "f2856e56e53ad7db82b3150fa75fa60697266c7a750e24c37a0a472a651e630e"
+    },
+    {
+      "path": "contrib/postgres/signals.py",
+      "bytes": 2950,
+      "physical_lines": 80,
+      "sha256": "b067526549033455be39b224cca4ad6caf3f11894b986033d81e74164213ee80"
+    },
+    {
+      "path": "contrib/postgres/utils.py",
+      "bytes": 1216,
+      "physical_lines": 29,
+      "sha256": "6c736bb2b6b89fa79a9d826963466a6b14021cd21ecfc868eaa631428d1946b1"
+    },
+    {
+      "path": "contrib/postgres/validators.py",
+      "bytes": 2892,
+      "physical_lines": 91,
+      "sha256": "583f6ca62c589d08605954b5ff22845775aaf622ecd21ab12117f73831ff2791"
+    },
+    {
+      "path": "contrib/redirects/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/redirects/admin.py",
+      "bytes": 324,
+      "physical_lines": 10,
+      "sha256": "803871f24d7cd68a20d79633178003e89507dc0d70370174d1809e5377332151"
+    },
+    {
+      "path": "contrib/redirects/apps.py",
+      "bytes": 259,
+      "physical_lines": 8,
+      "sha256": "857685eb5941203e6fc406ff893f31ae926b02aa813aa36e8a7e55dc2cfc601d"
+    },
+    {
+      "path": "contrib/redirects/middleware.py",
+      "bytes": 1971,
+      "physical_lines": 50,
+      "sha256": "79987488ae2b596ee45c92b34ae2633f7e6b6b14f1c4c4289e4f3cf0af4d5d34"
+    },
+    {
+      "path": "contrib/redirects/migrations/0001_initial.py",
+      "bytes": 2165,
+      "physical_lines": 64,
+      "sha256": "4138cbbff148c976354ef3d5b7c5b36f28d4f44efeb68abc8df9ddfa0f9f6869"
+    },
+    {
+      "path": "contrib/redirects/migrations/0002_alter_redirect_new_path_help_text.py",
+      "bytes": 658,
+      "physical_lines": 23,
+      "sha256": "d4358053834e67421a318b78233bba1fd2aa9ba6e0270ba78842441f84d5e008"
+    },
+    {
+      "path": "contrib/redirects/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/redirects/models.py",
+      "bytes": 1118,
+      "physical_lines": 35,
+      "sha256": "cc398e2a4b29de092c31173e7dd28e4c038cd116ef5103f2f6d5c47dc1b8abd8"
+    },
+    {
+      "path": "contrib/sessions/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sessions/apps.py",
+      "bytes": 201,
+      "physical_lines": 7,
+      "sha256": "f656f638945371bd5221114305ae60d0a22bdcd9942c448a2d953f128dfe5df9"
+    },
+    {
+      "path": "contrib/sessions/backends/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sessions/backends/base.py",
+      "bytes": 17481,
+      "physical_lines": 523,
+      "sha256": "3aa158b41c5bae752c4496888de7db20052d3644d79e343f47086d561e646751"
+    },
+    {
+      "path": "contrib/sessions/backends/cache.py",
+      "bytes": 4819,
+      "physical_lines": 145,
+      "sha256": "23922624dba21803d676d1c84deeca647ac5e41e6b4486ca7dd98fb8d4a164f8"
+    },
+    {
+      "path": "contrib/sessions/backends/cached_db.py",
+      "bytes": 4283,
+      "physical_lines": 135,
+      "sha256": "945e9ec56deffe1ee2b496b72ac756301d2fb964f967ee4aa40b46deb311ee7c"
+    },
+    {
+      "path": "contrib/sessions/backends/db.py",
+      "bytes": 7105,
+      "physical_lines": 198,
+      "sha256": "d6b2e69fade4d4e3b3552a4728494e253a0eaf0a712705bbbe2109c0d1156ad0"
+    },
+    {
+      "path": "contrib/sessions/backends/file.py",
+      "bytes": 8426,
+      "physical_lines": 226,
+      "sha256": "3ae63cc32d0e89053aed456dda727f9ab4b4053ba800f020a585fcb28ee8f530"
+    },
+    {
+      "path": "contrib/sessions/backends/signed_cookies.py",
+      "bytes": 3321,
+      "physical_lines": 103,
+      "sha256": "b085a26f43f4741923124a2d21927e8d6b5f6a68a7702ed3822b3fb9fa9114a9"
+    },
+    {
+      "path": "contrib/sessions/base_session.py",
+      "bytes": 1539,
+      "physical_lines": 48,
+      "sha256": "5ef9cf95661d6f92230e19281393fb9026ee242c26d35d0d3d3c2a0397b0bf0a"
+    },
+    {
+      "path": "contrib/sessions/exceptions.py",
+      "bytes": 378,
+      "physical_lines": 19,
+      "sha256": "6cbab8afe2b7efec42720e544f60b690038b6b9f965f893dc537f2984419cbc5"
+    },
+    {
+      "path": "contrib/sessions/management/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sessions/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sessions/management/commands/clearsessions.py",
+      "bytes": 682,
+      "physical_lines": 21,
+      "sha256": "4d9a9199df5fd7058c821a36e17d8995843b386ef219f65a8fcacb51ab5eb272"
+    },
+    {
+      "path": "contrib/sessions/middleware.py",
+      "bytes": 3560,
+      "physical_lines": 77,
+      "sha256": "cab012edb800164401f75616964ed6bbf6122758f1b47c60ab7c541f8a49cb70"
+    },
+    {
+      "path": "contrib/sessions/migrations/0001_initial.py",
+      "bytes": 1185,
+      "physical_lines": 37,
+      "sha256": "223e04badafae49d50bd7db9f70a060c7c43615209c45e1587589273640d1b12"
+    },
+    {
+      "path": "contrib/sessions/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sessions/models.py",
+      "bytes": 1285,
+      "physical_lines": 35,
+      "sha256": "e5140a684486249a966e445367231e626ca9fba687da42768dabbc17513c6db1"
+    },
+    {
+      "path": "contrib/sessions/serializers.py",
+      "bytes": 109,
+      "physical_lines": 3,
+      "sha256": "3cdd633118a03314dfc2fdc45a97254a6c3a7d9ebe78ce63c9899760d1525c67"
+    },
+    {
+      "path": "contrib/sitemaps/__init__.py",
+      "bytes": 7123,
+      "physical_lines": 200,
+      "sha256": "d35201880848b80280df40f1b0623063fc26920f2e3cfcabd4338d227ed30971"
+    },
+    {
+      "path": "contrib/sitemaps/apps.py",
+      "bytes": 257,
+      "physical_lines": 8,
+      "sha256": "5c50713c0cb38372bbc01023d68578a3e7976b5214b0e15c0ad77ff2e9539375"
+    },
+    {
+      "path": "contrib/sitemaps/views.py",
+      "bytes": 4797,
+      "physical_lines": 140,
+      "sha256": "3714e30a3170a3956177f586f21fe76db097ebcbe979de98dfde88ce84c316a5"
+    },
+    {
+      "path": "contrib/sites/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sites/admin.py",
+      "bytes": 222,
+      "physical_lines": 8,
+      "sha256": "86be56acaf6b567ab84d4315798fc3dff9494183ebdf264ee01643079dab8645"
+    },
+    {
+      "path": "contrib/sites/apps.py",
+      "bytes": 579,
+      "physical_lines": 17,
+      "sha256": "5c8e82728e18fe872df30f297272ba93169f1489dac82327083caa1194c1e6d9"
+    },
+    {
+      "path": "contrib/sites/checks.py",
+      "bytes": 380,
+      "physical_lines": 14,
+      "sha256": "cff541fc8b34d137ef40c88180694b19f772aacea5ca5abbb2413b85d852f1e6"
+    },
+    {
+      "path": "contrib/sites/management.py",
+      "bytes": 1693,
+      "physical_lines": 47,
+      "sha256": "b7b8352c67eb4033eeda002d9b529bde5ca17e3a1432d8e2df198d412a871e2e"
+    },
+    {
+      "path": "contrib/sites/managers.py",
+      "bytes": 2059,
+      "physical_lines": 65,
+      "sha256": "3a49037839098c11929d9603ce6f75d983e1f576bc488b328c69680dce485241"
+    },
+    {
+      "path": "contrib/sites/middleware.py",
+      "bytes": 321,
+      "physical_lines": 12,
+      "sha256": "9c078130de4a5aefe60acb7f3274140c846f54c32297d3fd1f2d309fc42c299c"
+    },
+    {
+      "path": "contrib/sites/migrations/0001_initial.py",
+      "bytes": 1404,
+      "physical_lines": 43,
+      "sha256": "ee498ec8ae90eedd1cade386270c167a44fc860bbcdfc0b1b3fe3cf1bf9a4a8c"
+    },
+    {
+      "path": "contrib/sites/migrations/0002_alter_domain_unique.py",
+      "bytes": 570,
+      "physical_lines": 21,
+      "sha256": "e3ae1c10c11379f66f739a507700d34e88242045a2367c4e4c0c4a5901fa30fd"
+    },
+    {
+      "path": "contrib/sites/migrations/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/sites/models.py",
+      "bytes": 3815,
+      "physical_lines": 120,
+      "sha256": "2f948bd6c7a48d5703e6fd27bb1dc1babdcc5f89a6fa62424bd28009fcc0578d"
+    },
+    {
+      "path": "contrib/sites/requests.py",
+      "bytes": 661,
+      "physical_lines": 20,
+      "sha256": "4362336ebcd143881dc33fe2cc9adbdbb17bead5f13b8292ab58ef3310804a7f"
+    },
+    {
+      "path": "contrib/sites/shortcuts.py",
+      "bytes": 591,
+      "physical_lines": 18,
+      "sha256": "18f24fee4ab7bb54983183d48305b0b3633f66a6e0c1c71bbfed38b643069db9"
+    },
+    {
+      "path": "contrib/staticfiles/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/staticfiles/apps.py",
+      "bytes": 518,
+      "physical_lines": 14,
+      "sha256": "16cdcd45337f213cc81c4c9a305b43c08291263d105c6dbe33f5bd5cd25c6dab"
+    },
+    {
+      "path": "contrib/staticfiles/checks.py",
+      "bytes": 875,
+      "physical_lines": 29,
+      "sha256": "add2d17efc31f233136288814a1b3d31d09edcf28473cc4ec59a909ea66ba7b5"
+    },
+    {
+      "path": "contrib/staticfiles/finders.py",
+      "bytes": 13929,
+      "physical_lines": 382,
+      "sha256": "b5b8466314ead0654064e92836f37af4fb70adaed5209564ace2a625a449c0eb"
+    },
+    {
+      "path": "contrib/staticfiles/handlers.py",
+      "bytes": 4158,
+      "physical_lines": 115,
+      "sha256": "9941d63dab32ae17597e678b4d2c86527708d87743b37a224b801365bbf7361a"
+    },
+    {
+      "path": "contrib/staticfiles/management/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/staticfiles/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/staticfiles/management/commands/collectstatic.py",
+      "bytes": 15484,
+      "physical_lines": 379,
+      "sha256": "b49a2a89bf2e62e09a74364f80ec747aa6d39c3cc7e4ebd9973dfee4c7eae65b"
+    },
+    {
+      "path": "contrib/staticfiles/management/commands/findstatic.py",
+      "bytes": 1691,
+      "physical_lines": 48,
+      "sha256": "aa4ee26c3ad40b68587a4302489beeec5894774ab522f6dc72570198ccc41648"
+    },
+    {
+      "path": "contrib/staticfiles/management/commands/runserver.py",
+      "bytes": 1409,
+      "physical_lines": 36,
+      "sha256": "60902b2982a483b004b907b2b1244dff1304e120459285b1a1f502c47073d1a0"
+    },
+    {
+      "path": "contrib/staticfiles/storage.py",
+      "bytes": 21721,
+      "physical_lines": 545,
+      "sha256": "fa93c351ed9e9cadc969a1210756ff778be37fb09f1b6e769d0671f2e6579007"
+    },
+    {
+      "path": "contrib/staticfiles/testing.py",
+      "bytes": 476,
+      "physical_lines": 13,
+      "sha256": "a12ff8b180654aea152d696a19bf8a4801152b372ae862eb5ba3e5afb89a7c18"
+    },
+    {
+      "path": "contrib/staticfiles/urls.py",
+      "bytes": 517,
+      "physical_lines": 19,
+      "sha256": "6d53c73c101420e2e7b2d9608756c3915145596ca3e3624ee72296ee6903802a"
+    },
+    {
+      "path": "contrib/staticfiles/utils.py",
+      "bytes": 2350,
+      "physical_lines": 71,
+      "sha256": "f7d448d25abf9b77f71aff400936bf46f9493cda44da09b82f83e4a10605607b"
+    },
+    {
+      "path": "contrib/staticfiles/views.py",
+      "bytes": 1302,
+      "physical_lines": 40,
+      "sha256": "489071e3ab8d7e020df55fccba9f4c6cca9b77d24460f3cbe16eab034cfd88a1"
+    },
+    {
+      "path": "contrib/syndication/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "contrib/syndication/apps.py",
+      "bytes": 210,
+      "physical_lines": 7,
+      "sha256": "f008d10e97e129685eb657df6be74fba49513ffd3e3bccf737a113dbd856df60"
+    },
+    {
+      "path": "contrib/syndication/views.py",
+      "bytes": 9612,
+      "physical_lines": 235,
+      "sha256": "e7a85ca58cb6b68cf0e5f62a23b14a889efa823371bc839cacc5f3777070b285"
+    },
+    {
+      "path": "core/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/asgi.py",
+      "bytes": 399,
+      "physical_lines": 13,
+      "sha256": "2cf13a93e89cb0bd0e715affae4c55bfedeb596cadc3d4f60c070c071d6486e6"
+    },
+    {
+      "path": "core/cache/__init__.py",
+      "bytes": 1996,
+      "physical_lines": 67,
+      "sha256": "72c232164edb0e2fcc2b087b1356614066e6af85932849d79fa08bcbef78ca84"
+    },
+    {
+      "path": "core/cache/backends/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/cache/backends/base.py",
+      "bytes": 14698,
+      "physical_lines": 406,
+      "sha256": "fb6106e810ebacb63d8a16633f5826b360073f125f024ff19fe657861fe726c5"
+    },
+    {
+      "path": "core/cache/backends/db.py",
+      "bytes": 11667,
+      "physical_lines": 294,
+      "sha256": "97e9478a2f545566ac482d21945c10222064eed0a83574d4e81a99158dd85b74"
+    },
+    {
+      "path": "core/cache/backends/dummy.py",
+      "bytes": 1077,
+      "physical_lines": 34,
+      "sha256": "5be11e245223598b8df24ca8e79e82e154c8e7f4cea918a38d11224ed02cf784"
+    },
+    {
+      "path": "core/cache/backends/filebased.py",
+      "bytes": 5966,
+      "physical_lines": 171,
+      "sha256": "6cf5d3a525e44a8c0974bcc7cc3346f90fc58995f04c64bdbcbaff1ec5a7ea8c"
+    },
+    {
+      "path": "core/cache/backends/locmem.py",
+      "bytes": 4154,
+      "physical_lines": 118,
+      "sha256": "1b150f2811bf9fcb7031aeccaa941056e5ff949748a0aae069a1a6b0d19bd010"
+    },
+    {
+      "path": "core/cache/backends/memcached.py",
+      "bytes": 6964,
+      "physical_lines": 188,
+      "sha256": "277a5773168b6cd2c6b85ada8f40645b6b9faca33552b3e7670d55c6de4d24db"
+    },
+    {
+      "path": "core/cache/backends/redis.py",
+      "bytes": 8244,
+      "physical_lines": 234,
+      "sha256": "2dc4a2c903d92a2dbb2c10784540ccbec46c7d0d9de117b5f8c42e907033ad03"
+    },
+    {
+      "path": "core/cache/utils.py",
+      "bytes": 409,
+      "physical_lines": 12,
+      "sha256": "83e51be88d7ee8e96a641588fb85d3a0e7cf049c3ea8b4dc570f16f1f9e4e8bf"
+    },
+    {
+      "path": "core/checks/__init__.py",
+      "bytes": 1297,
+      "physical_lines": 48,
+      "sha256": "ab242bf0fff9fe2cf5de373d8249ca0a57b57c9d42e78049700014dbe1fb7576"
+    },
+    {
+      "path": "core/checks/async_checks.py",
+      "bytes": 419,
+      "physical_lines": 16,
+      "sha256": "2391ce38de088904e487fccef8ff57842913eb03f306d7a14ecf717a9e55818f"
+    },
+    {
+      "path": "core/checks/caches.py",
+      "bytes": 2719,
+      "physical_lines": 76,
+      "sha256": "c0b0732e2bce2b03f7472bf8d2faa84e6a34931e80a6170955eee35e6f85b094"
+    },
+    {
+      "path": "core/checks/commands.py",
+      "bytes": 993,
+      "physical_lines": 28,
+      "sha256": "24d46ead49988a42996b9e4d9bf771ea3ba0c7b2b7c3ebcbffcbabbc735ad397"
+    },
+    {
+      "path": "core/checks/compatibility/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/checks/compatibility/django_4_0.py",
+      "bytes": 677,
+      "physical_lines": 20,
+      "sha256": "2689a02be4483322ccd8b2737526aae9381aaee59cea760b18ec55bc37e0356b"
+    },
+    {
+      "path": "core/checks/database.py",
+      "bytes": 355,
+      "physical_lines": 14,
+      "sha256": "78d79a1e5ac1c9cf989265727a2612f5a865e9fbbdf07383b5fc7c34a62c31d8"
+    },
+    {
+      "path": "core/checks/files.py",
+      "bytes": 541,
+      "physical_lines": 19,
+      "sha256": "80c1f895cbff4edc728a1a142aaa304e0a2f4a7237631b61f38fa7d5cd27342c"
+    },
+    {
+      "path": "core/checks/messages.py",
+      "bytes": 2322,
+      "physical_lines": 81,
+      "sha256": "307ec28cdbfb5808a8fb7311c4af092dc4b80e30c33fadc382d3939bbcc71dd1"
+    },
+    {
+      "path": "core/checks/model_checks.py",
+      "bytes": 9057,
+      "physical_lines": 227,
+      "sha256": "d9aec7af2097df96215645c365bd4d98b3527c2eb0bb9a990a78265162cd1026"
+    },
+    {
+      "path": "core/checks/registry.py",
+      "bytes": 3600,
+      "physical_lines": 118,
+      "sha256": "e961db977a2a60fe05350cd0301314a0b539e8e8f170c51f5ab0b8771018c2af"
+    },
+    {
+      "path": "core/checks/security/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/checks/security/base.py",
+      "bytes": 9423,
+      "physical_lines": 283,
+      "sha256": "f121eda35796eacf9a241719ce695b1b7627c2243c6df94f402c885a52a1f1a2"
+    },
+    {
+      "path": "core/checks/security/csrf.py",
+      "bytes": 2122,
+      "physical_lines": 67,
+      "sha256": "4e3d32630a973b2c76ef802a86f97be8fb4fcff7a6701bab2af41685066c59a5"
+    },
+    {
+      "path": "core/checks/security/sessions.py",
+      "bytes": 2653,
+      "physical_lines": 99,
+      "sha256": "01ac1569e10d0843700513aafc63d3e6656849df2c92082d6b99dd4c574e80e5"
+    },
+    {
+      "path": "core/checks/templates.py",
+      "bytes": 308,
+      "physical_lines": 12,
+      "sha256": "156ec7006b088afb967c0ede3b1e6a255503d63f0ab73ff1d6d90e9c273c8f45"
+    },
+    {
+      "path": "core/checks/translation.py",
+      "bytes": 2056,
+      "physical_lines": 66,
+      "sha256": "338a327ee66a2b3cb221eeb30bcae1182abc268f6b7ee1b1e054a16d8f10339d"
+    },
+    {
+      "path": "core/checks/urls.py",
+      "bytes": 5076,
+      "physical_lines": 159,
+      "sha256": "73f7e9c01649a8d173e4b50222ab36d18bd8c91ef5a1ee6bdf9a23eb2521bf28"
+    },
+    {
+      "path": "core/exceptions.py",
+      "bytes": 6820,
+      "physical_lines": 255,
+      "sha256": "62882028ccf8b1e42d1e2f4cad1330bccb55ad7c9b559d7cfd71d94beeb30cf8"
+    },
+    {
+      "path": "core/files/__init__.py",
+      "bytes": 63,
+      "physical_lines": 3,
+      "sha256": "50c7999817efb0402befcfe66b19d9efe44aca934f090fc38254ce4211557f79"
+    },
+    {
+      "path": "core/files/base.py",
+      "bytes": 5006,
+      "physical_lines": 161,
+      "sha256": "a6067d34b0191bf442e02acd479fcfa823365cbbb1ed33c35b0501cb4c9647a7"
+    },
+    {
+      "path": "core/files/images.py",
+      "bytes": 2733,
+      "physical_lines": 89,
+      "sha256": "05852d13897d4f95d001447bf73da01386d2132fd1deafe9b30c9aa93cf21c90"
+    },
+    {
+      "path": "core/files/locks.py",
+      "bytes": 3742,
+      "physical_lines": 128,
+      "sha256": "0f48338f2927b3f8935c809428c57f1a48c983c703ebacaf24db4e777110583f"
+    },
+    {
+      "path": "core/files/move.py",
+      "bytes": 3039,
+      "physical_lines": 91,
+      "sha256": "ff76d166edff54333fabdc43b998dc1b17b0954a24bb201a9105c1ac6c04c56d"
+    },
+    {
+      "path": "core/files/storage/__init__.py",
+      "bytes": 649,
+      "physical_lines": 27,
+      "sha256": "e25c09b25dff5203c755df6c729f0c82a33879eb384eaba14c13cfdeb0c8968c"
+    },
+    {
+      "path": "core/files/storage/base.py",
+      "bytes": 8502,
+      "physical_lines": 206,
+      "sha256": "dab19d34131af12e40a2b96325cd6a7b2659cb758e73493b310875169dd3782f"
+    },
+    {
+      "path": "core/files/storage/filesystem.py",
+      "bytes": 9846,
+      "physical_lines": 248,
+      "sha256": "4fc7b8fc2f4707c6d392b7cdc5c547dd42cbb4c7aa582c99f0e63971bd0b719c"
+    },
+    {
+      "path": "core/files/storage/handler.py",
+      "bytes": 1553,
+      "physical_lines": 46,
+      "sha256": "9d9b958b4efdce2d43b5ab352877d5ce31e544b3148427ca797e9990b9cb4326"
+    },
+    {
+      "path": "core/files/storage/memory.py",
+      "bytes": 10168,
+      "physical_lines": 293,
+      "sha256": "6b514f2008015a75b695efb64ed8efdb553ff170b6b0ac35ce145684e98c4206"
+    },
+    {
+      "path": "core/files/storage/mixins.py",
+      "bytes": 715,
+      "physical_lines": 15,
+      "sha256": "3ec01b9a1f30c71212dff3cc88746c8b79f359cbdceab57d842cf2a18c2dde86"
+    },
+    {
+      "path": "core/files/temp.py",
+      "bytes": 2582,
+      "physical_lines": 79,
+      "sha256": "3509c560abb83f6d539fa15538ec4b70351ae5b4e784501137d1ca665c208327"
+    },
+    {
+      "path": "core/files/uploadedfile.py",
+      "bytes": 4339,
+      "physical_lines": 150,
+      "sha256": "173bd9176074f8f0737da506ea235f7fd89989d65979d065c30e26e028d8a4a8"
+    },
+    {
+      "path": "core/files/uploadhandler.py",
+      "bytes": 7432,
+      "physical_lines": 252,
+      "sha256": "b7a0f97c8b0a0aae3dd16aaabe9c0ff7ae6028892a0ceb0becc955cdd44f50fd"
+    },
+    {
+      "path": "core/files/utils.py",
+      "bytes": 2679,
+      "physical_lines": 77,
+      "sha256": "4e6f0c609fff75c8ec2720864957a634b8eaff11c913e3493e7a4600980c1ecd"
+    },
+    {
+      "path": "core/handlers/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/handlers/asgi.py",
+      "bytes": 14211,
+      "physical_lines": 372,
+      "sha256": "e7caea258a1c8e09eb5899ea9515f82f5b495750f4b76a8c09820cf1383955a4"
+    },
+    {
+      "path": "core/handlers/base.py",
+      "bytes": 15186,
+      "physical_lines": 373,
+      "sha256": "1d6eeab8a153f6e8a098a83cfca328c8b8eddd7d3b026718778a7efdc3b3f1e3"
+    },
+    {
+      "path": "core/handlers/exception.py",
+      "bytes": 6147,
+      "physical_lines": 186,
+      "sha256": "0bbc858bd53bfbb7a10158bda825f71e99829db4faf4a6736ad6d61c7abf251b"
+    },
+    {
+      "path": "core/handlers/wsgi.py",
+      "bytes": 7522,
+      "physical_lines": 207,
+      "sha256": "93d0c2f3d077a148c2471b18cea8d5e810b09cc0b23e063c7ce4e8835cfc79f4"
+    },
+    {
+      "path": "core/mail/__init__.py",
+      "bytes": 5208,
+      "physical_lines": 159,
+      "sha256": "89b04c9732d83849004753ed3b6ff3467ab6c2c5bc1a19f4eb5cb84a8663a9fa"
+    },
+    {
+      "path": "core/mail/backends/__init__.py",
+      "bytes": 38,
+      "physical_lines": 1,
+      "sha256": "8b2a32a4bc65ab56d8289ff1ea2e6302ebf6f05f2fa064862ad9da4fb20e5735"
+    },
+    {
+      "path": "core/mail/backends/base.py",
+      "bytes": 1745,
+      "physical_lines": 62,
+      "sha256": "4c50abc3e895e1a2c67babfabe3fa3f71bcf9d5530024f2935968b1383dc1b02"
+    },
+    {
+      "path": "core/mail/backends/console.py",
+      "bytes": 1472,
+      "physical_lines": 45,
+      "sha256": "c33c7892383c2daf7a2949bb37fe27ed02231bb224c39308d4dd33231e011721"
+    },
+    {
+      "path": "core/mail/backends/dummy.py",
+      "bytes": 244,
+      "physical_lines": 10,
+      "sha256": "2b9b77936ce8f1194d5b575f61cf3d6a0be8be5134b514bbe3f22917ed291c93"
+    },
+    {
+      "path": "core/mail/backends/filebased.py",
+      "bytes": 2419,
+      "physical_lines": 66,
+      "sha256": "377073be264b69fb2dc1b152717317d02a42bb94b56c84e66dfe04d7dc34df6e"
+    },
+    {
+      "path": "core/mail/backends/locmem.py",
+      "bytes": 946,
+      "physical_lines": 33,
+      "sha256": "58d7c607ed75644534f43e3ec7ce04ec7ee4c050febdf7d6f9b92d5090a5edcd"
+    },
+    {
+      "path": "core/mail/backends/smtp.py",
+      "bytes": 5965,
+      "physical_lines": 162,
+      "sha256": "0ee642eee52898caeb3c412ab97f8a0b01b9a11a43dbf405e51e3c2c398360e4"
+    },
+    {
+      "path": "core/mail/message.py",
+      "bytes": 19269,
+      "physical_lines": 520,
+      "sha256": "027252e2ec2cce70566e4470eceff425dc70d7827adb83b0155fb39ed648dd49"
+    },
+    {
+      "path": "core/mail/utils.py",
+      "bytes": 528,
+      "physical_lines": 22,
+      "sha256": "9db1fa010df4fa159d98eb750ecfed8f6ce916b90976a5382d662c4ed8d068c9"
+    },
+    {
+      "path": "core/management/__init__.py",
+      "bytes": 17849,
+      "physical_lines": 442,
+      "sha256": "b1953af097d12c7ad7bfdf19c9cf21080d6ba615cf72888202205a2b198a153c"
+    },
+    {
+      "path": "core/management/base.py",
+      "bytes": 25478,
+      "physical_lines": 707,
+      "sha256": "6894627853814584c5c86f11e18e7b9d3dcac183c80aea3ea0b0e3e8115be8eb"
+    },
+    {
+      "path": "core/management/color.py",
+      "bytes": 3288,
+      "physical_lines": 120,
+      "sha256": "60d069f37678427e1745876382e0db98739537c680ee4b3c05630f44658058f6"
+    },
+    {
+      "path": "core/management/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/management/commands/check.py",
+      "bytes": 2920,
+      "physical_lines": 88,
+      "sha256": "92b7e439d36e388ef755b8616f689bb9f7b6b9e7dfb8aa5c8e92757d87d0def9"
+    },
+    {
+      "path": "core/management/commands/compilemessages.py",
+      "bytes": 7205,
+      "physical_lines": 195,
+      "sha256": "04b80bef4f15e0c729fd82649ab471f6c2b5e73f7bd5e7656cabc37debfab646"
+    },
+    {
+      "path": "core/management/commands/createcachetable.py",
+      "bytes": 4787,
+      "physical_lines": 131,
+      "sha256": "efa2435c676f3d5ccc15881f26124725e8a0538b9b07d3748ba5bfc0eefbc771"
+    },
+    {
+      "path": "core/management/commands/dbshell.py",
+      "bytes": 1811,
+      "physical_lines": 49,
+      "sha256": "362aecfa098b2cb31ae0df6e4ab321eea5013fbde11b7bf6c34994a93c6d1c4f"
+    },
+    {
+      "path": "core/management/commands/diffsettings.py",
+      "bytes": 3645,
+      "physical_lines": 91,
+      "sha256": "3c843fbd486dd9b43cbaafee5e07eb065d8ba272fd71ce5d540fb86c68b4376a"
+    },
+    {
+      "path": "core/management/commands/dumpdata.py",
+      "bytes": 11465,
+      "physical_lines": 285,
+      "sha256": "5c0a259156464c3a42f643832f5773c43941ea38f1999c8d60af70bc29e9e35f"
+    },
+    {
+      "path": "core/management/commands/flush.py",
+      "bytes": 3744,
+      "physical_lines": 93,
+      "sha256": "54df7885b424567dcbd436a0723298740fc397c850c520bc8c00270eac3fadf6"
+    },
+    {
+      "path": "core/management/commands/inspectdb.py",
+      "bytes": 17755,
+      "physical_lines": 417,
+      "sha256": "7bce84d60550b1e1f85771ba919f2ab4ed258bb279cf5187567fe7e05ce52386"
+    },
+    {
+      "path": "core/management/commands/loaddata.py",
+      "bytes": 16441,
+      "physical_lines": 433,
+      "sha256": "d4694f3ea565af4bb4f474306e63a81fb1f7c7594abfa8d8163c08a6c68da013"
+    },
+    {
+      "path": "core/management/commands/makemessages.py",
+      "bytes": 29464,
+      "physical_lines": 769,
+      "sha256": "1eb111b5ac9dbcbaa5879c5a765c5e4fac1af1f47cce8d0509dd5f11b58e6f3d"
+    },
+    {
+      "path": "core/management/commands/makemigrations.py",
+      "bytes": 23055,
+      "physical_lines": 516,
+      "sha256": "dfc7e61b9a14548d0c4542c860bbd9ef81cce50701f19f5a0b187ecc33503829"
+    },
+    {
+      "path": "core/management/commands/migrate.py",
+      "bytes": 21857,
+      "physical_lines": 508,
+      "sha256": "c6d6ee39d5d1651bbc357129fd44ab388ee79334383f59e041ec4da900e649ca"
+    },
+    {
+      "path": "core/management/commands/optimizemigration.py",
+      "bytes": 5373,
+      "physical_lines": 129,
+      "sha256": "1e9aa745a96d20eaf6668abe3641c73f7b1f044bea2fb8993337a0da67c6b0c0"
+    },
+    {
+      "path": "core/management/commands/runserver.py",
+      "bytes": 7740,
+      "physical_lines": 201,
+      "sha256": "80c0d63f3b9f0ac2055b7b83879b4979782c4ba6d32b4b115c9af73747e9d497"
+    },
+    {
+      "path": "core/management/commands/sendtestemail.py",
+      "bytes": 1564,
+      "physical_lines": 46,
+      "sha256": "f29819821031fad81ca2914a7eea9cc2276bc76c948fb2ce429aa6d8cd236410"
+    },
+    {
+      "path": "core/management/commands/shell.py",
+      "bytes": 9438,
+      "physical_lines": 269,
+      "sha256": "4016820c2af9e6abe51be4076112224cc109b86d7005907ab9f56a6c6587bf43"
+    },
+    {
+      "path": "core/management/commands/showmigrations.py",
+      "bytes": 7024,
+      "physical_lines": 177,
+      "sha256": "ac5b29bafcc4fb60bc907dbdf007b5313058616a12d8cda5d362b3bf9410c682"
+    },
+    {
+      "path": "core/management/commands/sqlflush.py",
+      "bytes": 1061,
+      "physical_lines": 30,
+      "sha256": "c436bd55e598a7d2eb4f52e67eed7f19da4dfa2fc344c5c72da6ea3270948d61"
+    },
+    {
+      "path": "core/management/commands/sqlmigrate.py",
+      "bytes": 3393,
+      "physical_lines": 83,
+      "sha256": "f8829fdd52a3ac747f18a1669a2253b4ec4a4aba074a86e37b692dec4b2f194a"
+    },
+    {
+      "path": "core/management/commands/sqlsequencereset.py",
+      "bytes": 1133,
+      "physical_lines": 32,
+      "sha256": "faed2f2252f31a017cb50ecb8995936f0a1b39b07be2542a134c9902537258c0"
+    },
+    {
+      "path": "core/management/commands/squashmigrations.py",
+      "bytes": 11149,
+      "physical_lines": 267,
+      "sha256": "c0bd733ec9058cb0f75d5cc359dd934f87b4d3045a30622a455494def80f2b42"
+    },
+    {
+      "path": "core/management/commands/startapp.py",
+      "bytes": 517,
+      "physical_lines": 14,
+      "sha256": "0a9d8161ec7efa6f85af979485752033507fa6dbc80d936c1e4ffc7a6aac2067"
+    },
+    {
+      "path": "core/management/commands/startproject.py",
+      "bytes": 810,
+      "physical_lines": 21,
+      "sha256": "045c09142abf8e0ec2a76ab65c3f5ba878625a8c1169a2f525dee400af3ab4db"
+    },
+    {
+      "path": "core/management/commands/test.py",
+      "bytes": 2433,
+      "physical_lines": 66,
+      "sha256": "50363fdbc9aa301b05f1c8668c68e48f553ae9837d9a02652be551d841732209"
+    },
+    {
+      "path": "core/management/commands/testserver.py",
+      "bytes": 2303,
+      "physical_lines": 65,
+      "sha256": "41329335fd649f17295d13a182278942a44fc4e9bf86ea78148c70397b4edb56"
+    },
+    {
+      "path": "core/management/sql.py",
+      "bytes": 1910,
+      "physical_lines": 59,
+      "sha256": "7a20181dab3a0d8ac66c814da9aefc4f0228b1b8b2ae3c4c892f856d1bf6185f"
+    },
+    {
+      "path": "core/management/templates.py",
+      "bytes": 15837,
+      "physical_lines": 402,
+      "sha256": "34eb705b80fd59d4d1c419f8c08363064153dc0c79ee5e118d3c3c2909f614a5"
+    },
+    {
+      "path": "core/management/utils.py",
+      "bytes": 5817,
+      "physical_lines": 181,
+      "sha256": "3d27dd6e66ce4c907b4f6698c9c00c538ca524a8c5038bc71663f784c22dbbb3"
+    },
+    {
+      "path": "core/paginator.py",
+      "bytes": 8143,
+      "physical_lines": 238,
+      "sha256": "4db514c41761076ad0cb6ae571b36ccb7fe7711e42a4eb8d706ea6e95ecd4be3"
+    },
+    {
+      "path": "core/serializers/__init__.py",
+      "bytes": 9026,
+      "physical_lines": 254,
+      "sha256": "28e7fc251595c25f556f198fc19fae3e052ecccd0b2c45a1e8449998eb674c93"
+    },
+    {
+      "path": "core/serializers/base.py",
+      "bytes": 13018,
+      "physical_lines": 387,
+      "sha256": "d34ffa55bb437187444051d22ee94dbcf0c46941734f95ab38f460745cdbc5c4"
+    },
+    {
+      "path": "core/serializers/json.py",
+      "bytes": 3871,
+      "physical_lines": 114,
+      "sha256": "43ddd1a748e0a4090080230a3887dcf02b2046b4dd46267d2890e91721dcea78"
+    },
+    {
+      "path": "core/serializers/jsonl.py",
+      "bytes": 2326,
+      "physical_lines": 68,
+      "sha256": "19cc1f5b58c8109501ed28e663dc9e083c93956ec8b5f1c99b97cb0439050f7d"
+    },
+    {
+      "path": "core/serializers/python.py",
+      "bytes": 8316,
+      "physical_lines": 222,
+      "sha256": "0668bd3dded2439e8c6318003c9ffeb2f3a0cb7748d2751a8bc09d1e4ea24781"
+    },
+    {
+      "path": "core/serializers/pyyaml.py",
+      "bytes": 3148,
+      "physical_lines": 87,
+      "sha256": "d052468dc6ba9c95cb64c376d16311412ba408b9897acabed317791ac6965080"
+    },
+    {
+      "path": "core/serializers/xml_serializer.py",
+      "bytes": 19057,
+      "physical_lines": 501,
+      "sha256": "c9ad75868fba1d5b4a1db9594a6b6ac518e68a18ee5d609ea49a8afb62210fc2"
+    },
+    {
+      "path": "core/servers/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/servers/basehttp.py",
+      "bytes": 10277,
+      "physical_lines": 282,
+      "sha256": "56671efa505eff5da769daba82cc4d60e8aee762991a69f142b974d3803c6050"
+    },
+    {
+      "path": "core/signals.py",
+      "bytes": 157,
+      "physical_lines": 6,
+      "sha256": "3400aad8d130a84e50d3915f15d1f7ad02e79c4822361b6431b2ffe3568bb316"
+    },
+    {
+      "path": "core/signing.py",
+      "bytes": 9049,
+      "physical_lines": 277,
+      "sha256": "efa4944b144437804ef55c696c8e8d5bc8ea0fa0820b7b7b9166a09583ef6115"
+    },
+    {
+      "path": "core/validators.py",
+      "bytes": 23161,
+      "physical_lines": 677,
+      "sha256": "7bdb7248a55a385be93c9b2f25d665247d9c3e8abe67b5b93b956b345e29a7e4"
+    },
+    {
+      "path": "core/wsgi.py",
+      "bytes": 401,
+      "physical_lines": 13,
+      "sha256": "770a79c8f3bcab1c43e2bb56472bb3814ef812c02a7a09de02ffc853f634a4dd"
+    },
+    {
+      "path": "db/__init__.py",
+      "bytes": 1596,
+      "physical_lines": 63,
+      "sha256": "8f7e8862e002eb1608dfe5c56fd9c4e399fcafa12f7f070b50b27369eba1a901"
+    },
+    {
+      "path": "db/backends/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/base/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/base/base.py",
+      "bytes": 29390,
+      "physical_lines": 792,
+      "sha256": "3d204687c62cde90d71b9c85675f65e2aec53f2c9142e0919aefad064702f444"
+    },
+    {
+      "path": "db/backends/base/client.py",
+      "bytes": 965,
+      "physical_lines": 28,
+      "sha256": "850581b615db01b7c6e550df10fb69909652674b720938d20a2f658169c11d47"
+    },
+    {
+      "path": "db/backends/base/creation.py",
+      "bytes": 16231,
+      "physical_lines": 384,
+      "sha256": "c4b60d6a25f6a96dac10437faa9076ea13722161c6145cfb087a5df3b384d180"
+    },
+    {
+      "path": "db/backends/base/features.py",
+      "bytes": 16365,
+      "physical_lines": 419,
+      "sha256": "c274f0e5f859f146afc78dc6f674a5b974b0f14b14b4acaf4f3928122e46a03b"
+    },
+    {
+      "path": "db/backends/base/introspection.py",
+      "bytes": 8112,
+      "physical_lines": 212,
+      "sha256": "f67630c5dd2edb22950055e20169627a0464245fe2fa4de9774aba3b9d56c99d"
+    },
+    {
+      "path": "db/backends/base/operations.py",
+      "bytes": 30975,
+      "physical_lines": 806,
+      "sha256": "1eb879f7d51788eb972014946645ff702d2b61ecf6a66df90657fc2731bbdb7b"
+    },
+    {
+      "path": "db/backends/base/schema.py",
+      "bytes": 84369,
+      "physical_lines": 2046,
+      "sha256": "2d8f82e156a11b91b24d4af060fd5181205b16a1629f25482bef9dd99856e500"
+    },
+    {
+      "path": "db/backends/base/validation.py",
+      "bytes": 1096,
+      "physical_lines": 29,
+      "sha256": "400d4ae08b70af09bd4d5f29523c433b82c9ffd59491b0eeef3903bc35cebf27"
+    },
+    {
+      "path": "db/backends/ddl_references.py",
+      "bytes": 8889,
+      "physical_lines": 270,
+      "sha256": "aad3d397fcc35f8024426b6c6de4337785689e8f003ecb33e782167704d593cf"
+    },
+    {
+      "path": "db/backends/dummy/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/dummy/base.py",
+      "bytes": 2292,
+      "physical_lines": 75,
+      "sha256": "afc0fefd161112520f5724c13a1cbff8ad53d05bc4dc48b4cee93f1642a1fdfb"
+    },
+    {
+      "path": "db/backends/dummy/features.py",
+      "bytes": 187,
+      "physical_lines": 6,
+      "sha256": "2b51613046eaca4b024a7287bb2d7a60e174599c984d6efe9b9723fb9c7c4219"
+    },
+    {
+      "path": "db/backends/mysql/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/mysql/base.py",
+      "bytes": 17313,
+      "physical_lines": 449,
+      "sha256": "bb3c8a0f3ec8832f258534c53ba62650b2f31082f568463e358b5c1cde25ca63"
+    },
+    {
+      "path": "db/backends/mysql/client.py",
+      "bytes": 3060,
+      "physical_lines": 72,
+      "sha256": "e51a8ee4876f5b69f6cf504a805da11611664789318c9cc4a5c45f73b7a6256f"
+    },
+    {
+      "path": "db/backends/mysql/compiler.py",
+      "bytes": 3166,
+      "physical_lines": 72,
+      "sha256": "ceca677e92e4e93ee24ecb2ad750d906cfd6a7f5aa3cd5155f74f3451cca1482"
+    },
+    {
+      "path": "db/backends/mysql/creation.py",
+      "bytes": 3536,
+      "physical_lines": 87,
+      "sha256": "364a5d820f8c78a1805092dfa16d7e6430572e1aa102ac73abdd08096c21d272"
+    },
+    {
+      "path": "db/backends/mysql/features.py",
+      "bytes": 11445,
+      "physical_lines": 317,
+      "sha256": "3f3e903fd699a6b95594b6be02eb4890e35078df46b264e69819844fe30a33f7"
+    },
+    {
+      "path": "db/backends/mysql/introspection.py",
+      "bytes": 14856,
+      "physical_lines": 358,
+      "sha256": "034dae368389e4367ded214ff9332189c931b4cf4e5e3bb0c9c3f445fa089f7c"
+    },
+    {
+      "path": "db/backends/mysql/operations.py",
+      "bytes": 18785,
+      "physical_lines": 455,
+      "sha256": "4e0b7b0c552fd1091ecf0226c160368c3fad444bd739b2ed63f3a4758f63cb26"
+    },
+    {
+      "path": "db/backends/mysql/schema.py",
+      "bytes": 11520,
+      "physical_lines": 281,
+      "sha256": "ee7d17d4496527bca1c54daf85f7290ed2738c77436dfb6e67383cb5c6472642"
+    },
+    {
+      "path": "db/backends/mysql/validation.py",
+      "bytes": 3170,
+      "physical_lines": 77,
+      "sha256": "d6eafe28b10453de6066dbba19c3c8d0d8e533172fc67ac22e7ac7d971ef0683"
+    },
+    {
+      "path": "db/backends/oracle/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/oracle/base.py",
+      "bytes": 26775,
+      "physical_lines": 668,
+      "sha256": "247b20a17e3e9e9ba52daa77138d9c50fa0c7b77b1cd60ff6acd3d12ef2f1f4c"
+    },
+    {
+      "path": "db/backends/oracle/client.py",
+      "bytes": 811,
+      "physical_lines": 27,
+      "sha256": "66d3758c076bca622bb40f0074701f1f8ff599b620c94b2e7f65f845f9aa5f8e"
+    },
+    {
+      "path": "db/backends/oracle/creation.py",
+      "bytes": 21453,
+      "physical_lines": 467,
+      "sha256": "168613cafafd97e9ea275618de7bee5469429e186ad01ce1d1a89320c7ea7ff0"
+    },
+    {
+      "path": "db/backends/oracle/features.py",
+      "bytes": 9559,
+      "physical_lines": 223,
+      "sha256": "0c748b386b9c18ee3addc9b962609cb32abbd0f573dd1819b60e118728aa8e22"
+    },
+    {
+      "path": "db/backends/oracle/functions.py",
+      "bytes": 838,
+      "physical_lines": 26,
+      "sha256": "70f8646dd234e4288ba106e1e456851d493074630512bbcf766a0751aef3343f"
+    },
+    {
+      "path": "db/backends/oracle/introspection.py",
+      "bytes": 15888,
+      "physical_lines": 414,
+      "sha256": "80ccc808dffbf88a2fda05cd834801aa9dd8ef09b5c2e28b1f2dd74a40345010"
+    },
+    {
+      "path": "db/backends/oracle/operations.py",
+      "bytes": 30930,
+      "physical_lines": 741,
+      "sha256": "31e11ca39940298fce12bd9362fd909e5813ce2577df0864cfbd9fb98ee0e713"
+    },
+    {
+      "path": "db/backends/oracle/oracledb_any.py",
+      "bytes": 466,
+      "physical_lines": 20,
+      "sha256": "ccdeb10e48ed70b2c264f9164110bfc14de26bd3a51603fa0e192ab6dcefa11a"
+    },
+    {
+      "path": "db/backends/oracle/schema.py",
+      "bytes": 11005,
+      "physical_lines": 252,
+      "sha256": "24d293dd502a52c768a867fca7d72ef692ad80a2ba455bdc8f9603518e3d364c"
+    },
+    {
+      "path": "db/backends/oracle/utils.py",
+      "bytes": 2852,
+      "physical_lines": 99,
+      "sha256": "f56678995bbd766e717b7cd08786d147fc1be27da16173fe38c033246f469d19"
+    },
+    {
+      "path": "db/backends/oracle/validation.py",
+      "bytes": 882,
+      "physical_lines": 22,
+      "sha256": "995b29bc18dbb977fab2de18d314490bd3d1fe200cfbdbc1ae58ac6c36b6eda8"
+    },
+    {
+      "path": "db/backends/postgresql/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/postgresql/base.py",
+      "bytes": 24097,
+      "physical_lines": 611,
+      "sha256": "d5a3e6d7496f993f7227df1435ce50d20804044549864a5d54131e54114648e9"
+    },
+    {
+      "path": "db/backends/postgresql/client.py",
+      "bytes": 2108,
+      "physical_lines": 64,
+      "sha256": "f4c76d9f3dff3761b3ae98f8f1c730c18b117af8f6b419b069adff549f985806"
+    },
+    {
+      "path": "db/backends/postgresql/compiler.py",
+      "bytes": 2108,
+      "physical_lines": 54,
+      "sha256": "50e3ce3195735ab1ab9782582efec7edbf8115ed29acbbdc70412705914cf27e"
+    },
+    {
+      "path": "db/backends/postgresql/creation.py",
+      "bytes": 3977,
+      "physical_lines": 91,
+      "sha256": "eacbf81f9715d83f1878d3e3a4d3c8a295227f63b93b789782926d0dc987f153"
+    },
+    {
+      "path": "db/backends/postgresql/features.py",
+      "bytes": 6142,
+      "physical_lines": 163,
+      "sha256": "b6c5e21fe11a0cc77f1d15a11cc0c386e7467a9df47f90e0d51462a89a52a719"
+    },
+    {
+      "path": "db/backends/postgresql/introspection.py",
+      "bytes": 11903,
+      "physical_lines": 299,
+      "sha256": "bdaadccc4f397a0564248ea4510607a8ece4d6b94b230dd169af2c82f00e303d"
+    },
+    {
+      "path": "db/backends/postgresql/operations.py",
+      "bytes": 16362,
+      "physical_lines": 422,
+      "sha256": "6799467856928efa997f44ff58a20d2e1f912c582d802dedd5e6ec8b7f03e1b9"
+    },
+    {
+      "path": "db/backends/postgresql/psycopg_any.py",
+      "bytes": 3999,
+      "physical_lines": 114,
+      "sha256": "3f3a18956272c1e65d54604a9df4f207ad9a05070c09d3d6e22e9a4eb14a7876"
+    },
+    {
+      "path": "db/backends/postgresql/schema.py",
+      "bytes": 15129,
+      "physical_lines": 380,
+      "sha256": "9bdd19536aac7b4946766f8578f9976597f6e999db2ff267c6a3479bccd34fb4"
+    },
+    {
+      "path": "db/backends/signals.py",
+      "bytes": 69,
+      "physical_lines": 3,
+      "sha256": "7564123606a56c22e64e9d621e594bff8128549ec55f1b8cd927d0489aba2504"
+    },
+    {
+      "path": "db/backends/sqlite3/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "db/backends/sqlite3/_functions.py",
+      "bytes": 15074,
+      "physical_lines": 515,
+      "sha256": "0d5c6c01579000c3b893ae089a4549f32af2b6d38a4d012747b2e807de84fbfb"
+    },
+    {
+      "path": "db/backends/sqlite3/base.py",
+      "bytes": 15510,
+      "physical_lines": 379,
+      "sha256": "adfe99cc8210fa854f8d7aec84583398ec9ed7ea1f29d5d2d6a7ba452dc2d3fd"
+    },
+    {
+      "path": "db/backends/sqlite3/client.py",
+      "bytes": 331,
+      "physical_lines": 10,
+      "sha256": "815d4db73ae7dc07fbc3f81b3d9f9f4a354908f87dafd290291a32803b95f4ac"
+    },
+    {
+      "path": "db/backends/sqlite3/creation.py",
+      "bytes": 7008,
+      "physical_lines": 159,
+      "sha256": "754182ab5ee97d02171bc27a5ce897b238bd97c3100ca238f54022fb6e14308a"
+    },
+    {
+      "path": "db/backends/sqlite3/features.py",
+      "bytes": 6694,
+      "physical_lines": 161,
+      "sha256": "ac9bbbabfaa28300c9ec67391e54b35444e25094344a55f0739c7152930afc0a"
+    },
+    {
+      "path": "db/backends/sqlite3/introspection.py",
+      "bytes": 18379,
+      "physical_lines": 449,
+      "sha256": "4f21ad723a3198c9e6bd3b3f0d715b9b2f3b028728d1c63733309ca5037fb56b"
+    },
+    {
+      "path": "db/backends/sqlite3/operations.py",
+      "bytes": 17610,
+      "physical_lines": 443,
+      "sha256": "88a528ab58830361281837388b6bc29084f70e9d3e9a19ca1774070c46457e65"
+    },
+    {
+      "path": "db/backends/sqlite3/schema.py",
+      "bytes": 21252,
+      "physical_lines": 503,
+      "sha256": "1dac887e56a656a9278f259087e2c657066de61578d6ee22612a09162ea6c40a"
+    },
+    {
+      "path": "db/backends/utils.py",
+      "bytes": 11479,
+      "physical_lines": 342,
+      "sha256": "1d0b660c02068eccbe7aba3b431e8d10b2aefdcacae0ffe95c8d8b1ce7906c69"
+    },
+    {
+      "path": "db/migrations/__init__.py",
+      "bytes": 99,
+      "physical_lines": 2,
+      "sha256": "0324a58424a2a6cf06d5b9e53038ca0672ff34439000c058c5996a2f1ec14f41"
+    },
+    {
+      "path": "db/migrations/autodetector.py",
+      "bytes": 88206,
+      "physical_lines": 1963,
+      "sha256": "52ddb4db2cb6dd8f399848d1d6ec38e70da84e80d7f0a825090402922724297d"
+    },
+    {
+      "path": "db/migrations/exceptions.py",
+      "bytes": 1264,
+      "physical_lines": 60,
+      "sha256": "1210335d2ba10e26a29b92a60a7475b5e292dd49511f5f0c542416be10bd12db"
+    },
+    {
+      "path": "db/migrations/executor.py",
+      "bytes": 19451,
+      "physical_lines": 413,
+      "sha256": "4174a5dcd2a47ccbdba7e2a4c3331cba4dc17fdfad0ec715ce7fee9bbbb05a1b"
+    },
+    {
+      "path": "db/migrations/graph.py",
+      "bytes": 13388,
+      "physical_lines": 333,
+      "sha256": "b09db546a58fef02ed9d64f130ac6992ec4389ffc91d0d947275029144a4989d"
+    },
+    {
+      "path": "db/migrations/loader.py",
+      "bytes": 17262,
+      "physical_lines": 385,
+      "sha256": "51a98a8878d27694bada9bc270dc14743377b74d5dc48bc6312a3ca0c20b4a4f"
+    },
+    {
+      "path": "db/migrations/migration.py",
+      "bytes": 10006,
+      "physical_lines": 239,
+      "sha256": "69b6ba8689d0b9fe6595d004af9c968bb1f73fc9f5bd4826112e8bfb3b36acfe"
+    },
+    {
+      "path": "db/migrations/operations/__init__.py",
+      "bytes": 1054,
+      "physical_lines": 46,
+      "sha256": "f1f68f51deaf35efd3157a20d74cd96c5b1b7d0177020d61898959b30cb8dc2d"
+    },
+    {
+      "path": "db/migrations/operations/base.py",
+      "bytes": 5728,
+      "physical_lines": 166,
+      "sha256": "2d4440662923a5654118bcd6446e80a10589d0d772aee4b41c2819b7c0aecb8c"
+    },
+    {
+      "path": "db/migrations/operations/fields.py",
+      "bytes": 13265,
+      "physical_lines": 365,
+      "sha256": "a32130cf55052de5615d0cefabae6c795b390fcc8227638f5126d33e28006476"
+    },
+    {
+      "path": "db/migrations/operations/models.py",
+      "bytes": 49206,
+      "physical_lines": 1342,
+      "sha256": "88f57ba7891cfa9bf8d01942ad521e98fd9cbd4a4eb7640072d8693bccd9cbb4"
+    },
+    {
+      "path": "db/migrations/operations/special.py",
+      "bytes": 8177,
+      "physical_lines": 211,
+      "sha256": "56d752fae34b2aad23a55c759d2ca58fdd4f56e254e2784c64ea83b7c7af4530"
+    },
+    {
+      "path": "db/migrations/optimizer.py",
+      "bytes": 3324,
+      "physical_lines": 69,
+      "sha256": "09275e83e0f01d657bfbda038c2897830698d29ba6b735fbbf59c9efb6b98d33"
+    },
+    {
+      "path": "db/migrations/questioner.py",
+      "bytes": 13915,
+      "physical_lines": 347,
+      "sha256": "65b02318d663ce3a423853f4d1642f2a32cd078e8492aaf691290ba5de211119"
+    },
+    {
+      "path": "db/migrations/recorder.py",
+      "bytes": 3938,
+      "physical_lines": 111,
+      "sha256": "0298e5181e71c8a93816592f0ba5c09cb542e2ee4c7e2fab14c83e4182e934ef"
+    },
+    {
+      "path": "db/migrations/serializer.py",
+      "bytes": 14538,
+      "physical_lines": 405,
+      "sha256": "7fd2cf6bea748b9f69f1b7ae624f9f6f0e8935b63d7f3b56eec8ea68263eb6ba"
+    },
+    {
+      "path": "db/migrations/state.py",
+      "bytes": 42941,
+      "physical_lines": 1017,
+      "sha256": "1310088b8ccec6c7c7c066fe0b02e806902e1819dfac53b3eb760b55a335b5ea"
+    },
+    {
+      "path": "db/migrations/utils.py",
+      "bytes": 4530,
+      "physical_lines": 129,
+      "sha256": "f84a6dfbfb0d457e2edcc310555d0a1c01bed6b939495b590cee8126945b7c97"
+    },
+    {
+      "path": "db/migrations/writer.py",
+      "bytes": 11929,
+      "physical_lines": 316,
+      "sha256": "a8e39de53e38e3c058f1e0ed4f09a0a396ca0ac52a33f5a6ebc538c4b544c2a4"
+    },
+    {
+      "path": "db/models/__init__.py",
+      "bytes": 3212,
+      "physical_lines": 127,
+      "sha256": "67ae1ffdf5eaa467e2ef55871b276e2e78c5cb7ffac8f1d1b8d6676023c4bede"
+    },
+    {
+      "path": "db/models/aggregates.py",
+      "bytes": 8417,
+      "physical_lines": 232,
+      "sha256": "84f776af6467e469d18ab7ecfc37cd49354af6b49c61c782bac86163a14587a9"
+    },
+    {
+      "path": "db/models/base.py",
+      "bytes": 103532,
+      "physical_lines": 2582,
+      "sha256": "10fc3871b82dfe95754e423bb4c821ca77f0c880b299fcf32e6b4de0d60542ba"
+    },
+    {
+      "path": "db/models/constants.py",
+      "bytes": 223,
+      "physical_lines": 13,
+      "sha256": "ec54e9104eb73bd71464e0c23dcd6ebe4d5d4a88d53d3f4fdda69d6055eeff31"
+    },
+    {
+      "path": "db/models/constraints.py",
+      "bytes": 30461,
+      "physical_lines": 728,
+      "sha256": "567bfabeea4e42439436baa21bfb1a1076ffb1e734a9da59694616347e6c2aca"
+    },
+    {
+      "path": "db/models/deletion.py",
+      "bytes": 21460,
+      "physical_lines": 517,
+      "sha256": "95d924d53eac4fe898d00e385f6d994b3a7f24ba753ac949e4b9159743a08463"
+    },
+    {
+      "path": "db/models/enums.py",
+      "bytes": 3650,
+      "physical_lines": 123,
+      "sha256": "bcf598524c2c48f4dee8f97b7949a720d120eca5f7b3e23097b6712dcbaa47dc"
+    },
+    {
+      "path": "db/models/expressions.py",
+      "bytes": 77133,
+      "physical_lines": 2150,
+      "sha256": "5fb6317e87228c7a095a88c80dd56ffd5fc67aa4150ce3ab2a1909977cbe1693"
+    },
+    {
+      "path": "db/models/fields/__init__.py",
+      "bytes": 101620,
+      "physical_lines": 2890,
+      "sha256": "0fd2bc567167ebd6523ccc4bb415010f8af417e86d2c452c0f34f730b5767b73"
+    },
+    {
+      "path": "db/models/fields/composite.py",
+      "bytes": 5908,
+      "physical_lines": 177,
+      "sha256": "8f570520ff49c52784b8d25463115e09a824c4ce9e6cab356bfb12d318d9b0ec"
+    },
+    {
+      "path": "db/models/fields/files.py",
+      "bytes": 20744,
+      "physical_lines": 538,
+      "sha256": "edbe9a71a674850ac8917a5edc658e0de49b4d115199588a60fab6ae4eb15b5a"
+    },
+    {
+      "path": "db/models/fields/generated.py",
+      "bytes": 7852,
+      "physical_lines": 197,
+      "sha256": "e43e82fbf20e8d99e54e3524b0456d275adad48e5384441f581eb52fc5d1fd6a"
+    },
+    {
+      "path": "db/models/fields/json.py",
+      "bytes": 24557,
+      "physical_lines": 664,
+      "sha256": "ac10bd289e3288839346c2b3c3edc29d3fcf37f029f9a41fd3731aa6b4f1d0a9"
+    },
+    {
+      "path": "db/models/fields/mixins.py",
+      "bytes": 2559,
+      "physical_lines": 81,
+      "sha256": "7cd8963d0e0e6ed17a749adea086b4d3170606796cb01283b7064a2e4b827e38"
+    },
+    {
+      "path": "db/models/fields/proxy.py",
+      "bytes": 533,
+      "physical_lines": 18,
+      "sha256": "520b9a0a6b35aa4812b50e166a4b3e3040d1c5abf0764dc2b48da1e7ea8e23db"
+    },
+    {
+      "path": "db/models/fields/related.py",
+      "bytes": 81436,
+      "physical_lines": 2065,
+      "sha256": "0d13d0ee8629d092fb587fd4dc3f4bea9cabaeaa0e19197f934002f6505ec711"
+    },
+    {
+      "path": "db/models/fields/related_descriptors.py",
+      "bytes": 68347,
+      "physical_lines": 1625,
+      "sha256": "7bc181db23345d985622b51d094dfb76227055ac59380a288d69b985e44cd853"
+    },
+    {
+      "path": "db/models/fields/related_lookups.py",
+      "bytes": 6227,
+      "physical_lines": 151,
+      "sha256": "15d083c001ce3e34a9e81ed4d4c8c6ae407e40d16e6aae6a2d849e55d858b56a"
+    },
+    {
+      "path": "db/models/fields/reverse_related.py",
+      "bytes": 13324,
+      "physical_lines": 416,
+      "sha256": "c8e858f4fe6cf7afba208e4b774414c3c05abc4887b70a8a263390388caaad85"
+    },
+    {
+      "path": "db/models/fields/tuple_lookups.py",
+      "bytes": 14744,
+      "physical_lines": 395,
+      "sha256": "2cf3e7f863ff4c4e03c5f9576dc549a3d08a56e5aab2e6faabca488af01b607f"
+    },
+    {
+      "path": "db/models/functions/__init__.py",
+      "bytes": 2907,
+      "physical_lines": 193,
+      "sha256": "c7fd6d1df61937de2f684838d07dadcdc1cdd00e72936c041c3fa672fe210f5f"
+    },
+    {
+      "path": "db/models/functions/comparison.py",
+      "bytes": 6982,
+      "physical_lines": 172,
+      "sha256": "4c8a301b186e7e893144af67b3d606ec611bdac9cbce7795d9572600ce0249ad"
+    },
+    {
+      "path": "db/models/functions/datetime.py",
+      "bytes": 14053,
+      "physical_lines": 439,
+      "sha256": "0af594c4f1026ed6214a2d2a511e4617f294d5fa509a866cc159ab94162dc930"
+    },
+    {
+      "path": "db/models/functions/json.py",
+      "bytes": 4792,
+      "physical_lines": 124,
+      "sha256": "e5aea91fce73f58f0fa4a4619afa04ff9573f06c96eb954be2cfd78248ef184e"
+    },
+    {
+      "path": "db/models/functions/math.py",
+      "bytes": 6354,
+      "physical_lines": 214,
+      "sha256": "cb503d63c42ad29323082f6bcd35a302d4e2e4861ca4671d8a91018aa6e42213"
+    },
+    {
+      "path": "db/models/functions/mixins.py",
+      "bytes": 2444,
+      "physical_lines": 62,
+      "sha256": "0d9b6fc71c061ad09a5a9e540b570e47a4d768e8154d2737868609fe8ec0cbc4"
+    },
+    {
+      "path": "db/models/functions/text.py",
+      "bytes": 11904,
+      "physical_lines": 376,
+      "sha256": "5ef2dc5223e20d8142c78e23fc8de9a60a9288ef542f2280c5fb2ece533fb6d2"
+    },
+    {
+      "path": "db/models/functions/window.py",
+      "bytes": 2961,
+      "physical_lines": 120,
+      "sha256": "31298d7e58274967c639d6cd9ec77c4e375e04e81ce0157be1a1643fe7616a7b"
+    },
+    {
+      "path": "db/models/indexes.py",
+      "bytes": 12234,
+      "physical_lines": 299,
+      "sha256": "23ed4aaa293ede5599f8907e13822797966a9ddb16df6c915ae4d083d25bb31b"
+    },
+    {
+      "path": "db/models/lookups.py",
+      "bytes": 29885,
+      "physical_lines": 837,
+      "sha256": "6b32ffd6533dd254dde546117e34f89fe251b007a67abeadab068bcf4b85ba1f"
+    },
+    {
+      "path": "db/models/manager.py",
+      "bytes": 7079,
+      "physical_lines": 213,
+      "sha256": "6d98807a2b6f8d6daff0f0da63dfde4994e6f4bc0b9c874674ea10912913dcab"
+    },
+    {
+      "path": "db/models/options.py",
+      "bytes": 40512,
+      "physical_lines": 1043,
+      "sha256": "e95d68653b64fdafcee3a25308835470970cf0a3f87b6c2c58c61d64cc99617b"
+    },
+    {
+      "path": "db/models/query.py",
+      "bytes": 109246,
+      "physical_lines": 2753,
+      "sha256": "00312e0bccb2a7e3fc37c2294d47cd9221e53b8d7273e4c13356d30b3bf7952f"
+    },
+    {
+      "path": "db/models/query_utils.py",
+      "bytes": 19977,
+      "physical_lines": 533,
+      "sha256": "0df6d7d5da83f4cca89a7c0143c3bf14289b7044a5709fb8808694acfd5e64a4"
+    },
+    {
+      "path": "db/models/signals.py",
+      "bytes": 1676,
+      "physical_lines": 54,
+      "sha256": "44e2832d047851426eca9a3d0a26d718e66a540c30450a3070a733a341c4b99a"
+    },
+    {
+      "path": "db/models/sql/__init__.py",
+      "bytes": 247,
+      "physical_lines": 6,
+      "sha256": "69c8a09bf6a93be8da46bfebc03da3443d0e04892057e749dc15d21bd193c3b7"
+    },
+    {
+      "path": "db/models/sql/compiler.py",
+      "bytes": 94571,
+      "physical_lines": 2174,
+      "sha256": "27608751af56736059fe743de86a325c0944ed83d53fae0a8adeeba3062973ff"
+    },
+    {
+      "path": "db/models/sql/constants.py",
+      "bytes": 625,
+      "physical_lines": 26,
+      "sha256": "af738fd6f983bd0c5c4791c7ea3ea934fe8e79869d7e0bdb29c203bc617dadae"
+    },
+    {
+      "path": "db/models/sql/datastructures.py",
+      "bytes": 8509,
+      "physical_lines": 238,
+      "sha256": "703649d6f4aa637ef009b849565825e94dbaeb088c76cfb4c167d74175645901"
+    },
+    {
+      "path": "db/models/sql/query.py",
+      "bytes": 122705,
+      "physical_lines": 2813,
+      "sha256": "fdc53547f37899296a593681c5fcb500e1a92458f48776e8e20e632ce0de3bbb"
+    },
+    {
+      "path": "db/models/sql/subqueries.py",
+      "bytes": 6328,
+      "physical_lines": 178,
+      "sha256": "e29cbc98c0f4b6050e439524728af5d81033b98458a09888c01bae0b27065abb"
+    },
+    {
+      "path": "db/models/sql/where.py",
+      "bytes": 12662,
+      "physical_lines": 345,
+      "sha256": "322e591fec9cdbeceb2ca932f1e78dd404bcddc142f99f96767b5a1a1c6a4f84"
+    },
+    {
+      "path": "db/models/utils.py",
+      "bytes": 2251,
+      "physical_lines": 69,
+      "sha256": "4255ff110264a6ef2e098eb2f5711621d3f58c39a72f363f19033b7e79a48459"
+    },
+    {
+      "path": "db/transaction.py",
+      "bytes": 12846,
+      "physical_lines": 340,
+      "sha256": "aa8aa7ede3aad3c39796b19a8c59e5e2bb8d52618e799759d04b8df96e580ac5"
+    },
+    {
+      "path": "db/utils.py",
+      "bytes": 9557,
+      "physical_lines": 278,
+      "sha256": "8f1414a40d0c58c9423a185757469add6e14f3996f63096832de0ccb10d002f4"
+    },
+    {
+      "path": "dispatch/__init__.py",
+      "bytes": 295,
+      "physical_lines": 9,
+      "sha256": "7243a5559a3171d70ceb7f3fe18636aad220aab62e599241aa0b69bcc825c136"
+    },
+    {
+      "path": "dispatch/dispatcher.py",
+      "bytes": 18271,
+      "physical_lines": 494,
+      "sha256": "382a9658e00cff45dbc4443a5a0c86cd2ef8ed55c907f2f392468b611fed68d8"
+    },
+    {
+      "path": "forms/__init__.py",
+      "bytes": 379,
+      "physical_lines": 11,
+      "sha256": "38248573f22fbb143b6adbd006226b86a458d55068be45d7bc0e302d0cb47241"
+    },
+    {
+      "path": "forms/boundfield.py",
+      "bytes": 13636,
+      "physical_lines": 365,
+      "sha256": "00198bf5e65af1e344113901d6c00cfa75568ad189072cee321a959e858998b0"
+    },
+    {
+      "path": "forms/fields.py",
+      "bytes": 51402,
+      "physical_lines": 1420,
+      "sha256": "fd0a687099429fa64f1430e4112086a81e2e87c27913238f08c2e515c210cf9e"
+    },
+    {
+      "path": "forms/forms.py",
+      "bytes": 16571,
+      "physical_lines": 439,
+      "sha256": "20b6d9b53a583f4b529a14dadf4f8e2bc23fe9aa3a711cf15aa6c47e7d3cc168"
+    },
+    {
+      "path": "forms/formsets.py",
+      "bytes": 21922,
+      "physical_lines": 584,
+      "sha256": "da1b160cb2f36c60c6bdabd358084220c1e1069ae922a368983030b03e774a36"
+    },
+    {
+      "path": "forms/models.py",
+      "bytes": 62900,
+      "physical_lines": 1687,
+      "sha256": "f2ddbfb3c962af1d62f13ab5001207a43f5f544abd181ca5280890f13d965226"
+    },
+    {
+      "path": "forms/renderers.py",
+      "bytes": 3399,
+      "physical_lines": 114,
+      "sha256": "092a0a1389baab0e3fc2475a8fc1962694e4e3a0ca5f44f684231594c287966f"
+    },
+    {
+      "path": "forms/utils.py",
+      "bytes": 8220,
+      "physical_lines": 246,
+      "sha256": "17f365f96dd94c7f80ac4e8e67a298b044083f942620c2d58fa9ff89b2cec40d"
+    },
+    {
+      "path": "forms/widgets.py",
+      "bytes": 42520,
+      "physical_lines": 1276,
+      "sha256": "9ce68e453826a674b2fa8b6eb9dae8b4ab99e4e40feab2b4abaa727575df60d9"
+    },
+    {
+      "path": "http/__init__.py",
+      "bytes": 1252,
+      "physical_lines": 52,
+      "sha256": "3396ce3b3c5154b28d9393a5a46be4b86d006191b4373f9ca2edac32df2f3c75"
+    },
+    {
+      "path": "http/cookie.py",
+      "bytes": 702,
+      "physical_lines": 23,
+      "sha256": "2d34bad96458d848664625404083b3008caf0d440c33aadd855d6aa8d5b39783"
+    },
+    {
+      "path": "http/multipartparser.py",
+      "bytes": 28584,
+      "physical_lines": 754,
+      "sha256": "777def33c9ab9818d5b991aedd12903088be15f609c4e7616bdc02febe85b240"
+    },
+    {
+      "path": "http/request.py",
+      "bytes": 29726,
+      "physical_lines": 834,
+      "sha256": "5ee34423334f26947538006d69b29c925cb42490013640074b0bcd2fb16cd545"
+    },
+    {
+      "path": "http/response.py",
+      "bytes": 26707,
+      "physical_lines": 752,
+      "sha256": "b536e5daea4121ced8b5f3fdfce7ff7024e746d5bbe3a8bddf465bba7d5fa606"
+    },
+    {
+      "path": "middleware/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "middleware/cache.py",
+      "bytes": 8710,
+      "physical_lines": 223,
+      "sha256": "a49dbc8faadc02c53b1cb79329c672d02fb6635008cbafe26c2dd706637136f3"
+    },
+    {
+      "path": "middleware/clickjacking.py",
+      "bytes": 1772,
+      "physical_lines": 48,
+      "sha256": "8eb432a83d064bf9e93a6cec1163c9648be0f9aca5fec764093f7f72e3297c4f"
+    },
+    {
+      "path": "middleware/common.py",
+      "bytes": 7844,
+      "physical_lines": 178,
+      "sha256": "80b6270a8e264d2a519887d70f8ecd9f6a518d3de5b75dc4f88b1ede966389e5"
+    },
+    {
+      "path": "middleware/csrf.py",
+      "bytes": 19972,
+      "physical_lines": 483,
+      "sha256": "4f745099146b204d34bc6d31d44accd463171d6d35954ca26ba2ca485d8923d3"
+    },
+    {
+      "path": "middleware/gzip.py",
+      "bytes": 3019,
+      "physical_lines": 74,
+      "sha256": "de0678efbe61708a7670a8d7bfbe93cafd45cb81a1222577e1011813c12fc2e6"
+    },
+    {
+      "path": "middleware/http.py",
+      "bytes": 1656,
+      "physical_lines": 40,
+      "sha256": "573442b8093d354670f77cccc5bec5de99123767a57ef554d363efc8d7030580"
+    },
+    {
+      "path": "middleware/locale.py",
+      "bytes": 3522,
+      "physical_lines": 80,
+      "sha256": "d224e51433ffb5a1f4f2ce0b7e41161c02d7e384c060a503053bc1ed0dccf9c6"
+    },
+    {
+      "path": "middleware/security.py",
+      "bytes": 2665,
+      "physical_lines": 66,
+      "sha256": "f9c373440418c517b30652506186acfd9a1fcb7e90bf405005cb324f17389f82"
+    },
+    {
+      "path": "shortcuts.py",
+      "bytes": 6700,
+      "physical_lines": 194,
+      "sha256": "0c22cd581f5aaa167b30a1520bb9ae94a0713649c1d5e525e8ad58f82c47fa2c"
+    },
+    {
+      "path": "template/__init__.py",
+      "bytes": 1920,
+      "physical_lines": 75,
+      "sha256": "4f48358418f0cff6d5f0def4d0ac3ae7e935e0ed5bb5873df265ce462f526032"
+    },
+    {
+      "path": "template/autoreload.py",
+      "bytes": 2124,
+      "physical_lines": 61,
+      "sha256": "1eb8b1bdb22f75be641ccb7a76235735adfcfadad3a0e513f050c17c0a15eea4"
+    },
+    {
+      "path": "template/backends/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "template/backends/base.py",
+      "bytes": 2884,
+      "physical_lines": 83,
+      "sha256": "1ee972fb284128677b6470d0769276bdb397c4bea983d9354848a0765dd04061"
+    },
+    {
+      "path": "template/backends/django.py",
+      "bytes": 6145,
+      "physical_lines": 182,
+      "sha256": "6462e3837c0b57c5b6fd6bb22d5f2612b9dce7cc1927c74e37dd245b887e9a72"
+    },
+    {
+      "path": "template/backends/dummy.py",
+      "bytes": 1802,
+      "physical_lines": 51,
+      "sha256": "5f52b11d24f0ceda903d0e1a1cc52adc14b9a3ba0361c3eda186f12ceeb9ef65"
+    },
+    {
+      "path": "template/backends/jinja2.py",
+      "bytes": 4161,
+      "physical_lines": 125,
+      "sha256": "66297bff317d82b10ef4b576b0fd7a18243d180e1e5d5e8f3be5f5786dfde939"
+    },
+    {
+      "path": "template/backends/utils.py",
+      "bytes": 439,
+      "physical_lines": 15,
+      "sha256": "c275e94fa1048d7bcc6cd4f556edb36654f5fb1b6c3f1605c68951521bf6d15a"
+    },
+    {
+      "path": "template/base.py",
+      "bytes": 42134,
+      "physical_lines": 1132,
+      "sha256": "1626de67309dbd2bbe0aa069c3c5e27ef1afea43692c4b487f562c1dd95adcce"
+    },
+    {
+      "path": "template/context.py",
+      "bytes": 9751,
+      "physical_lines": 303,
+      "sha256": "4c616928fab27481888560d5fbf320070233ea0041d74e6980e1f1757106ea56"
+    },
+    {
+      "path": "template/context_processors.py",
+      "bytes": 2569,
+      "physical_lines": 89,
+      "sha256": "5a17225a402cf5e8c540414a967a42fd7dc4bbe428edbdf970e5877f4f9e636a"
+    },
+    {
+      "path": "template/defaultfilters.py",
+      "bytes": 29429,
+      "physical_lines": 991,
+      "sha256": "97c06081d16bd2456b743b1cb5ead01aec95d42c2be070d5a7cd5a899c2392ec"
+    },
+    {
+      "path": "template/defaulttags.py",
+      "bytes": 51211,
+      "physical_lines": 1542,
+      "sha256": "3de249ac688b4593df623f94c1af87d1fcd12792485b9f53029eb08107173758"
+    },
+    {
+      "path": "template/engine.py",
+      "bytes": 7987,
+      "physical_lines": 214,
+      "sha256": "87cc9a75373eda2aea273deb64a5f45b0d3e7be3e633e67ca39801a29a955017"
+    },
+    {
+      "path": "template/exceptions.py",
+      "bytes": 1386,
+      "physical_lines": 44,
+      "sha256": "4ed8e798e3377ea567c62398de1874f1c1313bd839d63be94ea362c50c307c05"
+    },
+    {
+      "path": "template/library.py",
+      "bytes": 17171,
+      "physical_lines": 488,
+      "sha256": "df8ac7c3e5579fc300bf5e31175c7a4178705bd6b221833c1f9f3803703b405a"
+    },
+    {
+      "path": "template/loader.py",
+      "bytes": 2120,
+      "physical_lines": 66,
+      "sha256": "0e8a69ca87161ca9cbe50fd2348be5d5f88e6f80c5d2133178bf6262f4a70cf8"
+    },
+    {
+      "path": "template/loader_tags.py",
+      "bytes": 13596,
+      "physical_lines": 362,
+      "sha256": "d68acf7761b48a1e0187e007f8400730488b438ed540a8166346aac5ee2e0315"
+    },
+    {
+      "path": "template/loaders/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "template/loaders/app_directories.py",
+      "bytes": 325,
+      "physical_lines": 13,
+      "sha256": "625441b70f7e7ee68007551ee4469c4e25c937abc69384b3ca0e55de90612d67"
+    },
+    {
+      "path": "template/loaders/base.py",
+      "bytes": 1687,
+      "physical_lines": 51,
+      "sha256": "fb2bf7c7fca0da033581ffc98268363d1730af21f16595129a8c11511284ae66"
+    },
+    {
+      "path": "template/loaders/cached.py",
+      "bytes": 3816,
+      "physical_lines": 100,
+      "sha256": "f0f511a14ec0dd4eb56ae4366c1cf62315edbb26a0d243945aa563351b25dc0d"
+    },
+    {
+      "path": "template/loaders/filesystem.py",
+      "bytes": 1551,
+      "physical_lines": 45,
+      "sha256": "b3c7a4a118134fdac34c11557cc8db5d486252668ae1717b203ee4d7ece8ca19"
+    },
+    {
+      "path": "template/loaders/locmem.py",
+      "bytes": 698,
+      "physical_lines": 26,
+      "sha256": "6a721fc8b5a87c261745afb925c16fa944f394a76b84503ff1d1902a0079c956"
+    },
+    {
+      "path": "template/response.py",
+      "bytes": 5748,
+      "physical_lines": 164,
+      "sha256": "bcf120d63e5d631ffc87f84f1cb8f4b93dd22bef8aa305b9f632f64050234cb4"
+    },
+    {
+      "path": "template/smartif.py",
+      "bytes": 6624,
+      "physical_lines": 214,
+      "sha256": "eb6ebf95257e26b2571700c39a4231d1101446603aa220128585b68ac1323371"
+    },
+    {
+      "path": "template/utils.py",
+      "bytes": 3681,
+      "physical_lines": 110,
+      "sha256": "988061472f4016823087f534ad5a5cb030db18399bffffe44479a8193d0f1167"
+    },
+    {
+      "path": "templatetags/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "templatetags/cache.py",
+      "bytes": 3651,
+      "physical_lines": 100,
+      "sha256": "6def9800aecf75b86c4c5c584be66f904213aac6418a80f9c3a15df082cd8a9a"
+    },
+    {
+      "path": "templatetags/i18n.py",
+      "bytes": 20577,
+      "physical_lines": 616,
+      "sha256": "2e01a86821ebb769b1218cebcabdfd39a119fd68619245fcef18b1523932adab"
+    },
+    {
+      "path": "templatetags/l10n.py",
+      "bytes": 1623,
+      "physical_lines": 60,
+      "sha256": "b942791c1051adba2978d9af8f8fc8ee7312053bb83d09c22420c74fb8928c0b"
+    },
+    {
+      "path": "templatetags/static.py",
+      "bytes": 4909,
+      "physical_lines": 179,
+      "sha256": "ca7f37c0ad175288f56bf904025c26f3c268031d4da419d01692d93a4f312ed8"
+    },
+    {
+      "path": "templatetags/tz.py",
+      "bytes": 5559,
+      "physical_lines": 202,
+      "sha256": "dcffd1cf30b9ff943494a45bd609acfb4e08ad6ba328ae4e25bcc3ebf14fd3be"
+    },
+    {
+      "path": "test/__init__.py",
+      "bytes": 872,
+      "physical_lines": 38,
+      "sha256": "d333b17881226a7889ee03b6be3412ca5cd45b6fd2b8f9b5f98d50c981f05730"
+    },
+    {
+      "path": "test/client.py",
+      "bytes": 57560,
+      "physical_lines": 1751,
+      "sha256": "2d0eaa0250813198be7392b470ee13905d4dd098c5522fd295531411df9efe56"
+    },
+    {
+      "path": "test/html.py",
+      "bytes": 9142,
+      "physical_lines": 273,
+      "sha256": "efbe669aa968bd97f596bc77c66233b4218f32fc2947bedea4e4d0878b382060"
+    },
+    {
+      "path": "test/runner.py",
+      "bytes": 44294,
+      "physical_lines": 1262,
+      "sha256": "4f2bf9c1868610e0ef2b6cce1be1965f138ede929d1687a81219d352888e0680"
+    },
+    {
+      "path": "test/selenium.py",
+      "bytes": 9948,
+      "physical_lines": 263,
+      "sha256": "b2c30a26cbb278a61f886cce8519c04cdc8f66d736558ca4e6b757c63ac7184d"
+    },
+    {
+      "path": "test/signals.py",
+      "bytes": 7621,
+      "physical_lines": 253,
+      "sha256": "f08f04c4a4eccc45957a43f7dde637a6fcec8f5945710fe897db43a633186c16"
+    },
+    {
+      "path": "test/testcases.py",
+      "bytes": 70476,
+      "physical_lines": 1890,
+      "sha256": "3abe15d5c8ea1f7b3fb0b42e14e501875fa25bb2dac47243dfbcf9567ad11770"
+    },
+    {
+      "path": "test/utils.py",
+      "bytes": 33706,
+      "physical_lines": 1004,
+      "sha256": "ace058c9b209054d5d2c49c4e7e77fd5f6b69ba8b3a23f27c22611c2ebda6166"
+    },
+    {
+      "path": "urls/__init__.py",
+      "bytes": 1132,
+      "physical_lines": 53,
+      "sha256": "a03e7c08c7bfbf9a3088220020233913bd0265ee35fefbdb1616e86b85e3e43c"
+    },
+    {
+      "path": "urls/base.py",
+      "bytes": 6399,
+      "physical_lines": 208,
+      "sha256": "f3a6bdac34e8ffed334039c8f2b8acd1ac893139a05bdb4f52ea25abb3e3990e"
+    },
+    {
+      "path": "urls/conf.py",
+      "bytes": 3522,
+      "physical_lines": 96,
+      "sha256": "5643d39223cc3d52b6906bd087e890ac13d007c6bcea8cb4d37851d614847235"
+    },
+    {
+      "path": "urls/converters.py",
+      "bytes": 1860,
+      "physical_lines": 78,
+      "sha256": "06418b79e2d1790980c4db3d6ba2fc7b1b6ae45414f48bbf9b8c58dead892ec3"
+    },
+    {
+      "path": "urls/exceptions.py",
+      "bytes": 124,
+      "physical_lines": 9,
+      "sha256": "3b458b1cc44251c0049f6f13253f40199eec2458c2f7de4bbe12f0abfc293b48"
+    },
+    {
+      "path": "urls/resolvers.py",
+      "bytes": 32349,
+      "physical_lines": 831,
+      "sha256": "0781cae809a6ed119d6c44d70e9046f9fca098822cd15cf464481ca863903a1d"
+    },
+    {
+      "path": "urls/utils.py",
+      "bytes": 2245,
+      "physical_lines": 66,
+      "sha256": "646a7afe3625adc19ad6b4d7cbae7c43db8577f7cc866db7a0febfa79f659561"
+    },
+    {
+      "path": "utils/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "utils/_os.py",
+      "bytes": 2385,
+      "physical_lines": 62,
+      "sha256": "0efdb16828422db8c83f31fe4f103ee0a52ef14e52040001f6b1834e3b6d0518"
+    },
+    {
+      "path": "utils/archive.py",
+      "bytes": 8564,
+      "physical_lines": 262,
+      "sha256": "660e6971f6c0fe05f7caee908da3b7e7e68dca1388151e477a1626cd3134fe3f"
+    },
+    {
+      "path": "utils/asyncio.py",
+      "bytes": 1177,
+      "physical_lines": 39,
+      "sha256": "fd2d1a6032d173f85f2cb61b89b0d992e110621a6b65ece01bee789ee1834781"
+    },
+    {
+      "path": "utils/autoreload.py",
+      "bytes": 25104,
+      "physical_lines": 675,
+      "sha256": "f8cef34feff8156eb2cd9c6f703f12429059ad28c713872f1c0a9d0491b36ad2"
+    },
+    {
+      "path": "utils/cache.py",
+      "bytes": 17027,
+      "physical_lines": 444,
+      "sha256": "ff3add4b221e94101515567fd00a481675f203e59f0523ae34873aebc190cf76"
+    },
+    {
+      "path": "utils/choices.py",
+      "bytes": 4318,
+      "physical_lines": 116,
+      "sha256": "90c96de6dd846e3e94ebc1a5a791ca98b1a80640d86efabf925764ce642b2516"
+    },
+    {
+      "path": "utils/connection.py",
+      "bytes": 2639,
+      "physical_lines": 85,
+      "sha256": "31321bc3246089aafc8755c228474bbd1ba3b2d86c95fbdf16015a6f95e73588"
+    },
+    {
+      "path": "utils/crypto.py",
+      "bytes": 2739,
+      "physical_lines": 77,
+      "sha256": "bf991dedd93f84956119075a8d654aaa78eacb80d8e313aa1d916307c376e7c3"
+    },
+    {
+      "path": "utils/datastructures.py",
+      "bytes": 10612,
+      "physical_lines": 345,
+      "sha256": "d324f658b9cab9dc1107aa4e5fced39d24d8963ea36ac7465e4c05df3d962803"
+    },
+    {
+      "path": "utils/dateformat.py",
+      "bytes": 10449,
+      "physical_lines": 331,
+      "sha256": "f1317b92412e7859b72ae7e2bbbd5f6500d2cf7341ca3bc8d1c5070e18913175"
+    },
+    {
+      "path": "utils/dateparse.py",
+      "bytes": 5510,
+      "physical_lines": 154,
+      "sha256": "588e39a3c6b23ad9e8bbea6d60e335f264cb5f8c58b583da3ff4086cce1dd7bd"
+    },
+    {
+      "path": "utils/dates.py",
+      "bytes": 2258,
+      "physical_lines": 79,
+      "sha256": "480da8f3aea0814b534c588676e0e187626927f52765127b2364a047364d5b73"
+    },
+    {
+      "path": "utils/deconstruct.py",
+      "bytes": 2187,
+      "physical_lines": 61,
+      "sha256": "2dcf788b0a5ffd30bfc68858c945ca0bbe1319ce08c21c49fe46ee7892d858f5"
+    },
+    {
+      "path": "utils/decorators.py",
+      "bytes": 8557,
+      "physical_lines": 229,
+      "sha256": "540188feb6d76181724f50df308b2c95be9b94bc0b0205d3e013f2f9e02dfeac"
+    },
+    {
+      "path": "utils/deprecation.py",
+      "bytes": 5018,
+      "physical_lines": 142,
+      "sha256": "4f88a039d3872660580d873ea82762b8faf5807d1be64556f0810cdea8da1b4a"
+    },
+    {
+      "path": "utils/duration.py",
+      "bytes": 1276,
+      "physical_lines": 46,
+      "sha256": "bd57ef15b560fa3cc5b8ade76b8536689fe004b6b12e7db51840b4ba8324a2d9"
+    },
+    {
+      "path": "utils/encoding.py",
+      "bytes": 9055,
+      "physical_lines": 262,
+      "sha256": "bb7dc1eb473df5a39a3e9b719da3ce5be6735f94b6abfd97d19afb6474ac5854"
+    },
+    {
+      "path": "utils/feedgenerator.py",
+      "bytes": 18611,
+      "physical_lines": 522,
+      "sha256": "d2a302bae7d4fae99389d88f90510fefca47de5a0e0bb9792d6e8b782286006c"
+    },
+    {
+      "path": "utils/formats.py",
+      "bytes": 10560,
+      "physical_lines": 305,
+      "sha256": "201ecac7cf5b1f7e4828b03e156aeab8e349190b26b0094c97c4e14660348f5d"
+    },
+    {
+      "path": "utils/functional.py",
+      "bytes": 14992,
+      "physical_lines": 451,
+      "sha256": "5617e00fae102374ae62a48c519bb70628f18eb84980677ff67d1106f31b34ed"
+    },
+    {
+      "path": "utils/hashable.py",
+      "bytes": 764,
+      "physical_lines": 26,
+      "sha256": "bccca60fb39694f833d17fd1fedec592182da58c317393599c215381edda67ae"
+    },
+    {
+      "path": "utils/html.py",
+      "bytes": 18055,
+      "physical_lines": 511,
+      "sha256": "4765c6288b9d3769d598f9ed9243685a71d7f1e3f07d79ce05ad838914552a67"
+    },
+    {
+      "path": "utils/http.py",
+      "bytes": 13934,
+      "physical_lines": 387,
+      "sha256": "51401911564deaf36220eb3598132c1bf2671aa3b4b0f5ffac712b05bd5a28d4"
+    },
+    {
+      "path": "utils/inspect.py",
+      "bytes": 2394,
+      "physical_lines": 76,
+      "sha256": "a1b4cbeda77e0a9817fb713f158f9e46b910d89c606b3b2d98f66ac070e3fac9"
+    },
+    {
+      "path": "utils/ipv6.py",
+      "bytes": 1887,
+      "physical_lines": 64,
+      "sha256": "4dae00a4477df3528f0a3268db077a42c2be4f1b0d796bf7d6240b2e55d0003e"
+    },
+    {
+      "path": "utils/itercompat.py",
+      "bytes": 553,
+      "physical_lines": 21,
+      "sha256": "c0fb1dcc100500f83fc4b8fff485c593e5784aefffaab0fdf20d9cbf6f2d33fd"
+    },
+    {
+      "path": "utils/log.py",
+      "bytes": 8591,
+      "physical_lines": 262,
+      "sha256": "390a6ddfed4fbe977524b189cedbcab9e9899769505507b9916bb1da334aca34"
+    },
+    {
+      "path": "utils/lorem_ipsum.py",
+      "bytes": 5759,
+      "physical_lines": 286,
+      "sha256": "b24fbed412d4f79e443216914bf7144fb9d8aebfd24df212b0491fb084a50bcf"
+    },
+    {
+      "path": "utils/module_loading.py",
+      "bytes": 3927,
+      "physical_lines": 107,
+      "sha256": "b8b8cff1fbd251c8090e61d70ab514c42407233dd1ed748118211e70a841a170"
+    },
+    {
+      "path": "utils/numberformat.py",
+      "bytes": 3886,
+      "physical_lines": 105,
+      "sha256": "0dd7cf32433ab8a560ab055f9f7e878efaeac0ca9fc87ae52ca48556ae553528"
+    },
+    {
+      "path": "utils/regex_helper.py",
+      "bytes": 13126,
+      "physical_lines": 354,
+      "sha256": "3be682dc0d8ff2bb8b747915c1fc8975f260e2e7e96b9897778e09969e06e702"
+    },
+    {
+      "path": "utils/safestring.py",
+      "bytes": 2256,
+      "physical_lines": 78,
+      "sha256": "632e28588d69c9ed75ddc3f9cd7f73632f75d074a7efe527cc117207f8bf87ce"
+    },
+    {
+      "path": "utils/termcolors.py",
+      "bytes": 7607,
+      "physical_lines": 221,
+      "sha256": "a71a8fbbcacc0296e30a4e4699c40672e0cc35ed37f5d54a4bf6326f0f518ba8"
+    },
+    {
+      "path": "utils/text.py",
+      "bytes": 15074,
+      "physical_lines": 488,
+      "sha256": "1f31d65f7d84606f0069b6feddae31d37a1c7402cd9caffa96f81e5fd892a7e4"
+    },
+    {
+      "path": "utils/timesince.py",
+      "bytes": 5056,
+      "physical_lines": 142,
+      "sha256": "348f3f5f6eda8ba111fef52de1802503d6983959791c0f8e31f1a97129232012"
+    },
+    {
+      "path": "utils/timezone.py",
+      "bytes": 7554,
+      "physical_lines": 259,
+      "sha256": "bfa238bfff84b43de6ffff93803b9076673368590f5396d15bbf2537395a6751"
+    },
+    {
+      "path": "utils/translation/__init__.py",
+      "bytes": 9180,
+      "physical_lines": 302,
+      "sha256": "47d3c534119d1f00a27bc2f8695c56353dbc55878748ea0566fb68810ac7dfbb"
+    },
+    {
+      "path": "utils/translation/reloader.py",
+      "bytes": 1150,
+      "physical_lines": 36,
+      "sha256": "5507030d73e6d2099e3f6f6db6d9c213b6cfd184f4192d488b49ad2c054b8f46"
+    },
+    {
+      "path": "utils/translation/template.py",
+      "bytes": 10795,
+      "physical_lines": 246,
+      "sha256": "df8acff55a27ade8c78a9b06984b508fd20c019fcea3e12af066c16a1e7603ae"
+    },
+    {
+      "path": "utils/translation/trans_null.py",
+      "bytes": 1354,
+      "physical_lines": 67,
+      "sha256": "0144d03e9929095298519a019541181739c226aac1125d5fb477dc9a50ccba9b"
+    },
+    {
+      "path": "utils/translation/trans_real.py",
+      "bytes": 22925,
+      "physical_lines": 652,
+      "sha256": "cb7a9a3a462cabb1cda2fd5e2236ca067d119431204998bca5c39f07f3e09c90"
+    },
+    {
+      "path": "utils/tree.py",
+      "bytes": 4520,
+      "physical_lines": 126,
+      "sha256": "879ac2a25999161e642987cf5e6ddeec64fd22665384bdae57f5a7c93abcf451"
+    },
+    {
+      "path": "utils/version.py",
+      "bytes": 3861,
+      "physical_lines": 124,
+      "sha256": "397376993001ffac7e5de39b3974ea7a3e3372690ad00afd5edb0137c3f30b7a"
+    },
+    {
+      "path": "utils/xmlutils.py",
+      "bytes": 1207,
+      "physical_lines": 35,
+      "sha256": "d8281a65266566aa258a97f1a12a14dbb903dfbfdcd7b0d69276326b8847501a"
+    },
+    {
+      "path": "views/__init__.py",
+      "bytes": 66,
+      "physical_lines": 3,
+      "sha256": "1e9bb68fc1d178e3b256df955817e272825f8d33b612c3c7a9dfd028cd00c571"
+    },
+    {
+      "path": "views/csrf.py",
+      "bytes": 3505,
+      "physical_lines": 80,
+      "sha256": "caadc86673b5e719c6efb53a78288e49a4fc6852b70774e23f2bb6c35dbf9ba7"
+    },
+    {
+      "path": "views/debug.py",
+      "bytes": 26335,
+      "physical_lines": 665,
+      "sha256": "32e9dfcf244f9bce7ce86f239b18cda457f244c9cc557c76270ec63a0459c86d"
+    },
+    {
+      "path": "views/decorators/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "views/decorators/cache.py",
+      "bytes": 2905,
+      "physical_lines": 84,
+      "sha256": "1a694c2d535e2529d25cdf7323bd1ca89e1467b28beda393c08ae5a064e5ca08"
+    },
+    {
+      "path": "views/decorators/clickjacking.py",
+      "bytes": 2645,
+      "physical_lines": 90,
+      "sha256": "11806aeb29c60647f9fdd24a02254eb5cfcaf06763a6117942e2ea3336651773"
+    },
+    {
+      "path": "views/decorators/common.py",
+      "bytes": 766,
+      "physical_lines": 27,
+      "sha256": "c98c85327b63880d349eca2c136eda0263c76f8b2a650eab528a515a2ee33c07"
+    },
+    {
+      "path": "views/decorators/csrf.py",
+      "bytes": 2393,
+      "physical_lines": 69,
+      "sha256": "bd7bfb00303a9d05538f6100b9f63002437186edf2990f6d4e0ce3d0db3f5ac8"
+    },
+    {
+      "path": "views/decorators/debug.py",
+      "bytes": 5403,
+      "physical_lines": 147,
+      "sha256": "379921e238f84807a2ebb6610f1338a6bd1a28eccc8d6a37850a1bc5550b2b51"
+    },
+    {
+      "path": "views/decorators/gzip.py",
+      "bytes": 258,
+      "physical_lines": 5,
+      "sha256": "abd6d70eeeb2deff235ee8c980b0f1a6595c6b96311ea70724594ca0f8b97c0f"
+    },
+    {
+      "path": "views/decorators/http.py",
+      "bytes": 6702,
+      "physical_lines": 169,
+      "sha256": "e3fea016f190405f69111f700df6c194b9def12a3c0da2ba08bfa7656a4d7638"
+    },
+    {
+      "path": "views/decorators/vary.py",
+      "bytes": 1245,
+      "physical_lines": 44,
+      "sha256": "fd27e25836bb193241f1e9e1ec5848637b13cac18cba56d8ae82ac5f11e3c2de"
+    },
+    {
+      "path": "views/defaults.py",
+      "bytes": 4868,
+      "physical_lines": 150,
+      "sha256": "9d523b7e9ed7f23850c0177d856d4bc0a0efc07b79f7326eb4ba6119c7fe2dac"
+    },
+    {
+      "path": "views/generic/__init__.py",
+      "bytes": 925,
+      "physical_lines": 39,
+      "sha256": "e36c9d147f46dcf5cf427890496828ec092443e66e2d4b7b3fd5f5c384182e53"
+    },
+    {
+      "path": "views/generic/base.py",
+      "bytes": 9589,
+      "physical_lines": 286,
+      "sha256": "2667c918b4c96a2b0e3cdc4339cdb7987761022ca508021b151d8ccbd0c39b60"
+    },
+    {
+      "path": "views/generic/dates.py",
+      "bytes": 27744,
+      "physical_lines": 823,
+      "sha256": "869da1c4be9aabc115ded778c512020a12908241a8d525904350e4e639909ec9"
+    },
+    {
+      "path": "views/generic/detail.py",
+      "bytes": 7211,
+      "physical_lines": 189,
+      "sha256": "e7a6b50de94f2642ac85c28bb35e6ae0c10b6e6e9face62b230563a43310b972"
+    },
+    {
+      "path": "views/generic/edit.py",
+      "bytes": 9314,
+      "physical_lines": 274,
+      "sha256": "cd9a97fe76fb9a63bb57d5fe053b743d83612f7dbc6072d6a46c76da07069296"
+    },
+    {
+      "path": "views/generic/list.py",
+      "bytes": 8233,
+      "physical_lines": 224,
+      "sha256": "161243f9c527e90f54096943761d7be19664a18164cbe19130eaf5a32a67aa41"
+    },
+    {
+      "path": "views/i18n.py",
+      "bytes": 9271,
+      "physical_lines": 251,
+      "sha256": "58e6b6e0f2ef6b754363de266ba93c28c396c222ff27e99a70ca9005aaee5b91"
+    },
+    {
+      "path": "views/static.py",
+      "bytes": 4177,
+      "physical_lines": 122,
+      "sha256": "22339f9a0fd4e4291844f17f594c78658532f46bc85db2486b82aa0aa3d66985"
+    }
+  ],
+  "tree_sha256": "6d1a2fdb5b2c510f63d1c19fa5d6e21357b19fe8a5fc3f5ed54d2f3bcd32a0c8"
+}

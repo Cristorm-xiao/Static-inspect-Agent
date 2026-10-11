@@ -1,0 +1,142 @@
+{
+  "cases": 8,
+  "matched_cases": 0,
+  "tp": 0,
+  "fp": 3,
+  "fn": 5,
+  "details": [
+    {
+      "id": "constructor_list",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [],
+      "matches": false,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "explanation": "mutable built-in constructor default"
+    },
+    {
+      "id": "constructor_set",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [],
+      "matches": false,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "explanation": "mutable built-in set default"
+    },
+    {
+      "id": "nested_mutable",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [],
+      "matches": false,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "explanation": "mutable value nested inside immutable tuple"
+    },
+    {
+      "id": "eval_alias",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "actual": [],
+      "matches": false,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "explanation": "alias of built-in eval"
+    },
+    {
+      "id": "builtin_eval_attribute",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "actual": [],
+      "matches": false,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "explanation": "attribute access to built-in eval"
+    },
+    {
+      "id": "shadowed_eval",
+      "expected": [],
+      "actual": [
+        {
+          "file": "shadowed_eval.py",
+          "line": 2,
+          "rule": "eval_call",
+          "rule_id": "R003",
+          "severity": "warning",
+          "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+        }
+      ],
+      "matches": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "explanation": "local callable named eval is not proven built-in eval"
+    },
+    {
+      "id": "cleanup_reraise",
+      "expected": [],
+      "actual": [
+        {
+          "file": "cleanup_reraise.py",
+          "line": 3,
+          "rule": "bare_except",
+          "rule_id": "R001",
+          "severity": "error",
+          "desc": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+        }
+      ],
+      "matches": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "explanation": "cleanup then bare raise does not swallow exception; current R001 description is too broad"
+    },
+    {
+      "id": "latin1_cookie",
+      "expected": [],
+      "actual": [
+        {
+          "file": "latin1_cookie.py",
+          "line": 0,
+          "rule": "syntax_error",
+          "rule_id": "E000",
+          "severity": "error",
+          "desc": "'utf-8' codec can't decode byte 0xe9 in position 26: invalid continuation byte"
+        }
+      ],
+      "matches": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "explanation": "legal PEP 263 encoding should be readable by a general Python source tool"
+    }
+  ],
+  "exit_code": 1
+}

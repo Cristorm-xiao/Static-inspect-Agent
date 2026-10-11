@@ -1,0 +1,506 @@
+{
+  "files": 83,
+  "physical_lines": 17874,
+  "bytes": 590544,
+  "entries": [
+    {
+      "path": "docs/conf.py",
+      "bytes": 3487,
+      "physical_lines": 101,
+      "sha256": "532e9e94ac685f8b8c847b8efcc1c637abc2f216e86297389508d4bf16e706fe"
+    },
+    {
+      "path": "examples/celery/make_celery.py",
+      "bytes": 106,
+      "physical_lines": 4,
+      "sha256": "23ae546f46ef43b70454029514d30217b65951e530ab20321039ddebcc9202d4"
+    },
+    {
+      "path": "examples/celery/src/task_app/__init__.py",
+      "bytes": 1058,
+      "physical_lines": 39,
+      "sha256": "09855975c857699ea52673d9f0328d90711d01aecb0f494d8d53b9a5170f9148"
+    },
+    {
+      "path": "examples/celery/src/task_app/tasks.py",
+      "bytes": 507,
+      "physical_lines": 23,
+      "sha256": "19359f2e87177ad027644f8d306bd70a5edcb9d12fb5ad8581b59313b1ea731f"
+    },
+    {
+      "path": "examples/celery/src/task_app/views.py",
+      "bytes": 992,
+      "physical_lines": 38,
+      "sha256": "68619f15b4e6eb13aa69ea7624ae4b35a9683e357e3fb0979b5669dae8d1de95"
+    },
+    {
+      "path": "examples/javascript/js_example/__init__.py",
+      "bytes": 102,
+      "physical_lines": 5,
+      "sha256": "23454488131ef7ef0cd9b424d53d65c5a3cc6fdbdd8de70787c7367ae6a78655"
+    },
+    {
+      "path": "examples/javascript/js_example/views.py",
+      "bytes": 447,
+      "physical_lines": 18,
+      "sha256": "75ee220c559547e766ea2f1931ae4b3d0a35d8b99d35ca1b1cd473b3fb7bee59"
+    },
+    {
+      "path": "examples/javascript/tests/conftest.py",
+      "bytes": 231,
+      "physical_lines": 15,
+      "sha256": "c7335f658652c8fcd71735676d6ddfdfccf8fd4ff341f87ba17da0a3442982f1"
+    },
+    {
+      "path": "examples/javascript/tests/test_js_example.py",
+      "bytes": 754,
+      "physical_lines": 27,
+      "sha256": "35fc4b3b5b22bf06b83af66adb182a018d000a604adcad89211312589605fc7b"
+    },
+    {
+      "path": "examples/tutorial/flaskr/__init__.py",
+      "bytes": 1488,
+      "physical_lines": 51,
+      "sha256": "b54967ce714118d9f55522cc6ffd5e440482743fc79f5a40e7739eff9e881d18"
+    },
+    {
+      "path": "examples/tutorial/flaskr/auth.py",
+      "bytes": 3412,
+      "physical_lines": 116,
+      "sha256": "5c5a087f3d7db470f71f3135ed626b6cb97e7772647a00417447ccad5b9a0fb6"
+    },
+    {
+      "path": "examples/tutorial/flaskr/blog.py",
+      "bytes": 3430,
+      "physical_lines": 125,
+      "sha256": "1fbc399c3035bf4497ecc2dcac4389c892f63eb263b4538349fb0a62a7540ea0"
+    },
+    {
+      "path": "examples/tutorial/flaskr/db.py",
+      "bytes": 1373,
+      "physical_lines": 56,
+      "sha256": "a8054dcbd2b70738ec85fb76e9dfb0271b422d59529469d6e5595ae1208c4e71"
+    },
+    {
+      "path": "examples/tutorial/tests/conftest.py",
+      "bytes": 1516,
+      "physical_lines": 62,
+      "sha256": "deb4e44f610d8f21ccbd971ae55b6e936ad9a2e22b643b8aba0a5f7c8bd847b1"
+    },
+    {
+      "path": "examples/tutorial/tests/test_auth.py",
+      "bytes": 2139,
+      "physical_lines": 69,
+      "sha256": "604b9bda7eaa40763c02fb094fba7782d27de68141ddb9f3b7eccff1f3a25fed"
+    },
+    {
+      "path": "examples/tutorial/tests/test_blog.py",
+      "bytes": 2586,
+      "physical_lines": 83,
+      "sha256": "2dab03ae22420b6b6ef27f3cc3dd6cf02f22cd8c804b595764e542d2ff02d3e2"
+    },
+    {
+      "path": "examples/tutorial/tests/test_db.py",
+      "bytes": 645,
+      "physical_lines": 29,
+      "sha256": "40a402680539121b8c54113472200bcbb5f26e249f44f656059cec9d1abfaf40"
+    },
+    {
+      "path": "examples/tutorial/tests/test_factory.py",
+      "bytes": 310,
+      "physical_lines": 12,
+      "sha256": "abfbef7ebe22bcc95efece03cb1f256aeb90406a6e2d701b12743b026c283d35"
+    },
+    {
+      "path": "src/flask/__init__.py",
+      "bytes": 2762,
+      "physical_lines": 61,
+      "sha256": "f8fbb230dea54bcda5252fa7356a050df8f5d995717e34dd757517df34968066"
+    },
+    {
+      "path": "src/flask/__main__.py",
+      "bytes": 33,
+      "physical_lines": 3,
+      "sha256": "c13eb66970ae37b8b044f428b309e67868814b90a8bb408806f3316ce4dfbc5b"
+    },
+    {
+      "path": "src/flask/app.py",
+      "bytes": 63280,
+      "physical_lines": 1536,
+      "sha256": "fc5d782f3e464d97cd243c2c7c0ce34d07ecd1ca9b1456788da8cc07b59de899"
+    },
+    {
+      "path": "src/flask/blueprints.py",
+      "bytes": 4669,
+      "physical_lines": 128,
+      "sha256": "565d4de8d464df4e5ffe1b1daa4cd4dbd70b5e4d06a7f30e5ba93fab68d8b928"
+    },
+    {
+      "path": "src/flask/cli.py",
+      "bytes": 38319,
+      "physical_lines": 1135,
+      "sha256": "bfdcfedf485dffcb01cb948345232a73d4627b3f16c70ea88a41420be50eef59"
+    },
+    {
+      "path": "src/flask/config.py",
+      "bytes": 13586,
+      "physical_lines": 367,
+      "sha256": "1e96b8823b559bb504f168c07c86334cdde5370525b2aebd99f67336cdc4c205"
+    },
+    {
+      "path": "src/flask/ctx.py",
+      "bytes": 15513,
+      "physical_lines": 449,
+      "sha256": "076e62cac913b0ed56766a01f9ae2a24444854edd09fb71034c48190523f977f"
+    },
+    {
+      "path": "src/flask/debughelpers.py",
+      "bytes": 6258,
+      "physical_lines": 178,
+      "sha256": "b6cedc04781103721c5872edd9aa69fe38644c44d31c28280997f500b7379fbf"
+    },
+    {
+      "path": "src/flask/globals.py",
+      "bytes": 1764,
+      "physical_lines": 51,
+      "sha256": "a90ca3e9e7eb2a7c001052cbffb1fd591e4719fde91a9070c8d254d0ed80b4ea"
+    },
+    {
+      "path": "src/flask/helpers.py",
+      "bytes": 24158,
+      "physical_lines": 641,
+      "sha256": "49848f1857424cdf16e411d1da93b9e36dcbbaf6b1e324166a67634be7c4fcc7"
+    },
+    {
+      "path": "src/flask/json/__init__.py",
+      "bytes": 5772,
+      "physical_lines": 170,
+      "sha256": "39bb1ffe1688b4fbc32b5919ba775a4448fb1c30dd7e731c6d004bdb3f642b82"
+    },
+    {
+      "path": "src/flask/json/provider.py",
+      "bytes": 7887,
+      "physical_lines": 215,
+      "sha256": "fac6ed2a0d6eb704238cec77c6f1c51fb3dc7fae59529e1ac4da9b66c146f94e"
+    },
+    {
+      "path": "src/flask/json/tag.py",
+      "bytes": 9608,
+      "physical_lines": 327,
+      "sha256": "c4ba987d1dcb4768bd2e1bc81c3a4ce5798f76e38ca31949e59d919c8a305993"
+    },
+    {
+      "path": "src/flask/logging.py",
+      "bytes": 2456,
+      "physical_lines": 79,
+      "sha256": "1d3013cf14f23e25cc31a7cbe06ca3bec7f42258b861e26f08293a63cbf8a43e"
+    },
+    {
+      "path": "src/flask/sansio/app.py",
+      "bytes": 39063,
+      "physical_lines": 964,
+      "sha256": "ca68f8e81a90528708ee50c6dc533bc7b841b4376d545cf1e31fe008b2dee568"
+    },
+    {
+      "path": "src/flask/sansio/blueprints.py",
+      "bytes": 25269,
+      "physical_lines": 632,
+      "sha256": "5928682a6cb2682fcde3cccea35762f7892f31c407a5aba4c6364f8b116032eb"
+    },
+    {
+      "path": "src/flask/sansio/scaffold.py",
+      "bytes": 31163,
+      "physical_lines": 792,
+      "sha256": "33a2fdde418ad4df8e90b2167f752624c97534f74f52fc5bafeb5f21857acd14"
+    },
+    {
+      "path": "src/flask/sessions.py",
+      "bytes": 15879,
+      "physical_lines": 399,
+      "sha256": "660d51076d005e2951ac86b965d779da247278030a28af7ddf1d085cf12b2d53"
+    },
+    {
+      "path": "src/flask/signals.py",
+      "bytes": 767,
+      "physical_lines": 17,
+      "sha256": "b8356e2b1fcf44ae06ef435fded4244582870b728deed86553a877657574c08e"
+    },
+    {
+      "path": "src/flask/templating.py",
+      "bytes": 7755,
+      "physical_lines": 219,
+      "sha256": "5b873ae767f6d4364099230f1c7aae69458d304380e3be79ff371af2fee04467"
+    },
+    {
+      "path": "src/flask/testing.py",
+      "bytes": 10415,
+      "physical_lines": 298,
+      "sha256": "bbf0cd34fd55795a18dbce780d92a62721fd63782db4ddce97d0429bd747edb0"
+    },
+    {
+      "path": "src/flask/typing.py",
+      "bytes": 3386,
+      "physical_lines": 93,
+      "sha256": "4518ffb27024ec5c14cade62817529d2e0be5598faf03da4f4c3c250ca3a5eaa"
+    },
+    {
+      "path": "src/flask/views.py",
+      "bytes": 7153,
+      "physical_lines": 191,
+      "sha256": "5691ad7ee35d9e9efadb7d248883060617d5969bb689f046ec44a01b70e4ba9e"
+    },
+    {
+      "path": "src/flask/wrappers.py",
+      "bytes": 9663,
+      "physical_lines": 257,
+      "sha256": "ef65015ae45e799f432aa056b9ff6035d6870d736fee5debb210e3983af5ea07"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 3413,
+      "physical_lines": 128,
+      "sha256": "cfee9ca67f19a00f3c8c4ecffc541454c20016c46c24c7fdc44f0046a73d2c28"
+    },
+    {
+      "path": "tests/test_appctx.py",
+      "bytes": 5187,
+      "physical_lines": 209,
+      "sha256": "90ccde25d0d53968fc9cdf219f40e213d7b0902b2953adec0a2ea9857079f78a"
+    },
+    {
+      "path": "tests/test_apps/blueprintapp/__init__.py",
+      "bytes": 265,
+      "physical_lines": 9,
+      "sha256": "5a05bf2f86f1d3d52bdcdd0846ae5f1044c491dba47e56e7b8c7ea80db4c1f3b"
+    },
+    {
+      "path": "tests/test_apps/blueprintapp/apps/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_apps/blueprintapp/apps/admin/__init__.py",
+      "bytes": 386,
+      "physical_lines": 20,
+      "sha256": "dc4a7fea97406b3bf6bbedced1e6cf1f0284b9d84d8ce4886e3a743a9d290d29"
+    },
+    {
+      "path": "tests/test_apps/blueprintapp/apps/frontend/__init__.py",
+      "bytes": 341,
+      "physical_lines": 14,
+      "sha256": "f36133f440a2b113a25c9b593f2cc4d81eb8c638277db0afa823af223d5bfec6"
+    },
+    {
+      "path": "tests/test_apps/cliapp/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_apps/cliapp/app.py",
+      "bytes": 55,
+      "physical_lines": 3,
+      "sha256": "d0591e98b98800bae0f6dafb54c8b68a72d65808798e102b024149f660bd1e26"
+    },
+    {
+      "path": "tests/test_apps/cliapp/factory.py",
+      "bytes": 182,
+      "physical_lines": 13,
+      "sha256": "b06c281a24178b69f9523eda2b221638ac1f240bc598b46c04253b87b24dbadf"
+    },
+    {
+      "path": "tests/test_apps/cliapp/importerrorapp.py",
+      "bytes": 78,
+      "physical_lines": 5,
+      "sha256": "32edc38952014ba466046393a7da3335af45a6a7c8d245c131c805f357c83b42"
+    },
+    {
+      "path": "tests/test_apps/cliapp/inner1/__init__.py",
+      "bytes": 58,
+      "physical_lines": 3,
+      "sha256": "b933622c8a81dcaf77d5d9fd4db2d00898e812dd9aa448c3389b0c5cf438cc6e"
+    },
+    {
+      "path": "tests/test_apps/cliapp/inner1/inner2/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_apps/cliapp/inner1/inner2/flask.py",
+      "bytes": 50,
+      "physical_lines": 3,
+      "sha256": "4c15cbc7c8c17374b2c3053da9a4172b161a0f8e9c53187dea17b528a8d46fcb"
+    },
+    {
+      "path": "tests/test_apps/cliapp/multiapp.py",
+      "bytes": 71,
+      "physical_lines": 4,
+      "sha256": "43e353a3f01109cb5da9f005ed36c9c8a2252a4467e54e48202eb362f7580853"
+    },
+    {
+      "path": "tests/test_apps/helloworld/hello.py",
+      "bytes": 112,
+      "physical_lines": 8,
+      "sha256": "7cd83b3022409a2d4f969b9c7c70cbdd4ac0ecad3d7d15cdc152a126b66a072b"
+    },
+    {
+      "path": "tests/test_apps/helloworld/wsgi.py",
+      "bytes": 37,
+      "physical_lines": 1,
+      "sha256": "b9a6655c5f11f3dd28f96866a0697ae3ff4f0a3a0be53e8c6f0df6a8a7f68222"
+    },
+    {
+      "path": "tests/test_apps/subdomaintestmodule/__init__.py",
+      "bytes": 76,
+      "physical_lines": 3,
+      "sha256": "83c1df3997001930dd9d5c1d7c6783cf257e14c652c0d5a6cc23c1ed819897d2"
+    },
+    {
+      "path": "tests/test_async.py",
+      "bytes": 3480,
+      "physical_lines": 145,
+      "sha256": "57d565209a6893c94a098146e85c4a1df7f22cf04ed023329ec3d11f5629a3a0"
+    },
+    {
+      "path": "tests/test_basic.py",
+      "bytes": 55547,
+      "physical_lines": 1944,
+      "sha256": "3a6126319968fad80cbcfa9109d9afa2841e945ecf189ad33a416a96c5bcbe81"
+    },
+    {
+      "path": "tests/test_blueprints.py",
+      "bytes": 29824,
+      "physical_lines": 1046,
+      "sha256": "ca5578497dcdfc97a868ed737e58c1ddbd5a623c0091b0fd3ebc35f95a5bfb2f"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 21070,
+      "physical_lines": 702,
+      "sha256": "44e39bcfb116b0cc11d966016cfbdd00a295fa64ca5377007da9505611dd6b30"
+    },
+    {
+      "path": "tests/test_config.py",
+      "bytes": 7998,
+      "physical_lines": 250,
+      "sha256": "ae930d3e782e0003db02cffdb5cd2caae6e1b965e0b6a96264a0fbd7efcf9ef8"
+    },
+    {
+      "path": "tests/test_converters.py",
+      "bytes": 1135,
+      "physical_lines": 42,
+      "sha256": "e66eb504e1ab33c927e8dd6fac8664f13aca35a57587d3d90238e04c958154cf"
+    },
+    {
+      "path": "tests/test_helpers.py",
+      "bytes": 11607,
+      "physical_lines": 383,
+      "sha256": "abcae907c766967d4865613f70800a3a70e104ba08f310fb75b9be80e6c2efd0"
+    },
+    {
+      "path": "tests/test_instance_config.py",
+      "bytes": 3428,
+      "physical_lines": 111,
+      "sha256": "aa4cc3f5d14976f92e776404434aa9c786c11da77b821834a98a5da15f2b58d4"
+    },
+    {
+      "path": "tests/test_json.py",
+      "bytes": 9087,
+      "physical_lines": 346,
+      "sha256": "bc146ba98a7066408bc920e51bede193647f3107fd8079e7a8c85c7b1c5a4bf1"
+    },
+    {
+      "path": "tests/test_json_tag.py",
+      "bytes": 2084,
+      "physical_lines": 86,
+      "sha256": "efd7f1c1ac6e6d517a457d6d47aba7c3f8aed1d359951e70881f137c4488a1c9"
+    },
+    {
+      "path": "tests/test_logging.py",
+      "bytes": 2627,
+      "physical_lines": 98,
+      "sha256": "a70463526c1975785374312492368fa6acc6747e624841deac1f653f4f6a3d51"
+    },
+    {
+      "path": "tests/test_regression.py",
+      "bytes": 742,
+      "physical_lines": 30,
+      "sha256": "7aef1a8f0adceabaf0a719b48e4ef8b7270b2f8126209817086f52d1958ca435"
+    },
+    {
+      "path": "tests/test_reqctx.py",
+      "bytes": 9016,
+      "physical_lines": 325,
+      "sha256": "46795bdadc81b2c1485c59a1837db4f9a0800894c4877bd5b06a46f6309f1346"
+    },
+    {
+      "path": "tests/test_request.py",
+      "bytes": 1972,
+      "physical_lines": 70,
+      "sha256": "b7d32265037c1f4d7bc2b47e1e925c0d061d5309fafb79ff39ffb481566dfaaf"
+    },
+    {
+      "path": "tests/test_session_interface.py",
+      "bytes": 820,
+      "physical_lines": 28,
+      "sha256": "aa2494c05b90bdb2679b5d6f5a60975b8eb4dff8bfc7ea04f7343d501bb66860"
+    },
+    {
+      "path": "tests/test_signals.py",
+      "bytes": 5045,
+      "physical_lines": 181,
+      "sha256": "d1e074e48c6fbdb258acedae55fe56151a511bb92efdfcb666753bf2542a14e9"
+    },
+    {
+      "path": "tests/test_subclassing.py",
+      "bytes": 496,
+      "physical_lines": 21,
+      "sha256": "e3493f0a00daa782d4573ca1973879c338a9d0a5c8eef349afc98b1d86dd183d"
+    },
+    {
+      "path": "tests/test_templating.py",
+      "bytes": 12774,
+      "physical_lines": 451,
+      "sha256": "21e03cd60f50563f404de71cbdb171bfabf5cea4f24084807c46924a54f4bff7"
+    },
+    {
+      "path": "tests/test_testing.py",
+      "bytes": 10652,
+      "physical_lines": 385,
+      "sha256": "8c9c6b9aba5411acffb794a92a289458d2cb514a3a517838b43f850baa1ac5f6"
+    },
+    {
+      "path": "tests/test_user_error_handler.py",
+      "bytes": 8731,
+      "physical_lines": 295,
+      "sha256": "6a866dded41ff9b67bcc82fa8a2e8be5010fa5f26eac221f1356c4a86fc98d11"
+    },
+    {
+      "path": "tests/test_views.py",
+      "bytes": 6992,
+      "physical_lines": 260,
+      "sha256": "de045458dd8573841e4edd6eeed9ea561806dbeaf98f8590cab3b10fe99e43df"
+    },
+    {
+      "path": "tests/type_check/typing_app_decorators.py",
+      "bytes": 621,
+      "physical_lines": 32,
+      "sha256": "fb4750806a29f91651d9e0c2db3182f847c4d308f6c8130af80860dac2ae1e7c"
+    },
+    {
+      "path": "tests/type_check/typing_error_handler.py",
+      "bytes": 680,
+      "physical_lines": 33,
+      "sha256": "9fc8f4e493115f3a26a7f1b93a091a15ed0ce51683b76d71a81643cc498ae21a"
+    },
+    {
+      "path": "tests/type_check/typing_route.py",
+      "bytes": 2644,
+      "physical_lines": 112,
+      "sha256": "d845b5466b9e2e96b850bbe096c4a0f1459e62fdc80709e94a4c74108534565b"
+    }
+  ],
+  "tree_sha256": "ca109374bbc4772c5f46c49902b08c36a1741ba5dcffc69ce7ec857a8fa425f3"
+}

@@ -4,8 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "static-inspect-agent"
-version = "0.1.0"
+version = "0.3.0"
 description = "Python 工程静态巡检 Agent：规则引擎 + LLM 语义分析"
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "langgraph>=1.2",
@@ -16,13 +17,18 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
+    "build>=1.0",
 ]
 
 [project.scripts]
 inspect-agent = "main:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+only-include = [
+    "baseline.py", "config.py", "graph.py", "llm_node.py", "main.py",
+    "report.py", "rules.py", "sarif.py", "scanner.py", "state.py",
+    "source_analysis.py", "inspection_cache.py", "llm_protocol.py", "llm_runtime.py",
+]
 
 [tool.inspect-agent]
 # 长函数阈值：函数体超过这么多行才交给 LLM 分析

@@ -1,0 +1,148 @@
+{
+  "measurement": {
+    "project": "httpx",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 2.2020461999927647,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": null
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+    "files_scanned": 23,
+    "rule_findings": [
+      {
+        "file": "__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 4,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 6,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 7,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 8,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 9,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 10,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 11,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "__init__.py",
+        "line": 12,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 4,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0
+  }
+}

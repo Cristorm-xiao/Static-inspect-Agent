@@ -1,0 +1,35 @@
+{
+  "measurement": {
+    "project": "requests",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 2.168956800014712,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+    "files_scanned": 18,
+    "rule_findings": [],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "call_id": "primary-click-0",
+  "phase": "primary-click",
+  "kind": "primary",
+  "sample_ids": [
+    "click:testing.py:547:isolated_filesystem",
+    "click:testing.py:433:invoke",
+    "click:core.py:2314:type_cast_value",
+    "click:termui.py:328:progressbar",
+    "click:__init__.py:74:__getattr__"
+  ],
+  "started_at": "2026-10-10T02:04:15.627083+00:00",
+  "request": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是资深 Python 代码审查员。以下是 5 个较长的函数，请找出代码坏味道\n（如命名含糊、职责过多、嵌套过深、重复逻辑、魔法数字等）。\n\n\n### 片段0 (文件: click/testing.py, 行: 547)\n```python\n    def isolated_filesystem(\n        self, temp_dir: str | os.PathLike[str] | None = None\n    ) -> cabc.Iterator[str]:\n        \"\"\"A context manager that creates a temporary directory and\n        changes the current working directory to it. This isolates tests\n        that affect the contents of the CWD to prevent them from\n        interfering with each other.\n\n        :param temp_dir: Create the temporary directory under this\n            directory. If given, the created directory is not removed\n            when exiting.\n\n        .. versionchanged:: 8.0\n            Added the ``temp_dir`` parameter.\n        \"\"\"\n        cwd = os.getcwd()\n        dt = tempfile.mkdtemp(dir=temp_dir)\n        os.chdir(dt)\n\n        try:\n            yield dt\n        finally:\n            os.chdir(cwd)\n\n            if temp_dir is None:\n                import shutil\n\n                try:\n                    shutil.rmtree(dt)\n                except OSError:\n                    pass\n```\n\n### 片段1 (文件: click/testing.py, 行: 433)\n```python\n    def invoke(\n        self,\n        cli: Command,\n        args: str | cabc.Sequence[str] | None = None,\n        input: str | bytes | t.IO[t.Any] | None = None,\n        env: cabc.Mapping[str, str | None] | None = None,\n        catch_exceptions: bool | None = None,\n        color: bool = False,\n        **extra: t.Any,\n    ) -> Result:\n        \"\"\"Invokes a command in an isolated environment.  The arguments are\n        forwarded directly to the command line script, the `extra` keyword\n        arguments are passed to the :meth:`~clickpkg.Command.main` function of\n        the command.\n\n        This returns a :class:`Result` object.\n\n        :param cli: the command to invoke\n        :param args: the arguments to invoke. It may be given as an iterable\n                     or a string. When given as string it will be interpreted\n                     as a Unix shell command. More details at\n                     :func:`shlex.split`.\n        :param input: the input data for `sys.stdin`.\n        :param env: the environment overrides.\n        :param catch_exceptions: Whether to catch any other exceptions than\n                                 ``SystemExit``. If :data:`None`, the value\n                                 from :class:`CliRunner` is used.\n        :param extra: the keyword arguments to pass to :meth:`main`.\n        :param color: whether the output should contain color codes. The\n                      application can still override this explicitly.\n\n        .. versionadded:: 8.2\n            The result object has the ``output_bytes`` attribute with\n            the mix of ``stdout_bytes`` and ``stderr_bytes``, as the user would\n            see it in its terminal.\n\n        .. versionchanged:: 8.2\n            The result object always returns the ``stderr_bytes`` stream.\n\n        .. versionchanged:: 8.0\n            The result object has the ``return_value`` attribute with\n            the value returned from the invoked command.\n\n        .. versionchanged:: 4.0\n            Added the ``color`` parameter.\n\n        .. versionchanged:: 3.0\n            Added the ``catch_exceptions`` parameter.\n\n        .. versionchanged:: 3.0\n            The result object has the ``exc_info`` attribute with the\n            traceback if available.\n        \"\"\"\n        exc_info = None\n        if catch_exceptions is None:\n            catch_exceptions = self.catch_exceptions\n\n        with self.isolation(input=input, env=env, color=color) as outstreams:\n            return_value = None\n            exception: BaseException | None = None\n            exit_code = 0\n\n            if isinstance(args, str):\n                args = shlex.split(args)\n\n            try:\n                prog_name = extra.pop(\"prog_name\")\n            except KeyError:\n                prog_name = self.get_default_prog_name(cli)\n\n            try:\n                return_value = cli.main(args=args or (), prog_name=prog_name, **extra)\n            except SystemExit as e:\n                exc_info = sys.exc_info()\n                e_code = t.cast(\"int | t.Any | None\", e.code)\n\n                if e_code is None:\n                    e_code = 0\n\n                if e_code != 0:\n                    exception = e\n\n                if not isinstance(e_code, int):\n                    sys.stdout.write(str(e_code))\n                    sys.stdout.write(\"\\n\")\n                    e_code = 1\n\n                exit_code = e_code\n\n            except Exception as e:\n                if not catch_exceptions:\n                    raise\n                exception = e\n                exit_code = 1\n                exc_info = sys.exc_info()\n            finally:\n                sys.stdout.flush()\n                sys.stderr.flush()\n                stdout = outstreams[0].getvalue()\n                stderr = outstreams[1].getvalue()\n                output = outstreams[2].getvalue()\n\n        return Result(\n            runner=self,\n            stdout_bytes=stdout,\n            stderr_bytes=stderr,\n            output_bytes=output,\n            return_value=return_value,\n            exit_code=exit_code,\n            exception=exception,\n            exc_info=exc_info,  # type: ignore\n        )\n```\n\n### 片段2 (文件: click/core.py, 行: 2314)\n```python\n    def type_cast_value(self, ctx: Context, value: t.Any) -> t.Any:\n        \"\"\"Convert and validate a value against the parameter's\n        :attr:`type`, :attr:`multiple`, and :attr:`nargs`.\n        \"\"\"\n        if value in (None, UNSET):\n            if self.multiple or self.nargs == -1:\n                return ()\n            else:\n                return value\n\n        def check_iter(value: t.Any) -> cabc.Iterator[t.Any]:\n            try:\n                return _check_iter(value)\n            except TypeError:\n                # This should only happen when passing in args manually,\n                # the parser should construct an iterable when parsing\n                # the command line.\n                raise BadParameter(\n                    _(\"Value must be an iterable.\"), ctx=ctx, param=self\n                ) from None\n\n        # Define the conversion function based on nargs and type.\n\n        if self.nargs == 1 or self.type.is_composite:\n\n            def convert(value: t.Any) -> t.Any:\n                return self.type(value, param=self, ctx=ctx)\n\n        elif self.nargs == -1:\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                return tuple(self.type(x, self, ctx) for x in check_iter(value))\n\n        else:  # nargs > 1\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                value = tuple(check_iter(value))\n\n                if len(value) != self.nargs:\n                    raise BadParameter(\n                        ngettext(\n                            \"Takes {nargs} values but 1 was given.\",\n                            \"Takes {nargs} values but {len} were given.\",\n                            len(value),\n                        ).format(nargs=self.nargs, len=len(value)),\n                        ctx=ctx,\n                        param=self,\n                    )\n\n                return tuple(self.type(x, self, ctx) for x in value)\n\n        if self.multiple:\n            return tuple(convert(x) for x in check_iter(value))\n\n        return convert(value)\n```\n\n### 片段3 (文件: click/termui.py, 行: 328)\n```python\ndef progressbar(\n    iterable: cabc.Iterable[V] | None = None,\n    length: int | None = None,\n    label: str | None = None,\n    hidden: bool = False,\n    show_eta: bool = True,\n    show_percent: bool | None = None,\n    show_pos: bool = False,\n    item_show_func: t.Callable[[V | None], str | None] | None = None,\n    fill_char: str = \"#\",\n    empty_char: str = \"-\",\n    bar_template: str = \"%(label)s  [%(bar)s]  %(info)s\",\n    info_sep: str = \"  \",\n    width: int = 36,\n    file: t.TextIO | None = None,\n    color: bool | None = None,\n    update_min_steps: int = 1,\n) -> ProgressBar[V]:\n    \"\"\"This function creates an iterable context manager that can be used\n    to iterate over something while showing a progress bar.  It will\n    either iterate over the `iterable` or `length` items (that are counted\n    up).  While iteration happens, this function will print a rendered\n    progress bar to the given `file` (defaults to stdout) and will attempt\n    to calculate remaining time and more.  By default, this progress bar\n    will not be rendered if the file is not a terminal.\n\n    The context manager creates the progress bar.  When the context\n    manager is entered the progress bar is already created.  With every\n    iteration over the progress bar, the iterable passed to the bar is\n    advanced and the bar is updated.  When the context manager exits,\n    a newline is printed and the progress bar is finalized on screen.\n\n    Note: The progress bar is currently designed for use cases where the\n    total progress can be expected to take at least several seconds.\n    Because of this, the ProgressBar class object won't display\n    progress that is considered too fast, and progress where the time\n    between steps is less than a second.\n\n    No printing must happen or the progress bar will be unintentionally\n    destroyed.\n\n    Example usage::\n\n        with progressbar(items) as bar:\n            for item in bar:\n                do_something_with(item)\n\n    Alternatively, if no iterable is specified, one can manually update the\n    progress bar through the `update()` method instead of directly\n    iterating over the progress bar.  The update method accepts the number\n    of steps to increment the bar with::\n\n        with progressbar(length=chunks.total_bytes) as bar:\n            for chunk in chunks:\n                process_chunk(chunk)\n                bar.update(chunks.bytes)\n\n    The ``update()`` method also takes an optional value specifying the\n    ``current_item`` at the new position. This is useful when used\n    together with ``item_show_func`` to customize the output for each\n    manual step::\n\n        with click.progressbar(\n            length=total_size,\n            label='Unzipping archive',\n            item_show_func=lambda a: a.filename\n        ) as bar:\n            for archive in zip_file:\n                archive.extract()\n                bar.update(archive.size, archive)\n\n    :param iterable: an iterable to iterate over.  If not provided the length\n                     is required.\n    :param length: the number of items to iterate over.  By default the\n                   progressbar will attempt to ask the iterator about its\n                   length, which might or might not work.  If an iterable is\n                   also provided this parameter can be used to override the\n                   length.  If an iterable is not provided the progress bar\n                   will iterate over a range of that length.\n    :param label: the label to show next to the progress bar.\n    :param hidden: hide the progressbar. Defaults to ``False``. When no tty is\n        detected, it will only print the progressbar label. Setting this to\n        ``False`` also disables that.\n    :param show_eta: enables or disables the estimated time display.  This is\n                     automatically disabled if the length cannot be\n                     determined.\n    :param show_percent: enables or disables the percentage display.  The\n                         default is `True` if the iterable has a length or\n                         `False` if not.\n    :param show_pos: enables or disables the absolute position display.  The\n                     default is `False`.\n    :param item_show_func: A function called with the current item which\n        can return a string to show next to the progress bar. If the\n        function returns ``None`` nothing is shown. The current item can\n        be ``None``, such as when entering and exiting the bar.\n    :param fill_char: the character to use to show the filled part of the\n                      progress bar.\n    :param empty_char: the character to use to show the non-filled part of\n                       the progress bar.\n    :param bar_template: the format string to use as template for the bar.\n                         The parameters in it are ``label`` for the label,\n                         ``bar`` for the progress bar and ``info`` for the\n                         info section.\n    :param info_sep: the separator between multiple info items (eta etc.)\n    :param width: the width of the progress bar in characters, 0 means full\n                  terminal width\n    :param file: The file to write to. If this is not a terminal then\n        only the label is printed.\n    :param color: controls if the terminal supports ANSI colors or not.  The\n                  default is autodetection.  This is only needed if ANSI\n                  codes are included anywhere in the progress bar output\n                  which is not the case by default.\n    :param update_min_steps: Render only when this many updates have\n        completed. This allows tuning for very fast iterators.\n\n    .. versionadded:: 8.2\n        The ``hidden`` argument.\n\n    .. versionchanged:: 8.0\n        Output is shown even if execution time is less than 0.5 seconds.\n\n    .. versionchanged:: 8.0\n        ``item_show_func`` shows the current item, not the previous one.\n\n    .. versionchanged:: 8.0\n        Labels are echoed if the output is not a TTY. Reverts a change\n        in 7.0 that removed all output.\n\n    .. versionadded:: 8.0\n       The ``update_min_steps`` parameter.\n\n    .. versionadded:: 4.0\n        The ``color`` parameter and ``update`` method.\n\n    .. versionadded:: 2.0\n    \"\"\"\n    from ._termui_impl import ProgressBar\n\n    color = resolve_color_default(color)\n    return ProgressBar(\n        iterable=iterable,\n        length=length,\n        hidden=hidden,\n        show_eta=show_eta,\n        show_percent=show_percent,\n        show_pos=show_pos,\n        item_show_func=item_show_func,\n        fill_char=fill_char,\n        empty_char=empty_char,\n        bar_template=bar_template,\n        info_sep=info_sep,\n        file=file,\n        label=label,\n        width=width,\n        color=color,\n        update_min_steps=update_min_steps,\n    )\n```\n\n### 片段4 (文件: click/__init__.py, 行: 74)\n```python\ndef __getattr__(name: str) -> object:\n    import warnings\n\n    if name == \"BaseCommand\":\n        from .core import _BaseCommand\n\n        warnings.warn(\n            \"'BaseCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Command' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _BaseCommand\n\n    if name == \"MultiCommand\":\n        from .core import _MultiCommand\n\n        warnings.warn(\n            \"'MultiCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Group' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _MultiCommand\n\n    if name == \"OptionParser\":\n        from .parser import _OptionParser\n\n        warnings.warn(\n            \"'OptionParser' is deprecated and will be removed in Click 9.0. The\"\n            \" old parser is available in 'optparse'.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _OptionParser\n\n    if name == \"__version__\":\n        import importlib.metadata\n        import warnings\n\n        warnings.warn(\n            \"The '__version__' attribute is deprecated and will be removed in\"\n            \" Click 9.1. Use feature detection or\"\n            \" 'importlib.metadata.version(\\\"click\\\")' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return importlib.metadata.version(\"click\")\n\n    raise AttributeError(name)\n```\n\n\n只返回 JSON 数组，每个元素格式：{\"index\": 片段编号, \"smell\": \"坏味道名\", \"reason\": \"一句话说明\"}\n无问题就返回 []。"
+      }
+    ],
+    "temperature": 0.3
+  },
+  "http_attempts": 1,
+  "http_statuses": [
+    200
+  ],
+  "status": "ok",
+  "returned_model": "deepseek-flash",
+  "response_id": "afcc9f6a-49f5-41b0-9c5c-b16e00cd6ab2",
+  "finish_reason": "stop",
+  "content": "```json\n[\n  {\"index\": 0, \"smell\": \"函数内导入\", \"reason\": \"在 finally 块中才 import shutil，导入位置不规范，应放在模块顶部。\"},\n  {\"index\": 0, \"smell\": \"静默吞异常\", \"reason\": \"shutil.rmtree 失败时 except OSError: pass 完全忽略错误，难以排查问题。\"},\n  {\"index\": 1, \"smell\": \"职责过多\", \"reason\": \"invoke 同时负责参数解析、环境隔离、异常捕获、输出收集、结果构造，函数过长。\"},\n  {\"index\": 1, \"smell\": \"嵌套过深\", \"reason\": \"try/except/finally 多层嵌套，加上内部条件分支，可读性差。\"},\n  {\"index\": 1, \"smell\": \"魔法数字\", \"reason\": \"exit_code = 1、e_code = 0 等数字散落各处，缺少具名常量。\"},\n  {\"index\": 1, \"smell\": \"命名含糊\", \"reason\": \"e_code、dt、outstreams 等变量名含义不直观。\"},\n  {\"index\": 1, \"smell\": \"重复逻辑\", \"reason\": \"多处 sys.stdout.flush()/sys.stderr.flush() 与 getvalue 调用重复。\"},\n  {\"index\": 2, \"smell\": \"嵌套函数重复\", \"reason\": \"convert 在三个分支中重复定义，逻辑相似可抽取。\"},\n  {\"index\": 2, \"smell\": \"魔法数字\", \"reason\": \"nargs == -1、nargs == 1 等魔法值应使用具名常量。\"},\n  {\"index\": 2, \"smell\": \"命名含糊\", \"reason\": \"check_iter 与 _check_iter 命名相近，容易混淆。\"},\n  {\"index\": 3, \"smell\": \"参数过多\", \"reason\": \"progressbar 有 16 个参数，接口臃肿，应使用配置对象或分组。\"},\n  {\"index\": 3, \"smell\": \"魔法数字\", \"reason\": \"width=36、update_min_steps=1 等默认值散落，缺少具名常量。\"},\n  {\"index\": 3, \"smell\": \"函数内导入\", \"reason\": \"在函数体内 from ._termui_impl import ProgressBar，应置于模块顶部。\"},\n  {\"index\": 3, \"smell\": \"职责过多\", \"reason\": \"函数既做参数解析、颜色解析，又构造 ProgressBar，且文档极长。\"},\n  {\"index\": 4, \"smell\": \"重复逻辑\", \"reason\": \"四个分支结构高度相似（import、warn、return），可抽象为表驱动。\"},\n  {\"index\": 4, \"smell\": \"函数内导入\", \"reason\": \"import warnings 在函数内重复出现，应放在模块顶部。\"},\n  {\"index\": 4, \"smell\": \"魔法字符串\", \"reason\": \"版本号 '9.0'、'9.1' 硬编码在警告信息中，缺少常量。\"}\n]\n```",
+  "usage": {
+    "completion_tokens": 684,
+    "prompt_tokens": 3633,
+    "total_tokens": 4317,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 3633
+  },
+  "format": {
+    "json_array": true,
+    "strict_items": true,
+    "items": 17
+  },
+  "parsed_findings": [
+    {
+      "file": "click/testing.py",
+      "line": 547,
+      "smell": "函数内导入",
+      "reason": "在 finally 块中才 import shutil，导入位置不规范，应放在模块顶部。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 547,
+      "smell": "静默吞异常",
+      "reason": "shutil.rmtree 失败时 except OSError: pass 完全忽略错误，难以排查问题。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "职责过多",
+      "reason": "invoke 同时负责参数解析、环境隔离、异常捕获、输出收集、结果构造，函数过长。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "嵌套过深",
+      "reason": "try/except/finally 多层嵌套，加上内部条件分支，可读性差。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "魔法数字",
+      "reason": "exit_code = 1、e_code = 0 等数字散落各处，缺少具名常量。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "命名含糊",
+      "reason": "e_code、dt、outstreams 等变量名含义不直观。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "重复逻辑",
+      "reason": "多处 sys.stdout.flush()/sys.stderr.flush() 与 getvalue 调用重复。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "嵌套函数重复",
+      "reason": "convert 在三个分支中重复定义，逻辑相似可抽取。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "魔法数字",
+      "reason": "nargs == -1、nargs == 1 等魔法值应使用具名常量。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "命名含糊",
+      "reason": "check_iter 与 _check_iter 命名相近，容易混淆。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "参数过多",
+      "reason": "progressbar 有 16 个参数，接口臃肿，应使用配置对象或分组。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "魔法数字",
+      "reason": "width=36、update_min_steps=1 等默认值散落，缺少具名常量。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "函数内导入",
+      "reason": "在函数体内 from ._termui_impl import ProgressBar，应置于模块顶部。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "职责过多",
+      "reason": "函数既做参数解析、颜色解析，又构造 ProgressBar，且文档极长。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "重复逻辑",
+      "reason": "四个分支结构高度相似（import、warn、return），可抽象为表驱动。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "函数内导入",
+      "reason": "import warnings 在函数内重复出现，应放在模块顶部。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "魔法字符串",
+      "reason": "版本号 '9.0'、'9.1' 硬编码在警告信息中，缺少常量。"
+    }
+  ],
+  "seconds": 3.1569795999967027,
+  "finished_at": "2026-10-10T02:04:18.784074+00:00"
+}

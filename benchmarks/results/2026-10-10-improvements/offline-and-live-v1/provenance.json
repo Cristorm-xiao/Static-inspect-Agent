@@ -1,0 +1,58 @@
+{
+  "prepared_at": "2026-10-10T07:11:50.775601+00:00",
+  "product_sha256": {
+    "baseline.py": "952b5bf806ac04caf7157c9700b168170a1974c5c1bceda5ff6563013c1f994e",
+    "config.py": "9987b4c600de14a7a9fb951802609c0707a4040899dc505e920cc246d4a25c84",
+    "graph.py": "8ce202157f818e940535fd4bc04d554e2fcc055d8ff230bcde62e561020ad7ac",
+    "inspection_cache.py": "91ec0646399699c4bfb73af5bde147e373656d627866a43b8ecc6a83474f1d7e",
+    "llm_node.py": "9b35087c6aa2b4c81fe167ed026f2485a6f565d126e2cd88b43a30dacf0f4831",
+    "llm_protocol.py": "3dd7037fb1820af0a8ce53c435905c798c3114d8f505d2f56b1b44114f04fe30",
+    "llm_runtime.py": "9b282ba7652ab4091c4e6c3e2a1d43aa135b10d1d866e41a86c6c9f828f78704",
+    "main.py": "977437c7172d3dc2bf2a015db4dc7a620fffc552e37decb31cd4720654998bd1",
+    "report.py": "fe23e3fd56027a414ab76f2bc83214728aee103ee04e49834906e8c000b43058",
+    "rules.py": "f2b364016e0b771bc5dde1068cf1b550902fd3f9f7c5f7894a5adcb2e03dd0f4",
+    "sarif.py": "73ec82f7be40cbffdfec0f3806db54a088a109ba1464b5091c6f62f86ce5fa61",
+    "scanner.py": "b109400e91fc96dd7d98aefc9ccf6fe10bdc3c870d62424f3d68736b5027fdc4",
+    "source_analysis.py": "0433bf1047dc4240bbfff66dff9265cafeb2200a999baed3a95298d16b778826",
+    "state.py": "2bff4669734d9b21e100d1468aa996c72878d96565a7f641d1513ed80770c42c"
+  },
+  "corpus": [
+    {
+      "name": "requests",
+      "tag": "v2.32.5",
+      "repository": "https://github.com/psf/requests",
+      "commit": "b25c87d7cb8d6a18a37fa12442b5f883f9e41741",
+      "source": "src/requests"
+    },
+    {
+      "name": "flask",
+      "tag": "3.1.2",
+      "repository": "https://github.com/pallets/flask",
+      "commit": "2c1b30d0503cfb064f1cb252e6614a06915a362a",
+      "source": "src/flask"
+    },
+    {
+      "name": "click",
+      "tag": "8.3.0",
+      "repository": "https://github.com/pallets/click",
+      "commit": "00fadb8904387158ce6e9aa1573be770446895c1",
+      "source": "src/click"
+    },
+    {
+      "name": "httpx",
+      "tag": "0.28.1",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "source": "httpx"
+    },
+    {
+      "name": "django",
+      "tag": "5.2.7",
+      "repository": "https://github.com/django/django",
+      "commit": "3cff3209e35a560f94801d428cf7f2a3ecb2a051",
+      "source": "django"
+    }
+  ],
+  "heldout_selection": "2 per project, smallest SHA256(holdout-20261010|sample_id), excluding original 25",
+  "quality_note": "Same original25 isolates prompt change; controls8 and heldout10 also sent regardless of new selector. No human gold quality labels."
+}

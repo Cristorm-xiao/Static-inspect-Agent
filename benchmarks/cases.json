@@ -1,0 +1,314 @@
+{
+  "contract_cases": [
+    {
+      "id": "bare_except",
+      "source": "try:\n    work()\nexcept:\n    recover()\n",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "async_bare",
+      "source": "async def f():\n    try:\n        await work()\n    except:\n        pass\n",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 4
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "nested_bare",
+      "source": "def f():\n    try:\n        work()\n    except:\n        raise\n",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 4
+        }
+      ],
+      "note": "Pattern match despite re-raise; no claim that this swallows exceptions."
+    },
+    {
+      "id": "specific_except",
+      "source": "try:\n    work()\nexcept Exception:\n    pass\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "tuple_except",
+      "source": "try:\n    work()\nexcept (ValueError, TypeError):\n    pass\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "finally_only",
+      "source": "try:\n    work()\nfinally:\n    cleanup()\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "list_default",
+      "source": "def f(items=[]):\n    items.append(1)\n",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "kwonly_dict",
+      "source": "def f(*, options={}):\n    return options\n",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "async_set",
+      "source": "async def f(items={1, 2}):\n    return items\n",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "posonly_list",
+      "source": "def f(items=[], /):\n    return items\n",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "none_default",
+      "source": "def f(items=None):\n    items = [] if items is None else items\n    return items\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "tuple_default",
+      "source": "def f(items=(1, 2)):\n    return items\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "eval_direct",
+      "source": "result = eval(text)\n",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "eval_parens",
+      "source": "result = (eval)(text)\n",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "eval_in_func",
+      "source": "def f(text):\n    return eval(text)\n",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "literal_eval",
+      "source": "import ast\nresult = ast.literal_eval(text)\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "method_eval",
+      "source": "result = calculator.eval(text)\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "eval_in_text",
+      "source": "message = 'eval(text)'\n# eval(text)\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "star_import",
+      "source": "from module import *\n",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "relative_star",
+      "source": "from .module import *\n",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "two_stars",
+      "source": "from a import *\nfrom b import *\n",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        },
+        {
+          "rule_id": "R004",
+          "line": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "explicit_import",
+      "source": "from module import one, two\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "alias_import",
+      "source": "from module import one as alias\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "star_in_text",
+      "source": "message = 'from module import *'\n",
+      "expected": [],
+      "note": ""
+    },
+    {
+      "id": "syntax_error",
+      "source": "def broken(:\n    pass\n",
+      "expected": [
+        {
+          "rule_id": "E000",
+          "line": 1
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "non_utf8",
+      "source_hex": "2320636f64696e673a206c6174696e2d310a6e616d65203d2022e9220a",
+      "expected": [
+        {
+          "rule_id": "E000",
+          "line": 0
+        }
+      ],
+      "note": "Valid Latin-1 cookie; current documented UTF-8 reader emits E000. See separate boundary probe."
+    }
+  ],
+  "boundary_probes": [
+    {
+      "id": "constructor_list",
+      "source": "def f(items=list()):\n    items.append(1)\n",
+      "desired": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "meaning": "mutable built-in constructor default"
+    },
+    {
+      "id": "constructor_set",
+      "source": "def f(items=set()):\n    items.add(1)\n",
+      "desired": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "meaning": "mutable built-in set default"
+    },
+    {
+      "id": "nested_mutable",
+      "source": "def f(items=([],)):\n    items[0].append(1)\n",
+      "desired": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "meaning": "mutable value nested inside immutable tuple"
+    },
+    {
+      "id": "eval_alias",
+      "source": "run = eval\nresult = run(text)\n",
+      "desired": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "meaning": "alias of built-in eval"
+    },
+    {
+      "id": "builtin_eval_attribute",
+      "source": "import builtins\nresult = builtins.eval(text)\n",
+      "desired": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "meaning": "attribute access to built-in eval"
+    },
+    {
+      "id": "shadowed_eval",
+      "source": "def f(eval):\n    return eval('data')\n",
+      "desired": [],
+      "meaning": "local callable named eval is not proven built-in eval"
+    },
+    {
+      "id": "cleanup_reraise",
+      "source": "try:\n    work()\nexcept:\n    cleanup()\n    raise\n",
+      "desired": [],
+      "meaning": "cleanup then bare raise does not swallow exception; current R001 description is too broad"
+    },
+    {
+      "id": "latin1_cookie",
+      "source_hex": "2320636f64696e673a206c6174696e2d310a6e616d65203d2022e9220a",
+      "desired": [],
+      "meaning": "legal PEP 263 encoding should be readable by a general Python source tool"
+    }
+  ]
+}

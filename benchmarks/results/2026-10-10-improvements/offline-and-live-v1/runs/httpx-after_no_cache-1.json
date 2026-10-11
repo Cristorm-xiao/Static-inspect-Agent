@@ -1,0 +1,196 @@
+{
+  "measurement": {
+    "project": "httpx",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.20438420001301,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+    "files_scanned": 23,
+    "rule_findings": [
+      {
+        "file": "__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "9bad7f61f36900021d002cf512b59aef3afc09613b99ca3cbfad28e0e5522edf"
+      },
+      {
+        "file": "__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "3c54d0f2a7960ecca79495512502a1497a51d11b60bd6745dab94e863cd95f9f"
+      },
+      {
+        "file": "__init__.py",
+        "line": 4,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "e1e1e461f53d8bff3b3ca1ce7e3f923a0e709d9ecef78e356414a1c310036029"
+      },
+      {
+        "file": "__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "90df82a6fb0aa53e2cc591fc0bce07347515b586370b44a6a09b1785fa9133bf"
+      },
+      {
+        "file": "__init__.py",
+        "line": 6,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "bce6e19695b6818578e7457b8eb3056e7bed41306766fa44af14d3fe56280417"
+      },
+      {
+        "file": "__init__.py",
+        "line": 7,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "cf17dae5cfd4689d866ba54920ef17705efa184133b89691464786ba302a4de1"
+      },
+      {
+        "file": "__init__.py",
+        "line": 8,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "601665e1a49f2599bd49b57967a377d0f3ac3669997813a41eef609b847da591"
+      },
+      {
+        "file": "__init__.py",
+        "line": 9,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "c6ae120b8a0db3c1c09f7329796a5477d60d8d376f9b64def1ec85276f63226b"
+      },
+      {
+        "file": "__init__.py",
+        "line": 10,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "937d9e27a5b2e3407cc5fbaa3a9242d3433a77940af1a1bf37e84363f18bf276"
+      },
+      {
+        "file": "__init__.py",
+        "line": 11,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "0a670e5e47fa9a22196a577341177cc04337dd99e71de51172b5f42242caab6a"
+      },
+      {
+        "file": "__init__.py",
+        "line": 12,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "45c1922026095f386a6e9fc2da6b1b7f3ebcb2031b7539ec8110ad35c24cb16b"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "5d98a245297339cdef584194e74c1bde06d2048f0eae45381ee63ef41b1f123d"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "ea178d0cf0f85027106f14cb8150426ca6f3d4916fa2b3348789788372993982"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "043426001d04fda93e48e13eaae56bf56d1814571189fc95351ec8350cb6ece9"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 4,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "7c69f9e697477144ae76bee3be8c6bbc7fd85ba2ac984b5d9488eb6509b00b27"
+      },
+      {
+        "file": "_transports/__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "fa683df12f8fde1aea1f9f86d283580e2ab7a60210e95fdb8b78f2c091bdb48c"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

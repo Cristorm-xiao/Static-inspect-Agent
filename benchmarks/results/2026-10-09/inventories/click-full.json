@@ -1,0 +1,380 @@
+{
+  "files": 62,
+  "physical_lines": 21214,
+  "bytes": 707671,
+  "entries": [
+    {
+      "path": "docs/conf.py",
+      "bytes": 1987,
+      "physical_lines": 57,
+      "sha256": "37d9c3696230610f4cf474ac2d293af4df9acf9eca0e979a1b9ec2b1dba3fda0"
+    },
+    {
+      "path": "examples/aliases/aliases.py",
+      "bytes": 4204,
+      "physical_lines": 143,
+      "sha256": "40cbbf639327699ad2239b67d9b1bb079e83553588c772f693241bfc532b4b51"
+    },
+    {
+      "path": "examples/colors/colors.py",
+      "bytes": 965,
+      "physical_lines": 39,
+      "sha256": "906bc8b5e05891a55aca19b71959afb196cc83b06233897d612f59ceb07d54ea"
+    },
+    {
+      "path": "examples/completion/completion.py",
+      "bytes": 1444,
+      "physical_lines": 56,
+      "sha256": "a7d81907d9fd3726d27587b12a8fcb688f98b8663e4b25c85115aadc634ade07"
+    },
+    {
+      "path": "examples/complex/complex/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/complex/complex/cli.py",
+      "bytes": 1668,
+      "physical_lines": 60,
+      "sha256": "50d5ba9d1c411c52c79b61e2e17396fb8b6f3cc6ace74276b72323b5a7287c68"
+    },
+    {
+      "path": "examples/complex/complex/commands/__init__.py",
+      "bytes": 0,
+      "physical_lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/complex/complex/commands/cmd_init.py",
+      "bytes": 398,
+      "physical_lines": 13,
+      "sha256": "6d765bd8f1b53bdd0bec4ab8565d5653d09c2fd9ece4372dd91c7afb00a40330"
+    },
+    {
+      "path": "examples/complex/complex/commands/cmd_status.py",
+      "bytes": 297,
+      "physical_lines": 11,
+      "sha256": "f94a2703f3a911d1721df6910ff077e83570c89db45729fe4f14d940e836e581"
+    },
+    {
+      "path": "examples/imagepipe/imagepipe.py",
+      "bytes": 8545,
+      "physical_lines": 288,
+      "sha256": "1c6743acb2bafa2b50c74c9765c459b50dce6cef0c4a4d7de089fdc6d2cf78a5"
+    },
+    {
+      "path": "examples/inout/inout.py",
+      "bytes": 752,
+      "physical_lines": 30,
+      "sha256": "ada14773efe7de0ce0d148115fbb6423319d1b2a625d5d5ed520917a122b2774"
+    },
+    {
+      "path": "examples/naval/naval.py",
+      "bytes": 1769,
+      "physical_lines": 72,
+      "sha256": "68754e329ba511aa303b4fe5124d3090a22e55337bfce449304c042d0e31568a"
+    },
+    {
+      "path": "examples/repo/repo.py",
+      "bytes": 4883,
+      "physical_lines": 166,
+      "sha256": "4078178169a3d560ae3de3bbde65111cc99f03977c64ba215ae28b9366005076"
+    },
+    {
+      "path": "examples/termui/termui.py",
+      "bytes": 4319,
+      "physical_lines": 169,
+      "sha256": "393c1cc36e464b71feed87182b6736fbcc68ff56c81da662d80628e5166cc153"
+    },
+    {
+      "path": "examples/validation/validation.py",
+      "bytes": 1455,
+      "physical_lines": 48,
+      "sha256": "645bae4c4414571dd52e3386871377bbded0a6da2529eb1ca88a2bc542343cd8"
+    },
+    {
+      "path": "src/click/__init__.py",
+      "bytes": 4596,
+      "physical_lines": 123,
+      "sha256": "b4c4a1cd061e69fb86c5ef73932a4ee3530d89108bc1beb3c134ffaac87d004c"
+    },
+    {
+      "path": "src/click/_compat.py",
+      "bytes": 19315,
+      "physical_lines": 622,
+      "sha256": "40a727ebd3741fb9063d7b1fbd07f4d681c9ccd9e9b21dd47fb66db4678e7853"
+    },
+    {
+      "path": "src/click/_termui_impl.py",
+      "bytes": 27646,
+      "physical_lines": 847,
+      "sha256": "21d6f8bb6d581858d17f41ea39ebd87605ed243dfbc698edace14d518af6b3b5"
+    },
+    {
+      "path": "src/click/_textwrap.py",
+      "bytes": 1451,
+      "physical_lines": 51,
+      "sha256": "9dcc6ca24ecf10cac4367034f867da757cecc751d565a7cc56365d10c9c056c2"
+    },
+    {
+      "path": "src/click/_utils.py",
+      "bytes": 979,
+      "physical_lines": 36,
+      "sha256": "53ecd89c598ddccbc3fe30c32e14fc260d8570bbdae32d7ac28416eae822004e"
+    },
+    {
+      "path": "src/click/_winconsole.py",
+      "bytes": 8761,
+      "physical_lines": 296,
+      "sha256": "b667a0f68fd2a9c2eb448502f4e8326d93ecb4ee5bb012d104cdc3dfd48d4478"
+    },
+    {
+      "path": "src/click/core.py",
+      "bytes": 132202,
+      "physical_lines": 3347,
+      "sha256": "3b7f649afe259fc870afb1fd91ddeea82d78218d2311794593971d49abce5b2d"
+    },
+    {
+      "path": "src/click/decorators.py",
+      "bytes": 19012,
+      "physical_lines": 551,
+      "sha256": "9a3c308089b5cdc61fb977ef42e00ecffc8c2552158d78451339e560a4c98fb9"
+    },
+    {
+      "path": "src/click/exceptions.py",
+      "bytes": 10262,
+      "physical_lines": 308,
+      "sha256": "af59cc49e3e50ce0d8b8978ed42910b86d9729ac54f542d9ac8eca8076253f84"
+    },
+    {
+      "path": "src/click/formatting.py",
+      "bytes": 10031,
+      "physical_lines": 301,
+      "sha256": "67092a157c93184dd0f173b78acefd68473b4efb093dcf114ee2161cad520845"
+    },
+    {
+      "path": "src/click/globals.py",
+      "bytes": 1990,
+      "physical_lines": 67,
+      "sha256": "a04afa8359a321f88433c3689045a9cde5763eb1938ceb983c7749798ffbb46f"
+    },
+    {
+      "path": "src/click/parser.py",
+      "bytes": 19542,
+      "physical_lines": 532,
+      "sha256": "b7ca01b68da2c8bf53a7157ec6222690e705a05632e7b8371aae01d37da060d9"
+    },
+    {
+      "path": "src/click/shell_completion.py",
+      "bytes": 21661,
+      "physical_lines": 667,
+      "sha256": "e69febb4af9c638a5122229d56cd73e891ec93c69080cd43d50b067f3a0ce952"
+    },
+    {
+      "path": "src/click/termui.py",
+      "bytes": 31724,
+      "physical_lines": 877,
+      "sha256": "03e26a8c14dd622b611044f1c77f871af2f8a879e66a41b305237f52bb0da0d3"
+    },
+    {
+      "path": "src/click/testing.py",
+      "bytes": 19679,
+      "physical_lines": 577,
+      "sha256": "846c1d878c5bb5c9743a96b3e94074b23b589191bcbda252df3daffc9cc5884c"
+    },
+    {
+      "path": "src/click/types.py",
+      "bytes": 41136,
+      "physical_lines": 1209,
+      "sha256": "cbac3498d54e8a66305d419f4f76e4862dd84450db9ab6a3b931c6a89051df99"
+    },
+    {
+      "path": "src/click/utils.py",
+      "bytes": 20884,
+      "physical_lines": 627,
+      "sha256": "4d80c8f7c7600ad8fad11379e7fa9f09ba15ebf20795fa01879d45aee2767e5b"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 139,
+      "physical_lines": 8,
+      "sha256": "b0c4189c83125946326c1f2a864a4d02a8ba47f09ac878aa149c83832be8f566"
+    },
+    {
+      "path": "tests/test_arguments.py",
+      "bytes": 18348,
+      "physical_lines": 581,
+      "sha256": "be61ac10daf8365311bd8731e7a45f93e7c97ff03e71ea9e103231d4248fe7c0"
+    },
+    {
+      "path": "tests/test_basic.py",
+      "bytes": 21245,
+      "physical_lines": 735,
+      "sha256": "3f864403d1a5a8f481ebc45a58f8673a3ab8f5524159d6bbeb5b3fdf25f5684d"
+    },
+    {
+      "path": "tests/test_chain.py",
+      "bytes": 6031,
+      "physical_lines": 245,
+      "sha256": "62ed20984bdf3caa68a122d96c53bcd75b1c6c92c21da95c32ac70fbf2417023"
+    },
+    {
+      "path": "tests/test_command_decorators.py",
+      "bytes": 1972,
+      "physical_lines": 92,
+      "sha256": "12492336fe606245f1bb5d3d1d4f621805f5c68e8b86a3d4632179fdf018cbee"
+    },
+    {
+      "path": "tests/test_commands.py",
+      "bytes": 17559,
+      "physical_lines": 547,
+      "sha256": "d0720d741c66db18f9bbf0bf9575d85d5c4ca2d3c2fe898192d980d67cbac7db"
+    },
+    {
+      "path": "tests/test_compat.py",
+      "bytes": 317,
+      "physical_lines": 10,
+      "sha256": "8c7a61d2129e0973cf7db6da32aab3aef6ec67372bc15e9407f6f4e5826a9dc7"
+    },
+    {
+      "path": "tests/test_context.py",
+      "bytes": 18917,
+      "physical_lines": 672,
+      "sha256": "41b58ae87613e83175c998fe4554e3aac62f096cb811d7d48d7000e06d3df87a"
+    },
+    {
+      "path": "tests/test_custom_classes.py",
+      "bytes": 3134,
+      "physical_lines": 112,
+      "sha256": "65c8807cd81d0fca9dd708cd7e71e011ee653efea3da05f59628d42df456400d"
+    },
+    {
+      "path": "tests/test_defaults.py",
+      "bytes": 2617,
+      "physical_lines": 86,
+      "sha256": "840764888deced36376fda228649d49f82e0ae5ebbcb79d11aef52595a7bde21"
+    },
+    {
+      "path": "tests/test_formatting.py",
+      "bytes": 9818,
+      "physical_lines": 368,
+      "sha256": "e0c912c199d5c424e8773c36edb6c7ef6bc1cf5795b30ab9a73be78f28642933"
+    },
+    {
+      "path": "tests/test_imports.py",
+      "bytes": 1504,
+      "physical_lines": 70,
+      "sha256": "96bf9975111d6eb095eb4867acfd6ca42631b947652dbcc7f4cff52c774eb32a"
+    },
+    {
+      "path": "tests/test_info_dict.py",
+      "bytes": 8206,
+      "physical_lines": 275,
+      "sha256": "7a34016a6275f69ede520d30b43ac250049223f446c2d45ca4ed5e5acaa499c6"
+    },
+    {
+      "path": "tests/test_normalization.py",
+      "bytes": 1857,
+      "physical_lines": 63,
+      "sha256": "8e4045f5da37328421a54b9e6014ff3446e1f131735ca988e4c06ad0920c0723"
+    },
+    {
+      "path": "tests/test_options.py",
+      "bytes": 77916,
+      "physical_lines": 2241,
+      "sha256": "891f75fffdf3e9b31fa4c4c47bbd0a66f62e46c5eab91e1df8c3f6c77cbbe5b9"
+    },
+    {
+      "path": "tests/test_parser.py",
+      "bytes": 947,
+      "physical_lines": 32,
+      "sha256": "c5543494cb04d29656c0cbf97a90144e55793b9b6fe9ac9d052f949f5799345a"
+    },
+    {
+      "path": "tests/test_shell_completion.py",
+      "bytes": 18502,
+      "physical_lines": 561,
+      "sha256": "6ca4d83a4a5fca26325c98e9ed454a839cad89132efd3b0f7f4fc371b3c29c5c"
+    },
+    {
+      "path": "tests/test_termui.py",
+      "bytes": 26215,
+      "physical_lines": 705,
+      "sha256": "9fb7068290d6e95bda37f5136e494cacea4625a6dac17770dde8112e1987d477"
+    },
+    {
+      "path": "tests/test_testing.py",
+      "bytes": 12817,
+      "physical_lines": 471,
+      "sha256": "67698b61cee2d3b805eea875bf8ead60486709fd7da2882623acd8baf2191c26"
+    },
+    {
+      "path": "tests/test_types.py",
+      "bytes": 8360,
+      "physical_lines": 257,
+      "sha256": "0aa925cfcdec9efd73a3d1dd2f3444e93639393b862034df409010285c68a932"
+    },
+    {
+      "path": "tests/test_utils.py",
+      "bytes": 23584,
+      "physical_lines": 722,
+      "sha256": "63e8d0de8e391816a2c6d79390ef3211509a5f9c552a00695a43441d5d7a7123"
+    },
+    {
+      "path": "tests/typing/typing_aliased_group.py",
+      "bytes": 1238,
+      "physical_lines": 46,
+      "sha256": "bc55363b90fab3c5cf978304fb91c7742dac9a39db263022c922749dc9973648"
+    },
+    {
+      "path": "tests/typing/typing_confirmation_option.py",
+      "bytes": 341,
+      "physical_lines": 14,
+      "sha256": "0801ae00eb7a3ad2f4c6a312851029d9234c76234ef3936a576260abc5696e16"
+    },
+    {
+      "path": "tests/typing/typing_group_kw_options.py",
+      "bytes": 167,
+      "physical_lines": 11,
+      "sha256": "20d3d9619545e39276b28b13e1dea56c18aaa5e3ba32cf9183b7e6ed1c1fbdb2"
+    },
+    {
+      "path": "tests/typing/typing_help_option.py",
+      "bytes": 275,
+      "physical_lines": 13,
+      "sha256": "eae3dccca6776909ec4d7a9fe0e281b9f29decd2db48f5e0af1aff11ec5b02e3"
+    },
+    {
+      "path": "tests/typing/typing_options.py",
+      "bytes": 407,
+      "physical_lines": 16,
+      "sha256": "7f5d5360c1983fa80cc73b211f9292bc4b0a86c902017f7933370e8e31b8431d"
+    },
+    {
+      "path": "tests/typing/typing_password_option.py",
+      "bytes": 269,
+      "physical_lines": 14,
+      "sha256": "fbdf62834bb6dca2a12bcf8bb0941bac5157d4c5164694bf65be1c0ca34a5612"
+    },
+    {
+      "path": "tests/typing/typing_progressbar.py",
+      "bytes": 583,
+      "physical_lines": 24,
+      "sha256": "4606760c7da68958d38a648301362adb2ce52f9b647c2047066f10038511f805"
+    },
+    {
+      "path": "tests/typing/typing_simple_example.py",
+      "bytes": 525,
+      "physical_lines": 17,
+      "sha256": "898170c4850a120690b5017c574f62021fe5ebfe3980db97d8ee38cc53fcc778"
+    },
+    {
+      "path": "tests/typing/typing_version_option.py",
+      "bytes": 304,
+      "physical_lines": 16,
+      "sha256": "670cbacb31aa102447712770e22d185937005e945104ea65e366f81f9bbfa2d2"
+    }
+  ],
+  "tree_sha256": "1b0a9a51ff1beb020603c86dafd6f4ce175ea873dabd5ee66a3b69349b15895b"
+}

@@ -1,0 +1,40 @@
+{
+  "phase": "repeat-requests-2",
+  "kind": "repeat",
+  "seconds": 1.8283064999850467,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "requests/sessions.py",
+      "line": 302,
+      "smell": "职责过多",
+      "reason": "同一方法既重建代理、又删除/设置 Proxy-Authorization 头，混合了代理解析与认证头处理两种职责。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 523,
+      "smell": "魔法字符串",
+      "reason": "硬编码的 \"https\"、\"socks\"、\"//\" 等字符串散落在逻辑中，缺乏常量或语义化命名。"
+    },
+    {
+      "file": "requests/help.py",
+      "line": 34,
+      "smell": "重复逻辑",
+      "reason": "Jython 与 IronPython 分支都调用 platform.python_version() 并标注 'Complete Guess'，可合并处理。"
+    },
+    {
+      "file": "requests/utils.py",
+      "line": 581,
+      "smell": "逻辑缺陷/重复回退",
+      "reason": "回退分支复用可能为 None 的 encoding 变量，且与前面已尝试的编码逻辑重复，导致行为不一致。"
+    },
+    {
+      "file": "requests/adapters.py",
+      "line": 373,
+      "smell": "命名含糊",
+      "reason": "方法名 build_connection_pool_key_attributes 冗长且实际只是转发到 _urllib3_request_context，命名与实现不符。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

@@ -1,0 +1,356 @@
+{
+  "measurement": {
+    "project": "django",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 4.069485899992287,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  "report": {
+    "project": "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+    "files_scanned": 883,
+    "rule_findings": [
+      {
+        "file": "contrib/gis/db/models/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "0c47ad46af1616a9dea73742a9bef5ba20df7928954ed41c683427c50cf0d165"
+      },
+      {
+        "file": "contrib/gis/db/models/__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "f07e1b20efc3861f6392e6f422bdfb1312204a36e93df760605418f1a797d7b6"
+      },
+      {
+        "file": "contrib/gis/forms/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "27e1ef879408f7b6adf579f698e895a45df68f09af4ff229f463fe28eb2415fc"
+      },
+      {
+        "file": "contrib/gis/geos/prototypes/__init__.py",
+        "line": 46,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "44df7740c010750631c81c38185b1fa85ef70fb1217202b22e58091573bd864e"
+      },
+      {
+        "file": "contrib/gis/geos/prototypes/__init__.py",
+        "line": 67,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "566f2f782bfb13ce69a974c99dabc9ed3d2095b027f8126f4f25f9c73493b077"
+      },
+      {
+        "file": "contrib/messages/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "de6066338ad8653ac55c9655487528d148a435a4a6a1166ffd6bc7b9fdc67ed4"
+      },
+      {
+        "file": "contrib/messages/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "a18ec392af8ad4f72069b09a0c91f22b772e613cc148ef6d6444f014d94635ed"
+      },
+      {
+        "file": "contrib/postgres/aggregates/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "8dcd267ce694ec80f470188ab145fcd33ebca7a37477ba387e7dda7508457e2a"
+      },
+      {
+        "file": "contrib/postgres/aggregates/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "2ef7bce45fde784623e3ae1c0d05e1ad3412323ee0aef16f2c5cec4e27d7e83a"
+      },
+      {
+        "file": "contrib/postgres/fields/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "bb58c078faa0c75e59d4fa1aa109af092f66512709437274518b259c78955cf1"
+      },
+      {
+        "file": "contrib/postgres/fields/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "7fed17eed4e92f0a7632e1cb33602c4d8deca47b2064c8da0ed62fa3267e2bf2"
+      },
+      {
+        "file": "contrib/postgres/fields/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "183614e06e2ce65822f0c842c715c3cfdef306dd54313f7c49c14bba5e18dd62"
+      },
+      {
+        "file": "contrib/postgres/fields/__init__.py",
+        "line": 4,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "b8b782d1e6f8bef3adb0cec0d4977c972cf655eabde43dde9326c42f69d73e8e"
+      },
+      {
+        "file": "contrib/postgres/fields/__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "8bb8fa7836de9de6db355bd0d18aa184330e3ccfa469e81de59355b540599394"
+      },
+      {
+        "file": "contrib/postgres/forms/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "bb58c078faa0c75e59d4fa1aa109af092f66512709437274518b259c78955cf1"
+      },
+      {
+        "file": "contrib/postgres/forms/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "183614e06e2ce65822f0c842c715c3cfdef306dd54313f7c49c14bba5e18dd62"
+      },
+      {
+        "file": "contrib/postgres/forms/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "8bb8fa7836de9de6db355bd0d18aa184330e3ccfa469e81de59355b540599394"
+      },
+      {
+        "file": "db/migrations/__init__.py",
+        "line": 2,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "d0f3aed623bce5c6bc325ba42af7f41cc42ddc7f098f6104e8abc003e6ffe57d"
+      },
+      {
+        "file": "db/migrations/questioner.py",
+        "line": 168,
+        "rule": "eval_call",
+        "rule_id": "R003",
+        "severity": "warning",
+        "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式",
+        "scope": "InteractiveMigrationQuestioner._ask_default",
+        "fingerprint": "fcb93c1e3f9123d499f3fb257a8ae9c156464d5f2201187c92a4088c4843ba28"
+      },
+      {
+        "file": "db/models/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "885bbcbae25bab1e4fd688e9626509d5516446964563ed75ab4fd6388209321b"
+      },
+      {
+        "file": "db/models/__init__.py",
+        "line": 5,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "edc206d06935e11fa741c5c1c84081fd11e081a292060758c4cbd2bb8c2320b1"
+      },
+      {
+        "file": "db/models/__init__.py",
+        "line": 18,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "da366af3b7ec1f48ad462fd7c8a1cc691e40655795d98c634dc8abf828dcd29d"
+      },
+      {
+        "file": "db/models/__init__.py",
+        "line": 39,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "00dc7e0d0791e80b45df936c98a252e5e6dbdb6f32086d19d058ab26f41d08ce"
+      },
+      {
+        "file": "db/models/__init__.py",
+        "line": 46,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "f3ec09f08e41b6f2bf88f30677a836bee01dcd77cacba3343a533fd6d30bfb7f"
+      },
+      {
+        "file": "db/models/sql/__init__.py",
+        "line": 1,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "38a289035050b26deb70daa65d5a09e3f7a2bc3a263ba55339575a4310f1c4be"
+      },
+      {
+        "file": "db/models/sql/__init__.py",
+        "line": 3,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "2a0c9859b45c214b95a808eef8ad2bd2fa09d27786be5eafb08d745090b948b1"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 6,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "7b273f0d8bcfba1abd34f29988fbc703d915e0c9445bdcd5de4c5e670ac09b3d"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 7,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "b854255932fe1f84099d6fa5224b43b767bab052c36f29e460bf2b928f4f4293"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 8,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "dd9121e502d0e74988d8851eba140e001448056ca00518af6db4a9d7f9c8ec25"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 9,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "2546d5c1435db163bcdaf30b9f466bae3ab64f979a790c5b4d7eeed1aba03598"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 10,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "e8f5e66c68e24fe87fc3558b2a137e6f511f008f7e14c7025886eb3fb71a420c"
+      },
+      {
+        "file": "forms/__init__.py",
+        "line": 11,
+        "rule": "wildcard_import",
+        "rule_id": "R004",
+        "severity": "warning",
+        "desc": "通配导入会模糊名称来源，建议显式导入所需名称",
+        "scope": "<module>",
+        "fingerprint": "af3aae6d3fbe553d7001d01ca9865c22a1c01d1bb1d457b61566e5c90de4c213"
+      }
+    ],
+    "llm_findings": [],
+    "baseline_suppressed": 0,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    },
+    "llm_stats": {
+      "status": "disabled",
+      "candidates": 0,
+      "requests": 0,
+      "completed_functions": 0
+    },
+    "llm_outcomes": []
+  }
+}

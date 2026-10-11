@@ -1,0 +1,152 @@
+{
+  "files": 24,
+  "physical_lines": 9202,
+  "bytes": 346578,
+  "entries": [
+    {
+      "path": "__init__.py",
+      "bytes": 2762,
+      "physical_lines": 61,
+      "sha256": "f8fbb230dea54bcda5252fa7356a050df8f5d995717e34dd757517df34968066"
+    },
+    {
+      "path": "__main__.py",
+      "bytes": 33,
+      "physical_lines": 3,
+      "sha256": "c13eb66970ae37b8b044f428b309e67868814b90a8bb408806f3316ce4dfbc5b"
+    },
+    {
+      "path": "app.py",
+      "bytes": 63280,
+      "physical_lines": 1536,
+      "sha256": "fc5d782f3e464d97cd243c2c7c0ce34d07ecd1ca9b1456788da8cc07b59de899"
+    },
+    {
+      "path": "blueprints.py",
+      "bytes": 4669,
+      "physical_lines": 128,
+      "sha256": "565d4de8d464df4e5ffe1b1daa4cd4dbd70b5e4d06a7f30e5ba93fab68d8b928"
+    },
+    {
+      "path": "cli.py",
+      "bytes": 38319,
+      "physical_lines": 1135,
+      "sha256": "bfdcfedf485dffcb01cb948345232a73d4627b3f16c70ea88a41420be50eef59"
+    },
+    {
+      "path": "config.py",
+      "bytes": 13586,
+      "physical_lines": 367,
+      "sha256": "1e96b8823b559bb504f168c07c86334cdde5370525b2aebd99f67336cdc4c205"
+    },
+    {
+      "path": "ctx.py",
+      "bytes": 15513,
+      "physical_lines": 449,
+      "sha256": "076e62cac913b0ed56766a01f9ae2a24444854edd09fb71034c48190523f977f"
+    },
+    {
+      "path": "debughelpers.py",
+      "bytes": 6258,
+      "physical_lines": 178,
+      "sha256": "b6cedc04781103721c5872edd9aa69fe38644c44d31c28280997f500b7379fbf"
+    },
+    {
+      "path": "globals.py",
+      "bytes": 1764,
+      "physical_lines": 51,
+      "sha256": "a90ca3e9e7eb2a7c001052cbffb1fd591e4719fde91a9070c8d254d0ed80b4ea"
+    },
+    {
+      "path": "helpers.py",
+      "bytes": 24158,
+      "physical_lines": 641,
+      "sha256": "49848f1857424cdf16e411d1da93b9e36dcbbaf6b1e324166a67634be7c4fcc7"
+    },
+    {
+      "path": "json/__init__.py",
+      "bytes": 5772,
+      "physical_lines": 170,
+      "sha256": "39bb1ffe1688b4fbc32b5919ba775a4448fb1c30dd7e731c6d004bdb3f642b82"
+    },
+    {
+      "path": "json/provider.py",
+      "bytes": 7887,
+      "physical_lines": 215,
+      "sha256": "fac6ed2a0d6eb704238cec77c6f1c51fb3dc7fae59529e1ac4da9b66c146f94e"
+    },
+    {
+      "path": "json/tag.py",
+      "bytes": 9608,
+      "physical_lines": 327,
+      "sha256": "c4ba987d1dcb4768bd2e1bc81c3a4ce5798f76e38ca31949e59d919c8a305993"
+    },
+    {
+      "path": "logging.py",
+      "bytes": 2456,
+      "physical_lines": 79,
+      "sha256": "1d3013cf14f23e25cc31a7cbe06ca3bec7f42258b861e26f08293a63cbf8a43e"
+    },
+    {
+      "path": "sansio/app.py",
+      "bytes": 39063,
+      "physical_lines": 964,
+      "sha256": "ca68f8e81a90528708ee50c6dc533bc7b841b4376d545cf1e31fe008b2dee568"
+    },
+    {
+      "path": "sansio/blueprints.py",
+      "bytes": 25269,
+      "physical_lines": 632,
+      "sha256": "5928682a6cb2682fcde3cccea35762f7892f31c407a5aba4c6364f8b116032eb"
+    },
+    {
+      "path": "sansio/scaffold.py",
+      "bytes": 31163,
+      "physical_lines": 792,
+      "sha256": "33a2fdde418ad4df8e90b2167f752624c97534f74f52fc5bafeb5f21857acd14"
+    },
+    {
+      "path": "sessions.py",
+      "bytes": 15879,
+      "physical_lines": 399,
+      "sha256": "660d51076d005e2951ac86b965d779da247278030a28af7ddf1d085cf12b2d53"
+    },
+    {
+      "path": "signals.py",
+      "bytes": 767,
+      "physical_lines": 17,
+      "sha256": "b8356e2b1fcf44ae06ef435fded4244582870b728deed86553a877657574c08e"
+    },
+    {
+      "path": "templating.py",
+      "bytes": 7755,
+      "physical_lines": 219,
+      "sha256": "5b873ae767f6d4364099230f1c7aae69458d304380e3be79ff371af2fee04467"
+    },
+    {
+      "path": "testing.py",
+      "bytes": 10415,
+      "physical_lines": 298,
+      "sha256": "bbf0cd34fd55795a18dbce780d92a62721fd63782db4ddce97d0429bd747edb0"
+    },
+    {
+      "path": "typing.py",
+      "bytes": 3386,
+      "physical_lines": 93,
+      "sha256": "4518ffb27024ec5c14cade62817529d2e0be5598faf03da4f4c3c250ca3a5eaa"
+    },
+    {
+      "path": "views.py",
+      "bytes": 7153,
+      "physical_lines": 191,
+      "sha256": "5691ad7ee35d9e9efadb7d248883060617d5969bb689f046ec44a01b70e4ba9e"
+    },
+    {
+      "path": "wrappers.py",
+      "bytes": 9663,
+      "physical_lines": 257,
+      "sha256": "ef65015ae45e799f432aa056b9ff6035d6870d736fee5debb210e3983af5ea07"
+    }
+  ],
+  "tree_sha256": "07041ef83208a34f00f55216f6d6298b26e4a992630b1664e15145a8bb4997f8"
+}

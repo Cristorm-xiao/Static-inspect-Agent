@@ -1,0 +1,256 @@
+{
+  "findings": [
+    {
+      "function_id": "c05",
+      "file": "controls/c05.py",
+      "line": 1,
+      "end_line": 1,
+      "smell": "naming",
+      "reason": "The function and all its locals use single-letter names (p, a, b, c, d, e, f, g, h, i, j, k, l, m, n) and the returned dict keys are also single letters. This makes the report structure and the meaning of each field impossible to understand without reverse-engineering the body, and the docstring does not document the output schema.",
+      "evidence": "def p(a):",
+      "evidence_lines": [
+        1,
+        1
+      ],
+      "suggestion": "Rename the function and variables to descriptive names (e.g. positives/negatives, count, mean, min, max) and use meaningful keys in the returned mapping; document the output fields in the docstring."
+    }
+  ],
+  "outcomes": [
+    {
+      "function_id": "c01",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c02",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c03",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c04",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c05",
+      "status": "partial_invalid",
+      "findings": 1
+    },
+    {
+      "function_id": "c06",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "c07",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "c08",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:__init__.py:74:__getattr__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:core.py:2314:type_cast_value",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:core.py:768:invoke",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:decorators.py:421:version_option",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:termui.py:328:progressbar",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:testing.py:433:invoke",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:testing.py:547:isolated_filesystem",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:contrib/admin/actions.py:19:delete_selected",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:core/management/commands/createcachetable.py:57:create_table",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:db/backends/base/schema.py:1457:_alter_many_to_many",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:db/models/sql/query.py:1850:setup_joins",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:template/defaulttags.py:694:do_filter",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:views/decorators/http.py:106:decorator",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:app.py:226:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:app.py:425:create_url_adapter",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:cli.py:333:load_app",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:helpers.py:352:get_flashed_messages",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:sansio/blueprints.py:41:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:sansio/scaffold.py:754:find_package",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:views.py:86:as_view",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_api.py:364:patch",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_client.py:1543:stream",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_config.py:86:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_models.py:383:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_multipart.py:122:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_transports/asgi.py:99:handle_async_request",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_transports/default.py:374:handle_async_request",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:adapters.py:373:build_connection_pool_key_attributes",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:adapters.py:523:request_url",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:help.py:34:_implementation",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:models.py:409:prepare_url",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:models.py:947:json",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:sessions.py:302:rebuild_proxies",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:utils.py:581:get_unicode_from_response",
+      "status": "completed",
+      "findings": 0
+    }
+  ],
+  "stats": {
+    "candidates": 43,
+    "requests": 9,
+    "cache_hits": 0,
+    "estimated_input_reserved": 105431,
+    "prompt_tokens": 25342,
+    "completion_tokens": 1135,
+    "usage_missing_calls": 0,
+    "rejected_items": 3,
+    "context_rounds": 0,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "statuses": {
+      "partial_invalid": 5,
+      "completed": 38
+    },
+    "completed_functions": 38,
+    "status": "partial",
+    "seconds": 6.1850509000069
+  }
+}

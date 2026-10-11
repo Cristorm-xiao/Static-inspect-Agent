@@ -1,0 +1,7 @@
+{
+  "llm_concurrency": 2,
+  "llm_max_requests": 12,
+  "llm_input_budget": 200000,
+  "llm_output_tokens": 2000,
+  "llm_batch_tokens": 24000
+}

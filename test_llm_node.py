@@ -49,6 +49,14 @@ def _make_fake_client(raw_content):
 
     class _FakeCompletions:
         async def create(self, **kwargs):
+            if raw_content == 'VALID':
+                import json
+                from types import SimpleNamespace
+                c=json.loads(kwargs['messages'][-1]['content'])['functions'][0]
+                text=json.dumps({'findings':[{'function_id':c['function_id'],'category':'函数过长',
+                    'evidence_lines':[2,2],'evidence':c['source'].splitlines()[1].split(' | ',1)[1],
+                    'impact':'重复赋值影响维护','suggestion':'审查冗余赋值','needs_context':False}], 'context_requests':[]})
+                return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=text),finish_reason='stop')])
             return _FakeResponse()
 
     class _FakeChat:
@@ -90,7 +98,8 @@ def test_llm_timeout_degrades_gracefully(tmp_path, monkeypatch):
     result = llm_analyze_node(
         {"project_path": str(tmp_path), "py_files": [py_file]}
     )
-    assert result == {"llm_findings": []}
+    assert result['llm_findings'] == []
+    assert result['llm_outcomes'][0]['status'] == 'failed'
 
 
 def test_llm_returns_dict_not_list(tmp_path, monkeypatch):
@@ -100,13 +109,14 @@ def test_llm_returns_dict_not_list(tmp_path, monkeypatch):
     result = llm_analyze_node(
         {"project_path": str(tmp_path), "py_files": [py_file]}
     )
-    assert result == {"llm_findings": []}
+    assert result['llm_findings'] == []
+    assert result['llm_outcomes'][0]['status'] == 'invalid_response'
 
 
 def test_llm_returns_valid_findings(tmp_path, monkeypatch):
     # 正常路径：模型返回合法 JSON 数组，应正确提取发现
     py_file = _setup(monkeypatch, tmp_path,
-                     '[{"index": 0, "smell": "函数过长", "reason": "35行"}]')
+                     'VALID')
 
     result = llm_analyze_node(
         {"project_path": str(tmp_path), "py_files": [py_file]}
@@ -134,9 +144,56 @@ def test_llm_batches_multiple_functions(tmp_path, monkeypatch):
     # 预期：2 个发现（每批各 1 个）
     monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-fake-key-for-test")
     monkeypatch.setattr(llm_node, "AsyncOpenAI",
-                        _make_fake_client('[{"index": 0, "smell": "函数过长", "reason": "35行"}]'))
+                        _make_fake_client('VALID'))
 
     result = llm_analyze_node(
         {"project_path": str(tmp_path), "py_files": py_files}
     )
     assert len(result["llm_findings"]) == 2
+
+
+def test_bad_llm_item_does_not_discard_later_valid_item():
+    import json
+    batch = [{'function_id':'f','file':'demo.py','line':1,'source':'def f():\n    pass'}]
+    raw = json.dumps({'findings':[{'function_id':'oops'}, {'function_id':'f','category':'example',
+        'evidence_lines':[2,2],'evidence':'pass','impact':'example','suggestion':'review','needs_context':False}], 'context_requests':[]})
+    parsed = llm_node.parse_response(raw,batch)
+    assert len(parsed['findings'])==1 and parsed['rejected']==1
+
+
+def test_candidate_read_error_is_skipped(tmp_path, monkeypatch):
+    source = tmp_path / "gone.py"
+    source.write_text("def f():\n    pass\n", encoding="utf-8")
+    original = __import__("pathlib").Path.read_bytes
+
+    def fail_read(path, *args, **kwargs):
+        if path == source:
+            raise PermissionError("access denied")
+        return original(path, *args, **kwargs)
+
+    monkeypatch.setattr(__import__("pathlib").Path, "read_bytes", fail_read)
+    assert llm_node.extract_candidates(str(source)) == []
+
+
+def test_empty_llm_choices_degrades_gracefully(tmp_path, monkeypatch):
+    class EmptyCompletions:
+        async def create(self, **kwargs):
+            return type("Response", (), {"choices": []})()
+
+    class EmptyClient:
+        chat = type("Chat", (), {"completions": EmptyCompletions()})()
+
+        def __init__(self, **kwargs):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            pass
+
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-fake-key-for-test")
+    monkeypatch.setattr(llm_node, "AsyncOpenAI", EmptyClient)
+    source = _make_long_func_file(tmp_path)
+    result=llm_analyze_node({"project_path": str(tmp_path), "py_files": [source]})
+    assert result['llm_findings']==[] and result['llm_outcomes'][0]['status']=='failed'

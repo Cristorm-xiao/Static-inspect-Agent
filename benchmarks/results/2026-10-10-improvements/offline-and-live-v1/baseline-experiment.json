@@ -1,0 +1,13 @@
+{
+  "baseline_original": 32,
+  "shift_new": 0,
+  "shift_suppressed": 32,
+  "injected_new": 4,
+  "injected_old_suppressed": 32,
+  "new_rule_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004"
+  ]
+}

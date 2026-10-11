@@ -1,0 +1,642 @@
+[
+  {
+    "project": "requests",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 2.1537275000009686,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "requests",
+    "mode": "before",
+    "repeat": 1,
+    "seconds": 2.138068400003249,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "requests",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.1038296000042465,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "requests",
+    "mode": "after_no_cache",
+    "repeat": 0,
+    "seconds": 2.120499299984658,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.115478699997766,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_no_cache",
+    "repeat": 2,
+    "seconds": 2.108968900021864,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 2.168956800014712,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 18,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_warm",
+    "repeat": 0,
+    "seconds": 2.3112417999946047,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 18,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.0996341000136454,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 18,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "requests",
+    "mode": "after_warm",
+    "repeat": 2,
+    "seconds": 2.094707100011874,
+    "exit_code": 0,
+    "files": 18,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 18,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 2.1204719999805093,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": null
+  },
+  {
+    "project": "flask",
+    "mode": "before",
+    "repeat": 1,
+    "seconds": 2.1698908999969717,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": null
+  },
+  {
+    "project": "flask",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.132728500000667,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": null
+  },
+  {
+    "project": "flask",
+    "mode": "after_no_cache",
+    "repeat": 0,
+    "seconds": 2.20004239998525,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.115338600007817,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_no_cache",
+    "repeat": 2,
+    "seconds": 2.159019699989585,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 2.198374800005695,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 24,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_warm",
+    "repeat": 0,
+    "seconds": 2.3741529999824706,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 24,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.0823946000018623,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 24,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "flask",
+    "mode": "after_warm",
+    "repeat": 2,
+    "seconds": 2.0728195999981835,
+    "exit_code": 1,
+    "files": 24,
+    "findings": 2,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 24,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 2.119133400003193,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "click",
+    "mode": "before",
+    "repeat": 1,
+    "seconds": 2.1450649999896996,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "click",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.1350646000064444,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": null
+  },
+  {
+    "project": "click",
+    "mode": "after_no_cache",
+    "repeat": 0,
+    "seconds": 2.175275999994483,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 17,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.1444615999935195,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 17,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_no_cache",
+    "repeat": 2,
+    "seconds": 2.1454236000136007,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 17,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 2.2334165000065695,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 17,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_warm",
+    "repeat": 0,
+    "seconds": 2.3530683999997564,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 17,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.150812900013989,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 17,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "click",
+    "mode": "after_warm",
+    "repeat": 2,
+    "seconds": 2.1410035000008065,
+    "exit_code": 0,
+    "files": 17,
+    "findings": 0,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 17,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 2.2020461999927647,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": null
+  },
+  {
+    "project": "httpx",
+    "mode": "before",
+    "repeat": 1,
+    "seconds": 2.1888853999844287,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": null
+  },
+  {
+    "project": "httpx",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 2.1956920999800786,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": null
+  },
+  {
+    "project": "httpx",
+    "mode": "after_no_cache",
+    "repeat": 0,
+    "seconds": 2.213838099996792,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 2.20438420001301,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_no_cache",
+    "repeat": 2,
+    "seconds": 2.2070511000056285,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 2.221288500004448,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 23,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_warm",
+    "repeat": 0,
+    "seconds": 2.4701338000013493,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 23,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.133925200003432,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 23,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "httpx",
+    "mode": "after_warm",
+    "repeat": 2,
+    "seconds": 2.139547400001902,
+    "exit_code": 1,
+    "files": 23,
+    "findings": 16,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 23,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "before",
+    "repeat": 0,
+    "seconds": 3.5759900999837555,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": null
+  },
+  {
+    "project": "django",
+    "mode": "before",
+    "repeat": 1,
+    "seconds": 3.5558260999969207,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": null
+  },
+  {
+    "project": "django",
+    "mode": "before",
+    "repeat": 2,
+    "seconds": 3.5221458000014536,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": null
+  },
+  {
+    "project": "django",
+    "mode": "after_no_cache",
+    "repeat": 0,
+    "seconds": 4.1091197000059765,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_no_cache",
+    "repeat": 1,
+    "seconds": 4.069485899992287,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_no_cache",
+    "repeat": 2,
+    "seconds": 4.005551400012337,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_cold",
+    "repeat": 0,
+    "seconds": 5.488093799998751,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 883,
+      "cache_hits": 0,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_warm",
+    "repeat": 0,
+    "seconds": 10.87391480000224,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 883,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_warm",
+    "repeat": 1,
+    "seconds": 2.9913321000058204,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 883,
+      "read_errors": 0
+    }
+  },
+  {
+    "project": "django",
+    "mode": "after_warm",
+    "repeat": 2,
+    "seconds": 3.1153677999973297,
+    "exit_code": 1,
+    "files": 883,
+    "findings": 32,
+    "scan_stats": {
+      "parsed_files": 0,
+      "cache_hits": 883,
+      "read_errors": 0
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c01",
+    "positive": true,
+    "selected": true
+  },
+  {
+    "id": "c02",
+    "positive": false,
+    "selected": false
+  },
+  {
+    "id": "c03",
+    "positive": true,
+    "selected": true
+  },
+  {
+    "id": "c04",
+    "positive": false,
+    "selected": false
+  },
+  {
+    "id": "c05",
+    "positive": true,
+    "selected": true
+  },
+  {
+    "id": "c06",
+    "positive": false,
+    "selected": false
+  },
+  {
+    "id": "c07",
+    "positive": true,
+    "selected": true
+  },
+  {
+    "id": "c08",
+    "positive": false,
+    "selected": false
+  }
+]

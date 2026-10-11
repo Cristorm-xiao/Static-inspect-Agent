@@ -1,0 +1,10 @@
+{
+  "product_unchanged": true,
+  "same_product_as_offline_run": true,
+  "corpus_clean_and_pinned": true,
+  "sample_hashes_valid": true,
+  "evaluation_scripts_compile": true,
+  "no_api_key_in_evidence": true,
+  "archive_secret_free": true,
+  "env_git_ignored": true
+}

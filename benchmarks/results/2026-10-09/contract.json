@@ -1,0 +1,492 @@
+{
+  "cases": 26,
+  "matched_cases": 26,
+  "tp": 16,
+  "fp": 0,
+  "fn": 0,
+  "details": [
+    {
+      "id": "bare_except",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 3
+        }
+      ],
+      "actual": [
+        {
+          "file": "bare_except.py",
+          "line": 3,
+          "rule": "bare_except",
+          "rule_id": "R001",
+          "severity": "error",
+          "desc": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "async_bare",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 4
+        }
+      ],
+      "actual": [
+        {
+          "file": "async_bare.py",
+          "line": 4,
+          "rule": "bare_except",
+          "rule_id": "R001",
+          "severity": "error",
+          "desc": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "nested_bare",
+      "expected": [
+        {
+          "rule_id": "R001",
+          "line": 4
+        }
+      ],
+      "actual": [
+        {
+          "file": "nested_bare.py",
+          "line": 4,
+          "rule": "bare_except",
+          "rule_id": "R001",
+          "severity": "error",
+          "desc": "裸 except 会吞掉所有异常（含 KeyboardInterrupt），建议 except Exception:"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": "Pattern match despite re-raise; no claim that this swallows exceptions."
+    },
+    {
+      "id": "specific_except",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "tuple_except",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "finally_only",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "list_default",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "list_default.py",
+          "line": 1,
+          "rule": "mutable_default_arg",
+          "rule_id": "R002",
+          "severity": "error",
+          "desc": "函数 f 的默认参数是可变对象，调用间会共享状态"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "kwonly_dict",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "kwonly_dict.py",
+          "line": 1,
+          "rule": "mutable_default_arg",
+          "rule_id": "R002",
+          "severity": "error",
+          "desc": "函数 f 的默认参数是可变对象，调用间会共享状态"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "async_set",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "async_set.py",
+          "line": 1,
+          "rule": "mutable_default_arg",
+          "rule_id": "R002",
+          "severity": "error",
+          "desc": "函数 f 的默认参数是可变对象，调用间会共享状态"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "posonly_list",
+      "expected": [
+        {
+          "rule_id": "R002",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "posonly_list.py",
+          "line": 1,
+          "rule": "mutable_default_arg",
+          "rule_id": "R002",
+          "severity": "error",
+          "desc": "函数 f 的默认参数是可变对象，调用间会共享状态"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "none_default",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "tuple_default",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "eval_direct",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "eval_direct.py",
+          "line": 1,
+          "rule": "eval_call",
+          "rule_id": "R003",
+          "severity": "warning",
+          "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "eval_parens",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "eval_parens.py",
+          "line": 1,
+          "rule": "eval_call",
+          "rule_id": "R003",
+          "severity": "warning",
+          "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "eval_in_func",
+      "expected": [
+        {
+          "rule_id": "R003",
+          "line": 2
+        }
+      ],
+      "actual": [
+        {
+          "file": "eval_in_func.py",
+          "line": 2,
+          "rule": "eval_call",
+          "rule_id": "R003",
+          "severity": "warning",
+          "desc": "直接调用 eval 可能执行不可信输入，请确认输入来源并优先使用安全解析方式"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "literal_eval",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "method_eval",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "eval_in_text",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "star_import",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "star_import.py",
+          "line": 1,
+          "rule": "wildcard_import",
+          "rule_id": "R004",
+          "severity": "warning",
+          "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "relative_star",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "relative_star.py",
+          "line": 1,
+          "rule": "wildcard_import",
+          "rule_id": "R004",
+          "severity": "warning",
+          "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "two_stars",
+      "expected": [
+        {
+          "rule_id": "R004",
+          "line": 1
+        },
+        {
+          "rule_id": "R004",
+          "line": 2
+        }
+      ],
+      "actual": [
+        {
+          "file": "two_stars.py",
+          "line": 1,
+          "rule": "wildcard_import",
+          "rule_id": "R004",
+          "severity": "warning",
+          "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+        },
+        {
+          "file": "two_stars.py",
+          "line": 2,
+          "rule": "wildcard_import",
+          "rule_id": "R004",
+          "severity": "warning",
+          "desc": "通配导入会模糊名称来源，建议显式导入所需名称"
+        }
+      ],
+      "matches": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "explicit_import",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "alias_import",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "star_in_text",
+      "expected": [],
+      "actual": [],
+      "matches": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "syntax_error",
+      "expected": [
+        {
+          "rule_id": "E000",
+          "line": 1
+        }
+      ],
+      "actual": [
+        {
+          "file": "syntax_error.py",
+          "line": 1,
+          "rule": "syntax_error",
+          "rule_id": "E000",
+          "severity": "error",
+          "desc": "invalid syntax (syntax_error.py, line 1)"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": ""
+    },
+    {
+      "id": "non_utf8",
+      "expected": [
+        {
+          "rule_id": "E000",
+          "line": 0
+        }
+      ],
+      "actual": [
+        {
+          "file": "non_utf8.py",
+          "line": 0,
+          "rule": "syntax_error",
+          "rule_id": "E000",
+          "severity": "error",
+          "desc": "'utf-8' codec can't decode byte 0xe9 in position 26: invalid continuation byte"
+        }
+      ],
+      "matches": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "explanation": "Valid Latin-1 cookie; current documented UTF-8 reader emits E000. See separate boundary probe."
+    }
+  ],
+  "exit_code": 1
+}

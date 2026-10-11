@@ -1,0 +1,59 @@
+{
+  "projects": 5,
+  "source_files": 965,
+  "source_physical_lines": 192774,
+  "source_findings": 50,
+  "source_rule_counts": {
+    "R001": 1,
+    "R003": 2,
+    "R004": 47
+  },
+  "full_files": 3059,
+  "full_physical_lines": 557478,
+  "full_findings": 64,
+  "checks_passed": 54,
+  "checks_total": 54,
+  "contract": {
+    "cases": 26,
+    "matched_cases": 26,
+    "tp": 16,
+    "fp": 0,
+    "fn": 0,
+    "exit_code": 1
+  },
+  "boundary": {
+    "cases": 8,
+    "matched_cases": 0,
+    "tp": 0,
+    "fp": 3,
+    "fn": 5,
+    "exit_code": 1
+  },
+  "cli_invocations": 55,
+  "existing_tests": {
+    "passed": 25,
+    "seconds": 4.1,
+    "execution": "normal Windows permissions; original sandbox run failed on 0700 temp directory access",
+    "log": "pytest-normal.log"
+  },
+  "source_review": {
+    "reviewer": "Codex source-context review; not independent human or maintainer adjudication",
+    "review_scope": "All 50 production-source findings; not a recall study",
+    "findings_reviewed": 50,
+    "pattern_matches": 50,
+    "confirmed_new_defects": 0,
+    "categories": {
+      "reraise_message_inaccurate": 1,
+      "intentional_local_code_execution": 2,
+      "intentional_package_reexport": 47
+    },
+    "caution": "Intentional patterns are not automatically false positives under syntactic style rules. No real-world precision or recall claimed."
+  },
+  "line_shift": {
+    "old_findings": 32,
+    "reported_as_new": 19,
+    "suppressed": 13,
+    "rereport_ratio": 0.59375
+  },
+  "artifact_audit": "Recomputed metrics from raw stdout and timings; verified all 55 stdout SHA256 hashes and unchanged product source."
+}

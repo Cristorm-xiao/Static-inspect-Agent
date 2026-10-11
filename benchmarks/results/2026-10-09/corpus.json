@@ -1,0 +1,37 @@
+[
+  {
+    "name": "requests",
+    "tag": "v2.32.5",
+    "repository": "https://github.com/psf/requests",
+    "commit": "b25c87d7cb8d6a18a37fa12442b5f883f9e41741",
+    "source": "src/requests"
+  },
+  {
+    "name": "flask",
+    "tag": "3.1.2",
+    "repository": "https://github.com/pallets/flask",
+    "commit": "2c1b30d0503cfb064f1cb252e6614a06915a362a",
+    "source": "src/flask"
+  },
+  {
+    "name": "click",
+    "tag": "8.3.0",
+    "repository": "https://github.com/pallets/click",
+    "commit": "00fadb8904387158ce6e9aa1573be770446895c1",
+    "source": "src/click"
+  },
+  {
+    "name": "httpx",
+    "tag": "0.28.1",
+    "repository": "https://github.com/encode/httpx",
+    "commit": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+    "source": "httpx"
+  },
+  {
+    "name": "django",
+    "tag": "5.2.7",
+    "repository": "https://github.com/django/django",
+    "commit": "3cff3209e35a560f94801d428cf7f2a3ecb2a051",
+    "source": "django"
+  }
+]

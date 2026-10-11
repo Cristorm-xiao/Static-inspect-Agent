@@ -1,0 +1,218 @@
+[
+  {
+    "check": "requests-repeat-0",
+    "passed": true
+  },
+  {
+    "check": "requests-repeat-1",
+    "passed": true
+  },
+  {
+    "check": "requests-repeat-2",
+    "passed": true
+  },
+  {
+    "check": "requests-repeat-3",
+    "passed": true
+  },
+  {
+    "check": "requests-repeat-4",
+    "passed": true
+  },
+  {
+    "check": "requests-repeat-5",
+    "passed": true
+  },
+  {
+    "check": "requests-unchanged-baseline",
+    "passed": true
+  },
+  {
+    "check": "requests-sarif-parity",
+    "passed": true
+  },
+  {
+    "check": "requests-full-coverage",
+    "passed": true
+  },
+  {
+    "check": "requests-source-unchanged",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-0",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-1",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-2",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-3",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-4",
+    "passed": true
+  },
+  {
+    "check": "flask-repeat-5",
+    "passed": true
+  },
+  {
+    "check": "flask-unchanged-baseline",
+    "passed": true
+  },
+  {
+    "check": "flask-sarif-parity",
+    "passed": true
+  },
+  {
+    "check": "flask-full-coverage",
+    "passed": true
+  },
+  {
+    "check": "flask-source-unchanged",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-0",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-1",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-2",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-3",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-4",
+    "passed": true
+  },
+  {
+    "check": "click-repeat-5",
+    "passed": true
+  },
+  {
+    "check": "click-unchanged-baseline",
+    "passed": true
+  },
+  {
+    "check": "click-sarif-parity",
+    "passed": true
+  },
+  {
+    "check": "click-full-coverage",
+    "passed": true
+  },
+  {
+    "check": "click-source-unchanged",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-0",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-1",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-2",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-3",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-4",
+    "passed": true
+  },
+  {
+    "check": "httpx-repeat-5",
+    "passed": true
+  },
+  {
+    "check": "httpx-unchanged-baseline",
+    "passed": true
+  },
+  {
+    "check": "httpx-sarif-parity",
+    "passed": true
+  },
+  {
+    "check": "httpx-full-coverage",
+    "passed": true
+  },
+  {
+    "check": "httpx-source-unchanged",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-0",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-1",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-2",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-3",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-4",
+    "passed": true
+  },
+  {
+    "check": "django-repeat-5",
+    "passed": true
+  },
+  {
+    "check": "django-unchanged-baseline",
+    "passed": true
+  },
+  {
+    "check": "django-sarif-parity",
+    "passed": true
+  },
+  {
+    "check": "django-full-coverage",
+    "passed": true
+  },
+  {
+    "check": "django-source-unchanged",
+    "passed": true
+  },
+  {
+    "check": "baseline-injected-four",
+    "passed": true
+  },
+  {
+    "check": "missing-key-fallback",
+    "passed": true
+  },
+  {
+    "check": "contract-cases",
+    "passed": true
+  },
+  {
+    "check": "tool-source-unchanged",
+    "passed": true
+  }
+]

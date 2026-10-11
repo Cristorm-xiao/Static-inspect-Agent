@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-10-10T02:04:12.778083+00:00",
+  "requested_model": "deepseek-chat",
+  "base_url": "https://api.deepseek.com/v1",
+  "python": "3.13.10 (tags/v3.13.10:4fd8843, Dec  2 2025, 15:08:18) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "D:\\python\\python.exe"
+}

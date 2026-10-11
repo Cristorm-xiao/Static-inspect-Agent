@@ -1,0 +1,438 @@
+{
+  "findings": [
+    {
+      "function_id": "click:__init__.py:74:__getattr__",
+      "file": "click/__init__.py",
+      "line": 75,
+      "end_line": 112,
+      "smell": "重复导入",
+      "reason": "warnings 在第 2 行已导入，第 39 行在 __version__ 分支内再次 import warnings，属冗余；同时四个分支重复“导入目标 + warnings.warn + return”的相同结构，新增弃用别名时需复制整段模板。",
+      "evidence": "    import warnings\n\n    if name == \"BaseCommand\":\n        from .core import _BaseCommand\n\n        warnings.warn(\n            \"'BaseCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Command' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _BaseCommand\n\n    if name == \"MultiCommand\":\n        from .core import _MultiCommand\n\n        warnings.warn(\n            \"'MultiCommand' is deprecated and will be removed in Click 9.0. Use\"\n            \" 'Group' instead.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _MultiCommand\n\n    if name == \"OptionParser\":\n        from .parser import _OptionParser\n\n        warnings.warn(\n            \"'OptionParser' is deprecated and will be removed in Click 9.0. The\"\n            \" old parser is available in 'optparse'.\",\n            DeprecationWarning,\n            stacklevel=2,\n        )\n        return _OptionParser\n\n    if name == \"__version__\":\n        import importlib.metadata\n        import warnings",
+      "evidence_lines": [
+        2,
+        39
+      ],
+      "suggestion": "删除第 39 行重复的 import warnings；可将各别名映射为 (模块路径, 属性名, 弃用消息) 表，用统一循环处理导入与告警，减少重复模板。"
+    },
+    {
+      "function_id": "click:core.py:2314:type_cast_value",
+      "file": "click/core.py",
+      "line": 2337,
+      "end_line": 2363,
+      "smell": "重复业务逻辑",
+      "reason": "三个分支各自定义 convert，其中 nargs==-1 与 nargs>1 分支都执行 tuple(self.type(x, self, ctx) for x in ...)，仅差长度校验；重复的转换表达式在调整 type 调用签名时需同步修改多处。",
+      "evidence": "        if self.nargs == 1 or self.type.is_composite:\n\n            def convert(value: t.Any) -> t.Any:\n                return self.type(value, param=self, ctx=ctx)\n\n        elif self.nargs == -1:\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                return tuple(self.type(x, self, ctx) for x in check_iter(value))\n\n        else:  # nargs > 1\n\n            def convert(value: t.Any) -> t.Any:  # tuple[t.Any, ...]\n                value = tuple(check_iter(value))\n\n                if len(value) != self.nargs:\n                    raise BadParameter(\n                        ngettext(\n                            \"Takes {nargs} values but 1 was given.\",\n                            \"Takes {nargs} values but {len} were given.\",\n                            len(value),\n                        ).format(nargs=self.nargs, len=len(value)),\n                        ctx=ctx,\n                        param=self,\n                    )\n\n                return tuple(self.type(x, self, ctx) for x in value)",
+      "evidence_lines": [
+        24,
+        50
+      ],
+      "suggestion": "让 nargs>1 分支在完成长度校验后复用同一转换表达式，或提取 _convert_each(value) 辅助函数供两个分支调用，减少重复。"
+    },
+    {
+      "function_id": "click:termui.py:328:progressbar",
+      "file": "click/termui.py",
+      "line": 341,
+      "end_line": 341,
+      "smell": "缺少业务含义的数值阈值",
+      "reason": "width 默认值 36 是裸数字，文档仅说明“0 表示全终端宽度”，未解释 36 的来源或含义，调用方难以判断该默认值是否适合自身场景。",
+      "evidence": "    width: int = 36,",
+      "evidence_lines": [
+        14,
+        14
+      ],
+      "suggestion": "将 36 提取为具名模块常量（如 DEFAULT_BAR_WIDTH = 36）并在文档字符串中说明其含义，或补充注释解释该默认宽度的选取依据。"
+    },
+    {
+      "function_id": "click:testing.py:433:invoke",
+      "file": "click/testing.py",
+      "line": 503,
+      "end_line": 533,
+      "smell": "多层控制流",
+      "reason": "SystemExit 分支内嵌套了 e_code 归一化、非 int 输出、异常记录三层判断，与 finally 中的流读取混在同一 try 块，阅读时需同时跟踪退出码、异常对象、输出流三类状态，修改任一处易遗漏其他分支。",
+      "evidence": "            try:\n                return_value = cli.main(args=args or (), prog_name=prog_name, **extra)\n            except SystemExit as e:\n                exc_info = sys.exc_info()\n                e_code = t.cast(\"int | t.Any | None\", e.code)\n\n                if e_code is None:\n                    e_code = 0\n\n                if e_code != 0:\n                    exception = e\n\n                if not isinstance(e_code, int):\n                    sys.stdout.write(str(e_code))\n                    sys.stdout.write(\"\\n\")\n                    e_code = 1\n\n                exit_code = e_code\n\n            except Exception as e:\n                if not catch_exceptions:\n                    raise\n                exception = e\n                exit_code = 1\n                exc_info = sys.exc_info()\n            finally:\n                sys.stdout.flush()\n                sys.stderr.flush()\n                stdout = outstreams[0].getvalue()\n                stderr = outstreams[1].getvalue()\n                output = outstreams[2].getvalue()",
+      "evidence_lines": [
+        71,
+        101
+      ],
+      "suggestion": "把 SystemExit 的退出码归一化逻辑抽成独立小函数（如 _normalize_exit_code(e_code) 返回 (exit_code, exception)），try 块只保留调用与赋值，finally 仅负责 flush 与读取流。"
+    },
+    {
+      "function_id": "click:testing.py:547:isolated_filesystem",
+      "file": "click/testing.py",
+      "line": 572,
+      "end_line": 572,
+      "smell": "重复导入",
+      "reason": "shutil 在 finally 分支内局部导入，每次调用都会执行导入查找；同时把标准库依赖隐藏在异常清理路径中，读者需读到函数末尾才能发现该依赖。",
+      "evidence": "                import shutil",
+      "evidence_lines": [
+        26,
+        26
+      ],
+      "suggestion": "将 import shutil 提升到模块顶部与其他标准库导入并列，函数体内直接使用 shutil.rmtree。"
+    },
+    {
+      "function_id": "c01",
+      "file": "controls/c01.py",
+      "line": 4,
+      "end_line": 17,
+      "smell": "多层控制流",
+      "reason": "嵌套达 8 层，条件与循环交错，阅读时难以快速判断每层过滤的意图，修改任一过滤条件都需重新梳理缩进层级。",
+      "evidence": "    for group in groups:\n        if group is not None:\n            if group.get(\"enabled\"):\n                for member in group.get(\"members\", []):\n                    if member is not None:\n                        if member.get(\"active\"):\n                            for permission in member.get(\"permissions\", []):\n                                if permission is not None:\n                                    if permission.get(\"allowed\"):\n                                        for code in permission.get(\"codes\", []):\n                                            if isinstance(code, str):\n                                                if code.strip():\n                                                    if code not in result:\n                                                        result.append(code)",
+      "evidence_lines": [
+        4,
+        17
+      ],
+      "suggestion": "用 continue 提前跳过 None/未启用项，或把成员、权限的过滤拆成独立辅助函数，将嵌套压平到 2-3 层。"
+    },
+    {
+      "function_id": "c01",
+      "file": "controls/c01.py",
+      "line": 16,
+      "end_line": 17,
+      "smell": "重复计算",
+      "reason": "对 result 列表做线性成员检查，在 code 数量较大时整体复杂度为 O(n²)，且该去重逻辑与 c02 的 seen 集合去重是同一意图的不同实现。",
+      "evidence": "                                                    if code not in result:\n                                                        result.append(code)",
+      "evidence_lines": [
+        16,
+        17
+      ],
+      "suggestion": "改用 seen = set() 配合 result 列表做 O(1) 去重，与 c02 保持一致的去重写法。"
+    },
+    {
+      "function_id": "c03",
+      "file": "controls/c03.py",
+      "line": 3,
+      "end_line": 32,
+      "smell": "重复业务逻辑",
+      "reason": "三个渠道的统计逻辑逐字重复三遍，且与 c04 的 summarize_paid_orders 是同一计算。金额公式或 max(amount,0) 规则变更时需改四处，极易遗漏导致渠道间口径不一致。",
+      "evidence": "    online_total = 0\n    online_count = 0\n    online_ids = []\n    for order in online:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            online_total += max(amount, 0)\n            online_count += 1\n            online_ids.append(order[\"id\"])\n    retail_total = 0\n    retail_count = 0\n    retail_ids = []\n    for order in retail:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            retail_total += max(amount, 0)\n            retail_count += 1\n            retail_ids.append(order[\"id\"])\n    wholesale_total = 0\n    wholesale_count = 0\n    wholesale_ids = []\n    for order in wholesale:\n        if order[\"paid\"]:\n            amount = order[\"quantity\"] * order[\"unit_price\"]\n            amount -= order[\"discount\"]\n            wholesale_total += max(amount, 0)\n            wholesale_count += 1\n            wholesale_ids.append(order[\"id\"])",
+      "evidence_lines": [
+        3,
+        32
+      ],
+      "suggestion": "对每个渠道调用同一统计函数（如 c04 的 summarize_paid_orders），再组装成返回字典，消除三份重复循环。"
+    },
+    {
+      "function_id": "c07",
+      "file": "controls/c07.py",
+      "line": 6,
+      "end_line": 27,
+      "smell": "魔法数值/缺少业务含义",
+      "reason": "费率、阈值、附加费与地区系数全部以裸字面量硬编码，且函数无任何文档说明其含义。任何定价策略调整都需在函数体内逐处修改，无法从代码判断 700/2400、11/26、47、0.43、1.073 等数值的业务来源，容易改错或漏改。",
+      "evidence": "        if amount < 700:\n            fee = amount * 0.037 + 13\n        elif amount < 2400:\n            fee = amount * 0.029 + 17\n        else:\n            fee = amount * 0.021 + 23\n        if account[\"late_days\"] > 11:\n            fee += 19\n        if account[\"late_days\"] > 26:\n            fee += 31\n        if account[\"transactions\"] > 47:\n            fee += (account[\"transactions\"] - 47) * 0.43\n        if account[\"region\"] == \"north\":\n            fee *= 1.073\n        elif account[\"region\"] == \"south\":\n            fee *= 1.091\n        else:\n            fee *= 1.057\n        if account[\"loyalty_years\"] > 4:\n            fee *= 0.93\n        if account[\"loyalty_years\"] > 9:\n            fee *= 0.89",
+      "evidence_lines": [
+        6,
+        27
+      ],
+      "suggestion": "将各档位阈值、费率、附加费与地区系数提取为具名常量或模块级配置（如 BALANCE_TIERS、LATE_FEE_TIERS、REGION_MULTIPLIERS），并在函数 docstring 中说明计费规则与单位。"
+    },
+    {
+      "function_id": "c07",
+      "file": "controls/c07.py",
+      "line": 12,
+      "end_line": 27,
+      "smell": "重复业务逻辑/控制流",
+      "reason": "逾期费与忠诚度折扣采用“逐级累加/累乘”的并列 if 结构，语义上等价于阶梯规则，但阅读者需自行推断 11/26 与 4/9 是累进档位还是互斥档位；若后续新增档位，容易误写成 elif 而改变计费结果。",
+      "evidence": "        if account[\"late_days\"] > 11:\n            fee += 19\n        if account[\"late_days\"] > 26:\n            fee += 31\n        if account[\"transactions\"] > 47:\n            fee += (account[\"transactions\"] - 47) * 0.43\n        if account[\"region\"] == \"north\":\n            fee *= 1.073\n        elif account[\"region\"] == \"south\":\n            fee *= 1.091\n        else:\n            fee *= 1.057\n        if account[\"loyalty_years\"] > 4:\n            fee *= 0.93\n        if account[\"loyalty_years\"] > 9:\n            fee *= 0.89",
+      "evidence_lines": [
+        12,
+        27
+      ],
+      "suggestion": "用显式的阶梯表（阈值→增量/系数）配合循环或辅助函数表达，使档位关系一目了然，并避免新增档位时结构不一致。"
+    },
+    {
+      "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+      "file": "django/db/migrations/autodetector.py",
+      "line": 1021,
+      "end_line": 1026,
+      "smell": "重复计算",
+      "reason": "外层循环每处理一个新的字段名，都会重新对 old_field_keys - self.new_field_keys 求差集并排序，且对每个候选旧字段重新 deep_deconstruct。当模型字段较多时，同一批候选旧字段会被反复计算，属于可避免的重复开销，也让内层循环的意图（只比较同一模型的旧字段）不够直观。",
+      "evidence": "            for rem_app_label, rem_model_name, rem_field_name in sorted(\n                old_field_keys - self.new_field_keys\n            ):\n                if rem_app_label == app_label and rem_model_name == model_name:\n                    old_field = old_model_state.get_field(rem_field_name)\n                    old_field_dec = self.deep_deconstruct(old_field)",
+      "evidence_lines": [
+        16,
+        21
+      ],
+      "suggestion": "在进入外层循环前先计算一次候选集合，例如 candidates = sorted(old_field_keys - self.new_field_keys)，并在内层循环中按 (app_label, model_name) 过滤；如需进一步优化，可预先按模型分组或缓存 deep_deconstruct 结果。"
+    },
+    {
+      "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+      "file": "django/db/migrations/autodetector.py",
+      "line": 1027,
+      "end_line": 1043,
+      "smell": "多层控制流",
+      "reason": "重命名判定条件（含 remote_field 的 to 重写、db_column 补偿比较）嵌套在多层 if/for 中，且 old_field_dec 被就地修改，阅读者需要同时跟踪多个状态才能理解“何时算重命名”。这增加了后续修改判定逻辑时引入回归的风险。",
+      "evidence": "                    if (\n                        field.remote_field\n                        and field.remote_field.model\n                        and \"to\" in old_field_dec[2]\n                    ):\n                        old_rel_to = old_field_dec[2][\"to\"]\n                        if old_rel_to in self.renamed_models_rel:\n                            old_field_dec[2][\"to\"] = self.renamed_models_rel[old_rel_to]\n                    old_field.set_attributes_from_name(rem_field_name)\n                    old_db_column = old_field.get_attname_column()[1]\n                    if old_field_dec == field_dec or (\n                        # Was the field renamed and db_column equal to the\n                        # old field's column added?\n                        old_field_dec[0:2] == field_dec[0:2]\n                        and dict(old_field_dec[2], db_column=old_db_column)\n                        == field_dec[2]\n                    ):",
+      "evidence_lines": [
+        22,
+        38
+      ],
+      "suggestion": "将“把旧字段的 to 指向重命名后的模型”和“判断两个 deconstruct 结果是否等价（含 db_column 补偿）”分别抽成带命名的辅助方法或局部函数，使主循环只表达“找到候选并询问是否重命名”的流程。"
+    },
+    {
+      "function_id": "requests:auth.py:241:handle_401",
+      "file": "requests/auth.py",
+      "line": 260,
+      "end_line": 263,
+      "smell": "重复计算/可读性",
+      "reason": "每次进入该分支都重新编译同一个正则表达式，且 num_401_calls < 2 中的 2 为裸字面量，未说明“最多重试一次”的业务含义，读者需结合上下文推断。",
+      "evidence": "        if \"digest\" in s_auth.lower() and self._thread_local.num_401_calls < 2:\n            self._thread_local.num_401_calls += 1\n            pat = re.compile(r\"digest \", flags=re.IGNORECASE)\n            self._thread_local.chal = parse_dict_header(pat.sub(\"\", s_auth, count=1))",
+      "evidence_lines": [
+        20,
+        23
+      ],
+      "suggestion": "将正则编译提升为模块级常量，并把重试上限提取为具名常量（如 MAX_401_RETRIES = 1）或加注释说明其含义。"
+    },
+    {
+      "function_id": "requests:sessions.py:159:resolve_redirects",
+      "file": "requests/sessions.py",
+      "line": 177,
+      "end_line": 183,
+      "smell": "多层控制流/状态复用",
+      "reason": "循环内每轮都重新赋值 resp.history = hist[1:]，即对历史列表做切片复制；重定向次数多时产生 O(n^2) 的复制开销，且 hist 与 resp.history 的语义关系（hist 含原始响应、history 不含）仅靠注释维系，后续修改易破坏。",
+      "evidence": "        while url:\n            prepared_request = req.copy()\n\n            # Update history and keep track of redirects.\n            # resp.history must ignore the original request in this loop\n            hist.append(resp)\n            resp.history = hist[1:]",
+      "evidence_lines": [
+        19,
+        25
+      ],
+      "suggestion": "可改为在循环外维护历史并在每轮追加，或明确注释 hist 与 resp.history 的差异并考虑用单一列表加偏移量表达，减少重复切片。"
+    }
+  ],
+  "outcomes": [
+    {
+      "function_id": "c01",
+      "status": "partial_invalid",
+      "findings": 2
+    },
+    {
+      "function_id": "c02",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c03",
+      "status": "partial_invalid",
+      "findings": 1
+    },
+    {
+      "function_id": "c04",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c05",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "c06",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "c07",
+      "status": "completed",
+      "findings": 2
+    },
+    {
+      "function_id": "c08",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:__init__.py:74:__getattr__",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "click:core.py:2314:type_cast_value",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "click:decorators.py:217:decorator",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "click:termui.py:328:progressbar",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "click:testing.py:433:invoke",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "click:testing.py:547:isolated_filesystem",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "click:utils.py:449:get_app_dir",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:contrib/admin/options.py:1412:response_add",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:core/management/commands/createcachetable.py:57:create_table",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "django:db/migrations/autodetector.py:1006:create_renamed_fields",
+      "status": "partial_invalid",
+      "findings": 2
+    },
+    {
+      "function_id": "django:db/models/fields/__init__.py:1596:to_python",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "django:db/models/sql/query.py:1850:setup_joins",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "django:template/defaulttags.py:694:do_filter",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "django:views/decorators/http.py:106:decorator",
+      "status": "partial_invalid",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:app.py:226:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:app.py:425:create_url_adapter",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:config.py:256:from_file",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:helpers.py:352:get_flashed_messages",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:sansio/app.py:932:handle_url_build_error",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:sansio/blueprints.py:41:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "flask:sansio/scaffold.py:754:find_package",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_api.py:364:patch",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_client.py:1543:stream",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_config.py:86:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_models.py:383:__init__",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_transports/default.py:230:handle_request",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_transports/default.py:374:handle_async_request",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "httpx:_urlparse.py:497:quote",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:adapters.py:373:build_connection_pool_key_attributes",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:adapters.py:523:request_url",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:auth.py:241:handle_401",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "requests:help.py:34:_implementation",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:sessions.py:159:resolve_redirects",
+      "status": "completed",
+      "findings": 1
+    },
+    {
+      "function_id": "requests:sessions.py:302:rebuild_proxies",
+      "status": "completed",
+      "findings": 0
+    },
+    {
+      "function_id": "requests:utils.py:581:get_unicode_from_response",
+      "status": "completed",
+      "findings": 0
+    }
+  ],
+  "stats": {
+    "candidates": 43,
+    "requests": 9,
+    "cache_hits": 0,
+    "estimated_input_reserved": 119763,
+    "prompt_tokens": 30571,
+    "completion_tokens": 5490,
+    "usage_missing_calls": 0,
+    "rejected_items": 4,
+    "context_rounds": 0,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "statuses": {
+      "partial_invalid": 10,
+      "completed": 33
+    },
+    "completed_functions": 33,
+    "status": "partial",
+    "seconds": 12.45262840000214
+  }
+}

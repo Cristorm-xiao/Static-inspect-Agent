@@ -1,0 +1,37 @@
+[
+  {
+    "project": "requests",
+    "old_candidates": 43,
+    "new_candidates": 27,
+    "old_source_bytes": 82506,
+    "new_source_bytes": 53872
+  },
+  {
+    "project": "flask",
+    "old_candidates": 70,
+    "new_candidates": 24,
+    "old_source_bytes": 140274,
+    "new_source_bytes": 63054
+  },
+  {
+    "project": "click",
+    "old_candidates": 83,
+    "new_candidates": 46,
+    "old_source_bytes": 175056,
+    "new_source_bytes": 118507
+  },
+  {
+    "project": "httpx",
+    "old_candidates": 59,
+    "new_candidates": 61,
+    "old_source_bytes": 99300,
+    "new_source_bytes": 96549
+  },
+  {
+    "project": "django",
+    "old_candidates": 889,
+    "new_candidates": 762,
+    "old_source_bytes": 2125173,
+    "new_source_bytes": 1848083
+  }
+]

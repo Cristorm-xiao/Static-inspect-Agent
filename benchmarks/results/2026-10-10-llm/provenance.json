@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-10",
+  "prepared_at": "2026-10-10T02:03:36.773813+00:00",
+  "seed": 20261010,
+  "selection": "5 lowest SHA256(seed|project:path:line:name) ranks per project, all functions >=30 physical lines",
+  "candidate_population": 1144,
+  "primary_sample_functions": 25,
+  "control_functions": 8,
+  "product_sha256": {
+    "llm_node.py": "90a4c2ee11bc36e7ba7a6f1436a100dfbb08512c2ff44e89372950c9c4986e7d",
+    "main.py": "abfb9a444b9132024450606847ae554f6ae40c75bf93ac13356bbd7561a8f3b8",
+    "graph.py": "8ce202157f818e940535fd4bc04d554e2fcc055d8ff230bcde62e561020ad7ac",
+    "scanner.py": "1609c1c13f036c0423372e8b48e130e5deceb6d819b3e8ed2bbe27fcb092cd4b",
+    "config.py": "5468dd54cf0e20e1e67ba9b4fd2479e6f3bd77348c13b8c1467f2f6fe1dd7c87",
+    "rules.py": "b80ec31d0726ebae50f64ace9fe2833a80d55a74fcaa89e12bf96b0c58adef42",
+    "report.py": "ffa6d4436365728bb68362c5f312f4c27753b5a6d20281a288b1e1dc6371545c"
+  },
+  "corpus": [
+    {
+      "name": "requests",
+      "tag": "v2.32.5",
+      "repository": "https://github.com/psf/requests",
+      "commit": "b25c87d7cb8d6a18a37fa12442b5f883f9e41741",
+      "source": "src/requests"
+    },
+    {
+      "name": "flask",
+      "tag": "3.1.2",
+      "repository": "https://github.com/pallets/flask",
+      "commit": "2c1b30d0503cfb064f1cb252e6614a06915a362a",
+      "source": "src/flask"
+    },
+    {
+      "name": "click",
+      "tag": "8.3.0",
+      "repository": "https://github.com/pallets/click",
+      "commit": "00fadb8904387158ce6e9aa1573be770446895c1",
+      "source": "src/click"
+    },
+    {
+      "name": "httpx",
+      "tag": "0.28.1",
+      "repository": "https://github.com/encode/httpx",
+      "commit": "26d48e0634e6ee9cdc0533996db289ce4b430177",
+      "source": "httpx"
+    },
+    {
+      "name": "django",
+      "tag": "5.2.7",
+      "repository": "https://github.com/django/django",
+      "commit": "3cff3209e35a560f94801d428cf7f2a3ecb2a051",
+      "source": "django"
+    }
+  ],
+  "max_completion_token_budget": 100000,
+  "request_policy": "Original temperature=0.3, timeout=30s, max_retries=2, batch size=5. No prompt or output-token override.",
+  "review_policy": "All primary suggestions reviewed by Codex for source support and usefulness; not human ground truth."
+}

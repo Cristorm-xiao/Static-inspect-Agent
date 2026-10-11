@@ -1,0 +1,1070 @@
+[
+  {
+    "label": "requests-source-0",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.847988199995598,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-0.stdout",
+    "stderr_file": "raw/requests-source-0.stderr"
+  },
+  {
+    "label": "requests-source-1",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.92882559998543,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-1.stdout",
+    "stderr_file": "raw/requests-source-1.stderr"
+  },
+  {
+    "label": "requests-source-2",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.00939059999655,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-2.stdout",
+    "stderr_file": "raw/requests-source-2.stderr"
+  },
+  {
+    "label": "requests-source-3",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.962282899999991,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-3.stdout",
+    "stderr_file": "raw/requests-source-3.stderr"
+  },
+  {
+    "label": "requests-source-4",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9368624000053387,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-4.stdout",
+    "stderr_file": "raw/requests-source-4.stderr"
+  },
+  {
+    "label": "requests-source-5",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.955226300022332,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-source-5.stdout",
+    "stderr_file": "raw/requests-source-5.stderr"
+  },
+  {
+    "label": "requests-write-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json",
+      "--write-baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\requests.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9599571999860927,
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_file": "raw/requests-write-baseline.stdout",
+    "stderr_file": "raw/requests-write-baseline.stderr"
+  },
+  {
+    "label": "requests-unchanged-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\requests.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.977838699996937,
+    "exit_code": 0,
+    "stdout_sha256": "c88f5db5ba647b1ffd9bb6e171618da7dfeeb3467130cd3830acd10671a0dbf7",
+    "stdout_file": "raw/requests-unchanged-baseline.stdout",
+    "stderr_file": "raw/requests-unchanged-baseline.stderr"
+  },
+  {
+    "label": "requests-sarif",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests\\src\\requests",
+      "--no-llm",
+      "--format",
+      "sarif"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0090038999915123,
+    "exit_code": 0,
+    "stdout_sha256": "018ef5f42aa49df399f07ad40ac15de012bae6cad90a2320c1ad589d0a5fcbfa",
+    "stdout_file": "raw/requests-sarif.stdout",
+    "stderr_file": "raw/requests-sarif.stderr"
+  },
+  {
+    "label": "requests-full",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\requests",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0280583999992814,
+    "exit_code": 0,
+    "stdout_sha256": "c91181cb9d2133879f9a0d343f5ec495c678c18bd442540c38e03052b959a7d0",
+    "stdout_file": "raw/requests-full.stdout",
+    "stderr_file": "raw/requests-full.stderr"
+  },
+  {
+    "label": "flask-source-0",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.034038000012515,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-0.stdout",
+    "stderr_file": "raw/flask-source-0.stderr"
+  },
+  {
+    "label": "flask-source-1",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.42346700001508,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-1.stdout",
+    "stderr_file": "raw/flask-source-1.stderr"
+  },
+  {
+    "label": "flask-source-2",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.36237409999012,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-2.stdout",
+    "stderr_file": "raw/flask-source-2.stderr"
+  },
+  {
+    "label": "flask-source-3",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.1001422999834176,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-3.stdout",
+    "stderr_file": "raw/flask-source-3.stderr"
+  },
+  {
+    "label": "flask-source-4",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.2233088000211865,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-4.stdout",
+    "stderr_file": "raw/flask-source-4.stderr"
+  },
+  {
+    "label": "flask-source-5",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0954206000023987,
+    "exit_code": 1,
+    "stdout_sha256": "36a3b5fcbd7af5c3bc8239cc8dcdbdb17c2d06630b23717f85cb9e088db7f75a",
+    "stdout_file": "raw/flask-source-5.stdout",
+    "stderr_file": "raw/flask-source-5.stderr"
+  },
+  {
+    "label": "flask-write-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json",
+      "--write-baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\flask.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0378407999814954,
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_file": "raw/flask-write-baseline.stdout",
+    "stderr_file": "raw/flask-write-baseline.stderr"
+  },
+  {
+    "label": "flask-unchanged-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\flask.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.1395916999899782,
+    "exit_code": 0,
+    "stdout_sha256": "35f07ee616c92086acbeb3e5d1358ef3a7f97af0a9b5c0e89494412263044e47",
+    "stdout_file": "raw/flask-unchanged-baseline.stdout",
+    "stderr_file": "raw/flask-unchanged-baseline.stderr"
+  },
+  {
+    "label": "flask-sarif",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask\\src\\flask",
+      "--no-llm",
+      "--format",
+      "sarif"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.1090770000009798,
+    "exit_code": 1,
+    "stdout_sha256": "feb6c29d7ac1820d22a978c3542d57c210d17d2ee3daa0a0b7728b27d2d6b07e",
+    "stdout_file": "raw/flask-sarif.stdout",
+    "stderr_file": "raw/flask-sarif.stderr"
+  },
+  {
+    "label": "flask-full",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\flask",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0043134999868926,
+    "exit_code": 1,
+    "stdout_sha256": "2057ec01d5b69793153d76180753a5ea9541ec3be60b83fb988482f3993365be",
+    "stdout_file": "raw/flask-full.stdout",
+    "stderr_file": "raw/flask-full.stderr"
+  },
+  {
+    "label": "click-source-0",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0190529999963474,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-0.stdout",
+    "stderr_file": "raw/click-source-0.stderr"
+  },
+  {
+    "label": "click-source-1",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0318432000058237,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-1.stdout",
+    "stderr_file": "raw/click-source-1.stderr"
+  },
+  {
+    "label": "click-source-2",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0047378000163008,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-2.stdout",
+    "stderr_file": "raw/click-source-2.stderr"
+  },
+  {
+    "label": "click-source-3",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9509591000096407,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-3.stdout",
+    "stderr_file": "raw/click-source-3.stderr"
+  },
+  {
+    "label": "click-source-4",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.989221499999985,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-4.stdout",
+    "stderr_file": "raw/click-source-4.stderr"
+  },
+  {
+    "label": "click-source-5",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9486598999937996,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-source-5.stdout",
+    "stderr_file": "raw/click-source-5.stderr"
+  },
+  {
+    "label": "click-write-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json",
+      "--write-baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\click.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9835512000136077,
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_file": "raw/click-write-baseline.stdout",
+    "stderr_file": "raw/click-write-baseline.stderr"
+  },
+  {
+    "label": "click-unchanged-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\click.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0000970999826677,
+    "exit_code": 0,
+    "stdout_sha256": "c56c55af9522045ed2c6be0134ef9b5471c6e9f1b59815d8917261d6926528b6",
+    "stdout_file": "raw/click-unchanged-baseline.stdout",
+    "stderr_file": "raw/click-unchanged-baseline.stderr"
+  },
+  {
+    "label": "click-sarif",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click\\src\\click",
+      "--no-llm",
+      "--format",
+      "sarif"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.982697500003269,
+    "exit_code": 0,
+    "stdout_sha256": "018ef5f42aa49df399f07ad40ac15de012bae6cad90a2320c1ad589d0a5fcbfa",
+    "stdout_file": "raw/click-sarif.stdout",
+    "stderr_file": "raw/click-sarif.stderr"
+  },
+  {
+    "label": "click-full",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\click",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.101283500000136,
+    "exit_code": 0,
+    "stdout_sha256": "414e903189d2b20c2a256c6b578273bef42e6e6358ebc420b417f1ebc4c5bc31",
+    "stdout_file": "raw/click-full.stdout",
+    "stderr_file": "raw/click-full.stderr"
+  },
+  {
+    "label": "httpx-source-0",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9801930999965407,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-0.stdout",
+    "stderr_file": "raw/httpx-source-0.stderr"
+  },
+  {
+    "label": "httpx-source-1",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9237038999854121,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-1.stdout",
+    "stderr_file": "raw/httpx-source-1.stderr"
+  },
+  {
+    "label": "httpx-source-2",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0383064999768976,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-2.stdout",
+    "stderr_file": "raw/httpx-source-2.stderr"
+  },
+  {
+    "label": "httpx-source-3",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9610188000078779,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-3.stdout",
+    "stderr_file": "raw/httpx-source-3.stderr"
+  },
+  {
+    "label": "httpx-source-4",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.020478299993556,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-4.stdout",
+    "stderr_file": "raw/httpx-source-4.stderr"
+  },
+  {
+    "label": "httpx-source-5",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.070810100005474,
+    "exit_code": 1,
+    "stdout_sha256": "53a86e065ce02b4bb02d37ef74af3ef12783d87edddb430df7fe6a286db18645",
+    "stdout_file": "raw/httpx-source-5.stdout",
+    "stderr_file": "raw/httpx-source-5.stderr"
+  },
+  {
+    "label": "httpx-write-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json",
+      "--write-baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\httpx.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.0313893999846186,
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_file": "raw/httpx-write-baseline.stdout",
+    "stderr_file": "raw/httpx-write-baseline.stderr"
+  },
+  {
+    "label": "httpx-unchanged-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\httpx.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.018434300000081,
+    "exit_code": 0,
+    "stdout_sha256": "79937150dbcefd8dc00c72894de21f56afd16fa472aed89b169217ac6bf37ced",
+    "stdout_file": "raw/httpx-unchanged-baseline.stdout",
+    "stderr_file": "raw/httpx-unchanged-baseline.stderr"
+  },
+  {
+    "label": "httpx-sarif",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx\\httpx",
+      "--no-llm",
+      "--format",
+      "sarif"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 1.9829503999790177,
+    "exit_code": 1,
+    "stdout_sha256": "5d5f078540cefe3c774aedc086697b11f98d6a12ba8e3cdf12b56f791dc415be",
+    "stdout_file": "raw/httpx-sarif.stdout",
+    "stderr_file": "raw/httpx-sarif.stderr"
+  },
+  {
+    "label": "httpx-full",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\httpx",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.047737300017616,
+    "exit_code": 1,
+    "stdout_sha256": "5bc36a25986b8addb093aa421b37513b4a331da0d8da37ed49efefd5ab50f6f3",
+    "stdout_file": "raw/httpx-full.stdout",
+    "stderr_file": "raw/httpx-full.stderr"
+  },
+  {
+    "label": "django-source-0",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.3751266000035685,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-0.stdout",
+    "stderr_file": "raw/django-source-0.stderr"
+  },
+  {
+    "label": "django-source-1",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.438017900014529,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-1.stdout",
+    "stderr_file": "raw/django-source-1.stderr"
+  },
+  {
+    "label": "django-source-2",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.4403383000171743,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-2.stdout",
+    "stderr_file": "raw/django-source-2.stderr"
+  },
+  {
+    "label": "django-source-3",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.2460387000173796,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-3.stdout",
+    "stderr_file": "raw/django-source-3.stderr"
+  },
+  {
+    "label": "django-source-4",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.269665600004373,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-4.stdout",
+    "stderr_file": "raw/django-source-4.stderr"
+  },
+  {
+    "label": "django-source-5",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.3018890999956056,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/django-source-5.stdout",
+    "stderr_file": "raw/django-source-5.stderr"
+  },
+  {
+    "label": "django-write-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json",
+      "--write-baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\django.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.224605800001882,
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_file": "raw/django-write-baseline.stdout",
+    "stderr_file": "raw/django-write-baseline.stderr"
+  },
+  {
+    "label": "django-unchanged-baseline",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\django.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.3232287000282668,
+    "exit_code": 0,
+    "stdout_sha256": "793b8531485ea9b70ca46f89a24b073cc7274ecd1007ee150bd7af8eb523e08b",
+    "stdout_file": "raw/django-unchanged-baseline.stdout",
+    "stderr_file": "raw/django-unchanged-baseline.stderr"
+  },
+  {
+    "label": "django-sarif",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--no-llm",
+      "--format",
+      "sarif"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.2155064000107814,
+    "exit_code": 1,
+    "stdout_sha256": "a6c8eb912707a064bacb548715042d4e04cb83427d14ebe44bfe3d4ba534f872",
+    "stdout_file": "raw/django-sarif.stdout",
+    "stderr_file": "raw/django-sarif.stderr"
+  },
+  {
+    "label": "django-full",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 5.844573200010927,
+    "exit_code": 1,
+    "stdout_sha256": "45da817284274e74b6cb76567ba62271e473b6eb029b046028767e787ec6ba0c",
+    "stdout_file": "raw/django-full.stdout",
+    "stderr_file": "raw/django-full.stderr"
+  },
+  {
+    "label": "baseline-injected",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\scenarios\\new-findings",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\django.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 12.920827299996745,
+    "exit_code": 1,
+    "stdout_sha256": "0a7846f6d349d6ad586c1fcc62ace9cd3ceddd88ce6d55abb5aed331b67e24ba",
+    "stdout_file": "raw/baseline-injected.stdout",
+    "stderr_file": "raw/baseline-injected.stderr"
+  },
+  {
+    "label": "baseline-line-shift",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\scenarios\\line-shift",
+      "--no-llm",
+      "--format",
+      "json",
+      "--baseline",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\baselines\\django.json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 10.943965100013884,
+    "exit_code": 1,
+    "stdout_sha256": "85025517888e20772e5b1ed7ad915b6c9c193966497ba915d58e6e02bbb722de",
+    "stdout_file": "raw/baseline-line-shift.stdout",
+    "stderr_file": "raw/baseline-line-shift.stderr"
+  },
+  {
+    "label": "missing-key-fallback",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\corpus\\django\\django",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 3.431784600019455,
+    "exit_code": 1,
+    "stdout_sha256": "d3ff01d4d71eebdfdd10677f47ce5f364c0d108c3b2ceb9d8e49fd036e1cb2f5",
+    "stdout_file": "raw/missing-key-fallback.stdout",
+    "stderr_file": "raw/missing-key-fallback.stderr"
+  },
+  {
+    "label": "contract",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\fixtures\\contract",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.33866529999068,
+    "exit_code": 1,
+    "stdout_sha256": "e72ba68d06605957b6d83d14e56655bc7552b2d2b04394fcd5bbe0e0a08ed19f",
+    "stdout_file": "raw/contract.stdout",
+    "stderr_file": "raw/contract.stderr"
+  },
+  {
+    "label": "boundary",
+    "command": [
+      "D:\\python\\python.exe",
+      "-B",
+      "-m",
+      "main",
+      "D:\\静态工程巡检Agent\\validation-2026-10-09\\run-01\\fixtures\\boundary",
+      "--no-llm",
+      "--format",
+      "json"
+    ],
+    "cwd": "D:\\静态工程巡检Agent\\Static-inspect-Agent",
+    "seconds": 2.125594799988903,
+    "exit_code": 1,
+    "stdout_sha256": "743b09b123938cc6689af091e7eb8017b54296c9ad4b30c9dd5f6a3beb99841e",
+    "stdout_file": "raw/boundary.stdout",
+    "stderr_file": "raw/boundary.stderr"
+  }
+]

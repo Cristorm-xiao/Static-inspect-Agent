@@ -1,0 +1,112 @@
+{
+  "phase": "primary-click",
+  "kind": "primary",
+  "seconds": 3.1616521999822,
+  "samples": 5,
+  "findings": [
+    {
+      "file": "click/testing.py",
+      "line": 547,
+      "smell": "函数内导入",
+      "reason": "在 finally 块中才 import shutil，导入位置不规范，应放在模块顶部。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 547,
+      "smell": "静默吞异常",
+      "reason": "shutil.rmtree 失败时 except OSError: pass 完全忽略错误，难以排查问题。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "职责过多",
+      "reason": "invoke 同时负责参数解析、环境隔离、异常捕获、输出收集、结果构造，函数过长。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "嵌套过深",
+      "reason": "try/except/finally 多层嵌套，加上内部条件分支，可读性差。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "魔法数字",
+      "reason": "exit_code = 1、e_code = 0 等数字散落各处，缺少具名常量。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "命名含糊",
+      "reason": "e_code、dt、outstreams 等变量名含义不直观。"
+    },
+    {
+      "file": "click/testing.py",
+      "line": 433,
+      "smell": "重复逻辑",
+      "reason": "多处 sys.stdout.flush()/sys.stderr.flush() 与 getvalue 调用重复。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "嵌套函数重复",
+      "reason": "convert 在三个分支中重复定义，逻辑相似可抽取。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "魔法数字",
+      "reason": "nargs == -1、nargs == 1 等魔法值应使用具名常量。"
+    },
+    {
+      "file": "click/core.py",
+      "line": 2314,
+      "smell": "命名含糊",
+      "reason": "check_iter 与 _check_iter 命名相近，容易混淆。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "参数过多",
+      "reason": "progressbar 有 16 个参数，接口臃肿，应使用配置对象或分组。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "魔法数字",
+      "reason": "width=36、update_min_steps=1 等默认值散落，缺少具名常量。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "函数内导入",
+      "reason": "在函数体内 from ._termui_impl import ProgressBar，应置于模块顶部。"
+    },
+    {
+      "file": "click/termui.py",
+      "line": 328,
+      "smell": "职责过多",
+      "reason": "函数既做参数解析、颜色解析，又构造 ProgressBar，且文档极长。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "重复逻辑",
+      "reason": "四个分支结构高度相似（import、warn、return），可抽象为表驱动。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "函数内导入",
+      "reason": "import warnings 在函数内重复出现，应放在模块顶部。"
+    },
+    {
+      "file": "click/__init__.py",
+      "line": 74,
+      "smell": "魔法字符串",
+      "reason": "版本号 '9.0'、'9.1' 硬编码在警告信息中，缺少常量。"
+    }
+  ],
+  "logical_calls": 1,
+  "successful_calls": 1
+}

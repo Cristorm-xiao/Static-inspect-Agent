@@ -1,0 +1,110 @@
+{
+  "files": 17,
+  "physical_lines": 11038,
+  "bytes": 390871,
+  "entries": [
+    {
+      "path": "__init__.py",
+      "bytes": 4596,
+      "physical_lines": 123,
+      "sha256": "b4c4a1cd061e69fb86c5ef73932a4ee3530d89108bc1beb3c134ffaac87d004c"
+    },
+    {
+      "path": "_compat.py",
+      "bytes": 19315,
+      "physical_lines": 622,
+      "sha256": "40a727ebd3741fb9063d7b1fbd07f4d681c9ccd9e9b21dd47fb66db4678e7853"
+    },
+    {
+      "path": "_termui_impl.py",
+      "bytes": 27646,
+      "physical_lines": 847,
+      "sha256": "21d6f8bb6d581858d17f41ea39ebd87605ed243dfbc698edace14d518af6b3b5"
+    },
+    {
+      "path": "_textwrap.py",
+      "bytes": 1451,
+      "physical_lines": 51,
+      "sha256": "9dcc6ca24ecf10cac4367034f867da757cecc751d565a7cc56365d10c9c056c2"
+    },
+    {
+      "path": "_utils.py",
+      "bytes": 979,
+      "physical_lines": 36,
+      "sha256": "53ecd89c598ddccbc3fe30c32e14fc260d8570bbdae32d7ac28416eae822004e"
+    },
+    {
+      "path": "_winconsole.py",
+      "bytes": 8761,
+      "physical_lines": 296,
+      "sha256": "b667a0f68fd2a9c2eb448502f4e8326d93ecb4ee5bb012d104cdc3dfd48d4478"
+    },
+    {
+      "path": "core.py",
+      "bytes": 132202,
+      "physical_lines": 3347,
+      "sha256": "3b7f649afe259fc870afb1fd91ddeea82d78218d2311794593971d49abce5b2d"
+    },
+    {
+      "path": "decorators.py",
+      "bytes": 19012,
+      "physical_lines": 551,
+      "sha256": "9a3c308089b5cdc61fb977ef42e00ecffc8c2552158d78451339e560a4c98fb9"
+    },
+    {
+      "path": "exceptions.py",
+      "bytes": 10262,
+      "physical_lines": 308,
+      "sha256": "af59cc49e3e50ce0d8b8978ed42910b86d9729ac54f542d9ac8eca8076253f84"
+    },
+    {
+      "path": "formatting.py",
+      "bytes": 10031,
+      "physical_lines": 301,
+      "sha256": "67092a157c93184dd0f173b78acefd68473b4efb093dcf114ee2161cad520845"
+    },
+    {
+      "path": "globals.py",
+      "bytes": 1990,
+      "physical_lines": 67,
+      "sha256": "a04afa8359a321f88433c3689045a9cde5763eb1938ceb983c7749798ffbb46f"
+    },
+    {
+      "path": "parser.py",
+      "bytes": 19542,
+      "physical_lines": 532,
+      "sha256": "b7ca01b68da2c8bf53a7157ec6222690e705a05632e7b8371aae01d37da060d9"
+    },
+    {
+      "path": "shell_completion.py",
+      "bytes": 21661,
+      "physical_lines": 667,
+      "sha256": "e69febb4af9c638a5122229d56cd73e891ec93c69080cd43d50b067f3a0ce952"
+    },
+    {
+      "path": "termui.py",
+      "bytes": 31724,
+      "physical_lines": 877,
+      "sha256": "03e26a8c14dd622b611044f1c77f871af2f8a879e66a41b305237f52bb0da0d3"
+    },
+    {
+      "path": "testing.py",
+      "bytes": 19679,
+      "physical_lines": 577,
+      "sha256": "846c1d878c5bb5c9743a96b3e94074b23b589191bcbda252df3daffc9cc5884c"
+    },
+    {
+      "path": "types.py",
+      "bytes": 41136,
+      "physical_lines": 1209,
+      "sha256": "cbac3498d54e8a66305d419f4f76e4862dd84450db9ab6a3b931c6a89051df99"
+    },
+    {
+      "path": "utils.py",
+      "bytes": 20884,
+      "physical_lines": 627,
+      "sha256": "4d80c8f7c7600ad8fad11379e7fa9f09ba15ebf20795fa01879d45aee2767e5b"
+    }
+  ],
+  "tree_sha256": "6ceecbda46e0f382e5c4d34558a429a15bc9fd3ef96ca1e12d354b5412f3fb5d"
+}

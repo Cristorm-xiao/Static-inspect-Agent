@@ -5,6 +5,7 @@
 - 路径无效/目录为空时不报错，返回空列表，让下游节点自然空转
 """
 import logging
+import os
 from pathlib import Path
 
 from config import SKIP_DIRS
@@ -13,19 +14,22 @@ from state import InspectState
 logger = logging.getLogger(__name__)
 
 
-def collect_py_files(root: Path) -> list[str]:
+def collect_py_files(root: Path, skip_dirs=None) -> list[str]:
     """递归收集 root 下所有 .py 文件的路径字符串列表。
 
-    用 rglob 而不是 os.walk：一行完成递归匹配，代码更短更直观。
+    在进入忽略目录之前剪枝，不跟随符号链接，保证稳定顺序。
     """
     result = []
-    for path in sorted(root.rglob("*.py")):
-        # path.parts 形如 ('/', 'Users', 'xx', 'proj', '__pycache__', 'a.py')
-        # 只要路径中任何一段命中跳过名单，就整个文件排除
-        if any(part in SKIP_DIRS for part in path.parts):
-            continue
-        result.append(str(path))
-    return result
+    skip_dirs = set(SKIP_DIRS if skip_dirs is None else skip_dirs)
+    skip_dirs.add('.inspect-cache')
+    def onerror(error):
+        raise error
+    for folder, dirs, files in os.walk(root, topdown=True, followlinks=False, onerror=onerror):
+        dirs[:] = sorted(d for d in dirs if d not in skip_dirs and not (Path(folder)/d).is_symlink())
+        for name in sorted(files):
+            path=Path(folder)/name
+            if name.endswith('.py') and not path.is_symlink(): result.append(str(path))
+    return sorted(result)
 
 
 def scan_node(state: InspectState) -> dict:
@@ -38,6 +42,6 @@ def scan_node(state: InspectState) -> dict:
         logger.warning("路径不存在或不是目录 -> %s", project_path)
         return {"py_files": []}
 
-    py_files = collect_py_files(root)
+    py_files = collect_py_files(root, state.get("config", {}).get("skip_dirs"))
     logger.info("项目: %s | 扫描到 %d 个 .py 文件", root.name, len(py_files))
     return {"py_files": py_files}

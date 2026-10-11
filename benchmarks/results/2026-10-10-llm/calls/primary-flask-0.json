@@ -1,0 +1,116 @@
+{
+  "call_id": "primary-flask-0",
+  "phase": "primary-flask",
+  "kind": "primary",
+  "sample_ids": [
+    "flask:sansio/blueprints.py:41:__init__",
+    "flask:app.py:425:create_url_adapter",
+    "flask:app.py:226:__init__",
+    "flask:helpers.py:352:get_flashed_messages",
+    "flask:sansio/scaffold.py:754:find_package"
+  ],
+  "started_at": "2026-10-10T02:04:12.969546+00:00",
+  "request": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是资深 Python 代码审查员。以下是 5 个较长的函数，请找出代码坏味道\n（如命名含糊、职责过多、嵌套过深、重复逻辑、魔法数字等）。\n\n\n### 片段0 (文件: flask/sansio/blueprints.py, 行: 41)\n```python\n    def __init__(\n        self,\n        blueprint: Blueprint,\n        app: App,\n        options: t.Any,\n        first_registration: bool,\n    ) -> None:\n        #: a reference to the current application\n        self.app = app\n\n        #: a reference to the blueprint that created this setup state.\n        self.blueprint = blueprint\n\n        #: a dictionary with all options that were passed to the\n        #: :meth:`~flask.Flask.register_blueprint` method.\n        self.options = options\n\n        #: as blueprints can be registered multiple times with the\n        #: application and not everything wants to be registered\n        #: multiple times on it, this attribute can be used to figure\n        #: out if the blueprint was registered in the past already.\n        self.first_registration = first_registration\n\n        subdomain = self.options.get(\"subdomain\")\n        if subdomain is None:\n            subdomain = self.blueprint.subdomain\n\n        #: The subdomain that the blueprint should be active for, ``None``\n        #: otherwise.\n        self.subdomain = subdomain\n\n        url_prefix = self.options.get(\"url_prefix\")\n        if url_prefix is None:\n            url_prefix = self.blueprint.url_prefix\n        #: The prefix that should be used for all URLs defined on the\n        #: blueprint.\n        self.url_prefix = url_prefix\n\n        self.name = self.options.get(\"name\", blueprint.name)\n        self.name_prefix = self.options.get(\"name_prefix\", \"\")\n\n        #: A dictionary with URL defaults that is added to each and every\n        #: URL that was defined with the blueprint.\n        self.url_defaults = dict(self.blueprint.url_values_defaults)\n        self.url_defaults.update(self.options.get(\"url_defaults\", ()))\n```\n\n### 片段1 (文件: flask/app.py, 行: 425)\n```python\n    def create_url_adapter(self, request: Request | None) -> MapAdapter | None:\n        \"\"\"Creates a URL adapter for the given request. The URL adapter\n        is created at a point where the request context is not yet set\n        up so the request is passed explicitly.\n\n        .. versionchanged:: 3.1\n            If :data:`SERVER_NAME` is set, it does not restrict requests to\n            only that domain, for both ``subdomain_matching`` and\n            ``host_matching``.\n\n        .. versionchanged:: 1.0\n            :data:`SERVER_NAME` no longer implicitly enables subdomain\n            matching. Use :attr:`subdomain_matching` instead.\n\n        .. versionchanged:: 0.9\n           This can be called outside a request when the URL adapter is created\n           for an application context.\n\n        .. versionadded:: 0.6\n        \"\"\"\n        if request is not None:\n            if (trusted_hosts := self.config[\"TRUSTED_HOSTS\"]) is not None:\n                request.trusted_hosts = trusted_hosts\n\n            # Check trusted_hosts here until bind_to_environ does.\n            request.host = get_host(request.environ, request.trusted_hosts)  # pyright: ignore\n            subdomain = None\n            server_name = self.config[\"SERVER_NAME\"]\n\n            if self.url_map.host_matching:\n                # Don't pass SERVER_NAME, otherwise it's used and the actual\n                # host is ignored, which breaks host matching.\n                server_name = None\n            elif not self.subdomain_matching:\n                # Werkzeug doesn't implement subdomain matching yet. Until then,\n                # disable it by forcing the current subdomain to the default, or\n                # the empty string.\n                subdomain = self.url_map.default_subdomain or \"\"\n\n            return self.url_map.bind_to_environ(\n                request.environ, server_name=server_name, subdomain=subdomain\n            )\n\n        # Need at least SERVER_NAME to match/build outside a request.\n        if self.config[\"SERVER_NAME\"] is not None:\n            return self.url_map.bind(\n                self.config[\"SERVER_NAME\"],\n                script_name=self.config[\"APPLICATION_ROOT\"],\n                url_scheme=self.config[\"PREFERRED_URL_SCHEME\"],\n            )\n\n        return None\n```\n\n### 片段2 (文件: flask/app.py, 行: 226)\n```python\n    def __init__(\n        self,\n        import_name: str,\n        static_url_path: str | None = None,\n        static_folder: str | os.PathLike[str] | None = \"static\",\n        static_host: str | None = None,\n        host_matching: bool = False,\n        subdomain_matching: bool = False,\n        template_folder: str | os.PathLike[str] | None = \"templates\",\n        instance_path: str | None = None,\n        instance_relative_config: bool = False,\n        root_path: str | None = None,\n    ):\n        super().__init__(\n            import_name=import_name,\n            static_url_path=static_url_path,\n            static_folder=static_folder,\n            static_host=static_host,\n            host_matching=host_matching,\n            subdomain_matching=subdomain_matching,\n            template_folder=template_folder,\n            instance_path=instance_path,\n            instance_relative_config=instance_relative_config,\n            root_path=root_path,\n        )\n\n        #: The Click command group for registering CLI commands for this\n        #: object. The commands are available from the ``flask`` command\n        #: once the application has been discovered and blueprints have\n        #: been registered.\n        self.cli = cli.AppGroup()\n\n        # Set the name of the Click group in case someone wants to add\n        # the app's commands to another CLI tool.\n        self.cli.name = self.name\n\n        # Add a static route using the provided static_url_path, static_host,\n        # and static_folder if there is a configured static_folder.\n        # Note we do this without checking if static_folder exists.\n        # For one, it might be created while the server is running (e.g. during\n        # development). Also, Google App Engine stores static files somewhere\n        if self.has_static_folder:\n            assert bool(static_host) == host_matching, (\n                \"Invalid static_host/host_matching combination\"\n            )\n            # Use a weakref to avoid creating a reference cycle between the app\n            # and the view function (see #3761).\n            self_ref = weakref.ref(self)\n            self.add_url_rule(\n                f\"{self.static_url_path}/<path:filename>\",\n                endpoint=\"static\",\n                host=static_host,\n                view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950\n            )\n```\n\n### 片段3 (文件: flask/helpers.py, 行: 352)\n```python\ndef get_flashed_messages(\n    with_categories: bool = False, category_filter: t.Iterable[str] = ()\n) -> list[str] | list[tuple[str, str]]:\n    \"\"\"Pulls all flashed messages from the session and returns them.\n    Further calls in the same request to the function will return\n    the same messages.  By default just the messages are returned,\n    but when `with_categories` is set to ``True``, the return value will\n    be a list of tuples in the form ``(category, message)`` instead.\n\n    Filter the flashed messages to one or more categories by providing those\n    categories in `category_filter`.  This allows rendering categories in\n    separate html blocks.  The `with_categories` and `category_filter`\n    arguments are distinct:\n\n    * `with_categories` controls whether categories are returned with message\n      text (``True`` gives a tuple, where ``False`` gives just the message text).\n    * `category_filter` filters the messages down to only those matching the\n      provided categories.\n\n    See :doc:`/patterns/flashing` for examples.\n\n    .. versionchanged:: 0.3\n       `with_categories` parameter added.\n\n    .. versionchanged:: 0.9\n        `category_filter` parameter added.\n\n    :param with_categories: set to ``True`` to also receive categories.\n    :param category_filter: filter of categories to limit return values.  Only\n                            categories in the list will be returned.\n    \"\"\"\n    flashes = request_ctx.flashes\n    if flashes is None:\n        flashes = session.pop(\"_flashes\") if \"_flashes\" in session else []\n        request_ctx.flashes = flashes\n    if category_filter:\n        flashes = list(filter(lambda f: f[0] in category_filter, flashes))\n    if not with_categories:\n        return [x[1] for x in flashes]\n    return flashes\n```\n\n### 片段4 (文件: flask/sansio/scaffold.py, 行: 754)\n```python\ndef find_package(import_name: str) -> tuple[str | None, str]:\n    \"\"\"Find the prefix that a package is installed under, and the path\n    that it would be imported from.\n\n    The prefix is the directory containing the standard directory\n    hierarchy (lib, bin, etc.). If the package is not installed to the\n    system (:attr:`sys.prefix`) or a virtualenv (``site-packages``),\n    ``None`` is returned.\n\n    The path is the entry in :attr:`sys.path` that contains the package\n    for import. If the package is not installed, it's assumed that the\n    package was imported from the current working directory.\n    \"\"\"\n    package_path = _find_package_path(import_name)\n    py_prefix = os.path.abspath(sys.prefix)\n\n    # installed to the system\n    if pathlib.PurePath(package_path).is_relative_to(py_prefix):\n        return py_prefix, package_path\n\n    site_parent, site_folder = os.path.split(package_path)\n\n    # installed to a virtualenv\n    if site_folder.lower() == \"site-packages\":\n        parent, folder = os.path.split(site_parent)\n\n        # Windows (prefix/lib/site-packages)\n        if folder.lower() == \"lib\":\n            return parent, package_path\n\n        # Unix (prefix/lib/pythonX.Y/site-packages)\n        if os.path.basename(parent).lower() == \"lib\":\n            return os.path.dirname(parent), package_path\n\n        # something else (prefix/site-packages)\n        return site_parent, package_path\n\n    # not installed\n    return None, package_path\n```\n\n\n只返回 JSON 数组，每个元素格式：{\"index\": 片段编号, \"smell\": \"坏味道名\", \"reason\": \"一句话说明\"}\n无问题就返回 []。"
+      }
+    ],
+    "temperature": 0.3
+  },
+  "http_attempts": 1,
+  "http_statuses": [
+    200
+  ],
+  "status": "ok",
+  "returned_model": "deepseek-flash",
+  "response_id": "828c879f-20ce-49d4-ab5d-38aa5d8e5aa6",
+  "finish_reason": "stop",
+  "content": "[\n  {\"index\": 0, \"smell\": \"重复逻辑\", \"reason\": \"subdomain 和 url_prefix 都使用相同的 options.get(...) 回退到 blueprint 属性的模式，可提取辅助函数。\"},\n  {\"index\": 0, \"smell\": \"职责过多\", \"reason\": \"__init__ 同时处理多个属性的赋值与回退逻辑，且混入了大量文档注释。\"},\n  {\"index\": 1, \"smell\": \"嵌套过深\", \"reason\": \"多层 if/elif 嵌套处理 host_matching、subdomain_matching 等分支，逻辑复杂。\"},\n  {\"index\": 1, \"smell\": \"魔法字符串\", \"reason\": \"多次直接使用配置键字符串如 \\\"TRUSTED_HOSTS\\\"、\\\"SERVER_NAME\\\"、\\\"APPLICATION_ROOT\\\" 等。\"},\n  {\"index\": 2, \"smell\": \"职责过多\", \"reason\": \"__init__ 既调用 super 又初始化 CLI、注册静态路由，承担了过多初始化职责。\"},\n  {\"index\": 2, \"smell\": \"魔法字符串\", \"reason\": \"endpoint=\\\"static\\\"、\\\"<path:filename>\\\" 等硬编码字符串散落在逻辑中。\"},\n  {\"index\": 3, \"smell\": \"命名含糊\", \"reason\": \"变量 flashes 在过滤后被重新赋值，语义从原始列表变为过滤后列表，容易混淆。\"},\n  {\"index\": 3, \"smell\": \"魔法字符串\", \"reason\": \"session 键 \\\"_flashes\\\" 硬编码在函数中。\"},\n  {\"index\": 4, \"smell\": \"魔法字符串\", \"reason\": \"多次使用 \\\"site-packages\\\"、\\\"lib\\\" 等硬编码字符串判断路径结构。\"},\n  {\"index\": 4, \"smell\": \"嵌套过深\", \"reason\": \"多层 if 判断不同平台的 site-packages 路径布局，分支较多。\"}\n]",
+  "usage": {
+    "completion_tokens": 418,
+    "prompt_tokens": 2360,
+    "total_tokens": 2778,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 2360
+  },
+  "format": {
+    "json_array": true,
+    "strict_items": true,
+    "items": 10
+  },
+  "parsed_findings": [
+    {
+      "file": "flask/sansio/blueprints.py",
+      "line": 41,
+      "smell": "重复逻辑",
+      "reason": "subdomain 和 url_prefix 都使用相同的 options.get(...) 回退到 blueprint 属性的模式，可提取辅助函数。"
+    },
+    {
+      "file": "flask/sansio/blueprints.py",
+      "line": 41,
+      "smell": "职责过多",
+      "reason": "__init__ 同时处理多个属性的赋值与回退逻辑，且混入了大量文档注释。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 425,
+      "smell": "嵌套过深",
+      "reason": "多层 if/elif 嵌套处理 host_matching、subdomain_matching 等分支，逻辑复杂。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 425,
+      "smell": "魔法字符串",
+      "reason": "多次直接使用配置键字符串如 \"TRUSTED_HOSTS\"、\"SERVER_NAME\"、\"APPLICATION_ROOT\" 等。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 226,
+      "smell": "职责过多",
+      "reason": "__init__ 既调用 super 又初始化 CLI、注册静态路由，承担了过多初始化职责。"
+    },
+    {
+      "file": "flask/app.py",
+      "line": 226,
+      "smell": "魔法字符串",
+      "reason": "endpoint=\"static\"、\"<path:filename>\" 等硬编码字符串散落在逻辑中。"
+    },
+    {
+      "file": "flask/helpers.py",
+      "line": 352,
+      "smell": "命名含糊",
+      "reason": "变量 flashes 在过滤后被重新赋值，语义从原始列表变为过滤后列表，容易混淆。"
+    },
+    {
+      "file": "flask/helpers.py",
+      "line": 352,
+      "smell": "魔法字符串",
+      "reason": "session 键 \"_flashes\" 硬编码在函数中。"
+    },
+    {
+      "file": "flask/sansio/scaffold.py",
+      "line": 754,
+      "smell": "魔法字符串",
+      "reason": "多次使用 \"site-packages\"、\"lib\" 等硬编码字符串判断路径结构。"
+    },
+    {
+      "file": "flask/sansio/scaffold.py",
+      "line": 754,
+      "smell": "嵌套过深",
+      "reason": "多层 if 判断不同平台的 site-packages 路径布局，分支较多。"
+    }
+  ],
+  "seconds": 2.647743099980289,
+  "finished_at": "2026-10-10T02:04:15.617300+00:00"
+}

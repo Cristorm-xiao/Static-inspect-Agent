@@ -1,0 +1,134 @@
+{
+  "call_id": "primary-httpx-0",
+  "phase": "primary-httpx",
+  "kind": "primary",
+  "sample_ids": [
+    "httpx:_models.py:383:__init__",
+    "httpx:_config.py:86:__init__",
+    "httpx:_api.py:364:patch",
+    "httpx:_client.py:1543:stream",
+    "httpx:_transports/default.py:374:handle_async_request"
+  ],
+  "started_at": "2026-10-10T02:04:18.795319+00:00",
+  "request": {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你是资深 Python 代码审查员。以下是 5 个较长的函数，请找出代码坏味道\n（如命名含糊、职责过多、嵌套过深、重复逻辑、魔法数字等）。\n\n\n### 片段0 (文件: httpx/_models.py, 行: 383)\n```python\n    def __init__(\n        self,\n        method: str,\n        url: URL | str,\n        *,\n        params: QueryParamTypes | None = None,\n        headers: HeaderTypes | None = None,\n        cookies: CookieTypes | None = None,\n        content: RequestContent | None = None,\n        data: RequestData | None = None,\n        files: RequestFiles | None = None,\n        json: typing.Any | None = None,\n        stream: SyncByteStream | AsyncByteStream | None = None,\n        extensions: RequestExtensions | None = None,\n    ) -> None:\n        self.method = method.upper()\n        self.url = URL(url) if params is None else URL(url, params=params)\n        self.headers = Headers(headers)\n        self.extensions = {} if extensions is None else dict(extensions)\n\n        if cookies:\n            Cookies(cookies).set_cookie_header(self)\n\n        if stream is None:\n            content_type: str | None = self.headers.get(\"content-type\")\n            headers, stream = encode_request(\n                content=content,\n                data=data,\n                files=files,\n                json=json,\n                boundary=get_multipart_boundary_from_content_type(\n                    content_type=content_type.encode(self.headers.encoding)\n                    if content_type\n                    else None\n                ),\n            )\n            self._prepare(headers)\n            self.stream = stream\n            # Load the request body, except for streaming content.\n            if isinstance(stream, ByteStream):\n                self.read()\n        else:\n            # There's an important distinction between `Request(content=...)`,\n            # and `Request(stream=...)`.\n            #\n            # Using `content=...` implies automatically populated `Host` and content\n            # headers, of either `Content-Length: ...` or `Transfer-Encoding: chunked`.\n            #\n            # Using `stream=...` will not automatically include *any*\n            # auto-populated headers.\n            #\n            # As an end-user you don't really need `stream=...`. It's only\n            # useful when:\n            #\n            # * Preserving the request stream when copying requests, eg for redirects.\n            # * Creating request instances on the *server-side* of the transport API.\n            self.stream = stream\n```\n\n### 片段1 (文件: httpx/_config.py, 行: 86)\n```python\n    def __init__(\n        self,\n        timeout: TimeoutTypes | UnsetType = UNSET,\n        *,\n        connect: None | float | UnsetType = UNSET,\n        read: None | float | UnsetType = UNSET,\n        write: None | float | UnsetType = UNSET,\n        pool: None | float | UnsetType = UNSET,\n    ) -> None:\n        if isinstance(timeout, Timeout):\n            # Passed as a single explicit Timeout.\n            assert connect is UNSET\n            assert read is UNSET\n            assert write is UNSET\n            assert pool is UNSET\n            self.connect = timeout.connect  # type: typing.Optional[float]\n            self.read = timeout.read  # type: typing.Optional[float]\n            self.write = timeout.write  # type: typing.Optional[float]\n            self.pool = timeout.pool  # type: typing.Optional[float]\n        elif isinstance(timeout, tuple):\n            # Passed as a tuple.\n            self.connect = timeout[0]\n            self.read = timeout[1]\n            self.write = None if len(timeout) < 3 else timeout[2]\n            self.pool = None if len(timeout) < 4 else timeout[3]\n        elif not (\n            isinstance(connect, UnsetType)\n            or isinstance(read, UnsetType)\n            or isinstance(write, UnsetType)\n            or isinstance(pool, UnsetType)\n        ):\n            self.connect = connect\n            self.read = read\n            self.write = write\n            self.pool = pool\n        else:\n            if isinstance(timeout, UnsetType):\n                raise ValueError(\n                    \"httpx.Timeout must either include a default, or set all \"\n                    \"four parameters explicitly.\"\n                )\n            self.connect = timeout if isinstance(connect, UnsetType) else connect\n            self.read = timeout if isinstance(read, UnsetType) else read\n            self.write = timeout if isinstance(write, UnsetType) else write\n            self.pool = timeout if isinstance(pool, UnsetType) else pool\n```\n\n### 片段2 (文件: httpx/_api.py, 行: 364)\n```python\ndef patch(\n    url: URL | str,\n    *,\n    content: RequestContent | None = None,\n    data: RequestData | None = None,\n    files: RequestFiles | None = None,\n    json: typing.Any | None = None,\n    params: QueryParamTypes | None = None,\n    headers: HeaderTypes | None = None,\n    cookies: CookieTypes | None = None,\n    auth: AuthTypes | None = None,\n    proxy: ProxyTypes | None = None,\n    follow_redirects: bool = False,\n    verify: ssl.SSLContext | str | bool = True,\n    timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,\n    trust_env: bool = True,\n) -> Response:\n    \"\"\"\n    Sends a `PATCH` request.\n\n    **Parameters**: See `httpx.request`.\n    \"\"\"\n    return request(\n        \"PATCH\",\n        url,\n        content=content,\n        data=data,\n        files=files,\n        json=json,\n        params=params,\n        headers=headers,\n        cookies=cookies,\n        auth=auth,\n        proxy=proxy,\n        follow_redirects=follow_redirects,\n        verify=verify,\n        timeout=timeout,\n        trust_env=trust_env,\n    )\n```\n\n### 片段3 (文件: httpx/_client.py, 行: 1543)\n```python\n    async def stream(\n        self,\n        method: str,\n        url: URL | str,\n        *,\n        content: RequestContent | None = None,\n        data: RequestData | None = None,\n        files: RequestFiles | None = None,\n        json: typing.Any | None = None,\n        params: QueryParamTypes | None = None,\n        headers: HeaderTypes | None = None,\n        cookies: CookieTypes | None = None,\n        auth: AuthTypes | UseClientDefault | None = USE_CLIENT_DEFAULT,\n        follow_redirects: bool | UseClientDefault = USE_CLIENT_DEFAULT,\n        timeout: TimeoutTypes | UseClientDefault = USE_CLIENT_DEFAULT,\n        extensions: RequestExtensions | None = None,\n    ) -> typing.AsyncIterator[Response]:\n        \"\"\"\n        Alternative to `httpx.request()` that streams the response body\n        instead of loading it into memory at once.\n\n        **Parameters**: See `httpx.request`.\n\n        See also: [Streaming Responses][0]\n\n        [0]: /quickstart#streaming-responses\n        \"\"\"\n        request = self.build_request(\n            method=method,\n            url=url,\n            content=content,\n            data=data,\n            files=files,\n            json=json,\n            params=params,\n            headers=headers,\n            cookies=cookies,\n            timeout=timeout,\n            extensions=extensions,\n        )\n        response = await self.send(\n            request=request,\n            auth=auth,\n            follow_redirects=follow_redirects,\n            stream=True,\n        )\n        try:\n            yield response\n        finally:\n            await response.aclose()\n```\n\n### 片段4 (文件: httpx/_transports/default.py, 行: 374)\n```python\n    async def handle_async_request(\n        self,\n        request: Request,\n    ) -> Response:\n        assert isinstance(request.stream, AsyncByteStream)\n        import httpcore\n\n        req = httpcore.Request(\n            method=request.method,\n            url=httpcore.URL(\n                scheme=request.url.raw_scheme,\n                host=request.url.raw_host,\n                port=request.url.port,\n                target=request.url.raw_path,\n            ),\n            headers=request.headers.raw,\n            content=request.stream,\n            extensions=request.extensions,\n        )\n        with map_httpcore_exceptions():\n            resp = await self._pool.handle_async_request(req)\n\n        assert isinstance(resp.stream, typing.AsyncIterable)\n\n        return Response(\n            status_code=resp.status,\n            headers=resp.headers,\n            stream=AsyncResponseStream(resp.stream),\n            extensions=resp.extensions,\n        )\n```\n\n\n只返回 JSON 数组，每个元素格式：{\"index\": 片段编号, \"smell\": \"坏味道名\", \"reason\": \"一句话说明\"}\n无问题就返回 []。"
+      }
+    ],
+    "temperature": 0.3
+  },
+  "http_attempts": 1,
+  "http_statuses": [
+    200
+  ],
+  "status": "ok",
+  "returned_model": "deepseek-flash",
+  "response_id": "e38b5248-3a2d-41b8-9c09-8b0ce94dc723",
+  "finish_reason": "stop",
+  "content": "```json\n[\n  {\"index\": 0, \"smell\": \"职责过多\", \"reason\": \"__init__ 同时负责 URL 解析、headers 构造、cookies 处理、请求体编码、stream 分支处理，逻辑过于集中。\"},\n  {\"index\": 0, \"smell\": \"嵌套过深\", \"reason\": \"stream 为 None 分支内又嵌套 content_type 判断与 encode_request 调用，可读性下降。\"},\n  {\"index\": 0, \"smell\": \"魔法值\", \"reason\": \"硬编码字符串 \\\"content-type\\\" 未提取为常量。\"},\n  {\"index\": 1, \"smell\": \"重复逻辑\", \"reason\": \"四个属性 connect/read/write/pool 的赋值逻辑在多个分支中重复出现。\"},\n  {\"index\": 1, \"smell\": \"嵌套过深\", \"reason\": \"多层 if/elif/else 分支嵌套，条件判断复杂难读。\"},\n  {\"index\": 1, \"smell\": \"魔法数字\", \"reason\": \"使用 timeout[0]、timeout[1]、len(timeout) < 3 等索引与长度数字，含义不直观。\"},\n  {\"index\": 2, \"smell\": \"重复逻辑\", \"reason\": \"patch 函数与其它 HTTP 方法函数（get/post/put 等）几乎完全重复，仅方法名不同。\"},\n  {\"index\": 2, \"smell\": \"参数过多\", \"reason\": \"函数签名包含 14 个参数，接口臃肿，维护成本高。\"},\n  {\"index\": 3, \"smell\": \"参数过多\", \"reason\": \"stream 方法同样有大量参数，且与 build_request 参数高度重叠。\"},\n  {\"index\": 3, \"smell\": \"重复逻辑\", \"reason\": \"参数列表与 build_request 的参数几乎一一对应，存在样板式重复传递。\"},\n  {\"index\": 4, \"smell\": \"函数内导入\", \"reason\": \"在方法内部 import httpcore，应放在模块顶部，影响可读性与性能。\"},\n  {\"index\": 4, \"smell\": \"职责过多\", \"reason\": \"handle_async_request 同时负责类型断言、请求转换、异常映射、响应构造，职责混杂。\"},\n  {\"index\": 4, \"smell\": \"魔法值\", \"reason\": \"使用 assert 做运行时类型检查，且多处断言散落，缺乏统一校验。\"}\n]\n```",
+  "usage": {
+    "completion_tokens": 537,
+    "prompt_tokens": 1936,
+    "total_tokens": 2473,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1936
+  },
+  "format": {
+    "json_array": true,
+    "strict_items": true,
+    "items": 13
+  },
+  "parsed_findings": [
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "职责过多",
+      "reason": "__init__ 同时负责 URL 解析、headers 构造、cookies 处理、请求体编码、stream 分支处理，逻辑过于集中。"
+    },
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "嵌套过深",
+      "reason": "stream 为 None 分支内又嵌套 content_type 判断与 encode_request 调用，可读性下降。"
+    },
+    {
+      "file": "httpx/_models.py",
+      "line": 383,
+      "smell": "魔法值",
+      "reason": "硬编码字符串 \"content-type\" 未提取为常量。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "重复逻辑",
+      "reason": "四个属性 connect/read/write/pool 的赋值逻辑在多个分支中重复出现。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "嵌套过深",
+      "reason": "多层 if/elif/else 分支嵌套，条件判断复杂难读。"
+    },
+    {
+      "file": "httpx/_config.py",
+      "line": 86,
+      "smell": "魔法数字",
+      "reason": "使用 timeout[0]、timeout[1]、len(timeout) < 3 等索引与长度数字，含义不直观。"
+    },
+    {
+      "file": "httpx/_api.py",
+      "line": 364,
+      "smell": "重复逻辑",
+      "reason": "patch 函数与其它 HTTP 方法函数（get/post/put 等）几乎完全重复，仅方法名不同。"
+    },
+    {
+      "file": "httpx/_api.py",
+      "line": 364,
+      "smell": "参数过多",
+      "reason": "函数签名包含 14 个参数，接口臃肿，维护成本高。"
+    },
+    {
+      "file": "httpx/_client.py",
+      "line": 1543,
+      "smell": "参数过多",
+      "reason": "stream 方法同样有大量参数，且与 build_request 参数高度重叠。"
+    },
+    {
+      "file": "httpx/_client.py",
+      "line": 1543,
+      "smell": "重复逻辑",
+      "reason": "参数列表与 build_request 的参数几乎一一对应，存在样板式重复传递。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "函数内导入",
+      "reason": "在方法内部 import httpcore，应放在模块顶部，影响可读性与性能。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "职责过多",
+      "reason": "handle_async_request 同时负责类型断言、请求转换、异常映射、响应构造，职责混杂。"
+    },
+    {
+      "file": "httpx/_transports/default.py",
+      "line": 374,
+      "smell": "魔法值",
+      "reason": "使用 assert 做运行时类型检查，且多处断言散落，缺乏统一校验。"
+    }
+  ],
+  "seconds": 2.8075095000094734,
+  "finished_at": "2026-10-10T02:04:21.602841+00:00"
+}
